@@ -1,0 +1,13 @@
+LOGDIR=/tmp/sparksqllog
+TMPQ=/tmp/sparksqlqueries
+
+#TCPROOT=/home/sb/v2.10.0rc2
+TCPROOT=/home/sb/tpc/v2.10.0rc2
+
+#SparkSQL
+DBNAME=perfdb
+DBUSER=sb
+
+DTYPE=sparksql
+
+SPARKSQLPARAM="--master yarn --num-executors 2 -S"

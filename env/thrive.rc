@@ -1,0 +1,15 @@
+LOGDIR=/tmp/thcplog
+TMPQ=/tmp/tqueries
+
+TCPROOT=/home/sb/v2.10.0rc2
+RESFILE0=$TCPROOT/work/queries/thrift.result
+
+#Hive
+DBNAME=perfdb
+TENAME=perfte
+DBUSER=sb
+#HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:10016/XX-XX"
+HIVEURL="jdbc:hive2://hdp2.sb.com:10016/XX-XX;principal=hive/_HOST@HDP.COM.REALM;transportMode=binary;httpPath=cliservice"
+HDFSPATH="/tmp/data"
+
+DTYPE=hive

@@ -1,0 +1,13 @@
+LOGDIR=/tmp/oratcplog
+TMPQ=/tmp/queries
+
+TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+
+#oracle
+DBNAME=xxx
+DBUSER=xxx
+DBPASSWORD=xxx
+URL="c##perfdb/secret@//localhost:1521/ORCLCDB"
+
+DTYPE=oracle
+#SKIPQUERY=query34,query47

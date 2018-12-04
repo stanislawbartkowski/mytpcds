@@ -1,0 +1,20 @@
+LOGDIR=/tmp/postgreslog
+TMPQ=/tmp/pqueries
+
+TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+#TCPROOT=/home/sb/tpc/v2.10.0rc2
+
+#postgresql
+DBNAME=perfdb
+DBUSER=perfdb
+DBPASSWORD=secret
+#DBHOST=127.0.0.1
+DBHOST=boil1
+
+
+DTYPE=psql
+
+TCPQ0=$TCPROOT/work/postqueries/query_0.sql
+KILLINTERVAL="5 minutes"
+
+#SKIPQUERY=query03

@@ -1,0 +1,13 @@
+LOGDIR=/tmp/db2tpclog
+TMPQ=/tmp/queries
+
+TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+#TCPROOT=/home/sb/tpc/v2.10.0rc2
+
+#DB2
+DBNAME=PERFDB
+DBUSER=db2inst1
+DBPASSWORD=db2inst1
+CLIENT=client
+
+DTYPE=db2
