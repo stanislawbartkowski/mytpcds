@@ -3,10 +3,11 @@
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
-export ENV=env/thrive
 #export ENV=env/sparksql
+#export ENV=env/thrive
 #export ENV=env/phoenix
 #export ENV=env/mysql
+export ENV=env/netezza
 
 export TESTDATA=call_center
 export TESTQUERY=02

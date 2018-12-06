@@ -1,0 +1,12 @@
+TMPQ=/tmp/netezzaqueries
+LOGDIR=/tmp/netezzalog
+TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+
+LOGLOADDIR=$LOGDIR
+
+DBNAME=perfdb
+DBUSER=perf
+DBPASSWORD=secret
+DBHOST=netezza
+
+DTYPE=netezza

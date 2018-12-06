@@ -20,7 +20,7 @@ log() {
 }
 
 logfail() {
-  log "$1"./res/query3.res against /tmp/qresult/query3.res
+  log "$1"
   log "Exit immediately"
   exit 1
 }
@@ -76,18 +76,19 @@ numberoflines() {
 }
 
 verifyload() {
-  local table=$1
-  local file=$2
+  local -r table=$1
+  local -r file=$2
   log "Verify table $table against input file $2"
 #  local NOLINES=`wc --line $file | cut -d ' ' -f 1`
-  local NOLINES=`numberoflines $file`
+  local -r NOLINES=`numberoflines $file`
   log "Number of rows expected: $NOLINES"
-  local TMP=`mktemp`
+  local -r TMP=`mktemp`
   local query="SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table"
+  if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
   numberofrows "$query" | grep "NUMBEROFROWS:" | tr -d "\| " | cut -d ":" -f2 >$TMP
   [ $? -eq 0 ] || logfail "Failed while executing query"
   NUMOFROWS=`cat $TMP`
-  rm $TMP
+#  rm $TMP
   log "Number of rows returned: $NUMOFROWS"
   [ "$NOLINES" -eq "$NUMOFROWS" ] || logfail "Numbers do not match"
   log "OK."
