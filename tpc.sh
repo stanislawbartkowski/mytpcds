@@ -121,11 +121,12 @@ verify() {
   # "${VAR1:-default value}"
   TCPDS=${TCPDS:-$TCPROOT/tools/tpcds.sql}
   TCPDATA=${TCPDATA:-$TCPROOT/work/data}
-  TCPQ0=${TCPQ0:-$TCPROOT/work/queries/query_0.sql}
-  RESFILE0=${RESFILE0:-$TCPROOT/work/queries/$DTYPE.result}
+  STREAMNO=${STREAMNO:-0}
+  TCPQ0=${TCPQ0:-$TCPROOT/work/${DTYPE}queries/query_$STREAMNO.sql}
+  RESFILE0=${RESFILE0:-$TCPROOT/work/${DTYPE}queries/$DTYPE.result$STREAMNO}
   TESTQUERY=${TESTQUERY:-55}
   TESTDATA=${TESTDATA:-customer}
-  RESULTDIRECTORY=${RESULTDIRECTORY:-/tmp/qresult}
+  RESULTDIRECTORY=${RESULTDIRECTORY:-/tmp/qresult$STREAMNO}
   QUERYTIMEOUT=${QUERYTIMEOUT:-10m}
   RESQUERYDIR=${RESQUERYDIR:-$PWD/res}
   mkdir -p $RESULTDIRECTORY
@@ -281,18 +282,22 @@ runsinglequery() {
   local after=`date  +"%s"`
   local t=$(expr $after - $before)
   if [ $RES -eq 0 ]; then
-       mess="$1 | $TPLNAME | PASSED | $t"
-       local RESQUERY=$RESQUERYDIR/$QUERY.res
-       log "Compare the result $RESQUERY against $RESULTSET "
-       compactresult $RESQUERY >$TMP2
-       compactresult $RESULTSET >$TMP3
-       if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess | MATCH"; else mess="$mess | DIFFER"; fi
-       # compare size
-       local EXPECTEDLINE=`numberoflines $TMP2`
-       log "Expected number of line $EXPECTEDLINE"
-       local RESLINES=`numberoflines $TMP3`
-       log "Number of lines received $RESLINES"
-       if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess | NUMBER OF LINES MATCHES"; else mess="$mess | NUMBER OF LINES DIFFERS"; fi
+      if [ -z "$DONOTVERIFY" ]; then
+         mess="$1 | $TPLNAME | PASSED | $t"
+         local RESQUERY=$RESQUERYDIR/$QUERY.res
+         log "Compare the result $RESQUERY against $RESULTSET "
+         compactresult $RESQUERY >$TMP2
+         compactresult $RESULTSET >$TMP3
+         if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess | MATCH"; else mess="$mess | DIFFER"; fi
+         # compare size
+         local EXPECTEDLINE=`numberoflines $TMP2`
+         log "Expected number of line $EXPECTEDLINE"
+         local RESLINES=`numberoflines $TMP3`
+         log "Number of lines received $RESLINES"
+         if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess | NUMBER OF LINES MATCHES"; else mess="$mess | NUMBER OF LINES DIFFERS"; fi
+      else
+        mess="$1 | $TPLNAME | PASSED | $t"
+      fi
   elif [ $RES -eq 124 ]; then mess="$1 | $TPLNAME | TIMEOUT | $t"
   else mess="$1 | $TPLNAME | FAILED "
   fi

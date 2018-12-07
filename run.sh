@@ -10,7 +10,7 @@
 export ENV=env/netezza
 
 export TESTDATA=call_center
-export TESTQUERY=02
+export TESTQUERY=09
 export QUERYTIMEOUT=5m
 
 

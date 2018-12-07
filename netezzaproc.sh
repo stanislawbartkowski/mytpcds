@@ -40,7 +40,8 @@ loadfile() {
 }
 
 runquery() {
-  runnzsql $1 >$RESULTSET  
+  cat $1
+  runnzsql $1 >$RESULTSET
 }
 
 
@@ -56,5 +57,6 @@ testenv() {
 }
 
 export USEPIPECONCATENATE="X"
+export REMOVEQUERYDAYS=X
 
 testenv
