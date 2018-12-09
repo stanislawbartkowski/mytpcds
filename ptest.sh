@@ -12,8 +12,7 @@ export QUERYTIMEOUT=5m
 export DONOTVERIFY=X
 
 export STREAMNO=$1
-[ -z "$STREAMNO" ] && echo "Provide parameter, STREAM number"
-[ -z "$STREAMNO" ] && exit 1
+[ -z "$STREAMNO" ] && { echo "Provide parameter, STREAM number"; exit 1; }
 echo "STREAM number $STREAMNO"
 
 ./tpc.sh runqueries

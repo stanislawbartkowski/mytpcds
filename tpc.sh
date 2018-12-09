@@ -4,12 +4,10 @@
 STARTPWD=$PWD
 
 IFEXIST=
-[ -z "$ENV" ] && echo "Variable ENV not defined"
-[ -z "$ENV" ] && exit 1
+[ -z "$ENV" ] && { echo "Variable ENV not defined"; exit 1; }
 source ./$ENV.rc
 
-[ -z "$LOGDIR" ] && echo "Variable LOGDIR not defined"
-[ -z "$LOGDIR" ] && exit 1
+[ -z "$LOGDIR" ] && { echo "Variable LOGDIR not defined"; exit 1; }
 
 mkdir -p $LOGDIR
 LOGFILE=$LOGDIR/mytcp.log
@@ -40,6 +38,7 @@ removetables() {
     echo "DROP TABLE $IFEXIST $tablename ;" >>$tmpfile
   done
   rundroptable $tmpfile >>$LOGFILE
+  # do not return report error code
   rm $tmpfile
 }
 
@@ -79,16 +78,15 @@ verifyload() {
   local -r table=$1
   local -r file=$2
   log "Verify table $table against input file $2"
-#  local NOLINES=`wc --line $file | cut -d ' ' -f 1`
   local -r NOLINES=`numberoflines $file`
   log "Number of rows expected: $NOLINES"
   local -r TMP=`mktemp`
   local query="SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table"
   if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
   numberofrows "$query" | grep "NUMBEROFROWS:" | tr -d "\| " | cut -d ":" -f2 >$TMP
-  [ $? -eq 0 ] || logfail "Failed while executing query"
+  [ $? -eq 0 ] || logfail "Failed while executing a query"
   NUMOFROWS=`cat $TMP`
-#  rm $TMP
+  rm $TMP
   log "Number of rows returned: $NUMOFROWS"
   [ "$NOLINES" -eq "$NUMOFROWS" ] || logfail "Numbers do not match"
   log "OK."
@@ -305,11 +303,14 @@ runsinglequery() {
   rm $TMP1
   rm $TMP2
   rm $TMP3
-  cat $RESULTSET >>$LOGFILE
-  echo >>$LOGFILE
-  echo >>$LOGFILE
-  echo >>$LOGFILE
-  compactresult $RESULTSET >>$LOGFILE
+
+# uncomment for debugging
+#  cat $RESULTSET >>$LOGFILE
+#  echo >>$LOGFILE
+#  echo >>$LOGFILE
+#  echo >>$LOGFILE
+#  compactresult $RESULTSET >>$LOGFILE
+
   log "$mess"
   echo $mess >>$RESFILE0
   return $RES

@@ -1,4 +1,4 @@
-# Converts all numbers to number with tw digits after decimal point
+# Converts all numbers to number with two digits after decimal point
 
 BEGIN {
   FS="|"
