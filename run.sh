@@ -1,4 +1,4 @@
-#export ENV=env/db2
+export ENV=env/db2
 #export ENV=env/bigsql
 #export ENV=env/oracle
 #export ENV=env/hive
@@ -7,10 +7,10 @@
 #export ENV=env/thrive
 #export ENV=env/phoenix
 #export ENV=env/mysql
-export ENV=env/netezza
+#export ENV=env/netezza
 
 export TESTDATA=call_center
-export TESTQUERY=09
+export TESTQUERY=98
 export QUERYTIMEOUT=5m
 
 

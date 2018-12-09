@@ -168,16 +168,16 @@ compactresult() {
     # remove emmpty lines
           sed '/^\s*$/d' |
           # replace 0.9 with 0.90
-            sed "s/\(\.[0-9]\)$/\10/g" |
-              sed "s/\(\.[0-9]\)|/\10|/g" |
+#            sed "s/\(\.[0-9]\)$/\10/g" |
+#              sed "s/\(\.[0-9]\)|/\10|/g" |
                # remove NULL NaN
-                 sed "s/NULL//g" |
-                   sed "s/NaN//g" |
+               # run twice !
+                 sed "s/NULL//g" | sed "s/NaN//g" | sed "s/|-|/||/g" | sed "s/|-|/||/g" | sed "s/^-|/|/g" |
                 # replace |9999| with |9999.00|
                 # run twice the same, can overlap
-                sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" | sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" |
+#                sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" | sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" |
 
-  awk -f $STARTPWD/transf.awk
+   awk -f $STARTPWD/transf.awk
 
 }
 
@@ -360,6 +360,7 @@ printhelp() {
 verify
 RESTEMP=`mktemp`
 export RESULTSET=$RESTEMP
+trap "{ rm $RESTEMP; }" EXIT
 
 case $1 in
   test) testdbconnection;;
@@ -373,5 +374,3 @@ case $1 in
   removedata) removetables;;
   *) printhelp; logfail "Parameter expected";;
 esac
-
-rm $RESTEMP

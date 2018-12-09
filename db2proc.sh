@@ -69,6 +69,7 @@ numberofrows() {
 }
 
 loadfile() {
+#  trap "echo 'aaaaaaaaaaa'" RETURN
   local tablename=$1
   local inloadfile=$2
   connect

@@ -1,13 +1,13 @@
-LOGDIR=/tmp/db2tpclog
-TMPQ=/tmp/queries
+LOGDIR=/tmp/mytpcds/db2log
+TMPQ=/tmp/mytpcds/db2queries
 
 TCPROOT=/home/sbartkowski/work/v2.10.0rc2
 #TCPROOT=/home/sb/tpc/v2.10.0rc2
 
 #DB2
 DBNAME=PERFDB
-DBUSER=db2inst1
-DBPASSWORD=db2inst1
+DBUSER=perf
+DBPASSWORD=secret
 CLIENT=client
 
 DTYPE=db2
