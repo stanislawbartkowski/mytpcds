@@ -107,3 +107,20 @@ export TESTDATA=call_center
 #./tpc.sh verifyload
 #./tpc.sh runqueries
 ```
+
+# Step 5, load all data
+
+Uncomment **./tpc.sh loaddata** line and run the script
+
+```bash
+#./tpc.sh test
+#./tpc.sh removedata
+#./tpc.sh createtables
+#./tpc.sh loadtest
+#./tpc.sh testverify
+#./tpc.sh testquery
+
+./tpc.sh loaddata
+#./tpc.sh verifyload
+#./tpc.sh runqueries
+```
