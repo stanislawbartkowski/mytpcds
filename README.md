@@ -89,7 +89,7 @@ export TESTDATA=call_center
 ```
 # Step 4, verify data loaded
 
-The test compares number of lines in text input file and number of rows in target table
+The test compares number of lines in text input file and number of rows in the target table
 
 Uncomment **./tpc.sh testverify** line and run the script
 
