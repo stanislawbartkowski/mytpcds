@@ -124,3 +124,58 @@ Uncomment **./tpc.sh loaddata** line and run the script
 #./tpc.sh verifyload
 #./tpc.sh runqueries
 ```
+# Step 6, verify loaded data
+
+This test compares number of line in input text files against corresponding target tables.
+
+Uncomment **./tpc.sh verifyload** line and run the script
+
+```bash
+#./tpc.sh test
+#./tpc.sh removedata
+#./tpc.sh createtables
+#./tpc.sh loadtest
+#./tpc.sh testverify
+#./tpc.sh testquery
+
+#./tpc.sh loaddata
+./tpc.sh verifyload
+#./tpc.sh runqueries
+```
+
+# Step 7, run a single query
+
+Run single query as a test
+
+Uncomment **./tpc.sh testquery** line and run the script
+
+export TESTQUERY=98
+
+```bash
+#./tpc.sh test
+#./tpc.sh removedata
+#./tpc.sh createtables
+#./tpc.sh loadtest
+#./tpc.sh testverify
+./tpc.sh testquery
+
+#./tpc.sh loaddata
+#./tpc.sh verifyload
+#./tpc.sh runqueries
+```
+# Step 7, run all queries, QUALIFY TEST
+
+Uncomment **./tpc.sh runqueries** line and run the script
+
+```bash
+#./tpc.sh test
+#./tpc.sh removedata
+#./tpc.sh createtables
+#./tpc.sh loadtest
+#./tpc.sh testverify
+#./tpc.sh testquery
+
+#./tpc.sh loaddata
+#./tpc.sh verifyload
+./tpc.sh runqueries
+```
