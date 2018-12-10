@@ -1,7 +1,7 @@
 
 
 oraclescript() {
-  local TMP=`mktemp`
+  local -r TMP=`mktemp`
   cat >$TMP <<EOF
   WHENEVER OSERROR EXIT FAILURE;
   WHENEVER SQLERROR EXIT SQL.SQLCODE;
@@ -15,6 +15,8 @@ EOF
   echo EXIT | timeout $QUERYTIMEOUT sqlplus -S "$URL" \@$TMP >$RESULTSET
   local RES=$?
   rm $TMP
+  # remove parameter file, the calling function must not remove it
+  rm $1
   return $RES
 }
 
@@ -22,38 +24,32 @@ oraclecommand() {
   local TMP=`mktemp`
   echo "$1 ;" >$TMP
   oraclescript $TMP
-  local RES=$?
-  rm $TMP
-  return $RES
 }
 
 runquery() {
-  local TMP=`mktemp`
+  local -r TMP=`mktemp`
   sed -e "s/EXCEPT/minus/gi" $1 >$TMP
   cat $TMP
   oraclescript $TMP
-  local RES=$?
-  rm $TMP
-  return $RES
 }
 
 rundroptable() {
-  oraclescript $1
+  # oraclescript removes the file passed as a parameter
+  local -r TMP=`mktemp`
+  cp $1 $TMP
+  oraclescript $TMP
 }
 
 runcreatetable() {
-  local TMP=`mktemp`
+  local -r TMP=`mktemp`
   sed "s/ time /varchar(20)/g" $1  >$TMP
   oraclescript $TMP
-  local RES=$?
-  rm $TMP
-  return $RES
 }
 
 loadfile() {
-  local tbl=$1
-  local file=$2
-  local TMP=`mktemp`
+  local -r tbl=$1
+  local -r file=$2
+  local -r TMP=`mktemp`
   cat >$TMP <<EOF
   load data INFILE '$file'
   INTO TABLE $tbl
@@ -61,22 +57,29 @@ loadfile() {
   FIELDS TERMINATED BY "|"
 EOF
   cha="("
-  oraclecommand "select column_name,data_type from user_tab_columns where table_name = UPPER('$tbl') order by COLUMN_ID" | while read -r cname ctype
+  oraclecommand "select column_name,data_type from user_tab_columns where table_name = UPPER('$tbl') order by COLUMN_ID"
+  # oraclecommand outputs the result to $RESULTSET file
+  IFS='|' ; cat $RESULTSET | while read -r cname ctype
   do
     echo $cha >>$TMP
     echo -n $cname >>$TMP
-    [ $ctype == "DATE" ] && echo -n " date 'YYYY-MM-DD' " >>$TMP
+    [ $ctype == 'DATE' ] && echo -n " date 'YYYY-MM-DD' " >>$TMP
     cha=","
   done
   echo ")" >>$TMP
-  sqlldr "$URL" control=$TMP
-  local RES=$?
+  cat $TMP
+  log "log=$LOGDIR/oracleload.log"
+  sqlldr "$URL" control=$TMP log=$LOGDIR/oracleload.log
+  local -r RES=$?
   rm $TMP
   return $RES
 }
 
 numberofrows() {
   oraclecommand "$1"
+  local -r RES=$?
+  cat $RESULTSET
+  return $RES
 }
 
 testconnection() {

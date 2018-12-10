@@ -30,7 +30,7 @@ source ./${DTYPE}proc.sh
 
 removetables() {
   log "Dropping tables ...."
-  local tmpfile=`mktemp`
+  local -r tmpfile=`mktemp`
   echo $tmpfile
   cat $TCPDS | grep "create\ *table" |
   while read t1 t1 tablename; do

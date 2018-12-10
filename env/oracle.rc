@@ -1,5 +1,5 @@
-LOGDIR=/tmp/oratcplog
-TMPQ=/tmp/queries
+LOGDIR=/tmp/mytpcds/oraclelog
+TMPQ=/tmp/mytpcds/oraclequeries
 
 TCPROOT=/home/sbartkowski/work/v2.10.0rc2
 
@@ -7,7 +7,7 @@ TCPROOT=/home/sbartkowski/work/v2.10.0rc2
 DBNAME=xxx
 DBUSER=xxx
 DBPASSWORD=xxx
-URL="c##perfdb/secret@//localhost:1521/ORCLCDB"
+URL="c##perf/secret@//thinkde:1521/ORCLCDB"
 
 DTYPE=oracle
 #SKIPQUERY=query34,query47
