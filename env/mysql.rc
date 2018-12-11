@@ -1,15 +1,15 @@
-LOGDIR=/tmp/mysqllog
-TMPQ=/tmp/queries
+LOGDIR=/tmp/mytpcds/mysqllog
+TMPQ=/tmp/mytpcds/mysqlqueries
 
 TCPROOT=/home/sbartkowski/work/v2.10.0rc2
 #TCPROOT=/home/sb/tpc/v2.10.0rc2
 
 #mysql
 DBNAME=perfdb
-DBUSER=perfdb
+DBUSER=perf
 DBPASSWORD=secret
 #DBHOST=127.0.0.1
-DBHOST=boil1
+DBHOST=thinkde
 
 DTYPE=mysql
 

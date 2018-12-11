@@ -1,6 +1,7 @@
 
 mysqlcall() {
   local command="$1"
+  echo "mysql -A -h $DBHOST $DBNAME -u $DBUSER -p$DBPASSWORD -e \"$command\""
   timeout $QUERYTIMEOUT  mysql -A -h $DBHOST $DBNAME -u $DBUSER -p$DBPASSWORD -e "$command"
 }
 
@@ -12,7 +13,8 @@ mysqlscript() {
 loadfile() {
   local tbl=$1
   local file=$2
-  mysqlcall "LOAD DATA LOCAL INFILE '$file' INTO TABLE $tbl FIELDS TERMINATED BY '|'"
+  mysqlcall "LOAD DATA LOCAL INFILE '$file' REPLACE INTO TABLE $tbl FIELDS TERMINATED BY '|'"
+#  mysqlcall "LOAD DATA INFILE '$file' INTO TABLE $tbl FIELDS TERMINATED BY '|'"
 }
 
 numberofrows() {
