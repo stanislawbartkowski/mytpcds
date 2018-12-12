@@ -6,8 +6,32 @@ https://github.com/stanislawbartkowski/mytpcds/wiki
 ### Inspiration
 
 http://www.tpc.org/tpcds/
-TPC-DS is an objective tool to measure and compare different databases systems. The same set of data and non trivial queries can be loaded and executed and give an insight how databases respond to the workload. Also, having expected result based on experience, the tool can be also used for testing and tunning the newly installed or upgraded database.
 
+TPC-DS is an objective tool to measure and compare different databases systems. The same set of data and non trivial queries can be loaded and executed and give an insight how databases respond to the workload. Also, having expected result based on experience, the tool can be also used for testing and tunning the newly installed or upgraded database.
+But using TPC-DS is not easy out of the box. Requires some manual tasks to perform. So I decided to prepare an automated tool to do the task. Just download the TPC-DS files, configure and run it.
+
+## Tool description.
+
+The following database servers are supported: PosgreSQL, MySQL (MariaDB), Oracle, DB2, Netezza, Hive, SparkSQL and BigSQL.
+The tool consists of several simple bash and awk script file. Does not require any dependencies. 
+
+File | Description
+------------ | -------------
+db2proc.sh  | Implementation for DB2 and BigSQL 
+hiveproc.sh | Implementation for Hive and SparkSQL Thrive
+netezzaproc.sh | Implementation for Netezza
+phoenixproc.sh  | Implementation for HBAse Phoenix (not working)
+ptest.sh  | Starter for Throughout Test
+res | Expected result sets for Qualify and Performace Test
+run.sh | Launching script file
+tpc.sh | Main tpc-ds test runner
+env | Resource file for a databases
+mysqlproc.sh | Implementation for MySQL and MariaDB
+oracleproc.sh  | Implementation for Oracle
+psqlproc.sh | Implementation for PostreSQL
+run1.sh  | Alternative launching script
+sparksqlproc.sh  | Implementation for SparkSQL
+transf.awk | AWK script file used to transform the results
 
 ### QUALIFY test
 
