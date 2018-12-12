@@ -1,9 +1,3 @@
-LOGDIR=/tmp/tcplog
-
-#TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-TCPROOT=/home/sb/v2.10.0rc2
-TMPQ=/tmp/queries
-
 #Hive
 DBNAME=perfdb
 TENAME=perfte

@@ -1,9 +1,3 @@
-LOGDIR=/tmp/mytpcds/db2log
-TMPQ=/tmp/mytpcds/db2queries
-
-TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-#TCPROOT=/home/sb/tpc/v2.10.0rc2
-
 #DB2
 DBNAME=PERFDB
 DBUSER=perf

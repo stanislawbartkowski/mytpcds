@@ -1,9 +1,5 @@
-TMPQ=/tmp/mytpcds/netezzaqueries
-LOGDIR=/tmp/mytpcds/netezzalog
-TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-
 # netezza specific
-LOGLOADDIR=$LOGDIR
+LOGLOADDIR=/tmp/netezzaloadlog
 
 DBNAME=perfdb
 DBUSER=perf

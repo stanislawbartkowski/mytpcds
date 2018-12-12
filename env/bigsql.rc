@@ -1,9 +1,3 @@
-LOGDIR=/tmp/bigtpclog
-TMPQ=/tmp/queries
-
-TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-#TCPROOT=/var/iophome/bigsql/eh2bahw/tp
-
 #DB2
 DBNAME=BIGSQL
 DBUSER=sb

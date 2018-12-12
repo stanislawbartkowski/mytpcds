@@ -9,7 +9,7 @@ psqlcommand() {
 }
 
 psqlscript() {
-  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST -U $DBUSER -d $DBNAME -v "ON_ERROR_STOP=true" <$1
+  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" <$1 >$RESULTSET
 }
 
 rundroptable() {

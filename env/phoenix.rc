@@ -1,14 +1,6 @@
-LOGDIR=/tmp/phoenixlog
-
-#TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-#TCPROOT=/home/sb/v2.10.0rc2
-TCPROOT=/home/sb/v2.10.0rc2
-TMPQ=/tmp/phoqueries
-
 
 #Phoenix
 DBNAME=XX
-DBUSER=XX
 HDFSPATH="/tmp/data"
 #PHOHOME=/usr/hdp/2.6.4.0-91/phoenix
 PHOHOME=/usr/hdp/2.6.5.0-292/phoenix

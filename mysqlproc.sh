@@ -1,18 +1,20 @@
 
 mysqlcall() {
-  local command="$1"
+  local -r command="$1"
   timeout $QUERYTIMEOUT  mysql -A -h $DBHOST $DBNAME -u $DBUSER -p$DBPASSWORD -e "$command"
 }
 
 mysqlscript() {
-  local script="$1"
-  timeout $QUERYTIMEOUT mysql -A -h $DBHOST $DBNAME -u $DBUSER -p$DBPASSWORD <$script
+  local -r script="$1"
+  timeout $QUERYTIMEOUT mysql -t -N -A -h $DBHOST $DBNAME -u $DBUSER -p$DBPASSWORD <$script
 }
 
 loadfile() {
-  local tbl=$1
-  local file=$2
-  # MySQL - load always truncates data
+  local -r tbl=$1
+  local -r file=$2
+  # MySQL - truncate table
+  mysqlcall "TRUNCATE $tbl"
+  [ $? -eq 0 ] || return 1
   mysqlcall "LOAD DATA LOCAL INFILE '$file' INTO TABLE $tbl FIELDS TERMINATED BY '|'"
 }
 
@@ -21,12 +23,18 @@ numberofrows() {
 }
 
 runquery() {
-  local TMP=`mktemp`
+  local -r TMP=`mktemp`
+  local -r TMP1=`mktemp`
   sed -e "s/\+ *\([0-9]*\)  *days/+ INTERVAL \1 DAY/g" $1 | sed -e "s/\- *\([0-9]*\)  *days/- INTERVAL \1 DAY/g"  >$TMP
   cat $TMP
-  mysqlscript $TMP
-  local RES=$?
+  mysqlscript $TMP >$TMP1
+  local -r RES=$?
   rm $TMP
+  # remove first and last line from outout
+  cat $TMP1 | sed '1d;$d' |
+  # remove first and last pipe
+  sed 's/^|[ ]*//g ; s/|[ ]*$//g' >$RESULTSET
+  rm $TMP1
   return $RES
 }
 

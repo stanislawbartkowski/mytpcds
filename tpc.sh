@@ -7,11 +7,6 @@ IFEXIST=
 [ -z "$ENV" ] && { echo "Variable ENV not defined"; exit 1; }
 source ./$ENV.rc
 
-[ -z "$LOGDIR" ] && { echo "Variable LOGDIR not defined"; exit 1; }
-
-mkdir -p $LOGDIR
-LOGFILE=$LOGDIR/mytcp.log
-
 log() {
   echo $1 >>$LOGFILE
   echo "$1"
@@ -23,7 +18,9 @@ logfail() {
   exit 1
 }
 
-[ -z "$DTYPE" ] && logfail "Variable DTYPE not defined"
+[ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
+[ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
+mkdir -p $TEMPDIR
 source ./${DTYPE}proc.sh
 
 # ---------------------
@@ -60,8 +57,13 @@ droptables() {
 
 loadsinglefile() {
    log "Load $1 using $2"
+   local -r before=`date  +"%s"`
+
    loadfile $1 $2 >>$LOGFILE
    local -r RES=$?
+   local -r after=`date  +"%s"`
+   local -r t=$(expr $after - $before)
+   log "Time : $t sec"
    [ $RES -eq 124 ] && logfail "Timeout while loading"
    [ $RES -eq 0 ] || logfail "Failed while loading"
 }
@@ -123,11 +125,17 @@ verifyallload() {
 }
 
 verify() {
+
+  DTYPEID=${DTYPEID:-$DTYPE}
+  LOGDIR=${LOGDIR:-$TEMPDIR/${DTYPEID}log}
+
+  mkdir -p $LOGDIR
+  LOGFILE=$LOGDIR/mytcpds.log
+
   [ -z "$DBNAME" ] && logfail "Variable DBNAME not defined"
-  [ -z "$TCPROOT" ] && logfail "Variable TCPROOT not defined"
-  [ -z "$TMPQ" ] && logfail "Variable TMPQ not defined"
 
   # "${VAR1:-default value}"
+  TEMPDIR=${TEMPDIR:-/tmp/mytpcds}
   TCPDS=${TCPDS:-$TCPROOT/tools/tpcds.sql}
   TCPDATA=${TCPDATA:-$TCPROOT/work/data}
   STREAMNO=${STREAMNO:-0}
@@ -135,9 +143,11 @@ verify() {
   RESFILE0=${RESFILE0:-$TCPROOT/work/${DTYPE}queries/$DTYPE.result$STREAMNO}
   TESTQUERY=${TESTQUERY:-55}
   TESTDATA=${TESTDATA:-customer}
-  RESULTDIRECTORY=${RESULTDIRECTORY:-/tmp/qresult$STREAMNO}
   QUERYTIMEOUT=${QUERYTIMEOUT:-10m}
   RESQUERYDIR=${RESQUERYDIR:-$PWD/res}
+
+  RESULTDIRECTORY=${RESULTDIRECTORY:-$TEMPDIR/${DTYPEID}result${STREAMNO}}
+  TMPQ=${TMPQ:-$TEMPDIR/${DTYPEID}queries}
   mkdir -p $RESULTDIRECTORY
 
   [ -z "$RESQUERYDIR" ] && logfail "Variable RESQUERYDIR not defined"
@@ -169,7 +179,7 @@ compactresult() {
   # trim the first column
   sed "s/^ [ ]*\([^|]*\)|/\1|/g" $1 |
     # trim right spaces
-    sed "s/\([^ ]\) [ ]*|/\1|/g" |
+    sed "s/\([^ ]\) [ ]*|/\1|/g" | sed 's/[ ]*$//g' |
     # trim left
       sed "s/| [ ]*\([^ ]\)/|\1/g" |
     # replace decimal , with .
@@ -192,6 +202,7 @@ compactresult() {
 
 runsinglequery() {
   local qfile=$TMPQ/$1
+  [ -f $qfile ] || logfail "$qfile does not exist"
   local TPLNAME=`grep -o  "[^ ]*\.tpl" $qfile`
   local QUERY=`basename -s.tpl $TPLNAME`
   RESULTSET=$RESULTDIRECTORY/$QUERY.res
@@ -285,16 +296,16 @@ runsinglequery() {
     cp $TMP1 $TMP
   fi
 
-  local before=`date  +"%s"`
+  local -r before=`date  +"%s"`
   runquery $TMP >>$LOGFILE
-  local RES=$?
-  local after=`date  +"%s"`
-  local t=$(expr $after - $before)
+  local -r RES=$?
+  local -r after=`date  +"%s"`
+  local -r t=$(expr $after - $before)
   if [ $RES -eq 0 ]; then
       if [ -z "$DONOTVERIFY" ]; then
          mess="$1 | $TPLNAME | PASSED | $t"
          local RESQUERY=$RESQUERYDIR/$QUERY.res
-         log "Compare the result $RESQUERY against $RESULTSET "
+         log "Compare the result $RESQUERY against $RESULTSET"
          compactresult $RESQUERY >$TMP2
          compactresult $RESULTSET >$TMP3
          if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess | MATCH"; else mess="$mess | DIFFER"; fi
@@ -336,14 +347,14 @@ runqueries() {
   preparequery >>$LOGFILE
   rm -f $RESFILE0
   rm -f $RESULTDIRECTORY/*
-  local before=`date  +"%s"`
+  local -r before=`date  +"%s"`
   for f in $TMPQ/query*
   do
     query=`basename $f`
     runsinglequery $query
   done
-  local after=`date  +"%s"`
-  local t=$(expr $after - $before)
+  local -r after=`date  +"%s"`
+  local -r t=$(expr $after - $before)
   mess="ALL | $t"
   log "$mess"
   echo "$mess" >>$RESFILE0

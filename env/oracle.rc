@@ -1,12 +1,5 @@
-LOGDIR=/tmp/mytpcds/oraclelog
-TMPQ=/tmp/mytpcds/oraclequeries
-
-TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-
 #oracle
 DBNAME=xxx
-DBUSER=xxx
-DBPASSWORD=xxx
 URL="c##perf/secret@//thinkde:1521/ORCLCDB"
 
 DTYPE=oracle
