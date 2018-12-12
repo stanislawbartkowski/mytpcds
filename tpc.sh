@@ -58,15 +58,24 @@ droptables() {
   rm $TMP
 }
 
+loadsinglefile() {
+   log "Load $1 using $2"
+   loadfile $1 $2 >>$LOGFILE
+   local -r RES=$?
+   [ $RES -eq 124 ] && logfail "Timeout while loading"
+   [ $RES -eq 0 ] || logfail "Failed while loading"
+}
+
+loaddatatest() {
+  loadsinglefile $TESTDATA $TCPDATA/$TESTDATA.dat
+}
 
 loaddata() {
    log "Data loading ..."
    for f in $TCPDATA/*.dat
    do
      tbl=`basename $f .dat`
-     log "Load $tbl using $f"
-     loadfile $tbl $f >>$LOGFILE
-     [ $? -eq 0 ] || logfail "Failed while loading"
+     loadsinglefile $tbl $f
    done
 }
 
@@ -81,12 +90,18 @@ verifyload() {
   local -r NOLINES=`numberoflines $file`
   log "Number of rows expected: $NOLINES"
   local -r TMP=`mktemp`
+  local -r TMP1=`mktemp`
   local query="SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table"
   if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
-  numberofrows "$query" | grep "NUMBEROFROWS:" | tr -d "\| " | cut -d ":" -f2 >$TMP
-  [ $? -eq 0 ] || logfail "Failed while executing a query"
+  # avoid pipe here to catch to error from number of rows
+  numberofrows "$query" >$TMP1
+  local -r RES=$?
+  [ $RES -eq 124 ] && logfail "Timeout while loading"
+  [ $RES -eq 0 ] || logfail "Failed while executing a query"
+  cat $TMP1 | grep "NUMBEROFROWS:" | tr -d "\| " | cut -d ":" -f2 >$TMP
   NUMOFROWS=`cat $TMP`
   rm $TMP
+  rm $TMP1
   log "Number of rows returned: $NUMOFROWS"
   [ "$NOLINES" -eq "$NUMOFROWS" ] || logfail "Numbers do not match"
   log "OK."
@@ -94,10 +109,6 @@ verifyload() {
 
 testverify() {
   verifyload $TESTDATA $TCPDATA/$TESTDATA.dat
-}
-
-loaddatatest() {
-  loadfile $TESTDATA $TCPDATA/$TESTDATA.dat >>$LOGFILE
 }
 
 verifyallload() {

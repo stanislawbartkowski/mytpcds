@@ -9,9 +9,10 @@
 export ENV=env/mysql
 #export ENV=env/netezza
 
-#export TESTDATA=call_center
+export TESTDATA=call_center
 #export TESTDATA=catalog_sales
-export TESTDATA=store_sales
+#export TESTDATA=store_sales
+
 #export TESTQUERY=10
 export QUERYTIMEOUT=5m
 
@@ -19,11 +20,11 @@ export QUERYTIMEOUT=5m
 #./tpc.sh test
 #./tpc.sh removedata
 #./tpc.sh createtables
-./tpc.sh loadtest
+#./tpc.sh loadtest
 #./tpc.sh testverify
 #./tpc.sh testquery
 
-#./tpc.sh loaddata
+./tpc.sh loaddata
 #./tpc.sh verifyload
 #./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi
