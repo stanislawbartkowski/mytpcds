@@ -6,3 +6,4 @@ CLIENT=client
 SCHEMA=perfdb
 
 DTYPE=db2
+DTYPEID=bigsql

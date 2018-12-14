@@ -20,6 +20,22 @@ testconnection() {
   disconnect
 }
 
+prepare_runscript() {
+  local -r f=$1
+  if [ -n "$DBUSER" ]; then
+   echo "db2 connect to $DBNAME user $DBUSER using $DBPASSWORD"
+ else
+   echo "db2 connect to $DBNAME"
+ fi
+ if [ -n "$SCHEMA" ]; then
+   echo "db2 set current schema=$SCHEMA"
+ fi
+ echo "db2 -x -tsf $f" '>$1'
+ echo 'RES=$?'
+ echo "db2 terminate"
+ echo 'exit $RES'
+}
+
 old_runscript() {
   local scriptfile=$1
   connect
@@ -31,16 +47,38 @@ old_runscript() {
   return $RES
 }
 
+xxx_runscript() {
+  local -r TMP=`mktemp`
+  # prepare external script to run as timeout
+  prepare_runscript $1 >$TMP
+  cat $TMP
+  chmod 700 $TMP
+  timeout $QUERYTIMEOUT $TMP $RESULTSET
+  local -r RES=$?
+  rm $TMP
+  return $RES
+}
+
 runscript() {
   local scriptfile=$1
   local TMP=`mktemp`
+  local SHTMP=`mktemp`
   local CONN=""
   if [ -n "$DBUSER" ]; then
     CONN=" -a $DBUSER/$DBPASSWORD"
   fi
-  db2batch -d $DBNAME $CONN -f $scriptfile -t "|" -r $RESULTSET,$TMP -q on
+  if [ -n "$SCHEMA" ]; then
+    echo "set current schema=$SCHEMA; " >$SHTMP
+  fi
+  cat $scriptfile >>$SHTMP
+  timeout $QUERYTIMEOUT db2batch -d $DBNAME $CONN -f $SHTMP -t "|" -r $RESULTSET,/dev/null -q on  2>$TMP
   local RES=$?
+  cat $TMP
+  if [ $RES -eq 0 ]; then
+    if grep "CLI error" $TMP ; then RES=4; fi
+  fi
   rm $TMP
+  rm $SHTMP
   return $RES
 }
 
