@@ -17,7 +17,7 @@ numberofrows() {
 }
 
 runquery() {
-  sparksqlscript $1
+  sparksqlscript $1 >$RESULTSET
 }
 
 verifyvariable() {
@@ -25,3 +25,6 @@ verifyvariable() {
 }
 
 export REPLACEQUERYDAYSPROC=X
+export IFEXIST="IF EXISTS"
+export MODIFYALIAS=X
+

@@ -1,25 +1,24 @@
+export TEMPDIR=/tmp/mytpcds
+#export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+export TCPROOT=/home/sb/v2.10.0rc2
+
 #export ENV=env/db2
 #export ENV=env/bigsql
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
-#export ENV=env/sparksql
+export ENV=env/sparksql
 #export ENV=env/thrive
 #export ENV=env/phoenix
-export ENV=env/mysql
+#export ENV=env/mysql
 #export ENV=env/netezza
 
-export TEMPDIR=/tmp/mytpcds
-export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-#TCPROOT=/home/sb/tpc/v2.10.0rc2
-
-
-#export TESTDATA=call_center
+export TESTDATA=call_center
 #export TESTDATA=catalog_sales
 #export TESTDATA=store_sales
-export TESTDATA=dbgen_version
+#export TESTDATA=dbgen_version
 
-export TESTQUERY=02
+export TESTQUERY=98
 export QUERYTIMEOUT=5m
 #export QUERYTIMEOUT=1m
 

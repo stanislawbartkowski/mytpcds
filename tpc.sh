@@ -325,6 +325,8 @@ runsinglequery() {
   rm $TMP1
   rm $TMP2
   rm $TMP3
+#  echo $TMP2
+#  echo $TMP3
 
 # uncomment for debugging
 #  cat $RESULTSET >>$LOGFILE

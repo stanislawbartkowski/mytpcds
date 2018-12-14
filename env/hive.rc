@@ -2,8 +2,8 @@
 DBNAME=perfdb
 TENAME=perfte
 DBUSER=sb
-#HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
-HIVEURL="jdbc:hive2://hdp1.sb.com:2181,hdp2.sb.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@HDP.COM.REALM;auth=kerberos"
+HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
+#HIVEURL="jdbc:hive2://hdp1.sb.com:2181,hdp2.sb.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@HDP.COM.REALM;auth=kerberos"
 HDFSPATH="/tmp/data"
 
 REPLACEPIPES=X
