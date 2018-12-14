@@ -12,8 +12,8 @@ But using TPC-DS is not easy out of the box. Requires some manual tasks to perfo
 
 ## Tool description.
 
-The following database servers are supported: PosgreSQL, MySQL (MariaDB), Oracle, DB2, Netezza, Hive, SparkSQL and BigSQL.
-The tool consists of several simple bash and awk script file. Does not require any dependencies. 
+The following database servers are supported: PosgreSQL, MySQL (MariaDB), Oracle, DB2, Netezza, Hive, SparkSQL and IBM BigSQL.
+The tool consists of several simple bash and awk script files. The tool does not require any dependencies. 
 
 File | Description
 ------------ | -------------
