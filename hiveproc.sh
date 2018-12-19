@@ -79,8 +79,9 @@ loadfile() {
   [ $? -eq 0 ] || logfail "Cannot upload local file to HDFS path $HDFSPATH"
   local f=`basename $inloadfile`
   runhive 0 "LOAD DATA INPATH \"$HDFSPATH/$f\" OVERWRITE INTO TABLE $tablename"
-  runhive 0 "drop table IF EXISTS $DBNAME.$tablename"
+  runhive 0 "drop table IF EXISTS $DBNAME.$tablename purge"
   runhive 0 "create table $DBNAME.$tablename stored as parquet as select * from $tablename"
+  runhive 0 "truncate table $tablename"
 }
 
 verifyhive() {
