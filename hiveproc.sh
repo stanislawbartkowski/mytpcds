@@ -44,16 +44,15 @@ runquery() {
 }
 
 rundroptable() {
-  runscript $1
+  local -r TMP=`crtemp`
+  sed "s/;/ PURGE;/g" $1 >$TMP
+  runscript $TMP
 }
 
 runcreatetable() {
-  local TMP=`mktemp`
+  local TMP=`crtemp`
   transformtablesql $1 $TMP
   runscript $TMP
-  local RES=$?
-  rm $TMP
-  return $RES
 }
 
 testconnection() {

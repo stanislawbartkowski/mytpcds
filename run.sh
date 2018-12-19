@@ -1,5 +1,5 @@
 export TEMPDIR=/tmp/mytpcds
-export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+#export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
 export TCPROOT=/home/sb/v2.10.0rc2
 
 #export ENV=env/db2
@@ -26,11 +26,11 @@ export QUERYTIMEOUT=5m
 #./tpc.sh test
 #./tpc.sh removedata
 #./tpc.sh createtables
-#./tpc.sh loadtest
-#./tpc.sh testverify
+./tpc.sh loadtest
+./tpc.sh testverify
 #./tpc.sh testquery
 
-./tpc.sh loaddata
+#./tpc.sh loaddata
 #./tpc.sh verifyload
 #./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi

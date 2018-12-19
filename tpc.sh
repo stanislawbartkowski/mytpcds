@@ -7,6 +7,8 @@ IFEXIST=
 [ -z "$ENV" ] && { echo "Variable ENV not defined"; exit 1; }
 source ./$ENV.rc
 
+declare -g TMPSTORE=`mktemp`
+
 log() {
   echo $1 >>$LOGFILE
   echo "$1"
@@ -18,6 +20,18 @@ logfail() {
   exit 1
 }
 
+crtemp() {
+#  typeset -ga TMPSTORE
+  local -r TMP=`mktemp`
+  echo $TMP >>$TMPSTORE
+  echo $TMP
+}
+
+removetemp() {
+  cat $TMPSTORE | while read t;  do rm $t; done
+  rm $TMPSTORE
+}
+
 [ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
 mkdir -p $TEMPDIR
@@ -27,8 +41,7 @@ source ./${DTYPE}proc.sh
 
 removetables() {
   log "Dropping tables ...."
-  local -r tmpfile=`mktemp`
-  echo $tmpfile
+  local -r tmpfile=`crtemp`
   cat $TCPDS | grep "create\ *table" |
   while read t1 t1 tablename; do
     log "DROP TABLE $IFEXIST $tablename"
@@ -36,12 +49,11 @@ removetables() {
   done
   rundroptable $tmpfile >>$LOGFILE
   # do not return report error code
-  rm $tmpfile
 }
 
 droptables() {
   removetables
-  local TMP=`mktemp`
+  local TMP=`crtemp`
   log "Now creating tables ...."
 
   if [ -n "$REMOVEPRIMARY" ]; then
@@ -52,7 +64,6 @@ droptables() {
 
   runcreatetable $TMP >>$LOGFILE
   [ $? -eq 0 ] || logfail "Cannot create"
-  rm $TMP
 }
 
 loadsinglefile() {
@@ -91,8 +102,8 @@ verifyload() {
   log "Verify table $table against input file $2"
   local -r NOLINES=`numberoflines $file`
   log "Number of rows expected: $NOLINES"
-  local -r TMP=`mktemp`
-  local -r TMP1=`mktemp`
+  local -r TMP=`crtemp`
+  local -r TMP1=`crtemp`
   local query="SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table"
   if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
   # avoid pipe here to catch to error from number of rows
@@ -102,8 +113,6 @@ verifyload() {
   [ $RES -eq 0 ] || logfail "Failed while executing a query"
   cat $TMP1 | grep "NUMBEROFROWS:" | tr -d "\| " | cut -d ":" -f2 >$TMP
   NUMOFROWS=`cat $TMP`
-  rm $TMP
-  rm $TMP1
   log "Number of rows returned: $NUMOFROWS"
   [ "$NOLINES" -eq "$NUMOFROWS" ] || logfail "Numbers do not match"
   log "OK."
@@ -383,9 +392,8 @@ printhelp() {
 # main
 
 verify
-RESTEMP=`mktemp`
-export RESULTSET=$RESTEMP
-trap "{ rm $RESTEMP; }" EXIT
+export RESULTSET=`crtemp`
+trap "removetemp" EXIT
 
 case $1 in
   test) testdbconnection;;
