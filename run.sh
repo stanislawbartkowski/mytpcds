@@ -19,9 +19,10 @@ export TESTDATA=call_center
 #export TESTDATA=dbgen_version
 
 export TESTQUERY=13
-export QUERYTIMEOUT=59m
 #export QUERYTIMEOUT=1m
 
+export DONOTVERIFY=X
+export QUERYTIMEOUT=59m
 
 #./tpc.sh test
 #./tpc.sh removedata
