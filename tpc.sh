@@ -79,11 +79,17 @@ loadsinglefile() {
    [ $RES -eq 0 ] || logfail "Failed while loading"
 }
 
+verifydat() {
+  if ! ls $TCPDATA/*.dat >/dev/null 2>&1; then logfail "No flat files in $TCPDATA/*.dat"; fi
+}
+
 loaddatatest() {
+  verifydat
   loadsinglefile $TESTDATA $TCPDATA/$TESTDATA.dat
 }
 
 loaddata() {
+   verifydat
    log "Data loading ..."
    for f in $TCPDATA/*.dat
    do
@@ -99,6 +105,7 @@ numberoflines() {
 verifyload() {
   local -r table=$1
   local -r file=$2
+  [ -f $file ] || logfail "File $file does not exist"
   log "Verify table $table against input file $2"
   local -r NOLINES=`numberoflines $file`
   log "Number of rows expected: $NOLINES"
@@ -123,6 +130,7 @@ testverify() {
 }
 
 verifyallload() {
+  verifydat
   log "Data loading ..."
   for f in $TCPDATA/*.dat
   do
@@ -130,7 +138,6 @@ verifyallload() {
     verifyload $tbl $f
     [ $? -eq 0 ] || logfail "Failed while loading"
   done
-
 }
 
 verify() {
