@@ -1,7 +1,7 @@
 #DB2
 DBNAME=BIGSQL
-DBUSER=sb
-DBPASSWORD="secret123?"
+#DBUSER=sb
+#DBPASSWORD="secret123?"
 CLIENT=client
 SCHEMA=perfdb
 

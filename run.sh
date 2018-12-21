@@ -3,12 +3,12 @@ export TEMPDIR=/tmp/mytpcds
 export TCPROOT=/home/sb/v2.10.0rc2
 
 #export ENV=env/db2
-#export ENV=env/bigsql
+export ENV=env/bigsql
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
 #export ENV=env/sparksql
-export ENV=env/thrive
+#export ENV=env/thrive
 #export ENV=env/phoenix
 #export ENV=env/mysql
 #export ENV=env/netezza
@@ -18,7 +18,7 @@ export TESTDATA=call_center
 #export TESTDATA=store_sales
 #export TESTDATA=dbgen_version
 
-export TESTQUERY=13
+export TESTQUERY=04
 #export QUERYTIMEOUT=5m
 #export QUERYTIMEOUT=1m
 
