@@ -20,13 +20,13 @@ File | Description
 db2proc.sh  | Implementation for DB2 and BigSQL 
 hiveproc.sh | Implementation for Hive and SparkSQL Thrive
 netezzaproc.sh | Implementation for Netezza
-phoenixproc.sh  | Implementation for HBAse Phoenix (not working)
+phoenixproc.sh  | Implementation for HBase Phoenix (not working)
 ptest.sh  | Starter for Throughout Test
-res | Expected result sets for Qualify and Performace Test
+res | Expected result sets for Qualify Test
 run.sh | Launching script file
 tpc.sh | Main tpc-ds test runner
-env | Resource file for a databases
-mysqlproc.sh | Implementation for MySQL and MariaDB
+env | Configuration files for databases
+mysqlproc.sh | Implementation for MySQL/MariaDB
 oracleproc.sh  | Implementation for Oracle
 psqlproc.sh | Implementation for PostreSQL
 run1.sh  | Alternative launching script
@@ -37,7 +37,7 @@ transf.awk | AWK script file used to transform the results
 
 Prepare the server, the client and the connection. https://github.com/stanislawbartkowski/mytpcds/wiki contains a bunch of useful informations.
 
-In run.sh file uncomment the resource file appropriate for a particular database.
+In run.sh file uncomment the property file appropriate for a particular database and modify the file according to the environment. 
 
 https://github.com/stanislawbartkowski/mytpcds/blob/master/run.sh
 
