@@ -33,6 +33,31 @@ run1.sh  | Alternative launching script
 sparksqlproc.sh  | Implementation for SparkSQL
 transf.awk | AWK script file used to transform the results
 
+## The queries
+
+Not all queries are ready to execute out of the box. The TPC-DS specification allows small alteration of the query to make them runnable.
+
+> It is recognized that implementations require specific adjustments for their operating environment and the
+> syntactic variations of its dialect of the SQL language
+
+TO avoid keeping different version of queries for every databaase, I decided to make amendments on the fly. Most changes are related to date arithmetics like adding or subtracting number of days or table aliases. I decided also to apply only changes possible to make through simple string or regular expression replacement.
+
+The changes are list in https://github.com/stanislawbartkowski/mytpcds/blob/master/tpc.sh script file, **runsinglequery** bash function.
+
+After that, I ended up with the following queries coverage
+
+Database | Coverage
+------------ | -------------
+ DB2   | 100%
+ Oracle | 100%
+ MySQL/MariaDB | 87%
+ PostgreSQL | 97%
+ Hive | 49%
+ SparkSQL | 94%
+ Netezza | 95%
+ IBM BigSQL |  100%
+
+
 ### QUALIFY test
 
 Prepare the server, the client and the connection. https://github.com/stanislawbartkowski/mytpcds/wiki contains a bunch of useful informations.
