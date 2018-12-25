@@ -258,5 +258,5 @@ Important: every **runqueries** truncated the result file. In order to keep hist
 * Prepare an appropriate data set using dsdgen utility
 * **loaddata**
 * **verifyload** (just in case)
-* **runquueries**
+* **runqueries**
 * pick up the test result
