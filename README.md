@@ -35,16 +35,16 @@ transf.awk | AWK script file used to transform the results
 
 ## The queries
 
-Not all queries are ready to execute out of the box. The TPC-DS specification allows small alteration of the query to make them runnable.
+Not all queries are ready to execute out of the box. The TPC-DS specification allows small alteration of the query to make them runnable (4.2.3.1).
 
 > It is recognized that implementations require specific adjustments for their operating environment and the
 > syntactic variations of its dialect of the SQL language
 
-TO avoid keeping different version of queries for every databaase, I decided to make amendments on the fly. Most changes are related to date arithmetics like adding or subtracting number of days or table aliases. I decided also to apply only changes possible to make through simple string or regular expression replacement.
+To avoid keeping a different version of queries for every database, I decided to make amendments on the fly. Most changes are related to date arithmetics like adding or subtracting a number of days or table aliases. I decided also to apply only changes possible to make through simple string or regular expression replacement.
 
 The changes are list in https://github.com/stanislawbartkowski/mytpcds/blob/master/tpc.sh script file, **runsinglequery** bash function.
 
-After that, I ended up with the following queries coverage
+After that, I ended up with the following queries coverage.
 
 Database | Coverage
 ------------ | -------------
@@ -57,8 +57,28 @@ Database | Coverage
  Netezza | 95%
  IBM BigSQL |  100%
 
+## Query Validation
+
+Unfortunately, I was unable to match the answer data set provided in TPC-DS package with any output. So I decided to use Oracle output as a reference answer set. But the Oracle answer set does not provide a perfect match. Sometimes it matches, sometimes does not. As a consequence, the Query Validation implemented is not fully reliable, it is not easy to tell if the query execution is valid or invalid.
+
+https://github.com/stanislawbartkowski/mytpcds/tree/master/res
+
 
 ### QUALIFY test
+
+## Global settings
+
+Variable name | Description | Default/sample value
+------------ | ------------- | -------------
+TEMPDIR | Temporary directory for log file and temp files | /tmp/mytpcds
+TCPROOT | Root directory for upacked TCP-DS payload | /home/sbartkowski/work/v2.10.0rc2
+ENV | Resource file for a database under test | env/bigsql
+TESTDATA | TCP-DS table used for test loading phase | call_center
+TESTQUERY | Number of query used to execute a query test | 04
+DONOTVERIFY | If empty, run Test Validation (QUALIFY). If not empty, ignore Test Validation | X (not empty)
+QUERYTIMEOUT | Query time execution thereshold. Parameter for **timout** command | 5s (limit is 5 seconds)
+
+## Configure database properties
 
 Prepare the server, the client and the connection. https://github.com/stanislawbartkowski/mytpcds/wiki contains a bunch of useful informations.
 
