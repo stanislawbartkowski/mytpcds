@@ -3,6 +3,9 @@ Run TPC-DS against different databases including Hive, Spark SQL and IBM BigSQL
 
 https://github.com/stanislawbartkowski/mytpcds/wiki
 
+Test results:
+https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-DS-BigData-results
+
 ### Inspiration
 
 http://www.tpc.org/tpcds/
