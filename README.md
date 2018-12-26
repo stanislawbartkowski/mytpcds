@@ -253,7 +253,8 @@ Uncomment **./tpc.sh runqueries** line and run the script
 ```
 
 # Step 8, analyze the result
-The test result, queries and the time of the execution, is stored in the directory: TCPROOT/work/{database}queries/{database}.result
+
+The test result, queries and the time of the execution, is stored in the directory: TCPROOT/work/{database}queries/{database}.result<br/>
 Important: every **runqueries** truncated the result file. In order to keep historical result, one has to make a manual copy of the result  file.
 
 ### Power Test
