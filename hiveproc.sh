@@ -72,11 +72,11 @@ numberofrows() {
 }
 
 loadfile() {
-  local tablename=$1
-  local inloadfile=$2
+  local -r tablename=$1
+  local -r inloadfile=$2
   hdfs dfs -copyFromLocal -f $inloadfile $HDFSPATH
   [ $? -eq 0 ] || logfail "Cannot upload local file to HDFS path $HDFSPATH"
-  local f=`basename $inloadfile`
+  local -r f=`basename $inloadfile`
   runhive 0 "LOAD DATA INPATH \"$HDFSPATH/$f\" OVERWRITE INTO TABLE $tablename"
   runhive 0 "drop table IF EXISTS $DBNAME.$tablename purge"
   runhive 0 "create table $DBNAME.$tablename stored as parquet as select * from $tablename"

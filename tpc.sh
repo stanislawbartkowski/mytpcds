@@ -114,7 +114,7 @@ verifyload() {
   local query="SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table"
   if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
   # avoid pipe here to catch to error from number of rows
-  numberofrows "$query" >$TMP1
+  numberofrows "$query" $table >$TMP1
   local -r RES=$?
   [ $RES -eq 124 ] && logfail "Timeout while loading"
   [ $RES -eq 0 ] || logfail "Failed while executing a query"
@@ -263,7 +263,6 @@ runsinglequery() {
     cp $TMP1 $TMP
   fi
 
-
   if grep query23.tpl $TMP; then
     sed "s/group by c_customer_sk)/group by c_customer_sk) xx1 /g" $TMP |
       sed "s/from best_ss_customer))/from best_ss_customer)) xx2 /g" |
@@ -275,6 +274,11 @@ runsinglequery() {
 
   if [ -n "$REMOVEQUERYDAYS" ]; then
     sed -e "s/\+ *\([0-9]*\)  *days/+ \1/g" $TMP | sed -e "s/\- *\([0-9]*\)  *days/- \1/g" >$TMP1
+    cp $TMP1 $TMP
+  fi
+
+  if [ -n "$REMOVECOMMENTS" ]; then
+    sed "/--/d" $TMP >$TMP1
     cp $TMP1 $TMP
   fi
 
