@@ -5,6 +5,13 @@ prepareurl() {
      then U=${HIVEURL/XX-XX/$TENAME}
      else U=${HIVEURL/XX-XX/$DBNAME}
   fi
+  # check queue
+  local -r PATT=QUEUE$STREAMNO
+  # queue name
+  local -r TEZQUEUE=${!PATT}
+  if [ -n "$TEZQUEUE" ]; then
+    U="$U?tez.queue.name=$TEZQUEUE"
+  fi
   DBE=
   E=
   if [ -n "§USE" ]; then

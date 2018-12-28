@@ -1,14 +1,18 @@
+export TEMPDIR=/tmp/mytpcds
+#export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+export TCPROOT=/home/sb/v2.10.0rc2
+
 #export ENV=env/envdb2
 #export ENV=env/oracle
-#export ENV=env/hive
+export ENV=env/hive
 #export ENV=env/postgresql
 #export ENV=env/thrive
 #export ENV=env/sparksql
 #export ENV=env/phoenix
 #export ENV=env/bigsql
-export ENV=env/netezza
+#export ENV=env/netezza
 
-export QUERYTIMEOUT=5m
+export QUERYTIMEOUT=59m
 export DONOTVERIFY=X
 
 export STREAMNO=$1

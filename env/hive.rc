@@ -8,5 +8,8 @@ HDFSPATH="/tmp/data"
 
 REPLACEPIPES=X
 
+QUEUE1=queue1
+QUEUE2=queue2
+QUEUE3=queue3
 
 DTYPE=hive

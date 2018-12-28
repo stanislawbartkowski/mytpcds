@@ -1,18 +1,18 @@
 export TEMPDIR=/tmp/mytpcds
-export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-#export TCPROOT=/home/sb/v2.10.0rc2
+#export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
+export TCPROOT=/home/sb/v2.10.0rc2
 
 #export ENV=env/db2
 #export ENV=env/bigsql
 #export ENV=env/oracle
-#export ENV=env/hive
+export ENV=env/hive
 #export ENV=env/postgresql
 #export ENV=env/sparksql
 #export ENV=env/thrive
 #export ENV=env/phoenix
 #export ENV=env/mysql
 #export ENV=env/netezza
-export ENV=env/derby
+#export ENV=env/derby
 
 
 export TESTDATA=call_center
@@ -26,6 +26,8 @@ export TESTQUERY=04
 
 export DONOTVERIFY=X
 export QUERYTIMEOUT=59m
+
+export STREAMNO=2
 
 #./tpc.sh test
 #./tpc.sh removedata
