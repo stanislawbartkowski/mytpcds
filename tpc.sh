@@ -28,7 +28,7 @@ crtemp() {
 }
 
 removetemp() {
-  cat $TMPSTORE | while read t;  do rm $t; done
+  while read rmfile;  do rm $rmfile; done <$TMPSTORE
   rm $TMPSTORE
 }
 
