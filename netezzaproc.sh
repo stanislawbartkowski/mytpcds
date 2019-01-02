@@ -54,6 +54,7 @@ testenv() {
   if ! [ -x "$(command -v nzsql)" ]; then logfail "nzsql is not available"; fi
   if ! [ -x "$(command -v nzload)" ]; then logfail "nzload is not available"; fi
   [ -z "$LOGLOADDIR" ] && logfail "LOGLOADDIR variable not defined"
+  mkdir -p $LOGLOADDIR
 }
 
 export USEPIPECONCATENATE="X"
