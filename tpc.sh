@@ -163,7 +163,7 @@ verify() {
   RESQUERYDIR=${RESQUERYDIR:-$PWD/res}
 
   RESULTDIRECTORY=${RESULTDIRECTORY:-$TEMPDIR/${DTYPEID}result${STREAMNO}}
-  TMPQ=${TMPQ:-$TEMPDIR/${DTYPEID}queries}
+  TMPQ=${TMPQ:-$TEMPDIR/${DTYPEID}queries${STREAMNO}}
   mkdir -p $RESULTDIRECTORY
 
   [ -z "$RESQUERYDIR" ] && logfail "Variable RESQUERYDIR not defined"
@@ -230,8 +230,8 @@ runsinglequery() {
     echo $mess >>$RESFILE0
     return
   fi
-
-  log "$qfile  started ..."
+  [ $STREAMNO -eq 0 ] && log "$qfile  started ..."
+  [ $STREAMNO -ne 0 ] && log "$STREAMNO $qfile  started ..."
   [ -f $qfile ] || logfail "Query $qfile does not exist"
   local TMP=`mktemp`
   local TMP1=`mktemp`

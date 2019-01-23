@@ -4,12 +4,12 @@ export TCPROOT=/home/sb/v2.10.0rc2
 #export TCPDATA=/mnt/data1
 
 #export ENV=env/db2
-#export ENV=env/bigsql
+export ENV=env/bigsql
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
 #export ENV=env/sparksql
-export ENV=env/thrive
+#export ENV=env/thrive
 #export ENV=env/phoenix
 #export ENV=env/mysql
 #export ENV=env/netezza
@@ -21,7 +21,7 @@ export TESTDATA=call_center
 #export TESTDATA=store_sales
 #export TESTDATA=dbgen_version
 
-export TESTQUERY=04
+export TESTQUERY=01
 #export QUERYTIMEOUT=5m
 #export QUERYTIMEOUT=1m
 
@@ -36,6 +36,6 @@ export QUERYTIMEOUT=59m
 #./tpc.sh testquery
 
 #./tpc.sh loaddata
-#./tpc.sh verifyload
-./tpc.sh runqueries
+./tpc.sh verifyload
+#./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi
