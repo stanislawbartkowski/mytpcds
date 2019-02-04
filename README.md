@@ -13,6 +13,31 @@ http://www.tpc.org/tpcds/
 TPC-DS is an objective tool to measure and compare different databases systems. The same set of data and non trivial queries can be loaded and executed and give an insight how databases respond to the workload. Also, having expected result based on experience, the tool can be also used for testing and tunning the newly installed or upgraded database.
 But using TPC-DS is not easy out of the box. Requires some manual tasks to perform. So I decided to prepare an automated tool to do the task. Just download the TPC-DS files, configure and run it.
 
+## TPC-DS preparation
+Unpack the compressed zip file in the directory. The following directory structure is created.
+* v2.10.1rc3
+  * answer_sets  
+  * EULA.txt  
+  * query_templates  
+  * query_variants  
+  * specification  
+  * tests  
+  * tools  
+  
+For the purpose of the test the additional directories should be created.
+* v2.10.1rc3
+  * word
+     * data (will contained input data)
+     * db2queries (queries and results related to appropriate database)
+     * mysqlqueries
+     * (etc)
+    
+> cd v2.10.1rc3/tools<br>
+> make <br>
+
+Executable files are created. To create an input data set run the command *dsdgen*. The parameter **-sc** describes the size of the data.
+> ./dsdgen -dir ../work/data -sc 100
+
 ## Tool description.
 
 The following database servers are supported: PosgreSQL, MySQL (MariaDB), Oracle, DB2, Netezza, Hive, SparkSQL and IBM BigSQL.
