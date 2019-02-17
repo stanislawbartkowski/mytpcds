@@ -314,6 +314,7 @@ The command prepares four streams of queriers in *../work/db2queries* directory.
 Next step is to launch four *ptest.sh* session with parameters 0,1,2, and 3 running in parallel. Every session runs appropriate list of queries and produce a separate result report.
 For instance:
 > ./ptest 2<br>
+
 It will execute *query_2.sql* query set and outputs the result in *work/db2queries/db2sql.result2*
 ### Result
 When all sessions complete, evaluate the result in *work/db2queries*.
