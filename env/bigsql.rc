@@ -2,6 +2,8 @@
 DBNAME=BIGSQL
 #DBUSER=sb
 #DBPASSWORD="secret123?"
+DBUSER=perf
+DBPASSWORD="Arkadiusz123?"
 CLIENT=client
 SCHEMA=perfdb
 

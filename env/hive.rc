@@ -1,13 +1,17 @@
 #Hive
 DBNAME=perfdb
 TENAME=perfte
-DBUSER=sb
-HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
+DBUSER=perf
+HIVEURL="jdbc:hive2://a1.fyre.ibm.com:2181,aa1.fyre.ibm.com:2181,hurds1.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@FYRE.NET"
+
+#HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
+#HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
 #HIVEURL="jdbc:hive2://hdp1.sb.com:2181,hdp2.sb.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@HDP.COM.REALM;auth=kerberos"
 HDFSPATH="/tmp/data"
 
 REPLACEPIPES=X
 
+QUEUE0=queue0
 QUEUE1=queue1
 QUEUE2=queue2
 QUEUE3=queue3

@@ -1,14 +1,14 @@
 export TEMPDIR=/tmp/mytpcds
 #export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-export TCPROOT=/home/sb/v2.10.0rc2
-#export TCPDATA=/mnt/data1
+export TCPROOT=/home/perf/v2.10.1rc3
+export TCPDATA=/mnt/data/data
 
 #export ENV=env/db2
-export ENV=env/bigsql
+#export ENV=env/bigsql
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
-#export ENV=env/sparksql
+export ENV=env/sparksql
 #export ENV=env/thrive
 #export ENV=env/phoenix
 #export ENV=env/mysql
@@ -28,14 +28,16 @@ export TESTQUERY=01
 export DONOTVERIFY=X
 export QUERYTIMEOUT=59m
 
+export STREAMNO=2
+
 #./tpc.sh test
 #./tpc.sh removedata
 #./tpc.sh createtables
 #./tpc.sh loadtest
 #./tpc.sh testverify
-#./tpc.sh testquery
+./tpc.sh testquery
 
 #./tpc.sh loaddata
-./tpc.sh verifyload
+#./tpc.sh verifyload
 #./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi
