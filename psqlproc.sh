@@ -4,12 +4,17 @@ verifyvariable() {
 }
 
 psqlcommand() {
-  local command="$1"
-  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" -c "$command"
+  local -r command="$1"
+  local PORT=""
+  [ -n "DBPORT" ] && PORT="-p $DBPORT"
+  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST $PORT -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" -c "$command"
 }
 
 psqlscript() {
-  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" <$1 >$RESULTSET
+  local PORT=""
+  [ -n "DBPORT" ] && PORT="-p $DBPORT"
+
+  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST $PORT -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" <$1 >$RESULTSET
 }
 
 rundroptable() {

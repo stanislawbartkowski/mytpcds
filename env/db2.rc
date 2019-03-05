@@ -1,7 +1,7 @@
 #DB2
 DBNAME=PERFDB
-DBUSER=perf
-DBPASSWORD=secret
+DBUSER=db2inst1
+DBPASSWORD=db2inst1
 CLIENT=client
 
 DTYPE=db2

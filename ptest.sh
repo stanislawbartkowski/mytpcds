@@ -1,6 +1,8 @@
 export TEMPDIR=/tmp/mytpcds
 #export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-export TCPROOT=/home/sb/v2.10.0rc2
+#export TCPROOT=/home/sb/v2.10.0rc2
+export TCPROOT=/home/perf/v2.10.1rc3
+export TCPDATA=/mnt/data/data
 
 #export ENV=env/envdb2
 #export ENV=env/oracle
