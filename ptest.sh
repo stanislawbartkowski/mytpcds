@@ -8,10 +8,10 @@ export TCPDATA=/mnt/data/data
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
-#export ENV=env/thrive
+export ENV=env/thrive
 #export ENV=env/sparksql
 #export ENV=env/phoenix
-export ENV=env/bigsql
+#export ENV=env/bigsql
 #export ENV=env/netezza
 
 export QUERYTIMEOUT=4h

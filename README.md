@@ -282,10 +282,39 @@ Uncomment **./tpc.sh runqueries** line and run the script
 The test result, queries and the time of the execution, is stored in the directory: TCPROOT/work/{database}queries/{database}.result<br/>
 Important: every **runqueries** truncated the result file. In order to keep historical result, one has to make a manual copy of the result  file.
 
-### Power Test
+## Power Test
 
 * Prepare an appropriate data set using dsdgen utility
 * **loaddata**
 * **verifyload** (just in case)
 * **runqueries**
 * pick up the test result
+
+## Throughput Test
+### Preparation
+(TPC-DS specification : 7.4.6)<br>
+Throughput Test measures the ability of the database engine to process queries with multiple users.
+Assume the minimal number of concurrent streams, 4.<br>
+A separate batch file *ptest.sh* should be launched to emulate one session. The *ptest.sh* accepts a parameter, number 0-3 meaning the stream number. Example, stream number 3.
+> ./ptest.sh 3
+### Prepare the query streams.
+> ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/{directory} -DIALECT {dialect} -STREAMS 4 -sc 200<br>
+Example for DB2:<br>
+
+> ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/db2queries -DIALECT db2 -STREAMS 4 -sc 200<br>
+
+The command prepares four streams of queriers in *../work/db2queries* directory.
+```
+ query_0.sql
+ query_1.sql
+ query_2.sql
+ query_3.sql
+```
+### Run the test
+Next step is to launch four *ptest.sh* session with parameters 0,1,2, and 3 running in parallel. Every session runs appropriate list of queries and produce a separate result report.
+For instance:
+> ./ptest 2<br>
+
+It will execute *query_2.sql* query set and outputs the result in *work/db2queries/db2sql.result2*
+### Result
+When all sessions complete, evaluate the result in *work/db2queries*.

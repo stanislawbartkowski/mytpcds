@@ -5,7 +5,17 @@ sparksqlcommand() {
 
 sparksqlscript() {
   export SPARK_MAJOR_VERSION=2
-  timeout $QUERYTIMEOUT spark-sql $SPARKSQLPARAM --database $DBNAME -f "$1"
+
+ # check queue
+  local -r PATT=QUEUE$STREAMNO
+  # queue name
+  local U=
+  local -r YARNQUEUE=${!PATT}
+  if [ -n "$YARNQUEUE" ]; then
+    U="--queue=$YARNQUEUE"
+  fi
+
+  timeout $QUERYTIMEOUT spark-sql $SPARKSQLPARAM $U --database $DBNAME -f "$1"
 }
 
 testconnection() {

@@ -11,6 +11,7 @@ HDFSPATH="/tmp/data"
 
 REPLACEPIPES=X
 
+QUEUE0=queue0
 QUEUE1=queue1
 QUEUE2=queue2
 QUEUE3=queue3
