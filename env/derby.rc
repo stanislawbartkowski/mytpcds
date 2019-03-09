@@ -1,7 +1,0 @@
-DBNAME=perfdb
-IJ=/opt/db-derby-10.14.2.0-bin/bin/ij
-DBHOST=thinkde
-DBPORT=1527
-DTYPE=derby
-REMOTEUSER=derby
-LANG=en

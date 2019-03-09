@@ -28,16 +28,16 @@ export TESTQUERY=01
 export DONOTVERIFY=X
 #export QUERYTIMEOUT=59m
 #export QUERYTIMEOUT=3h
-export QUERYTIMEOUT=666666h
+export QUERYTIMEOUT=3h
 
 #./tpc.sh test
 #./tpc.sh removedata
 #./tpc.sh createtables
-./tpc.sh loadtest
-./tpc.sh testverify
+#./tpc.sh loadtest
+#./tpc.sh testverify
 #./tpc.sh testquery
 
 #./tpc.sh loaddata
 #./tpc.sh verifyload
-#./tpc.sh runqueries
+./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi

@@ -1,9 +1,0 @@
-# netezza specific
-LOGLOADDIR=/tmp/netezzaloadlog
-
-DBNAME=perfdb
-DBUSER=perf
-DBPASSWORD=secret
-DBHOST=netezza
-
-DTYPE=netezza
