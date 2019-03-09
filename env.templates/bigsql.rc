@@ -1,0 +1,10 @@
+#DB2
+DBNAME=BIGSQL
+#DBUSER=sb
+DBPASSWORD="secret123?"
+DBUSER=perf
+CLIENT=client
+SCHEMA=perfdb
+
+DTYPE=db2
+DTYPEID=bigsql

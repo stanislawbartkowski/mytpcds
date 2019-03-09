@@ -1,0 +1,10 @@
+#mysql
+DBNAME=perfdb
+DBUSER=perf
+DBPASSWORD=secret
+#DBHOST=localhost
+DBHOST=thinkde
+
+DTYPE=mysql
+
+#SKIPQUERY=query94

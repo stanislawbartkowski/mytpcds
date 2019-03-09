@@ -1,0 +1,13 @@
+DBNAME=perfdb
+DBUSER=perf
+DBPASSWORD=secret
+#DBHOST=thinkde
+DBHOST=localhost
+DBPORT=5433
+
+DTYPE=psql
+
+#KILLINTERVAL="5 minutes"
+KILLINTERVAL="3 hours"
+
+#SKIPQUERY=query03
