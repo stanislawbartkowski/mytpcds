@@ -1,2 +1,6 @@
 /nohup.out
 /derby.log
+env/*
+run.sh
+run1.sh
+ptest.sh
