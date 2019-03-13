@@ -86,7 +86,7 @@ loadfile() {
   local -r f=`basename $inloadfile`
   runhive 0 "LOAD DATA INPATH \"$HDFSPATH/$f\" OVERWRITE INTO TABLE $tablename"
   runhive 0 "drop table IF EXISTS $DBNAME.$tablename purge"
-  runhive 0 "create table $DBNAME.$tablename stored as parquet as select * from $tablename"
+  runhive 0 "create table $DBNAME.$tablename $STOREDAS as select * from $tablename"
   runhive 0 "truncate table $tablename"
 }
 
