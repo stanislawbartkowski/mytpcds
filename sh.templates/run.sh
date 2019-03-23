@@ -28,8 +28,6 @@ export TESTQUERY=01
 export DONOTVERIFY=X
 export QUERYTIMEOUT=59m
 
-export STREAMNO=2
-
 #./tpc.sh test
 #./tpc.sh removedata
 #./tpc.sh createtables
