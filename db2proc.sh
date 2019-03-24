@@ -107,7 +107,6 @@ numberofrows() {
 }
 
 loadfile() {
-#  trap "echo 'aaaaaaaaaaa'" RETURN
   local tablename=$1
   local inloadfile=$2
   connect
@@ -116,5 +115,8 @@ loadfile() {
   local RES=$?
   db2 "set integrity for $tablename IMMEDIATE CHECKED FORCE GENERATED"
   disconnect
+  [ $RES -ne 0 ] && echo "$RES - non zero exit code from db2 load"
+  [ $RES -eq 2 ] && echo "Warning detected while loading, will continue"
+  [ $RES -eq 2 ] && RES=0
   return $RES
 }
