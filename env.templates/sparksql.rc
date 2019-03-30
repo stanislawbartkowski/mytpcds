@@ -7,7 +7,7 @@ DTYPE=sparksql
 SPARKSQLPARAM="--master yarn --num-executors 2 -S"
 
 # comment out for power test
-QUEUE0=queue0
+QUEUE0=default
 QUEUE1=queue1
 QUEUE2=queue2
 QUEUE3=queue3
