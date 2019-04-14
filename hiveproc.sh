@@ -35,7 +35,7 @@ runhive() {
 transformtablesql() {
   local infile=$1
   local outfile=$2
-  sed "s/ time /varchar(20)/g" $infile | sed "s/not null//g" | sed "s/integer/int/g" | sed "/primary key/d" | sed -z  "s/,[ ,\n]*);/\n);/g"  | sed "s/);/) ROW FORMAT DELIMITED FIELDS TERMINATED BY \"|\" ;"/g  >$outfile
+  sed "s/ time /varchar(20)/g" $infile | sed "s/not null//g" | sed "s/integer/int/g" | sed "/primary key/d" | sed -z  "s/,[ ,\n]*);/\n);/g"  | sed "s/);/) ROW FORMAT DELIMITED FIELDS TERMINATED BY \"|\" STORED AS TEXTFILE ;"/g  >$outfile
 }
 
 runscript() {
