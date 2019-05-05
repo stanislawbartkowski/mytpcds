@@ -15,7 +15,7 @@ But using TPC-DS is not easy out of the box. Requires some manual tasks to perfo
 
 ## TPC-DS preparation
 Unpack the compressed zip file in the directory. The following directory structure is created.
-* v2.10.1rc3
+* v2.10.1rc3/v2.11.0rc2
   * answer_sets  
   * EULA.txt  
   * query_templates  
@@ -25,14 +25,14 @@ Unpack the compressed zip file in the directory. The following directory structu
   * tools  
   
 For the purpose of the test the additional directories should be created.
-* v2.10.1rc3
+* v2.10.1rc3/v2.11.0rc2
   * word
      * data (will contained input data)
      * db2queries (queries and results related to appropriate database)
      * mysqlqueries
      * (etc)
     
-> cd v2.10.1rc3/tools<br>
+> cd v2.10.1rc3(v2.11.0rc2)/tools<br>
 > make <br>
 
 Executable files are created. To create an input data set run the command *dsdgen*. The parameter **-sc** describes the size of the data.
