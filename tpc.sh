@@ -35,7 +35,7 @@ removetemp() {
 [ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
 mkdir -p $TEMPDIR
-source ./${DTYPE}proc.sh
+source db/${DTYPE}proc.sh
 
 # ---------------------
 
@@ -161,6 +161,7 @@ verify() {
   TESTDATA=${TESTDATA:-customer}
   QUERYTIMEOUT=${QUERYTIMEOUT:-10m}
   RESQUERYDIR=${RESQUERYDIR:-$PWD/res}
+  DELIM=${DELIM:-|}
 
   RESULTDIRECTORY=${RESULTDIRECTORY:-$TEMPDIR/${DTYPEID}result${STREAMNO}}
   TMPQ=${TMPQ:-$TEMPDIR/${DTYPEID}queries${STREAMNO}}
@@ -215,6 +216,20 @@ compactresult() {
    awk -f $STARTPWD/transf.awk
 
 }
+
+resultline() {
+  local -r RES=$1
+  local -r NAME=$2
+  local -r TPLNAME=$3
+  local -r t=$4
+  local mess=""
+  if [ $RES -eq 0 ]; then mess="$NAME $DELIM $TPLNAME $DELIM $t"
+  elif [ $RES -eq 124 ]; then mess="$NAME $DELIM $TPLNAME $DELIM TIMEOUT "
+  else mess="$NAME $DELIM $TPLNAME $DELIM FAILED "
+  fi
+  echo $mess
+}
+
 
 runsinglequery() {
   local qfile=$TMPQ/$1
@@ -321,25 +336,19 @@ runsinglequery() {
   local -r RES=$?
   local -r after=`date  +"%s"`
   local -r t=$(expr $after - $before)
-  if [ $RES -eq 0 ]; then
-      if [ -z "$DONOTVERIFY" ]; then
-         mess="$1 | $TPLNAME | PASSED | $t"
-         local RESQUERY=$RESQUERYDIR/$QUERY.res
-         log "Compare the result $RESQUERY against $RESULTSET"
-         compactresult $RESQUERY >$TMP2
-         compactresult $RESULTSET >$TMP3
-         if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess | MATCH"; else mess="$mess | DIFFER"; fi
-         # compare size
-         local EXPECTEDLINE=`numberoflines $TMP2`
-         log "Expected number of line $EXPECTEDLINE"
-         local RESLINES=`numberoflines $TMP3`
-         log "Number of lines received $RESLINES"
-         if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess | NUMBER OF LINES MATCHES"; else mess="$mess | NUMBER OF LINES DIFFERS"; fi
-      else
-        mess="$1 | $TPLNAME | PASSED | $t"
-      fi
-  elif [ $RES -eq 124 ]; then mess="$1 | $TPLNAME | TIMEOUT | $t"
-  else mess="$1 | $TPLNAME | FAILED "
+  local mess=`resultline $RES $1 $TPLNAME $t`
+  if [ $RES -eq 0 ] && [ -z "$DONOTVERIFY" ]; then
+    local RESQUERY=$RESQUERYDIR/$QUERY.res
+    log "Compare the result $RESQUERY against $RESULTSET"
+    compactresult $RESQUERY >$TMP2
+    compactresult $RESULTSET >$TMP3
+    if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess $DELIM MATCH"; else mess="$mess $DELIM DIFFER"; fi
+    # compare size
+    local EXPECTEDLINE=`numberoflines $TMP2`
+    log "Expected number of line $EXPECTEDLINE"
+    local RESLINES=`numberoflines $TMP3`
+    log "Number of lines received $RESLINES"
+    if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess $DELIM NUMBER OF LINES MATCHES"; else mess="$mess $DELIM NUMBER OF LINES DIFFERS"; fi
   fi
   rm $TMP
   rm $TMP1
