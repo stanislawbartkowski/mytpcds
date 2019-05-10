@@ -1,5 +1,5 @@
-/nohup.out
-/derby.log
+nohup.out
+derby.log
 run.sh
 run1.sh
 ptest.sh
