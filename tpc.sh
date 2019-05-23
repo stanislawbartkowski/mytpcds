@@ -88,14 +88,33 @@ loaddatatest() {
   loadsinglefile $TESTDATA $TCPDATA/$TESTDATA.dat
 }
 
+# --------------
+
+getsec() {
+  echo `date  +"%s"`
+}
+
+
+calculatesec() {
+  local -r before=$1
+  local -r after=`getsec`
+  echo $(expr $after - $before)
+}
+
+# --------------
+
 loaddata() {
    verifydat
    log "Data loading ..."
+   local -r before=`getsec`
    for f in $TCPDATA/*.dat
    do
      tbl=`basename $f .dat`
      loadsinglefile $tbl $f
    done
+   local -r timeelapsed=`calculatesec $before`
+   echo $LOADTIMEFILE
+   echo "LOAD TIME IN SEC: $timeelapsed" >$LOADTIMEFILE
 }
 
 numberoflines() {
@@ -157,6 +176,7 @@ verify() {
   STREAMNO=${STREAMNO:-0}
   TCPQ0=${TCPQ0:-$TCPROOT/work/${DTYPE}queries/query_$STREAMNO.sql}
   RESFILE0=${RESFILE0:-$TCPROOT/work/${DTYPE}queries/${DTYPEID}.result$STREAMNO}
+  LOADTIMEFILE=${LOADTIMELINE:-$TCPROOT/work/${DTYPE}queries/${DTYPEID}.loadtime}
   TESTQUERY=${TESTQUERY:-55}
   TESTDATA=${TESTDATA:-customer}
   QUERYTIMEOUT=${QUERYTIMEOUT:-10m}
@@ -341,11 +361,10 @@ runsinglequery() {
     cp $TMP1 $TMP
   fi
 
-  local -r before=`date  +"%s"`
+  local -r before=`getsec`
   runquery $TMP >>$LOGFILE
   local -r RES=$?
-  local -r after=`date  +"%s"`
-  local -r t=$(expr $after - $before)
+  local -r t=`calculatesec $before`
   local mess=`resultline $RES $1 $TPLNAME $t`
   if [ $RES -eq 0 ] && [ -z "$DONOTVERIFY" ]; then
     local RESQUERY=$RESQUERYDIR/$QUERY.res
