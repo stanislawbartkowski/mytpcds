@@ -298,10 +298,10 @@ Assume the minimal number of concurrent streams, 4.<br>
 A separate batch file *ptest.sh* should be launched to emulate one session. The *ptest.sh* accepts a parameter, number 0-3 meaning the stream number. Example, stream number 3.
 > ./ptest.sh 3
 ### Prepare the query streams.
-> ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/{directory} -DIALECT {dialect} -STREAMS 4 -sc 200<br>
+> ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/{directory} -DIALECT {dialect} -STREAMS 4 -sc 100<br>
 Example for DB2:<br>
 
-> ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/db2queries -DIALECT db2 -STREAMS 4 -sc 200<br>
+> ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/db2queries -DIALECT db2 -STREAMS 4 -sc 100<br>
 
 The command prepares four streams of queriers in *../work/db2queries* directory.
 ```
