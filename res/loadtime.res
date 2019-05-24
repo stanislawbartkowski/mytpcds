@@ -1,1 +1,0 @@
-LOAD TIME IN SEC: 9
