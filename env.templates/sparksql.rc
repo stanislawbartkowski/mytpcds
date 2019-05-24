@@ -1,14 +1,21 @@
 #SparkSQL
-DBNAME=perfdb
-#DBUSER=sb
 
 DTYPE=sparksql
 
-SPARKSQLPARAM="--master yarn --num-executors 2 -S"
+DBNAME=perfdb
+TENAME=perfte
+DBUSER=perf
+
+HIVEURL="--database XX-XX --master yarn --num-executors 2 -S"
+HDFSPATH="/tmp/data"
 
 # comment out for power test
 QUEUE0=default
 QUEUE1=queue1
 QUEUE2=queue2
 QUEUE3=queue3
+
+STOREDAS="stored as parquet"
+#STOREDAS="stored as orc"
+
 

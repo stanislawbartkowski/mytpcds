@@ -1,0 +1,100 @@
+ 330013055|                                                  |                                                  |           2|                 1
+34417983.3|Music                                             |                                                  |           1|                 1
+33401790.6|Children                                          |                                                  |           1|                 2
+33389808.7|Shoes                                             |                                                  |           1|                 3
+33131518.7|Sports                                            |                                                  |           1|                 4
+32849275.7|Jewelry                                           |                                                  |           1|                 5
+32704802.2|Home                                              |                                                  |           1|                 6
+32677830.1|Electronics                                       |                                                  |           1|                 7
+32337537.9|Books                                             |                                                  |           1|                 8
+32173075.9|Women                                             |                                                  |           1|                 9
+31898879.1|Men                                               |                                                  |           1|                10
+1030552.66|                                                  |                                                  |           1|                11
+2612267.98|Books                                             |fiction                                           |           0|                 1
+2600254.28|Books                                             |history                                           |           0|                 2
+2292992.44|Books                                             |home repair                                       |           0|                 3
+2205844.69|Books                                             |computers                                         |           0|                 4
+2150782.02|Books                                             |romance                                           |           0|                 5
+2099755.76|Books                                             |sports                                            |           0|                 6
+2086514.16|Books                                             |reference                                         |           0|                 7
+2014180.15|Books                                             |science                                           |           0|                 8
+1956932.77|Books                                             |travel                                            |           0|                 9
+1944562.37|Books                                             |cooking                                           |           0|                10
+1864618.81|Books                                             |parenting                                         |           0|                11
+1822552.69|Books                                             |entertainments                                    |           0|                12
+1760590.74|Books                                             |business                                          |           0|                13
+1733387.18|Books                                             |self-help                                         |           0|                14
+1711024.13|Books                                             |arts                                              |           0|                15
+1431483.76|Books                                             |mystery                                           |           0|                16
+     49794|Books                                             |                                                  |           0|                17
+ 8662207.2|Children                                          |infants                                           |           0|                 1
+8645102.05|Children                                          |toddlers                                          |           0|                 2
+8309608.78|Children                                          |school-uniforms                                   |           0|                 3
+7696468.92|Children                                          |newborn                                           |           0|                 4
+  88403.67|Children                                          |                                                  |           0|                 5
+2642835.18|Electronics                                       |karoke                                            |           0|                 1
+2454555.77|Electronics                                       |dvd/vcr players                                   |           0|                 2
+2416705.43|Electronics                                       |stereo                                            |           0|                 3
+2289828.54|Electronics                                       |monitors                                          |           0|                 4
+2163979.78|Electronics                                       |musical                                           |           0|                 5
+2128912.67|Electronics                                       |wireless                                          |           0|                 6
+2087338.62|Electronics                                       |cameras                                           |           0|                 7
+2022200.04|Electronics                                       |memory                                            |           0|                 8
+1992108.01|Electronics                                       |disk drives                                       |           0|                 9
+ 1950550.9|Electronics                                       |personal                                          |           0|                10
+1856764.34|Electronics                                       |camcorders                                        |           0|                11
+1819444.57|Electronics                                       |televisions                                       |           0|                12
+ 1781774.3|Electronics                                       |scanners                                          |           0|                13
+1722994.17|Electronics                                       |audio                                             |           0|                14
+1709394.54|Electronics                                       |portable                                          |           0|                15
+ 1638443.2|Electronics                                       |automotive                                        |           0|                16
+2539024.19|Home                                              |mattresses                                        |           0|                 1
+2506908.34|Home                                              |paint                                             |           0|                 2
+2443855.27|Home                                              |flatware                                          |           0|                 3
+ 2394776.8|Home                                              |curtains/drapes                                   |           0|                 4
+2356961.38|Home                                              |glassware                                         |           0|                 5
+2248213.94|Home                                              |bedding                                           |           0|                 6
+2031115.59|Home                                              |tables                                            |           0|                 7
+1971444.55|Home                                              |furniture                                         |           0|                 8
+ 1916741.6|Home                                              |accent                                            |           0|                 9
+1856816.99|Home                                              |lighting                                          |           0|                10
+1806958.46|Home                                              |bathroom                                          |           0|                11
+1757586.54|Home                                              |wallpaper                                         |           0|                12
+1750125.73|Home                                              |decor                                             |           0|                13
+1744773.93|Home                                              |blinds/shades                                     |           0|                14
+1722565.65|Home                                              |kids                                              |           0|                15
+1631478.69|Home                                              |rugs                                              |           0|                16
+  25454.53|Home                                              |                                                  |           0|                17
+2688017.65|Jewelry                                           |gold                                              |           0|                 1
+ 2378759.7|Jewelry                                           |pendants                                          |           0|                 2
+2268204.16|Jewelry                                           |womens watch                                      |           0|                 3
+2220957.56|Jewelry                                           |jewelry boxes                                     |           0|                 4
+2200737.07|Jewelry                                           |loose stones                                      |           0|                 5
+2167505.41|Jewelry                                           |rings                                             |           0|                 6
+2161148.59|Jewelry                                           |custom                                            |           0|                 7
+2097896.98|Jewelry                                           |estate                                            |           0|                 8
+   2015741|Jewelry                                           |costume                                           |           0|                 9
+1930851.59|Jewelry                                           |earings                                           |           0|                10
+1885619.33|Jewelry                                           |birdal                                            |           0|                11
+1844105.28|Jewelry                                           |mens watch                                        |           0|                12
+1811611.13|Jewelry                                           |diamonds                                          |           0|                13
+ 1799422.8|Jewelry                                           |semi-precious                                     |           0|                14
+1760393.72|Jewelry                                           |consignment                                       |           0|                15
+1519768.76|Jewelry                                           |bracelets                                         |           0|                16
+  98534.94|Jewelry                                           |                                                  |           0|                17
+8722740.81|Men                                               |shirts                                            |           0|                 1
+8477155.81|Men                                               |sports-apparel                                    |           0|                 2
+7680342.37|Men                                               |accessories                                       |           0|                 3
+6980207.87|Men                                               |pants                                             |           0|                 4
+  38432.27|Men                                               |                                                  |           0|                 5
+10134314.3|Music                                             |classical                                         |           0|                 1
+9001046.76|Music                                             |pop                                               |           0|                 2
+ 7750908.7|Music                                             |rock                                              |           0|                 3
+7491466.04|Music                                             |country                                           |           0|                 4
+  40247.45|Music                                             |                                                  |           0|                 5
+8867824.31|Shoes                                             |mens                                              |           0|                 1
+8354952.67|Shoes                                             |kids                                              |           0|                 2
+8255261.86|Shoes                                             |womens                                            |           0|                 3
+7888031.16|Shoes                                             |athletic                                          |           0|                 4
+  23738.68|Shoes                                             |                                                  |           0|                 5
+2693813.77|Sports                                            |golf                                              |           0|                 1

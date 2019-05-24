@@ -1,0 +1,86 @@
+# ========================================
+# common for beeline and spark-sql
+# ========================================
+
+prepareurl() {
+  local typ=$1
+  if [ $typ -eq 0 ]
+     then U=${HIVEURL/XX-XX/$TENAME}
+     else U=${HIVEURL/XX-XX/$DBNAME}
+  fi
+  # check queue
+  local -r PATT=QUEUE$STREAMNO
+  # queue name
+  TEZQUEUE=${!PATT}
+  if [ -n "$TEZQUEUE" ]; then
+    U="$U?tez.queue.name=$TEZQUEUE"
+  fi
+  DBE=
+  E='-e'
+  if [ $typ -eq 0 ]
+     then DBE="USE $TENAME"
+     else DBE="USE $DBNAME"
+  fi
+  echo $DBE
+}
+
+# ROW FORMAT DELIMITED FIELDS TERMINATED BY "|";
+transformtablesql() {
+  local infile=$1
+  local outfile=$2
+  sed "s/ time /varchar(20)/g" $infile | sed "s/not null//g" | sed "s/integer/int/g" | sed "/primary key/d" | sed -z  "s/,[ ,\n]*);/\n);/g"  | sed "s/);/) ROW FORMAT DELIMITED FIELDS TERMINATED BY \"|\" STORED AS TEXTFILE ;"/g  >$outfile
+}
+
+rundroptable() {
+  local -r TMP=`crtemp`
+  sed "s/;/ PURGE;/g" $1 >$TMP
+  runscript $TMP
+}
+
+runcreatetable() {
+  local -r TMP=`crtemp`
+  transformtablesql $1 $TMP
+  runscript $TMP
+}
+
+testconnection() {
+  log "Verify  Hive connection"
+  runcommand 0 "SHOW TABLES"
+  runcommand 1 "SHOW TABLES"
+}
+
+numberofrows() {
+  runcommand 1 "$1"
+}
+
+loadfile() {
+  local -r tablename=$1
+  local -r inloadfile=$2
+  hdfs dfs -copyFromLocal -f $inloadfile $HDFSPATH
+  [ $? -eq 0 ] || logfail "Cannot upload local file to HDFS path $HDFSPATH"
+  local -r f=`basename $inloadfile`
+  local -r TMP=`crtemp`
+#  runcommand 0 "LOAD DATA INPATH \"$HDFSPATH/$f\" OVERWRITE INTO TABLE $tablename"
+#  runcommand 0 "drop table IF EXISTS $DBNAME.$tablename purge"
+#  runcommand 0 "create table $DBNAME.$tablename $STOREDAS as select * from $tablename"
+#  runcommand 0 "truncate table $tablename"
+cat <<EOF >$TMP
+  LOAD DATA INPATH "$HDFSPATH/$f" OVERWRITE INTO TABLE $tablename;
+  drop table IF EXISTS $DBNAME.$tablename purge;
+  create table $DBNAME.$tablename $STOREDAS as select * from $tablename;
+  truncate table $tablename;
+EOF
+cat $TMP
+  runscript $TMP 
+}
+
+verifycommand() {
+  [ -z "$HDFSPATH" ] && logfail "Variable HDFSPATH not defined"
+  [ -z "$TENAME" ] && logfail "Variable TENAME not defined"
+  [ -z "$HIVEURL" ] && logfail "Variable HIVEURL not defined"
+}
+
+export IFEXIST="IF EXISTS"
+export REPLACEQUERYDAYSPROC=X
+export MODIFYALIAS=X
+

@@ -186,6 +186,7 @@ verify() {
   RESULTDIRECTORY=${RESULTDIRECTORY:-$TEMPDIR/${DTYPEID}result${STREAMNO}}
   TMPQ=${TMPQ:-$TEMPDIR/${DTYPEID}queries${STREAMNO}}
   mkdir -p $RESULTDIRECTORY
+  mkdir -p $RESQUERYDIR
 
   [ -z "$RESQUERYDIR" ] && logfail "Variable RESQUERYDIR not defined"
   [ -z "$RESULTDIRECTORY" ] && logfail "Variable RESULTDIRECTORY not defined"

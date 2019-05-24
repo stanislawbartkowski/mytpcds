@@ -1,40 +1,30 @@
-sparksqlcommand() {
+source db/hivesql.proc
+
+runcommand() {
   export SPARK_MAJOR_VERSION=2
-  timeout $QUERYTIMEOUT spark-sql $SPARKSQLPARAM --database $DBNAME -e "$1"
+  local command="$2"
+  prepareurl $1
+
+  timeout $QUERYTIMEOUT spark-sql $U -e "$command"
 }
 
-sparksqlscript() {
+runscript() {
   export SPARK_MAJOR_VERSION=2
+  local scriptfile=$1
+  prepareurl 0
 
- # check queue
-  local -r PATT=QUEUE$STREAMNO
   # queue name
-  local U=
-  local -r YARNQUEUE=${!PATT}
-  if [ -n "$YARNQUEUE" ]; then
-    U="--queue=$YARNQUEUE"
-  fi
+  local -r Q="--queue=$TEZQUEUE"
 
-  timeout $QUERYTIMEOUT spark-sql $SPARKSQLPARAM $U --database $DBNAME -f "$1"
-}
-
-testconnection() {
-  sparksqlcommand "show tables"
-}
-
-numberofrows() {
-  sparksqlcommand "$1"
+  timeout $QUERYTIMEOUT spark-sql $U $Q -f "$1"
 }
 
 runquery() {
-  sparksqlscript $1 >$RESULTSET
-}
-
-verifyvariable() {
-  [ -z "$SPARKSQLPARAM" ] && logfail "Variable SPARKSQLPARAM not defined"
+  runscript $1 >$RESULTSET
 }
 
 export REPLACEQUERYDAYSPROC=X
 export IFEXIST="IF EXISTS"
 export MODIFYALIAS=X
 
+verifycommand
