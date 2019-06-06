@@ -1,6 +1,6 @@
 nohup.out
 derby.log
 run.sh
-run1.sh
+run*.sh
 ptest.sh
 /env/*

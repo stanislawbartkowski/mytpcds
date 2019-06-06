@@ -6,7 +6,7 @@ DBNAME=perfdb
 TENAME=perfte
 DBUSER=perf
 
-HIVEURL="--database XX-XX --master yarn --num-executors 2 -S"
+HIVEURL="--database XX-XX --master yarn --num-executors 2 -S --conf spark.sql.crossJoin.enabled=true --conf spark.driver.memory=2g "
 HDFSPATH="/tmp/data"
 
 # comment out for power test

@@ -293,7 +293,7 @@ runsinglequery() {
 # replace d1.d_date + 5 with date_add(d1.d_date,5)
 # should be replaced by something more sophisticated because this replacement is space vulnerable
 
-  if grep query72.tpl $TMP && [ "$DTYPE" = "hive" ]; then    
+  if grep query72.tpl $TMP && ([ "$DTYPE" = "hive" ] || [ "$DTYPE" = "sparksql" ]); then    
     sed -z "s/d1.d_date + 5/date_add(d1.d_date,5)/" $TMP >$TMP1
     cp $TMP1 $TMP
   fi

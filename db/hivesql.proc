@@ -21,7 +21,6 @@ prepareurl() {
      then DBE="USE $TENAME"
      else DBE="USE $DBNAME"
   fi
-  echo $DBE
 }
 
 # ROW FORMAT DELIMITED FIELDS TERMINATED BY "|";
@@ -44,7 +43,7 @@ runcreatetable() {
 }
 
 testconnection() {
-  log "Verify  Hive connection"
+  log "Verify  $DTYPE connection"
   runcommand 0 "SHOW TABLES"
   runcommand 1 "SHOW TABLES"
 }

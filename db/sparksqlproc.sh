@@ -2,25 +2,30 @@ source db/hivesql.proc
 
 runcommand() {
   export SPARK_MAJOR_VERSION=2
-  local command="$2"
+  local -r command="$2"
   prepareurl $1
 
   timeout $QUERYTIMEOUT spark-sql $U -e "$command"
 }
 
-runscript() {
+i_runscript() {
   export SPARK_MAJOR_VERSION=2
-  local scriptfile=$1
-  prepareurl 0
+  local -r scriptfile=$2
+  prepareurl $1
 
   # queue name
   local -r Q="--queue=$TEZQUEUE"
 
-  timeout $QUERYTIMEOUT spark-sql $U $Q -f "$1"
+  timeout $QUERYTIMEOUT spark-sql $U $Q -f $scriptfile
+}
+
+
+runscript() {
+  i_runscript 0 $1
 }
 
 runquery() {
-  runscript $1 >$RESULTSET
+  i_runscript 1 $1 >$RESULTSET
 }
 
 export REPLACEQUERYDAYSPROC=X
