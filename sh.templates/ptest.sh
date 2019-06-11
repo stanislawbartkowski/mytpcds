@@ -4,7 +4,7 @@ export TEMPDIR=/tmp/mytpcds
 export TCPROOT=/home/perf/v2.10.1rc3
 export TCPDATA=/mnt/data/data
 
-#export ENV=env/envdb2
+#export ENV=env/db2
 #export ENV=env/oracle
 #export ENV=env/hive
 #export ENV=env/postgresql
