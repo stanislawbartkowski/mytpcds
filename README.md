@@ -26,7 +26,7 @@ Unpack the compressed zip file in the directory. The following directory structu
   
 For the purpose of the test the additional directories should be created.
 * v2.10.1rc3/v2.11.0rc2
-  * word
+  * work
      * data (will contained input data)
      * db2queries (queries and results related to appropriate database)
      * mysqlqueries
