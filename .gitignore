@@ -1,7 +1,8 @@
 nohup.out
 derby.log
 run.sh
-run*.sh
+runi*.sh
 ptest.sh
+conn.rc
 TMP
 /env/*
