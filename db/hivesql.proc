@@ -21,19 +21,32 @@ prepareurl() {
      then DBE="USE $TENAME"
      else DBE="USE $DBNAME"
   fi
+
+  CREDEN="-n $DBUSER"
+  if [ -n "$DBPASSWORD" ]; then CREDEN="$CREDEN -p $DBPASSWORD"; fi
 }
 
 # ROW FORMAT DELIMITED FIELDS TERMINATED BY "|";
 transformtablesql() {
   local infile=$1
   local outfile=$2
-  sed "s/ time /varchar(20)/g" $infile | sed "s/not null//g" | sed "s/integer/int/g" | sed "/primary key/d" | sed -z  "s/,[ ,\n]*);/\n);/g"  | sed "s/);/) ROW FORMAT DELIMITED FIELDS TERMINATED BY \"|\" STORED AS TEXTFILE ;"/g  >$outfile
+  echo "USE $TENAME ;" >$outfile
+  sed "s/ time /varchar(20)/g" $infile | sed "s/not null//g" | sed "s/integer/int/g" | sed "/primary key/d" | sed -z  "s/,[ ,\n]*);/\n);/g"  | sed "s/);/) ROW FORMAT DELIMITED FIELDS TERMINATED BY \"|\" STORED AS TEXTFILE ;"/g  >>$outfile
+}
+
+rundroptablescript() {
+  local -r script=$1
+  local -r num=$2
+  prepareurl $num
+  local -r TMP=`crtemp`
+  echo "$DBE;" >$TMP
+  sed "s/;/ PURGE;/g" $script >>$TMP
+  runscript $TMP
 }
 
 rundroptable() {
-  local -r TMP=`crtemp`
-  sed "s/;/ PURGE;/g" $1 >$TMP
-  runscript $TMP
+  rundroptablescript $1 0
+  rundroptablescript $1 1
 }
 
 runcreatetable() {
@@ -59,17 +72,17 @@ loadfile() {
   [ $? -eq 0 ] || logfail "Cannot upload local file to HDFS path $HDFSPATH"
   local -r f=`basename $inloadfile`
   local -r TMP=`crtemp`
-#  runcommand 0 "LOAD DATA INPATH \"$HDFSPATH/$f\" OVERWRITE INTO TABLE $tablename"
-#  runcommand 0 "drop table IF EXISTS $DBNAME.$tablename purge"
-#  runcommand 0 "create table $DBNAME.$tablename $STOREDAS as select * from $tablename"
-#  runcommand 0 "truncate table $tablename"
+
 cat <<EOF >$TMP
+  USE $TENAME;
   LOAD DATA INPATH "$HDFSPATH/$f" OVERWRITE INTO TABLE $tablename;
   drop table IF EXISTS $DBNAME.$tablename purge;
   create table $DBNAME.$tablename $STOREDAS as select * from $tablename;
   truncate table $tablename;
 EOF
-cat $TMP
+
+  cat $TMP
+
   runscript $TMP 
 }
 
@@ -82,4 +95,3 @@ verifycommand() {
 export IFEXIST="IF EXISTS"
 export REPLACEQUERYDAYSPROC=X
 export MODIFYALIAS=X
-

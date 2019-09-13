@@ -10,7 +10,7 @@ source ./$ENV.rc
 declare -g TMPSTORE=`mktemp`
 
 log() {
-  echo $1 >>$LOGFILE
+  [ -n "$LOGILE" ] && echo $1 >>$LOGFILE
   echo "$1"
 }
 
@@ -21,7 +21,6 @@ logfail() {
 }
 
 crtemp() {
-#  typeset -ga TMPSTORE
   local -r TMP=`mktemp`
   echo $TMP >>$TMPSTORE
   echo $TMP
@@ -44,8 +43,9 @@ removetables() {
   local -r tmpfile=`crtemp`
   cat $TCPDS | grep "create\ *table" |
   while read t1 t1 tablename; do
-    log "DROP TABLE $IFEXIST $tablename"
-    echo "DROP TABLE $IFEXIST $tablename ;" >>$tmpfile
+    local droptable="DROP TABLE $IFEXIST $tablename $PURGE ;"
+    log "$droptable"
+    echo "$droptable" >>$tmpfile
   done
   rundroptable $tmpfile >>$LOGFILE
   # do not return report error code
@@ -53,7 +53,7 @@ removetables() {
 
 droptables() {
   removetables
-  local TMP=`crtemp`
+  local -r TMP=`crtemp`
   log "Now creating tables ...."
 
   if [ -n "$REMOVEPRIMARY" ]; then
@@ -159,6 +159,29 @@ verifyallload() {
   done
 }
 
+required_var() {
+  local -r VARIABLE=$1
+  [ -z "${!VARIABLE}" ] && logfail "Need to set environment variable $VARIABLE"
+}
+
+required_listofvars() {
+  local -r listv=$1
+  for value in $listv; do required_var $value; done
+}
+
+required_command() {
+  local -r COMMAND=$1
+
+  if ! command -v $COMMAND; then logfail "$COMMAND not installed"; fi
+}
+
+required_listofcommands() {
+  local -r LISTC=$1
+  for value in $LISTC; do required_command $value; done
+}
+#  [ -x "$(command -v jsqsh)" ] || logfail "jsqsh is not available"
+
+
 verify() {
 
   DTYPEID=${DTYPEID:-$DTYPE}
@@ -167,9 +190,8 @@ verify() {
   mkdir -p $LOGDIR
   LOGFILE=$LOGDIR/mytcpds.log
 
-  [ -z "$DBNAME" ] && logfail "Variable DBNAME not defined"
+  required_var DBNAME
 
-  # "${VAR1:-default value}"
   TEMPDIR=${TEMPDIR:-/tmp/mytpcds}
   TCPDS=${TCPDS:-$TCPROOT/tools/tpcds.sql}
   TCPDATA=${TCPDATA:-$TCPROOT/work/data}
@@ -188,14 +210,19 @@ verify() {
   mkdir -p $RESULTDIRECTORY
   mkdir -p $RESQUERYDIR
 
-  [ -z "$RESQUERYDIR" ] && logfail "Variable RESQUERYDIR not defined"
-  [ -z "$RESULTDIRECTORY" ] && logfail "Variable RESULTDIRECTORY not defined"
-  [ -z "$TCPDATA" ] && logfail "Variable TCPDATA not defined"
-  [ -z "$RESFILE0" ] && logfail "Variable RESFILE0 not defined"
+  required_listofvars "RESQUERYDIR RESULTDIRECTORY TCPDATA RESFILE0"
+
+#  [ -z "$RESQUERYDIR" ] && logfail "Variable RESQUERYDIR not defined"
+#  [ -z "$RESULTDIRECTORY" ] && logfail "Variable RESULTDIRECTORY not defined"
+#  [ -z "$TCPDATA" ] && logfail "Variable TCPDATA not defined"
+#  [ -z "$RESFILE0" ] && logfail "Variable RESFILE0 not defined"
   [ -f $TCPDS ] || logfail "$TCPDS does not exist"
   [ -f $TCPQ0 ] || logfail "$TCPQ0 does not exist"
   [ -d $TCPDATA ] || logfail "$TCPDATA directory does not exist"
   [ -d $RESQUERYDIR ] || logfail "$RESQUERYDIR directory does not exist"
+
+  [ -n "$REQUIREDVARS" ] && required_listofvars "$REQUIREDVARS"
+  [ -n "$REQUIREDCOMMANDS" ] && required_listofcommands "$REQUIREDCOMMANDS"
 }
 
 testdbconnection() {

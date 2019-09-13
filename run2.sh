@@ -33,10 +33,10 @@ export QUERYTIMEOUT=59m
 #./tpc.sh removedata
 #./tpc.sh createtables
 #./tpc.sh loadtest
-./tpc.sh testverify
+#./tpc.sh testverify
 #./tpc.sh testquery
 
 #./tpc.sh loaddata
 #./tpc.sh verifyload
-#./tpc.sh runqueries
+./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi

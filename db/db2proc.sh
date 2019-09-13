@@ -1,3 +1,4 @@
+
 connect() {
    if [ -n "$DBUSER" ]; then
     db2 connect to $DBNAME user $DBUSER using $DBPASSWORD
@@ -34,29 +35,6 @@ prepare_runscript() {
  echo 'RES=$?'
  echo "db2 terminate"
  echo 'exit $RES'
-}
-
-old_runscript() {
-  local scriptfile=$1
-  connect
-  #timeout $QUERYTIMEOUT  (cannot use timeout for DB2)
-  # do not display header and query
-  db2 -xv -tsvf $scriptfile >$RESULTSET
-  local RES=$?
-  disconnect
-  return $RES
-}
-
-xxx_runscript() {
-  local -r TMP=`mktemp`
-  # prepare external script to run as timeout
-  prepare_runscript $1 >$TMP
-  cat $TMP
-  chmod 700 $TMP
-  timeout $QUERYTIMEOUT $TMP $RESULTSET
-  local -r RES=$?
-  rm $TMP
-  return $RES
 }
 
 runscript() {
@@ -120,3 +98,10 @@ loadfile() {
   [ $RES -eq 2 ] && RES=0
   return $RES
 }
+
+verifyvariables() {
+  [ -z "$HDFSPATH" ] && logfail "Variable HDFSPATH not defined"
+  [ -z "$STOREDAS" ] && logfail "Variable STOREDAS not defined"
+}
+
+[ $DTYPEID = bigsql ] && verifyvariables
