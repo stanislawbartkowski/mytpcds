@@ -3,4 +3,5 @@ derby.log
 run.sh
 run*.sh
 ptest.sh
+TMP
 /env/*
