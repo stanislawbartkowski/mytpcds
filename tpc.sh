@@ -172,14 +172,13 @@ required_listofvars() {
 required_command() {
   local -r COMMAND=$1
 
-  if ! command -v $COMMAND; then logfail "$COMMAND not installed"; fi
+  if ! command -v $COMMAND >>$LOGFILE ; then logfail "$COMMAND not installed"; fi
 }
 
 required_listofcommands() {
   local -r LISTC=$1
   for value in $LISTC; do required_command $value; done
 }
-#  [ -x "$(command -v jsqsh)" ] || logfail "jsqsh is not available"
 
 
 verify() {

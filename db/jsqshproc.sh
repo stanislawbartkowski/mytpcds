@@ -5,8 +5,7 @@ jsqsh_script() {
     echo "SET CURRENT SCHEMA $SCHEMA;" >$TMP
     cat $script >>$TMP
 
-    jsqsh $DBNAME -i $TMP -o $OUTPUT 
-#    jsqsh $DBNAME -i $TMP 
+    timeout $QUERYTIMEOUT jsqsh $DBNAME -v footers=false -v headers=false -i $TMP -o $OUTPUT 2>>$LOGFILE
     if [ $? -ne 0 ]; then logfail "jsqsh failed"; fi
 }
 
@@ -30,7 +29,7 @@ loadfile() {
 cat <<EOF >$TMP
   load hadoop using file url '$HDFSPATH/$f' with source properties ('field.delimiter'='|', 'ignore.extra.fields'='true') into table $tablename OVERWRITE;
 EOF
-  cat $TMP
+#  cat $TMP
 
   jsqsh_script $TMP 
 }
@@ -61,8 +60,8 @@ rundroptable() {
 runquery() {
   jsqsh_script $1
   local -r RES=$?
-  # remove first and last line from outout
-  cat $OUTPUT | sed '1d;$d' >$RESULTSET
+  # remove the first and the last line from outout
+  sed '1d;$d' $OUTPUT >$RESULTSET
   return $RES
 }
 
