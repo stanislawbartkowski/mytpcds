@@ -53,7 +53,7 @@ db/mysqlproc.sh | Implementation for MySQL/MariaDB | https://github.com/stanisla
 db/oracleproc.sh  | Implementation for Oracle | https://github.com/stanislawbartkowski/mytpcds/wiki/Oracle
 db/psqlproc.sh | Implementation for PostreSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/PostgreSQL
 db/sparksqlproc.sh  | Implementation for SparkSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/SparkSQL-Thrive
-db/jsqshproc.sh | Alternative solution for BigSQL, jsqsh
+db/jsqshproc.sh | Alternative solution for BigSQL, jsqsh | https://github.com/stanislawbartkowski/mytpcds/wiki/IBM-BigSQL,-jsqsh
 ptest.sh  | Starter for Throughout Test
 res | Expected result sets for Qualify Test
 run.sh | Launching script file
