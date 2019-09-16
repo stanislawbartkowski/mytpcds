@@ -301,6 +301,7 @@ A separate batch file *ptest.sh* should be launched to emulate one session. The 
 > ./ptest.sh 3
 ### Prepare the query streams.
 > ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/{directory} -DIALECT {dialect} -STREAMS 4 -sc 100<br>
+
 Example for DB2:<br>
 
 > ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/db2queries -DIALECT db2 -STREAMS 4 -sc 100<br>
