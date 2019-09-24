@@ -45,7 +45,7 @@ The tool consists of several simple bash and awk script files. The tool does not
 
 File | Description | Wiki
 ------------ | ------------- | ------
-db/db2proc.sh  | Implementation for DB2 and BigSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/DB2
+db/db2proc.sh  | Implementation for DB2 and BigSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/DB2<br>https://github.com/stanislawbartkowski/mytpcds/wiki/IBM-BigSQL
 db/hiveproc.sh | Implementation for Hive and SparkSQL Thrive | https://github.com/stanislawbartkowski/mytpcds/wiki/SparkSQL-Thrive
 db/netezzaproc.sh | Implementation for Netezza | https://github.com/stanislawbartkowski/mytpcds/wiki/Netezza
 db/phoenixproc.sh  | Implementation for HBase Phoenix (not working)
