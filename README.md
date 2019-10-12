@@ -43,23 +43,25 @@ Executable files are created. To create an input data set run the command *dsdge
 The following database servers are supported: PosgreSQL, MySQL (MariaDB), Oracle, DB2, Netezza, Hive, SparkSQL and IBM BigSQL.
 The tool consists of several simple bash and awk script files. The tool does not require any dependencies. 
 
-File | Description
------------- | -------------
-db2proc.sh  | Implementation for DB2 and BigSQL 
-hiveproc.sh | Implementation for Hive and SparkSQL Thrive
-netezzaproc.sh | Implementation for Netezza
-phoenixproc.sh  | Implementation for HBase Phoenix (not working)
+File | Description | Wiki
+------------ | ------------- | ------
+db/db2proc.sh  | Implementation for DB2 and BigSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/DB2<br>https://github.com/stanislawbartkowski/mytpcds/wiki/IBM-BigSQL
+db/hiveproc.sh | Implementation for Hive and SparkSQL Thrive | https://github.com/stanislawbartkowski/mytpcds/wiki/SparkSQL-Thrive
+db/netezzaproc.sh | Implementation for Netezza | https://github.com/stanislawbartkowski/mytpcds/wiki/Netezza
+db/phoenixproc.sh  | Implementation for HBase Phoenix (not working)
+db/mysqlproc.sh | Implementation for MySQL/MariaDB | https://github.com/stanislawbartkowski/mytpcds/wiki/MySQL
+db/oracleproc.sh  | Implementation for Oracle | https://github.com/stanislawbartkowski/mytpcds/wiki/Oracle
+db/psqlproc.sh | Implementation for PostreSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/PostgreSQL
+db/sparksqlproc.sh  | Implementation for SparkSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/SparkSQL-Thrive
+db/jsqshproc.sh | Alternative solution for BigSQL, jsqsh | https://github.com/stanislawbartkowski/mytpcds/wiki/IBM-BigSQL,-jsqsh
 ptest.sh  | Starter for Throughout Test
 res | Expected result sets for Qualify Test
 run.sh | Launching script file
 tpc.sh | Main tpc-ds test runner
 env | Configuration files for databases
-mysqlproc.sh | Implementation for MySQL/MariaDB
-oracleproc.sh  | Implementation for Oracle
-psqlproc.sh | Implementation for PostreSQL
-run1.sh  | Alternative launching script
-sparksqlproc.sh  | Implementation for SparkSQL
 transf.awk | AWK script file used to transform the results
+env.templates | Templates for configuration files
+sh.templates | Templates for lauch scripts
 
 ## The queries
 
@@ -299,6 +301,7 @@ A separate batch file *ptest.sh* should be launched to emulate one session. The 
 > ./ptest.sh 3
 ### Prepare the query streams.
 > ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/{directory} -DIALECT {dialect} -STREAMS 4 -sc 100<br>
+
 Example for DB2:<br>
 
 > ./dsqgen -VERBOSE Y -DIRECTORY ../query_templates -INPUT ../query_templates/templates.lst -OUTPUT_DIR ../work/db2queries -DIALECT db2 -STREAMS 4 -sc 100<br>
