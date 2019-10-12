@@ -7,6 +7,3 @@ HDFSPATH="/tmp/data"
 
 STOREDAS="stored as parquet"
 #STOREDAS="stored as orc"
-
-REQUIREDVARS="STOREDAS HDFSPATH SCHEMA"
-REQUIREDCOMMANDS=jsqsh

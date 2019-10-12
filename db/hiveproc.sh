@@ -19,3 +19,6 @@ runquery() {
 }
 
 verifycommand
+
+export REQUIREDCOMMANDS=beeline
+export REPLACEPIPES=X

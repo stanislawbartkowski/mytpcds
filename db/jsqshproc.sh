@@ -69,3 +69,6 @@ runquery() {
 
 export IFEXIST="IF EXISTS"
 export PURGE="PURGE"
+export REQUIREDVARS="STOREDAS HDFSPATH SCHEMA"
+export REQUIREDCOMMANDS=jsqsh
+

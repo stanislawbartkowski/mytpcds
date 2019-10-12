@@ -40,7 +40,8 @@ rundroptablescript() {
   prepareurl $num
   local -r TMP=`crtemp`
   echo "$DBE;" >$TMP
-  sed "s/;/ PURGE;/g" $script >>$TMP
+  cat $script >>$TMP
+#  sed "s/;/ PURGE;/g" $script >>$TMP
   runscript $TMP
 }
 
@@ -87,11 +88,11 @@ EOF
 }
 
 verifycommand() {
-  [ -z "$HDFSPATH" ] && logfail "Variable HDFSPATH not defined"
-  [ -z "$TENAME" ] && logfail "Variable TENAME not defined"
-  [ -z "$HIVEURL" ] && logfail "Variable HIVEURL not defined"
+  true
 }
 
 export IFEXIST="IF EXISTS"
 export REPLACEQUERYDAYSPROC=X
 export MODIFYALIAS=X
+export REQUIREDVARS="TENAME HIVEURL HDFSPATH STOREDAS"
+export PURGE="PURGE"
