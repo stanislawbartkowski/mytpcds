@@ -5,8 +5,7 @@ jsqsh_script() {
     echo "SET CURRENT SCHEMA $SCHEMA;" >$TMP
     cat $script >>$TMP
 
-    timeout $QUERYTIMEOUT jsqsh $DBNAME -v footers=false -v headers=false -i $TMP -o $OUTPUT 2>>$LOGFILE
-    if [ $? -ne 0 ]; then logfail "jsqsh failed"; fi
+    timeout $QUERYTIMEOUT xjsqsh $DBNAME -v footers=false -v headers=false -i $TMP -o $OUTPUT 2>>$LOGFILE
 }
 
 jsqsh_command() {
@@ -14,6 +13,7 @@ jsqsh_command() {
     local -r TMP=`crtemp`
     echo "$command" >$TMP
     jsqsh_script $TMP
+    if [ $? -ne 0 ]; then logfail "jsqsh failed"; fi
 }
 
 # ===========================

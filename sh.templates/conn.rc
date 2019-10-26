@@ -14,3 +14,4 @@ export ENV=env/postgresql
 #export ENV=env/mysql
 #export ENV=env/netezza
 #export ENV=env/derby
+export ENV=env/jsqsh
