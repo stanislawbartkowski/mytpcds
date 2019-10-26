@@ -5,7 +5,7 @@ jsqsh_script() {
     echo "SET CURRENT SCHEMA $SCHEMA;" >$TMP
     cat $script >>$TMP
 
-    timeout $QUERYTIMEOUT xjsqsh $DBNAME -v footers=false -v headers=false -i $TMP -o $OUTPUT 2>>$LOGFILE
+    timeout $QUERYTIMEOUT jsqsh $DBNAME -v footers=false -v headers=false -i $TMP -o $OUTPUT 2>>$LOGFILE
 }
 
 jsqsh_command() {
