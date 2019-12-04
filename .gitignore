@@ -6,3 +6,4 @@ ptest.sh
 conn*.rc
 TMP
 /env/*
+prepres/param.py
