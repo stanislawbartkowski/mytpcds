@@ -5,6 +5,7 @@ connect() {
   else
     db2 connect to $DBNAME
   fi
+  [ $? -eq 0 ] || return 4
   echo "-------------"
   if [ -n "$SCHEMA" ]; then
     db2 "set current schema=$SCHEMA"
