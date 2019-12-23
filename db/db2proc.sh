@@ -104,4 +104,4 @@ verifyvariables() {
   [ -z "$STOREDAS" ] && logfail "Variable STOREDAS not defined"
 }
 
-[ $DTYPEID = bigsql ] && verifyvariables
+[ "$DTYPEID" = "bigsql" ] && verifyvariables
