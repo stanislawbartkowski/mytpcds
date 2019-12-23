@@ -54,7 +54,7 @@ db/oracleproc.sh  | Implementation for Oracle | https://github.com/stanislawbart
 db/psqlproc.sh | Implementation for PostreSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/PostgreSQL
 db/sparksqlproc.sh  | Implementation for SparkSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/SparkSQL-Thrive
 db/jsqshproc.sh | Alternative solution for BigSQL, jsqsh | https://github.com/stanislawbartkowski/mytpcds/wiki/IBM-BigSQL,-jsqsh
-ptest.sh  | Starter for Throughout Test
+ptest.sh  | Starter for Throughput Test
 res | Expected result sets for Qualify Test
 run.sh | Launching script file
 tpc.sh | Main tpc-ds test runner
