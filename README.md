@@ -82,8 +82,8 @@ Database | Coverage
  Oracle | 100%
  MySQL/MariaDB | 87%
  PostgreSQL | 97%
- Hive | 49%
- SparkSQL | 94%
+ Hive 2.1 | 49%
+ SparkSQL 2.3 | 94%
  Netezza | 95%
  IBM BigSQL |  100%
 
