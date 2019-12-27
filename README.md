@@ -72,7 +72,7 @@ Not all queries are ready to execute out of the box. The TPC-DS specification al
 
 To avoid keeping a different version of queries for every database, I decided to make amendments on the fly. Most changes are related to date arithmetics like adding or subtracting a number of days or table aliases. I decided also to apply only changes possible to make through simple string or regular expression replacement.
 
-The changes are list in https://github.com/stanislawbartkowski/mytpcds/blob/master/tpc.sh script file, **runsinglequery** bash function.
+The changes are implemented in https://github.com/stanislawbartkowski/mytpcds/blob/master/tpc.sh script file, **runsinglequery** bash function.
 
 After that, I ended up with the following queries coverage.
 
