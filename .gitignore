@@ -9,4 +9,4 @@ TMP
 prepres/param.py
 tpcgraph/*svg
 tpcgraph/*png
-/*.pyc
+//*.pyc
