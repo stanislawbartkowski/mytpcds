@@ -7,3 +7,5 @@ conn*.rc
 TMP
 /env/*
 prepres/param.py
+tpcgraph/*svg
+tpcgraph/*png
