@@ -2,9 +2,8 @@ from util.readtable import readmd
 
 import matplotlib.pyplot as plt
 import numpy as np
-import mpld3
 
-def plotcoverage(tablename,title) :
+def plotcoverage(tablename,title="Query coverage") :
     ta=readmd(tablename) 
     (header,values) = ta.coveragechangetobar()
 
@@ -16,7 +15,7 @@ def plotcoverage(tablename,title) :
     plt.suptitle(title)
     plt.show()
 
-def plotpower(tablename,title="aaa") :
+def plotpower(tablename,title="TPC Power Test") :
     ta=readmd(tablename) 
     header,labels,values = ta.powerchangetobar()
     x = np.arange(len(header))  # the label locations
@@ -32,12 +31,13 @@ def plotpower(tablename,title="aaa") :
         ax.barh(startx + (sheight*i),v,sheight,label=label)
 
     ax.set_xlabel("Time in sec")
-    ax.set_title("Power Test")
+    ax.set_title(title)
     ax.set_yticks(x)
     ax.set_yticklabels(header)
     ax.legend()
 #    plt.savefig('foo.png')
-    plt.savefig("test.svg",format="svg")
+#    plt.savefig("test.svg",format="svg")
+    plt.subplots_adjust(left=0.07, right=0.99, top=0.98, bottom=0.05)
     plt.show()
     #mpld3.show()
 
