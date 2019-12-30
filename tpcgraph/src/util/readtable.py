@@ -4,6 +4,9 @@ from util.tablemd import TABLEMD
 
 PAGE="https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-DS-BigData-results.md"
 
+PAGERES="https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-BigData-Result-Tables.md"
+
+
 # including space
 TABLELABEL="<tablelabel "
 TABLE="table"
@@ -103,13 +106,17 @@ class READMD() :
       return None
          
 
-def __readmdwiki() :
-   response = urllib.request.urlopen(PAGE, timeout = 5)
+def __readmdwiki(page) :
+   response = urllib.request.urlopen(page, timeout = 5)
    data = response.read()     
    return data.decode('utf-8').splitlines()
 
+PAGETABLES = ["2"]
+
 def readmd(tablename) :
-    lines=__readmdwiki()
-    C = READMD(lines)
-    return C.go(tablename)
+   page = PAGERES
+   if tablename in PAGETABLES : page = PAGE
+   lines=__readmdwiki(page)
+   C = READMD(lines)
+   return C.go(tablename)
 

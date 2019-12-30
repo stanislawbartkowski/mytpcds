@@ -21,13 +21,20 @@ def readtest() :
    plt.show()
 
 def read1() :
-   plotcoverage("1","Query coverage")
+#   plotcoverage("1","Query coverage")
    plotpower("1","Query coverage")
+
 
 def read2test() :
    ta=readmd("1") 
    header,labels,values = ta.powerchangetobar()
    print(header,labels,values)
+
+def read3test() :
+   ta=readmd("2") 
+   header,labels,values = ta.putchangetobar()
+   print(header,labels,values)
+
 
 # ==================================   
 
@@ -126,12 +133,23 @@ def plottest2() :
    ax.set_xlabel('Performance')
    ax.set_title('How fast do you want to go today?')
    plt.subplots_adjust(left=0.1, right=0.99, top=0.99, bottom=0.1)
+#   plt.margins(*margins, x=None, y=None, tight=True)[source]
+   plt.margins(y=0)
 
    plt.show()   
+
+def read2() :
+   ta=readmd("2") 
+   print (ta)
+
 
 #plottest()   
 #read1()
 #plottest1()
-#plottest2()
-
+plottest2()
 #read2test()
+#read3test()
+
+
+
+

@@ -15,9 +15,7 @@ def plotcoverage(tablename,title="Query coverage") :
     plt.suptitle(title)
     plt.show()
 
-def plotpower(tablename,title="TPC Power Test") :
-    ta=readmd(tablename) 
-    header,labels,values = ta.powerchangetobar()
+def __plot(title,header,labels,values) :
     x = np.arange(len(header))  # the label locations
     height = 0.9 # height of the combined bar
     sheight = height / len(labels) # height of the single bar
@@ -34,12 +32,35 @@ def plotpower(tablename,title="TPC Power Test") :
     ax.set_title(title)
     ax.set_yticks(x)
     ax.set_yticklabels(header)
-    ax.legend()
+    #ax.legend()
+    ax.legend(reversed(plt.legend().legendHandles), reversed(labels))
 #    plt.savefig('foo.png')
 #    plt.savefig("test.svg",format="svg")
     plt.subplots_adjust(left=0.07, right=0.99, top=0.98, bottom=0.05)
+    plt.margins(y=0)
     plt.show()
-    #mpld3.show()
+
+
+def plotpower(tablename,title="TPC Power Test") :
+    ta=readmd(tablename) 
+    header,labels,values = ta.powerchangetobar()
+    __plot(title,header,labels,values)
+
+def plotput(tablename,title="TPC Throughput Test") :
+    ta=readmd(tablename) 
+    header,labels,val = ta.putchangetobar()
+    # temporary solution, transform put data to power data
+    values = []
+    for li in val :
+        v = [ sum(lis) for lis in li]
+        values.append(v)
+    __plot(title,header,labels,values)
+
+        
+
+
+
+
 
 
 
