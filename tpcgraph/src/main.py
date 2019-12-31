@@ -16,3 +16,11 @@ from util.plots import plotcoverage,plotpower,plotput
 #plotput("7") # figure_9
 
 plotput("8") # figure_10
+
+#plotpower("9") # figure_11
+
+#plotpower("10") # figure_12
+
+#plotput("11") # figure_13
+
+#plotput("12") # figure_14

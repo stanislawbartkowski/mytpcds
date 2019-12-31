@@ -8,7 +8,7 @@ class TABLEMD :
 #        for l in ls : re.append(l.strip())
         # remove the first column, always empty
         # check first column if empty
-        if re[0] == "" : re = re.pop()
+        if re[0] == "" : re = re[1:]
         # check the last column
         if re[len(re) -1 ] == "" : re = re[:len(re)-1]
         return re
