@@ -6,6 +6,9 @@ PAGE="https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-DS-BigData-results
 
 PAGERES="https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-BigData-Result-Tables.md"
 
+#PAGETABLES = ["2"]
+PAGETABLES = []
+
 
 # including space
 TABLELABEL="<tablelabel "
@@ -110,8 +113,6 @@ def __readmdwiki(page) :
    response = urllib.request.urlopen(page, timeout = 5)
    data = response.read()     
    return data.decode('utf-8').splitlines()
-
-PAGETABLES = ["2"]
 
 def readmd(tablename) :
    page = PAGERES

@@ -1,4 +1,5 @@
 from util.readtable import readmd
+from util.removeoutliers import removeoutliers
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,7 +16,9 @@ def plotcoverage(tablename,title="Query coverage") :
     plt.suptitle(title)
     plt.show()
 
+
 def __plot(title,header,labels,values) :
+    removeoutliers(header,values)
     x = np.arange(len(header))  # the label locations
     height = 0.9 # height of the combined bar
     sheight = height / len(labels) # height of the single bar

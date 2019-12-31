@@ -1,14 +1,17 @@
+import re
 
 class TABLEMD :
 
     def __split(self,line) :
         ls = line.split("|")
-        re = []
-        for l in ls : re.append(l.strip())
+        re = [l.strip() for l in ls ]
+#        for l in ls : re.append(l.strip())
         # remove the first column, always empty
         # check first column if empty
-        if re[0] == "" : return re[1:]
-        else: return re
+        if re[0] == "" : re = re.pop()
+        # check the last column
+        if re[len(re) -1 ] == "" : re = re[:len(re)-1]
+        return re
 
     def __transform(self,header,content) :
         self.header = self.__split(header)
@@ -86,6 +89,13 @@ class TABLEMD :
 
     def __trans(self,lr) :
         return [ lr[0] + ' ' + lr[1] + ' ' + lr[2] + ' ' + lr[3],lr[4],lr[5],lr[6]]
+
+    def __modifheader(self,lr) :
+        di = re.findall(r'\d+', lr[0])
+        s = 'q' + di[0] + ','
+        for i in range(1,len(di)-1) : s = s + di[i] + ','
+        lr[0] = s + di[len(di)-1]
+        return lr
         
     def putchangetobar(self) :
         """ Changes the data into horizontal bar, throughput results
@@ -97,7 +107,7 @@ class TABLEMD :
                 values : [[[67,34,77,88] ,[97,11,33,55],[99,11,23,56],....],[[45 ..],[88..],[99..],.....],[[23 ..],[45 ..],[23 ..].....]]
         """ 
         return self.__createlist(self.__trans(self.header),
-                                 lambda c : [int(v.strip()) for v in c.split(' ')],
+                                 lambda c : [int(v.strip()) for v in c.split()],
                                  lambda label : [ 0 for i in range(0,len(label))],
-                                 lambda lr : self.__trans(lr)
+                                 lambda lr : self.__modifheader(self.__trans(lr))
                                  )
