@@ -67,11 +67,11 @@ sh.templates | Templates for lauch scripts
 res | Refeence data set for Qualify Test
 qualification | Queries parameters used to run Qualify Test
 
-## Java query runner
+## Java Query Runner
 
-The queries can be executed by an appropriate command line tool. But to pass QUALIFY test, the output should match the reference answer result set. Because every tool comes with its own output format, it is not easy to find a common denominator for all databases. So I develeped a simple Java QueryRunner giving the same output format regardless of the database.<br>
+The queries can be executed by an appropriate command line tool. But to pass Qalify Test, the output should match the reference answer result set. Because every tool comes with its own output format, it is not easy to find a common denominator for all databases. So I develeped a simple Java QueryRunner giving the same output format regardless of the database.<br>
 
-**Build Java QueryRunner**
+**Build Java Query Runner**
 > cd cd RunQueries<br>
 > mvn package<br>
 The following directory structure should be created.
@@ -193,7 +193,13 @@ To prepare qualification queries:
 * Configure **conn.rc** and **env/{db}proc.sh** file
 * **run.sh** file, uncomment *./tpc.sh queryqualification* line and comment out all other *./tpc.sh* lines.
 * ./run.sh
-
+```
+qgen2 Query Generator (Version 2.11.0)
+Copyright Transaction Processing Performance Council (TPC) 2001 - 2019
+Warning: This scale factor is valid for QUALIFICATION ONLY
+Parsed 99 templates
+PASSED
+```
 
 ## Step 1, test the connection
 
