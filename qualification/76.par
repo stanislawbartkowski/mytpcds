@@ -1,0 +1,3 @@
+NULLCOLCS=cs_ship_addr_sk
+NULLCOLWS=ws_ship_customer_sk
+NULLCOLSS=ss_store_sk

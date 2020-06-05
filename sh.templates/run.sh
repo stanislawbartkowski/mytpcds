@@ -13,8 +13,10 @@ export TESTQUERY=32
 #export DONOTVERIFY=X
 export QUERYTIMEOUT=59m
 
+#./tpc.sh querystreams 
+#./tpc.sh queryqualification
 #./tpc.sh test
-#./tpc.sh removedata
+./tpc.sh removedata
 #./tpc.sh createtables
 #./tpc.sh loadtest
 #./tpc.sh testverify
@@ -22,5 +24,5 @@ export QUERYTIMEOUT=59m
 
 #./tpc.sh loaddata
 #./tpc.sh verifyload
-./tpc.sh runqueries
+#./tpc.sh runqueries
 if [ $? -ne 0 ]; then echo "FAILED"; else echo "PASSED"; fi

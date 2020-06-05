@@ -10,3 +10,4 @@ prepres/param.py
 tpcgraph/*svg
 tpcgraph/*png
 *.pyc
+param.py

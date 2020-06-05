@@ -1,10 +1,14 @@
-         1|ationcallyationable                               |callyeingbarcallyought
-         2|n stpripriese                                     |bareseationcallyought
-         3|oughtbaroughtanti                                 |barn stcallycally
-         4|ought                                             |eingoughtn stn st
-         5|prin stpriable                                    |callycallybarantiought
-         6|ableoughtcallyableought                           |
-         7|antin stese                                       |eseableablepriought
-         8|antioughtbarcallyought                            |ationoughtantianti
-         9|ablebarationought                                 |callyn stantieseought
-        10|callybaroughtableought                            |barcallyableought
+----------------------------------------------------------------------------------------------------------------------------
+|                 RNK|                                   BEST_PERFORMING|                                  WORST_PERFORMING|
+----------------------------------------------------------------------------------------------------------------------------
+|                   1|oughtantiprin st                                  |callyeingbarcallyought                            |
+|                   2|barcallyprioughtought                             |bareseationcallyought                             |
+|                   3|ableeingantiable                                  |barn stcallycally                                 |
+|                   4|n stesebarn st                                    |eingoughtn stn st                                 |
+|                   5|antioughtationbarought                            |callycallybarantiought                            |
+|                   6|callyeseationantiought                            |                                                  |
+|                   7|priableeseableought                               |eseableablepriought                               |
+|                   8|ableoughtableeseought                             |ationoughtantianti                                |
+|                   9|esebarableeseought                                |callyn stantieseought                             |
+|                  10|eingoughtn station                                |barcallyableought                                 |
+----------------------------------------------------------------------------------------------------------------------------

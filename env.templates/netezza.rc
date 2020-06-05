@@ -7,3 +7,7 @@ DBPASSWORD=secret
 DBHOST=netezza
 
 DTYPE=netezza
+
+DBURL="jdbc:netezza://$DBHOST:5480/$DBNAME"
+JAVADRIVER=/usr/local/nz/lib/nzjdbc3.jar
+

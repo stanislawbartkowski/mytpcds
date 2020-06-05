@@ -1,95 +1,92 @@
-AAAAAAAAAAABBAAA|Donald              |Brewer                        |Donald.Brewer@G3i53520XJvBdB.com
-AAAAAAAAAAICBAAA|Ronald              |Mitchell                      |Ronald.Mitchell@pnQlzt0R6Sxmm.edu
-AAAAAAAAAAJAAAAA|Jason               |Bullard                       |Jason.Bullard@kh6SfenKv.edu
-AAAAAAAAACCJAAAA|Benny               |Negron                        |Benny.Negron@C.org
-AAAAAAAAADFIBAAA|Christopher         |Bush                          |Christopher.Bush@J3hjjuoJ3e0ER.com
-AAAAAAAAAEDLAAAA|Willie              |Holmes                        |Willie.Holmes@YJJDzeba1MFdxy000n.com
-AAAAAAAAAKNFAAAA|Lisa                |Henry                         |Lisa.Henry@H02OkZLZO.edu
-AAAAAAAAAMMCBAAA|Aaron               |Roberts                       |Aaron.Roberts@dMhtAfxnDH7N.edu
-AAAAAAAAANENAAAA|                    |Miller                        |
-AAAAAAAAANKDAAAA|John                |Leach                         |John.Leach@d0XeMnDE7o.org
-AAAAAAAAAPBDBAAA|Charles             |Moreno                        |Charles.Moreno@8yL.org
-AAAAAAAAAPJABAAA|Graciela            |Lessard                       |Graciela.Lessard@EpImnU.org
-AAAAAAAABCBBAAAA|Brenda              |Sherry                        |Brenda.Sherry@8xLrrrH0ka.org
-AAAAAAAABDOBAAAA|Wilfred             |Wood                          |Wilfred.Wood@62gAYygQR3.org
-AAAAAAAABMDCAAAA|Sandra              |Galloway                      |Sandra.Galloway@TkQ073gOvOAGf8CBUQ.org
-AAAAAAAACHJJAAAA|Ruby                |Parker                        |Ruby.Parker@o28Zfc.edu
-AAAAAAAACPFIBAAA|Alejandro           |Grimes                        |Alejandro.Grimes@JhIa6.edu
-AAAAAAAADAPFBAAA|Cruz                |Curtis                        |Cruz.Curtis@cl3bMO2kjx5.com
-AAAAAAAADDNCBAAA|                    |Williams                      |Rebecca.Williams@RrHPqXMSVnrOCAPZOuU.edu
-AAAAAAAADHMBBAAA|Christinia          |Walker                        |Christinia.Walker@YgFssLlnLc.org
-AAAAAAAADHNAAAAA|Heather             |Patrick                       |Heather.Patrick@l8Pqtd0XVy.edu
-AAAAAAAADIJNAAAA|Scott               |Wofford                       |Scott.Wofford@FnaePT2hLV67.org
-AAAAAAAADKJDAAAA|Cheryl              |Clark                         |Cheryl.Clark@JE.com
-AAAAAAAADPJEAAAA|Amy                 |Kish                          |Amy.Kish@Rtjht4.com
-AAAAAAAAEDKBAAAA|Joshua              |Walters                       |Joshua.Walters@EaIhQ2txJPZrcV.org
-AAAAAAAAEIIABAAA|Leonard             |Roberts                       |Leonard.Roberts@JxfzrKznVv.org
-AAAAAAAAELAIAAAA|Nicholas            |Bourque                       |Nicholas.Bourque@8VoMohl.org
-AAAAAAAAELIIAAAA|Harold              |Lee                           |Harold.Lee@n.org
-AAAAAAAAFAIHBAAA|Everett             |Tate                          |Everett.Tate@YVNGz7Oq5lv.edu
-AAAAAAAAFAJDBAAA|Geneva              |Trapp                         |Geneva.Trapp@OfMqrcpKx4SQ9ur.com
-AAAAAAAAFDDEAAAA|Betty               |Hinson                        |Betty.Hinson@XVfhKEQuZLOKzXT.edu
-AAAAAAAAFDJFAAAA|John                |Reese                         |John.Reese@qDse4NIRgD.edu
-AAAAAAAAFEKGBAAA|Janet               |Loomis                        |Janet.Loomis@xtnZtd3z61.com
-AAAAAAAAFFNEAAAA|Kelsey              |Knowles                       |Kelsey.Knowles@smvX0.edu
-AAAAAAAAFHNEBAAA|Lorri               |Mcknight                      |Lorri.Mcknight@Glx.org
-AAAAAAAAFJIAAAAA|Jeffrey             |Bertram                       |Jeffrey.Bertram@6xd908anxSU.edu
-AAAAAAAAFMFOAAAA|Peggy               |Stevens                       |Peggy.Stevens@85N.com
-AAAAAAAAFNLKAAAA|                    |Rowell                        |Wayne.Rowell@I1.edu
-AAAAAAAAFPDBBAAA|Maxwell             |Wright                        |Maxwell.Wright@8j.com
-AAAAAAAAFPJOAAAA|Walter              |Hansen                        |Walter.Hansen@hx5g.edu
-AAAAAAAAGCPPAAAA|Fairy               |Guidry                        |Fairy.Guidry@ENOrn661brYsJMkG.com
-AAAAAAAAGECLAAAA|Rodney              |Seymore                       |Rodney.Seymore@JEydT.edu
-AAAAAAAAGFJNAAAA|Nathan              |Valles                        |Nathan.Valles@Xt42gIRmTvN.com
-AAAAAAAAGGGIAAAA|Eva                 |Navarro                       |Eva.Navarro@V9tCujgMf1EHL.edu
-AAAAAAAAGLJHBAAA|Glenn               |Horn                          |Glenn.Horn@uCt.org
-AAAAAAAAGNHBBAAA|William             |Quinones                      |William.Quinones@ITcRVd4SuQxttrsngd.org
-AAAAAAAAGOPPAAAA|Corey               |Santiago                      |Corey.Santiago@P0a5b86ugh.com
-AAAAAAAAHAKCAAAA|Lisa                |Cook                          |Lisa.Cook@naXMTqsxQkU.edu
-AAAAAAAAHBCBBAAA|Eddie               |Valdez                        |Eddie.Valdez@yMTOe.edu
-AAAAAAAAHDLHBAAA|Andrew              |Price                         |Andrew.Price@N7C06F.com
-AAAAAAAAHEDOAAAA|Chandra             |Ramirez                       |Chandra.Ramirez@3Epr5k.edu
-AAAAAAAAHEJFBAAA|Valerie             |Thomas                        |Valerie.Thomas@gbsOg5rQ.com
-AAAAAAAAHFLCBAAA|Helen               |                              |
-AAAAAAAAHHCHBAAA|Alex                |Black                         |Alex.Black@Fb.org
-AAAAAAAAHKFABAAA|Derek               |Ladd                          |Derek.Ladd@E0Bi5JlOFR.edu
-AAAAAAAAHMHDAAAA|Arcelia             |Jackson                       |Arcelia.Jackson@SeL2fxJ5YaH6oGbLU.org
-AAAAAAAAHOHCAAAA|Christopher         |Perez                         |Christopher.Perez@JuT.com
-AAAAAAAAIEHFBAAA|Meghan              |Mack                          |Meghan.Mack@T.org
-AAAAAAAAILLFAAAA|Jennifer            |Hernandez                     |Jennifer.Hernandez@kgXXbG9Yxsmy.edu
-AAAAAAAAIOOEAAAA|James               |Starr                         |James.Starr@vca15YR1IBhL.com
-AAAAAAAAJAGEBAAA|Christine           |Mcgee                         |Christine.Mcgee@Hj6dq.edu
-AAAAAAAAJCMMAAAA|David               |Robb                          |David.Robb@6s.com
-AAAAAAAAJOAIAAAA|Donna               |Lawson                        |Donna.Lawson@FXhCbYfGfeyi.org
-AAAAAAAAKAGNAAAA|Teresa              |James                         |Teresa.James@pB4Oat44i7C.com
-AAAAAAAAKANOAAAA|Samantha            |Sherman                       |Samantha.Sherman@YHvG0QabVnt8.edu
-AAAAAAAAKDAEBAAA|Dean                |Taggart                       |Dean.Taggart@Hm5pXtPMOYFtXtgL.com
-AAAAAAAAKGINAAAA|Vincent             |Darling                       |Vincent.Darling@tpk5qPp5e03uxXd.org
-AAAAAAAALAJDAAAA|Sheila              |Jones                         |Sheila.Jones@N6eRKt.edu
-AAAAAAAALFIGBAAA|John                |Chang                         |John.Chang@ovLStYRKZhKpvnA.org
-AAAAAAAALLACBAAA|Agnes               |Simons                        |Agnes.Simons@lUUfZEvliNb.com
-AAAAAAAALNDLAAAA|Isaac               |Haley                         |Isaac.Haley@dGZ0k6eAmtGV267.com
-AAAAAAAAMBCBAAAA|Cynthia             |Champion                      |Cynthia.Champion@oZMhQg5QLKIAlCK.org
-AAAAAAAAMDGGBAAA|Ronald              |Fortner                       |Ronald.Fortner@TEvmolV3DXGi.edu
-AAAAAAAAMHAEBAAA|Barbara             |Rose                          |Barbara.Rose@5q.edu
-AAAAAAAAMHBEAAAA|Al                  |Doyle                         |Al.Doyle@ChdEyflN.com
-AAAAAAAAMKBCBAAA|Martin              |Benedict                      |Martin.Benedict@N.edu
-AAAAAAAAMNDFAAAA|Justin              |Harding                       |Justin.Harding@EkSkP1Rny.com
-AAAAAAAANDKGAAAA|Sarah               |Bernier                       |Sarah.Bernier@iio4OLx.com
-AAAAAAAANJJKAAAA|Peter               |Peterson                      |Peter.Peterson@sy6hHEOI1e4.com
-AAAAAAAANPMBAAAA|Silvia              |                              |Silvia.Ruiz@cn1Ya.edu
-AAAAAAAAODLBAAAA|Jennifer            |Allen                         |Jennifer.Allen@cOFRb8qGAD6h.com
-AAAAAAAAOEJABAAA|Erika               |Winston                       |Erika.Winston@gmN0BzstjJtRlU.org
-AAAAAAAAOHBPAAAA|Anna                |Frantz                        |Anna.Frantz@srYnOl38o4efD.org
-AAAAAAAAOHKABAAA|Audrey              |Wallace                       |Audrey.Wallace@4oGVHLD0oZ53J.org
-AAAAAAAAOMPHBAAA|Kathryn             |Thomas                        |Kathryn.Thomas@3XlGG.edu
-AAAAAAAAOPKAAAAA|Michelle            |Scott                         |Michelle.Scott@zJ1zohTAqMOFc.edu
-AAAAAAAAOPPNAAAA|Al                  |Cooper                        |Al.Cooper@iU2qlAIPNAk8nj.com
-AAAAAAAAPBGHBAAA|Jonathan            |Gill                          |Jonathan.Gill@pgChIL5CBvYB.edu
-AAAAAAAAPDOMAAAA|Elvin               |Brown                         |Elvin.Brown@5o7pd3KY.edu
-AAAAAAAAPEEDAAAA|Lori                |Hicks                         |Lori.Hicks@Fs.com
-AAAAAAAAPENLAAAA|Donald              |Silver                        |Donald.Silver@ejUyJYFSS.com
-AAAAAAAAPGIDBAAA|Delores             |Hatcher                       |Delores.Hatcher@4sJJk.org
-AAAAAAAAPHBNAAAA|                    |Hays                          |James.Hays@qXg9mRlF78Hy9l.edu
-AAAAAAAAPLNNAAAA|Michael             |Burton                        |Michael.Burton@Y3qjakI.org
-AAAAAAAAPONIAAAA|Phyllis             |Davis                         |Phyllis.Davis@8j7.org
+---------------------------------------------------------------------------------------------------
+|     CUSTOMER_ID| CUSTOMER_FIRST_NAME|            CUSTOMER_LAST_NAME|CUSTOMER_PREFERRED_CUST_FLAG|
+---------------------------------------------------------------------------------------------------
+|AAAAAAAAAFGBBAAA|Howard              |Major                         |                           Y|
+|AAAAAAAAAMGDAAAA|Kenneth             |Harlan                        |                           Y|
+|AAAAAAAAAOPFBAAA|Jerry               |Fields                        |                           Y|
+|AAAAAAAABLEIBAAA|Paula               |Wakefield                     |                           Y|
+|AAAAAAAABNBBAAAA|Irma                |Smith                         |                           Y|
+|AAAAAAAACADPAAAA|Cristobal           |Thomas                        |                           Y|
+|AAAAAAAACFENAAAA|Christopher         |Dawson                        |                            |
+|AAAAAAAACIJMAAAA|Elizabeth           |Thomas                        |                           Y|
+|AAAAAAAACJDIAAAA|James               |Kerr                          |                           N|
+|AAAAAAAACNAGBAAA|Virginia            |May                           |                           N|
+|AAAAAAAADBEFBAAA|Bennie              |Bowers                        |                           N|
+|AAAAAAAADCKOAAAA|Robert              |Gonzalez                      |                           N|
+|AAAAAAAADFKABAAA|Latoya              |Craft                         |                           N|
+|AAAAAAAADIIOAAAA|David               |Carroll                       |                           Y|
+|AAAAAAAADIJGBAAA|Ruth                |Sanders                       |                           N|
+|AAAAAAAADLHBBAAA|Henry               |Bertrand                      |                           N|
+|AAAAAAAAEADJAAAA|Ruth                |Carroll                       |                           N|
+|AAAAAAAAEJDLAAAA|Alice               |Wright                        |                           N|
+|AAAAAAAAEKFPAAAA|Annika              |Chin                          |                           N|
+|AAAAAAAAEKJLAAAA|Aisha               |Carlson                       |                           Y|
+|AAAAAAAAEPOGAAAA|Felisha             |Mendes                        |                           Y|
+|AAAAAAAAFACEAAAA|Priscilla           |Miller                        |                           N|
+|AAAAAAAAFBAHAAAA|Michael             |Williams                      |                           N|
+|AAAAAAAAFGIGAAAA|Eduardo             |Miller                        |                           Y|
+|AAAAAAAAFGPGAAAA|Albert              |Wadsworth                     |                           Y|
+|AAAAAAAAFMHIAAAA|Emilio              |Darling                       |                           Y|
+|AAAAAAAAFOGIAAAA|Michelle            |Greene                        |                           N|
+|AAAAAAAAFOJAAAAA|Don                 |Castillo                      |                           Y|
+|AAAAAAAAGEHIAAAA|Tyler               |Miller                        |                           N|
+|AAAAAAAAGHPBBAAA|Nick                |Mendez                        |                           Y|
+|AAAAAAAAGNDAAAAA|Terry               |Mcdowell                      |                           N|
+|AAAAAAAAHGOABAAA|Sonia               |White                         |                           N|
+|AAAAAAAAHHCABAAA|William             |Stewart                       |                           Y|
+|AAAAAAAAHJLAAAAA|Audrey              |Beltran                       |                           Y|
+|AAAAAAAAHMJNAAAA|Ryan                |Baptiste                      |                           Y|
+|AAAAAAAAHMOIAAAA|Grace               |Henderson                     |                           N|
+|AAAAAAAAIADEBAAA|Diane               |Aldridge                      |                           N|
+|AAAAAAAAIBAEBAAA|Sandra              |Wilson                        |                           N|
+|AAAAAAAAIBFCBAAA|Ruth                |Grantham                      |                           N|
+|AAAAAAAAIBHHAAAA|Jennifer            |Ballard                       |                           Y|
+|AAAAAAAAICHFAAAA|Linda               |Mccoy                         |                           N|
+|AAAAAAAAIDKFAAAA|Michael             |Mack                          |                           N|
+|AAAAAAAAIJEMAAAA|Charlie             |Cummings                      |                           Y|
+|AAAAAAAAIMHBAAAA|Kathy               |Knowles                       |                           N|
+|AAAAAAAAIMHHBAAA|Lillian             |Davidson                      |                           Y|
+|AAAAAAAAJDBLAAAA|Melvin              |Taylor                        |                           Y|
+|AAAAAAAAJEKFBAAA|Norma               |Burkholder                    |                           N|
+|AAAAAAAAJGMMAAAA|Richard             |Larson                        |                           Y|
+|AAAAAAAAJIALAAAA|Santos              |Gutierrez                     |                           N|
+|AAAAAAAAJKBNAAAA|Julie               |Kern                          |                           N|
+|AAAAAAAAJMHLAAAA|Wanda               |Ryan                          |                           Y|
+|AAAAAAAAJONHBAAA|Warren              |Orozco                        |                           N|
+|AAAAAAAAJPINAAAA|Rose                |Waite                         |                           Y|
+|AAAAAAAAKAECAAAA|Milton              |Mackey                        |                           N|
+|AAAAAAAAKAPPAAAA|Karen               |Parker                        |                           Y|
+|AAAAAAAAKJBKAAAA|Georgia             |Scott                         |                           N|
+|AAAAAAAAKJBLAAAA|Kerry               |Davis                         |                           Y|
+|AAAAAAAAKKGEAAAA|Katie               |Dunbar                        |                           N|
+|AAAAAAAAKLHHBAAA|Manuel              |Castaneda                     |                           N|
+|AAAAAAAAKNAKAAAA|Gladys              |Banks                         |                           N|
+|AAAAAAAALFKKAAAA|Ignacio             |Miller                        |                           Y|
+|AAAAAAAALHMCAAAA|Brooke              |Nelson                        |                           Y|
+|AAAAAAAALIOPAAAA|Derek               |Allen                         |                           Y|
+|AAAAAAAALJNCBAAA|George              |Gamez                         |                           Y|
+|AAAAAAAAMDCAAAAA|Louann              |Hamel                         |                           Y|
+|AAAAAAAAMFFLAAAA|Margret             |Gray                          |                           Y|
+|AAAAAAAAMMOBBAAA|Margaret            |Smith                         |                           N|
+|AAAAAAAANFBDBAAA|Vernice             |Fernandez                     |                           Y|
+|AAAAAAAANGDBBAAA|Carlos              |Jewell                        |                           N|
+|AAAAAAAANIPLAAAA|Eric                |Lawrence                      |                           Y|
+|AAAAAAAANJAGAAAA|Allen               |Hood                          |                           Y|
+|AAAAAAAANJHCBAAA|Christopher         |Schreiber                     |                           N|
+|AAAAAAAANJOLAAAA|Debra               |Underwood                     |                           Y|
+|AAAAAAAAOBADBAAA|Elizabeth           |Burnham                       |                           N|
+|AAAAAAAAOCAJAAAA|Jenna               |Staton                        |                           N|
+|AAAAAAAAOCLBBAAA|                    |                              |                            |
+|AAAAAAAAODMMAAAA|Gayla               |Cline                         |                           N|
+|AAAAAAAAOFLCAAAA|James               |Taylor                        |                           N|
+|AAAAAAAAOPDLAAAA|Ann                 |Pence                         |                           N|
+|AAAAAAAAPDFBAAAA|Terrance            |Banks                         |                           Y|
+|AAAAAAAAPEHEBAAA|Edith               |Molina                        |                           Y|
+|AAAAAAAAPFCLAAAA|Felicia             |Neville                       |                           N|
+|AAAAAAAAPICEAAAA|Jennifer            |Cortez                        |                           Y|
+|AAAAAAAAPJENAAAA|Ashley              |Norton                        |                           Y|
+|AAAAAAAAPKBCBAAA|Andrea              |White                         |                           N|
+|AAAAAAAAPKIKAAAA|Wendy               |Horvath                       |                           Y|
+|AAAAAAAAPMMBBAAA|Paul                |Jordan                        |                           N|
+|AAAAAAAAPPIBBAAA|Candice             |Lee                           |                           Y|
+---------------------------------------------------------------------------------------------------

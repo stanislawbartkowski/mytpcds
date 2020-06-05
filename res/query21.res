@@ -1,100 +1,104 @@
-Bad cards must make.|AAAAAAAAAALAAAAA|      3010|      2978
-Bad cards must make.|AAAAAAAAAAOCAAAA|      2596|      2113
-Bad cards must make.|AAAAAAAAABBDAAAA|      2414|      2928
-Bad cards must make.|AAAAAAAAACHCAAAA|      1419|      1650
-Bad cards must make.|AAAAAAAAACKCAAAA|      2011|      2604
-Bad cards must make.|AAAAAAAAACPDAAAA|      1853|      1376
-Bad cards must make.|AAAAAAAAADKBAAAA|      2077|      2513
-Bad cards must make.|AAAAAAAAAEOCAAAA|      2390|      2380
-Bad cards must make.|AAAAAAAAAFADAAAA|      1198|      1401
-Bad cards must make.|AAAAAAAAAFPCAAAA|      2323|      3429
-Bad cards must make.|AAAAAAAAAHHAAAAA|      2038|      1439
-Bad cards must make.|AAAAAAAAAHJBAAAA|      2844|      2278
-Bad cards must make.|AAAAAAAAAIECAAAA|      2839|      3614
-Bad cards must make.|AAAAAAAAAJACAAAA|      2119|      2855
-Bad cards must make.|AAAAAAAAAKAAAAAA|      2811|      2812
-Bad cards must make.|AAAAAAAAALECAAAA|      3385|      2516
-Bad cards must make.|AAAAAAAAALJCAAAA|      1993|      2772
-Bad cards must make.|AAAAAAAAAMBEAAAA|      2516|      3405
-Bad cards must make.|AAAAAAAAAOIBAAAA|      2233|      1843
-Bad cards must make.|AAAAAAAAAPLAAAAA|      2822|      1996
-Bad cards must make.|AAAAAAAAAPLDAAAA|      2655|      2282
-Bad cards must make.|AAAAAAAABAPDAAAA|      2418|      2398
-Bad cards must make.|AAAAAAAABDCEAAAA|      2429|      1904
-Bad cards must make.|AAAAAAAABDDDAAAA|      1327|      1402
-Bad cards must make.|AAAAAAAABDJAAAAA|      1465|      2094
-Bad cards must make.|AAAAAAAABIDBAAAA|       727|       619
-Bad cards must make.|AAAAAAAABIGBAAAA|      1798|      2283
-Bad cards must make.|AAAAAAAABIJBAAAA|      1928|      2164
-Bad cards must make.|AAAAAAAABJFEAAAA|      1867|      2782
-Bad cards must make.|AAAAAAAABKFAAAAA|      2516|      2328
-Bad cards must make.|AAAAAAAABLDEAAAA|      2027|      2845
-Bad cards must make.|AAAAAAAABNIDAAAA|      2769|      2208
-Bad cards must make.|AAAAAAAABNLAAAAA|      2365|      2542
-Bad cards must make.|AAAAAAAABNLDAAAA|      2230|      2889
-Bad cards must make.|AAAAAAAABNMCAAAA|      2599|      2104
-Bad cards must make.|AAAAAAAABOMBAAAA|      2324|      2048
-Bad cards must make.|AAAAAAAACAAAAAAA|      2144|      2544
-Bad cards must make.|AAAAAAAACAADAAAA|      2813|      2831
-Bad cards must make.|AAAAAAAACABEAAAA|      1909|      2428
-Bad cards must make.|AAAAAAAACBDEAAAA|      1935|      1796
-Bad cards must make.|AAAAAAAACBFAAAAA|      2895|      2027
-Bad cards must make.|AAAAAAAACBGEAAAA|      2695|      1992
-Bad cards must make.|AAAAAAAACBIAAAAA|      2971|      2999
-Bad cards must make.|AAAAAAAACBJBAAAA|      1924|      2008
-Bad cards must make.|AAAAAAAACBNAAAAA|      2625|      3030
-Bad cards must make.|AAAAAAAACCABAAAA|      2123|      1764
-Bad cards must make.|AAAAAAAACCHDAAAA|      2392|      2296
-Bad cards must make.|AAAAAAAACDIDAAAA|      1528|      2029
-Bad cards must make.|AAAAAAAACEICAAAA|      1921|      2009
-Bad cards must make.|AAAAAAAACELDAAAA|      2386|      3199
-Bad cards must make.|AAAAAAAACEMBAAAA|      2213|      2617
-Bad cards must make.|AAAAAAAACFAAAAAA|      1846|      1257
-Bad cards must make.|AAAAAAAACFEAAAAA|      1839|      1237
-Bad cards must make.|AAAAAAAACFHDAAAA|      1658|      1440
-Bad cards must make.|AAAAAAAACGCDAAAA|      1614|      2198
-Bad cards must make.|AAAAAAAACGMCAAAA|      2696|      3460
-Bad cards must make.|AAAAAAAACGNBAAAA|      1807|      1856
-Bad cards must make.|AAAAAAAACGOAAAAA|      2287|      2188
-Bad cards must make.|AAAAAAAACHEAAAAA|      1491|      2119
-Bad cards must make.|AAAAAAAACHHAAAAA|      2440|      2634
-Bad cards must make.|AAAAAAAACHNAAAAA|      2451|      3088
-Bad cards must make.|AAAAAAAACHPCAAAA|      2267|      1609
-Bad cards must make.|AAAAAAAACIPDAAAA|      1384|      1961
-Bad cards must make.|AAAAAAAACJCBAAAA|      2656|      2396
-Bad cards must make.|AAAAAAAACJHBAAAA|      2066|      2259
-Bad cards must make.|AAAAAAAACKHAAAAA|      1438|      1545
-Bad cards must make.|AAAAAAAACLAEAAAA|      2286|      3066
-Bad cards must make.|AAAAAAAACLKAAAAA|      2836|      2947
-Bad cards must make.|AAAAAAAACMADAAAA|      2150|      1991
-Bad cards must make.|AAAAAAAACMFDAAAA|      1830|      2397
-Bad cards must make.|AAAAAAAACMJAAAAA|      2847|      3353
-Bad cards must make.|AAAAAAAACMPDAAAA|      2345|      2813
-Bad cards must make.|AAAAAAAACNBBAAAA|      2484|      3533
-Bad cards must make.|AAAAAAAACNFAAAAA|      2558|      2070
-Bad cards must make.|AAAAAAAACOMAAAAA|      2348|      2390
-Bad cards must make.|AAAAAAAADCBEAAAA|      1526|      2093
-Bad cards must make.|AAAAAAAADCPCAAAA|      1627|      1941
-Bad cards must make.|AAAAAAAADDHAAAAA|      2326|      3162
-Bad cards must make.|AAAAAAAADDNDAAAA|      3006|      3095
-Bad cards must make.|AAAAAAAADEAAAAAA|      1947|      1947
-Bad cards must make.|AAAAAAAADEJAAAAA|      2106|      3157
-Bad cards must make.|AAAAAAAADEJDAAAA|      2455|      2130
-Bad cards must make.|AAAAAAAADFLDAAAA|      2522|      2641
-Bad cards must make.|AAAAAAAADGCCAAAA|      2119|      1706
-Bad cards must make.|AAAAAAAADGFCAAAA|      2333|      2281
-Bad cards must make.|AAAAAAAADGGBAAAA|      1873|      2423
-Bad cards must make.|AAAAAAAADGHAAAAA|      1370|      1295
-Bad cards must make.|AAAAAAAADHPAAAAA|      2216|      2959
-Bad cards must make.|AAAAAAAADIDCAAAA|      2565|      3553
-Bad cards must make.|AAAAAAAADKPDAAAA|      2275|      2357
-Bad cards must make.|AAAAAAAADMDBAAAA|      2309|      2600
-Bad cards must make.|AAAAAAAADNLBAAAA|      2025|      2283
-Bad cards must make.|AAAAAAAAEAMAAAAA|      2465|      1789
-Bad cards must make.|AAAAAAAAEBDCAAAA|      1510|      2017
-Bad cards must make.|AAAAAAAAEBGCAAAA|      1824|      1841
-Bad cards must make.|AAAAAAAAECDEAAAA|      2209|      2334
-Bad cards must make.|AAAAAAAAECGCAAAA|      2473|      2355
-Bad cards must make.|AAAAAAAAEDOCAAAA|      3030|      3193
-Bad cards must make.|AAAAAAAAEEACAAAA|      2402|      2926
-Bad cards must make.|AAAAAAAAEEBEAAAA|      1936|      2127
+-------------------------------------------------------------------------------------------------------------------------
+|W_WAREHOUSE_NAME    |       I_ITEM_ID|                              INV_BEFORE|                               INV_AFTER|
+-------------------------------------------------------------------------------------------------------------------------
+|                    |AAAAAAAAAABDAAAA|                                    2565|                                    1922|
+|                    |AAAAAAAAAAHDAAAA|                                    2956|                                    2052|
+|                    |AAAAAAAAAALAAAAA|                                    2042|                                    1793|
+|                    |AAAAAAAAABDAAAAA|                                    3340|                                    2626|
+|                    |AAAAAAAAACGCAAAA|                                    2373|                                    1771|
+|                    |AAAAAAAAACKCAAAA|                                    2321|                                    1856|
+|                    |AAAAAAAAACOBAAAA|                                    1504|                                    1397|
+|                    |AAAAAAAAADKBAAAA|                                    1820|                                    2163|
+|                    |AAAAAAAAAEADAAAA|                                    2631|                                    1965|
+|                    |AAAAAAAAAEOCAAAA|                                    1659|                                    1798|
+|                    |AAAAAAAAAFACAAAA|                                    1965|                                    1705|
+|                    |AAAAAAAAAFADAAAA|                                    1769|                                    1313|
+|                    |AAAAAAAAAHDEAAAA|                                    2700|                                    1985|
+|                    |AAAAAAAAAHHAAAAA|                                    1578|                                    1082|
+|                    |AAAAAAAAAIECAAAA|                                    1756|                                    1804|
+|                    |AAAAAAAAAIMCAAAA|                                    3603|                                    2951|
+|                    |AAAAAAAAAJACAAAA|                                    2109|                                    1989|
+|                    |AAAAAAAAAJKBAAAA|                                    2573|                                    3540|
+|                    |AAAAAAAAALBEAAAA|                                    3458|                                    2992|
+|                    |AAAAAAAAALCEAAAA|                                    1720|                                    1810|
+|                    |AAAAAAAAALECAAAA|                                    2569|                                    1946|
+|                    |AAAAAAAAALNBAAAA|                                    2552|                                    1750|
+|                    |AAAAAAAAANFEAAAA|                                    2022|                                    2269|
+|                    |AAAAAAAAAOBBAAAA|                                    1603|                                    1592|
+|                    |AAAAAAAAAOIBAAAA|                                    2982|                                    2540|
+|                    |AAAAAAAAAPJBAAAA|                                    2344|                                    2593|
+|                    |AAAAAAAABAPDAAAA|                                    2182|                                    2787|
+|                    |AAAAAAAABDCEAAAA|                                    2844|                                    2069|
+|                    |AAAAAAAABDDDAAAA|                                    2417|                                    2537|
+|                    |AAAAAAAABDJAAAAA|                                    1584|                                    1666|
+|                    |AAAAAAAABEODAAAA|                                    2141|                                    2649|
+|                    |AAAAAAAABFCCAAAA|                                    2745|                                    2020|
+|                    |AAAAAAAABFMBAAAA|                                    1642|                                    1364|
+|                    |AAAAAAAABHPCAAAA|                                    1923|                                    1780|
+|                    |AAAAAAAABIDBAAAA|                                    1956|                                    2836|
+|                    |AAAAAAAABIGBAAAA|                                    2023|                                    2344|
+|                    |AAAAAAAABIJBAAAA|                                    1977|                                    2728|
+|                    |AAAAAAAABJFEAAAA|                                    1891|                                    2390|
+|                    |AAAAAAAABLDEAAAA|                                    1983|                                    1797|
+|                    |AAAAAAAABNIDAAAA|                                    2485|                                    2324|
+|                    |AAAAAAAABNLDAAAA|                                    2385|                                    2786|
+|                    |AAAAAAAABOMBAAAA|                                    2291|                                    2092|
+|                    |AAAAAAAACAAAAAAA|                                    2233|                                    2560|
+|                    |AAAAAAAACBCDAAAA|                                    1540|                                    2012|
+|                    |AAAAAAAACBIAAAAA|                                    2394|                                    2122|
+|                    |AAAAAAAACBPBAAAA|                                    1790|                                    1661|
+|                    |AAAAAAAACCMDAAAA|                                    2654|                                    2691|
+|                    |AAAAAAAACDBCAAAA|                                    1804|                                    2072|
+|                    |AAAAAAAACFEAAAAA|                                    1941|                                    1567|
+|                    |AAAAAAAACFHDAAAA|                                    1696|                                    1147|
+|                    |AAAAAAAACGFDAAAA|                                    2123|                                    2265|
+|                    |AAAAAAAACHPCAAAA|                                    2933|                                    2174|
+|                    |AAAAAAAACIGDAAAA|                                    2618|                                    2399|
+|                    |AAAAAAAACJCBAAAA|                                    2728|                                    2367|
+|                    |AAAAAAAACJLAAAAA|                                    1350|                                    1732|
+|                    |AAAAAAAACLAEAAAA|                                    2578|                                    2329|
+|                    |AAAAAAAACLGAAAAA|                                    1842|                                    1588|
+|                    |AAAAAAAACLLBAAAA|                                    3418|                                    2657|
+|                    |AAAAAAAACLOBAAAA|                                    3115|                                    2560|
+|                    |AAAAAAAACMADAAAA|                                    1991|                                    2243|
+|                    |AAAAAAAACMJAAAAA|                                    1261|                                    1855|
+|                    |AAAAAAAACMLAAAAA|                                    3288|                                    2753|
+|                    |AAAAAAAACMPDAAAA|                                    1320|                                    1676|
+|                    |AAAAAAAACNGBAAAA|                                    2340|                                    2118|
+|                    |AAAAAAAACNHDAAAA|                                    3519|                                    3348|
+|                    |AAAAAAAACNPCAAAA|                                    2561|                                    1948|
+|                    |AAAAAAAADCPCAAAA|                                    2664|                                    2627|
+|                    |AAAAAAAADDHAAAAA|                                    1313|                                    1926|
+|                    |AAAAAAAADDNDAAAA|                                    1109|                                     835|
+|                    |AAAAAAAADEAAAAAA|                                    2141|                                    1847|
+|                    |AAAAAAAADEJAAAAA|                                    3142|                                    2723|
+|                    |AAAAAAAADFKBAAAA|                                    1470|                                    1650|
+|                    |AAAAAAAADGCCAAAA|                                    2113|                                    2331|
+|                    |AAAAAAAADGFCAAAA|                                    2201|                                    2928|
+|                    |AAAAAAAADHPAAAAA|                                    2467|                                    2133|
+|                    |AAAAAAAADMBAAAAA|                                    3085|                                    2087|
+|                    |AAAAAAAADPABAAAA|                                    3494|                                    3081|
+|                    |AAAAAAAAEAECAAAA|                                    2133|                                    2148|
+|                    |AAAAAAAAEAPAAAAA|                                    1560|                                    1275|
+|                    |AAAAAAAAECGCAAAA|                                    2815|                                    3307|
+|                    |AAAAAAAAEDPDAAAA|                                    2731|                                    1883|
+|                    |AAAAAAAAEEECAAAA|                                    2024|                                    1902|
+|                    |AAAAAAAAEEMCAAAA|                                    2624|                                    2387|
+|                    |AAAAAAAAEFFAAAAA|                                    2047|                                    1878|
+|                    |AAAAAAAAEGJAAAAA|                                    2403|                                    2633|
+|                    |AAAAAAAAEGMAAAAA|                                    2784|                                    2772|
+|                    |AAAAAAAAEGOCAAAA|                                    2389|                                    1753|
+|                    |AAAAAAAAEHFDAAAA|                                    1940|                                    1420|
+|                    |AAAAAAAAEHLBAAAA|                                    2320|                                    2057|
+|                    |AAAAAAAAEHPAAAAA|                                    1898|                                    1853|
+|                    |AAAAAAAAEIPBAAAA|                                    2930|                                    2326|
+|                    |AAAAAAAAEJAEAAAA|                                    2582|                                    1836|
+|                    |AAAAAAAAEJIBAAAA|                                    2257|                                    1681|
+|                    |AAAAAAAAEJJAAAAA|                                    2791|                                    1941|
+|                    |AAAAAAAAEJJDAAAA|                                    3410|                                    2405|
+|                    |AAAAAAAAEJNCAAAA|                                    2472|                                    2067|
+|                    |AAAAAAAAEJPDAAAA|                                    1219|                                    1229|
+|                    |AAAAAAAAEKEBAAAA|                                    2047|                                    1713|
+|                    |AAAAAAAAEMEAAAAA|                                    2502|                                    1897|
+|                    |AAAAAAAAEMKCAAAA|                                    2362|                                    2042|
+-------------------------------------------------------------------------------------------------------------------------

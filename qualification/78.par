@@ -1,0 +1,2 @@
+YEAR=2000
+SELECTONE=ss_sold_year, ss_item_sk, ss_customer_sk

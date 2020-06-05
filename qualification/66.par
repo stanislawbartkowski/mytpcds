@@ -1,0 +1,8 @@
+SALESTWO=cs_sales_price
+SALESONE=ws_ext_sales_price
+NETTWO=cs_net_paid_inc_tax
+NETONE=ws_net_paid
+SMC.1=DHL
+SMC.2=BARIAN
+TIMEONE=30838
+YEAR=2001

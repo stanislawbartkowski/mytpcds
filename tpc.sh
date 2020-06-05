@@ -34,7 +34,9 @@ removetemp() {
 [ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
 mkdir -p $TEMPDIR
+source db/jdbcproc.sh
 source db/${DTYPE}proc.sh
+source proc/queries.sh
 
 # ---------------------
 
@@ -183,6 +185,8 @@ required_listofcommands() {
 
 verify() {
 
+  local -r VERQ=$1
+
   DTYPEID=${DTYPEID:-$DTYPE}
   LOGDIR=${LOGDIR:-$TEMPDIR/${DTYPEID}log}
 
@@ -211,12 +215,10 @@ verify() {
 
   required_listofvars "RESQUERYDIR RESULTDIRECTORY TCPDATA RESFILE0"
 
-#  [ -z "$RESQUERYDIR" ] && logfail "Variable RESQUERYDIR not defined"
-#  [ -z "$RESULTDIRECTORY" ] && logfail "Variable RESULTDIRECTORY not defined"
-#  [ -z "$TCPDATA" ] && logfail "Variable TCPDATA not defined"
-#  [ -z "$RESFILE0" ] && logfail "Variable RESFILE0 not defined"
   [ -f $TCPDS ] || logfail "$TCPDS does not exist"
-  [ -f $TCPQ0 ] || logfail "$TCPQ0 does not exist"
+  if [ $VERQ -eq 1 ]; then 
+     [ -f $TCPQ0 ] || logfail "$TCPQ0 does not exist"
+  fi
   [ -d $TCPDATA ] || logfail "$TCPDATA directory does not exist"
   [ -d $RESQUERYDIR ] || logfail "$RESQUERYDIR directory does not exist"
 
@@ -227,16 +229,36 @@ verify() {
 testdbconnection() {
   testconnection >>$LOGFILE
   [ $? -eq 0 ] || logfail "Cannot connect to database"
+  if [ -n "$DBURL" ]; then
+    testjdbcconnection
+  fi
 }
 
+getqueryname() {
+  local TPLNAME=`grep -o  "[^ ]*\.tpl" $1`
+  local QUERY=`basename -s.tpl $TPLNAME`
+  echo $QUERY
+}
 
 preparequery() {
-  mkdir -p $TMPQ
-  rm -f $TMPQ/*
-  cd $TMPQ
+  local -r TEMPD=`mktemp -d`
+  mkdir -p $TEMPD
+  cd $TEMPD
   csplit --suppress-matched  $TCPQ0 "/-- end query/" "{*}" -f query
   # remove 0
-  find $TMPQ -size  0 -exec rm {} \;
+  find $TEMPD -size  0 -exec rm {} \;
+
+  # now move files to TMPQ according to template name
+  rm -f $TMPQ/*
+  mkdir -p $TMPQ
+
+  for f in $TEMPD/query*
+  do
+   QUERY=`getqueryname $f`
+   cp $f $TMPQ/$QUERY
+  done
+  rm -rf $TEMPD
+  cd $STARTPWD
 }
 
 compactresult() {
@@ -260,7 +282,7 @@ compactresult() {
                 # run twice the same, can overlap
 #                sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" | sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" |
 
-   awk -f $STARTPWD/transf.awk
+   awk -f $STARTPWD/proc/transf.awk
 
 }
 
@@ -281,12 +303,12 @@ resultline() {
 runsinglequery() {
   local qfile=$TMPQ/$1
   [ -f $qfile ] || logfail "$qfile does not exist"
-  local TPLNAME=`grep -o  "[^ ]*\.tpl" $qfile`
-  local QUERY=`basename -s.tpl $TPLNAME`
+  local -r QUERY=`getqueryname $qfile`
+  local -r TPLNAME=$QUERY.tpl
   RESULTSET=$RESULTDIRECTORY/$QUERY.res
   rm -f $RESULTSET
 
-  if [[ "$SKIPQUERY" =~ .*$QUERY.* ]]; then
+  if [[ "$SKIPQUERY" =~ .*${TPLNAME}.* ]]; then
     mess="$1 | $QUERY | SKIPPED"
     log "$mess"
     echo $mess >>$RESFILE0
@@ -295,10 +317,10 @@ runsinglequery() {
   [ $STREAMNO -eq 0 ] && log "$qfile  started ..."
   [ $STREAMNO -ne 0 ] && log "$STREAMNO $qfile  started ..."
   [ -f $qfile ] || logfail "Query $qfile does not exist"
-  local TMP=`mktemp`
-  local TMP1=`mktemp`
-  local TMP2=`mktemp`
-  local TMP3=`mktemp`
+  local TMP=`crtemp`
+  local TMP1=`crtemp`
+  local TMP2=`crtemp`
+  local TMP3=`crtemp`
 
   sed "s/c_last_review_date_sk/c_last_review_date/gi" $qfile |
     # remove space between cast and ( (MySQL)
@@ -406,12 +428,6 @@ runsinglequery() {
     log "Number of lines received $RESLINES"
     if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess $DELIM NUMBER OF LINES MATCHES"; else mess="$mess $DELIM NUMBER OF LINES DIFFERS"; fi
   fi
-  rm $TMP
-  rm $TMP1
-  rm $TMP2
-  rm $TMP3
-#  echo $TMP2
-#  echo $TMP3
 
 # uncomment for debugging
 #  cat $RESULTSET >>$LOGFILE
@@ -456,6 +472,8 @@ printhelp() {
   log "    loaddata : load data"
   log "    verifyload : verify load "
   log "    runqueries : runqueries"
+  log "   querystreams : query streams"
+  log "   queryqualification : qualification queries"
   log " -- TEST"
   log "    test : test connection"
   log "    loadtest : load a single table as a test"
@@ -464,22 +482,47 @@ printhelp() {
   log "    removedata : drop all tables"
 }
 
+main() {
+  case $1 in
+    querystreams) producestreams;;
+    queryqualification) producequalification;;
+    test) testdbconnection;;
+    createtables) droptables;;
+    loaddata) loaddata;;
+    loadtest) loaddatatest;;
+    verifyload) verifyallload;;
+    testverify) testverify;;
+    testquery) testquery;;
+    runqueries) runqueries;;
+    removedata) removetables;;
+    *) printhelp; logfail "Parameter expected";;
+  esac
+}
+
+test() {
+  preparequery
+}
+
 
 # main
 
-verify
+VERQ=1
+case $1 in
+  querystreams|queryqualification) verify 0;;
+  *) verify 1;;
+esac
+
 export RESULTSET=`crtemp`
 trap "removetemp" EXIT
 
+if [ -n "$DBURL" ]; then
+   required_listofvars "JAVADRIVER"
+fi
+
+VERQ=1
 case $1 in
-  test) testdbconnection;;
-  createtables) droptables;;
-  loaddata) loaddata;;
-  loadtest) loaddatatest;;
-  verifyload) verifyallload;;
-  testverify) testverify;;
-  testquery) testquery;;
-  runqueries) runqueries;;
-  removedata) removetables;;
-  *) printhelp; logfail "Parameter expected";;
+  querystreams|queryqualification) VERQ=0;;
 esac
+
+
+main $1

@@ -1,100 +1,96 @@
-AAAAAAAAACFCBAAA|Felipe              |Dixon
-AAAAAAAAACKOAAAA|Judy                |Higgins
-AAAAAAAAAEGOAAAA|Richard             |Pruitt
-AAAAAAAAAGEJAAAA|Michael             |Tolbert
-AAAAAAAAAGOLAAAA|Lawrence            |Reed
-AAAAAAAAAHAGBAAA|Nilda               |Bernal
-AAAAAAAAAIFBBAAA|Juana               |Giles
-AAAAAAAAAJNGBAAA|Roger               |Kaufman
-AAAAAAAAALDHBAAA|Lori                |Barrett
-AAAAAAAAAOGBAAAA|George              |Johnston
-AAAAAAAABAPIAAAA|Rona                |Jordan
-AAAAAAAABFJGAAAA|Willie              |Ott
-AAAAAAAABFOMAAAA|Robert              |Pickard
-AAAAAAAABPBNAAAA|John                |Curley
-AAAAAAAACFHCAAAA|Carmella            |Lombardo
-AAAAAAAACJEDBAAA|Deborah             |Ross
-AAAAAAAACLJNAAAA|Lashawn             |Rutherford
-AAAAAAAADDODAAAA|Debra               |Pool
-AAAAAAAADGBDBAAA|Myra                |Soto
-AAAAAAAADNFBBAAA|Vicki               |Held
-AAAAAAAAEAGOAAAA|Gregory             |Cornell
-AAAAAAAAECJBAAAA|Jerry               |Gipson
-AAAAAAAAEDBAAAAA|Ashley              |Thompson
-AAAAAAAAEEDKAAAA|Ngoc                |Morris
-AAAAAAAAEENFAAAA|Bryan               |Peterson
-AAAAAAAAEGCEAAAA|Leah                |Jenkins
-AAAAAAAAEGNCBAAA|Larry               |Brown
-AAAAAAAAEHJDBAAA|Doris               |Muse
-AAAAAAAAFAIGBAAA|Amanda              |Sosa
-AAAAAAAAFEFJAAAA|Karen               |Burton
-AAAAAAAAFFFIBAAA|Howard              |Guay
-AAAAAAAAFFNEAAAA|Kelsey              |Knowles
-AAAAAAAAFFPFBAAA|Sima                |Kelly
-AAAAAAAAFHIEBAAA|James               |Douglas
-AAAAAAAAFNJBBAAA|Dorothy             |Brown
-AAAAAAAAFOBPAAAA|Frank               |Talley
-AAAAAAAAFPIJAAAA|Joanne              |Rhodes
-AAAAAAAAFPNGBAAA|Brian               |Powers
-AAAAAAAAGALMAAAA|Tara                |Torres
-AAAAAAAAGFHOAAAA|April               |Moore
-AAAAAAAAGHLBAAAA|John                |Hyman
-AAAAAAAAGHLBBAAA|Oscar               |Dinkins
-AAAAAAAAGIPABAAA|Pearlie             |Gomez
-AAAAAAAAGKEEAAAA|Felicia             |Cross
-AAAAAAAAGKFDBAAA|Jane                |Creel
-AAAAAAAAGKMGAAAA|Harriet             |Springer
-AAAAAAAAGLDEBAAA|Ammie               |Medina
-AAAAAAAAGOPCAAAA|Davida              |Kerr
-AAAAAAAAHFKOAAAA|Howard              |Strand
-AAAAAAAAHHCEBAAA|Richard             |Morgan
-AAAAAAAAHJIAAAAA|Graham              |Reis
-AAAAAAAAIADJAAAA|David               |Mason
-AAAAAAAAIDOEBAAA|Johnny              |Michael
-AAAAAAAAIFNBAAAA|Charles             |Curtis
-AAAAAAAAIGJOAAAA|Bessie              |Zimmerman
-AAAAAAAAIHDFAAAA|                    |
-AAAAAAAAIKNIAAAA|Roosevelt           |Bender
-AAAAAAAAILLFAAAA|Jennifer            |Hernandez
-AAAAAAAAJBAHBAAA|Renea               |Dean
-AAAAAAAAJBJGBAAA|Kathleen            |Lester
-AAAAAAAAJBKABAAA|Tara                |
-AAAAAAAAJMCFBAAA|Zachary             |Pittman
-AAAAAAAAJMIJAAAA|Rebecca             |Hernandez
-AAAAAAAAJOJKAAAA|Erik                |Foster
-AAAAAAAAJPDEAAAA|Robert              |Hardy
-AAAAAAAAKAAKAAAA|Brian               |Miller
-AAAAAAAAKBOIAAAA|Jose                |Braden
-AAAAAAAAKJCAAAAA|Theresa             |Brown
-AAAAAAAAKJEAAAAA|George              |Zielinski
-AAAAAAAAKKMDAAAA|                    |Brown
-AAAAAAAAKNFGBAAA|Denise              |Glenn
-AAAAAAAAKPPDBAAA|Albert              |Haag
-AAAAAAAALAOFBAAA|Susie               |Watt
-AAAAAAAALBMKAAAA|Doris               |Brock
-AAAAAAAALCADBAAA|Erik                |Price
-AAAAAAAALDOABAAA|Charles             |Atkins
-AAAAAAAALIJNAAAA|Charles             |Norton
-AAAAAAAALKLAAAAA|Jeffrey             |Jones
-AAAAAAAALKLOAAAA|Todd                |Guerra
-AAAAAAAALNGAAAAA|Linda               |Day
-AAAAAAAAMAEEBAAA|Robbi               |Spencer
-AAAAAAAAMBDMAAAA|Donita              |Corbin
-AAAAAAAAMCNFBAAA|Justin              |Pack
-AAAAAAAANAPEBAAA|George              |Miller
-AAAAAAAANBDOAAAA|George              |Stevens
-AAAAAAAANBPCAAAA|Shasta              |Delgado
-AAAAAAAANCDEAAAA|Earl                |Ray
-AAAAAAAANCGGBAAA|Cornelius           |Wilcox
-AAAAAAAANCNMAAAA|Cathy               |Betz
-AAAAAAAANDFCAAAA|Phillip             |Flores
-AAAAAAAANDFGBAAA|James               |Schaffer
-AAAAAAAANDFNAAAA|Bruce               |Johnson
-AAAAAAAANDGEAAAA|Leonard             |Foust
-AAAAAAAANDJDAAAA|Angie               |Berger
-AAAAAAAANKAFAAAA|Willie              |Merritt
-AAAAAAAANKIDBAAA|Todd                |Kimbrough
-AAAAAAAANLGDAAAA|John                |Barnes
-AAAAAAAANPOJAAAA|Erick               |Counts
-AAAAAAAAOANFBAAA|Jason               |Greenlee
-AAAAAAAAOBKJAAAA|Ronnie              |Slayton
+----------------------------------------------------------------------
+|     CUSTOMER_ID| CUSTOMER_FIRST_NAME|            CUSTOMER_LAST_NAME|
+----------------------------------------------------------------------
+|AAAAAAAAAMGDAAAA|Kenneth             |Harlan                        |
+|AAAAAAAAANFAAAAA|Philip              |Banks                         |
+|AAAAAAAAAOPFBAAA|Jerry               |Fields                        |
+|AAAAAAAABLEIBAAA|Paula               |Wakefield                     |
+|AAAAAAAABNBBAAAA|Irma                |Smith                         |
+|AAAAAAAACADPAAAA|Cristobal           |Thomas                        |
+|AAAAAAAACFCGBAAA|Marcus              |Sanders                       |
+|AAAAAAAACFENAAAA|Christopher         |Dawson                        |
+|AAAAAAAACIJMAAAA|Elizabeth           |Thomas                        |
+|AAAAAAAACJDIAAAA|James               |Kerr                          |
+|AAAAAAAACNAGBAAA|Virginia            |May                           |
+|AAAAAAAADBEFBAAA|Bennie              |Bowers                        |
+|AAAAAAAADCKOAAAA|Robert              |Gonzalez                      |
+|AAAAAAAADFIEBAAA|John                |Gray                          |
+|AAAAAAAADFKABAAA|Latoya              |Craft                         |
+|AAAAAAAADIIOAAAA|David               |Carroll                       |
+|AAAAAAAADIJGBAAA|Ruth                |Sanders                       |
+|AAAAAAAADLHBBAAA|Henry               |Bertrand                      |
+|AAAAAAAAEADJAAAA|Ruth                |Carroll                       |
+|AAAAAAAAEJDLAAAA|Alice               |Wright                        |
+|AAAAAAAAEKFPAAAA|Annika              |Chin                          |
+|AAAAAAAAEKJLAAAA|Aisha               |Carlson                       |
+|AAAAAAAAEOAKAAAA|Molly               |Benjamin                      |
+|AAAAAAAAEPOGAAAA|Felisha             |Mendes                        |
+|AAAAAAAAFACEAAAA|Priscilla           |Miller                        |
+|AAAAAAAAFBAHAAAA|Michael             |Williams                      |
+|AAAAAAAAFGIGAAAA|Eduardo             |Miller                        |
+|AAAAAAAAFGPGAAAA|Albert              |Wadsworth                     |
+|AAAAAAAAFHACBAAA|                    |                              |
+|AAAAAAAAFJHFAAAA|Larissa             |Roy                           |
+|AAAAAAAAFMHIAAAA|Emilio              |Darling                       |
+|AAAAAAAAFOGIAAAA|Michelle            |Greene                        |
+|AAAAAAAAFOJAAAAA|Don                 |Castillo                      |
+|AAAAAAAAGEHIAAAA|Tyler               |Miller                        |
+|AAAAAAAAGFMDBAAA|Kathleen            |Gibson                        |
+|AAAAAAAAGHPBBAAA|Nick                |Mendez                        |
+|AAAAAAAAGNDAAAAA|Terry               |Mcdowell                      |
+|AAAAAAAAHGOABAAA|Sonia               |White                         |
+|AAAAAAAAHHCABAAA|William             |Stewart                       |
+|AAAAAAAAHJLAAAAA|Audrey              |Beltran                       |
+|AAAAAAAAHMJNAAAA|Ryan                |Baptiste                      |
+|AAAAAAAAHMOIAAAA|Grace               |Henderson                     |
+|AAAAAAAAHNFHAAAA|Rebecca             |Wilson                        |
+|AAAAAAAAIADEBAAA|Diane               |Aldridge                      |
+|AAAAAAAAIBAEBAAA|Sandra              |Wilson                        |
+|AAAAAAAAIBFCBAAA|Ruth                |Grantham                      |
+|AAAAAAAAIBHHAAAA|Jennifer            |Ballard                       |
+|AAAAAAAAICHFAAAA|Linda               |Mccoy                         |
+|AAAAAAAAIDKFAAAA|Michael             |Mack                          |
+|AAAAAAAAIJEMAAAA|Charlie             |Cummings                      |
+|AAAAAAAAIMHBAAAA|Kathy               |Knowles                       |
+|AAAAAAAAIMHHBAAA|Lillian             |Davidson                      |
+|AAAAAAAAJEKFBAAA|Norma               |Burkholder                    |
+|AAAAAAAAJGMMAAAA|Richard             |Larson                        |
+|AAAAAAAAJIALAAAA|Santos              |Gutierrez                     |
+|AAAAAAAAJKBNAAAA|Julie               |Kern                          |
+|AAAAAAAAJONHBAAA|Warren              |Orozco                        |
+|AAAAAAAAKAECAAAA|Milton              |Mackey                        |
+|AAAAAAAAKBCABAAA|Debra               |Bell                          |
+|AAAAAAAAKJBKAAAA|Georgia             |Scott                         |
+|AAAAAAAAKJBLAAAA|Kerry               |Davis                         |
+|AAAAAAAAKKGEAAAA|Katie               |Dunbar                        |
+|AAAAAAAAKLHHBAAA|Manuel              |Castaneda                     |
+|AAAAAAAAKNAKAAAA|Gladys              |Banks                         |
+|AAAAAAAAKOJJAAAA|Gracie              |Mendoza                       |
+|AAAAAAAALFKKAAAA|Ignacio             |Miller                        |
+|AAAAAAAALHMCAAAA|Brooke              |Nelson                        |
+|AAAAAAAALIOPAAAA|Derek               |Allen                         |
+|AAAAAAAALJNCBAAA|George              |Gamez                         |
+|AAAAAAAAMDCAAAAA|Louann              |Hamel                         |
+|AAAAAAAAMFFLAAAA|Margret             |Gray                          |
+|AAAAAAAAMMOBBAAA|Margaret            |Smith                         |
+|AAAAAAAANFBDBAAA|Vernice             |Fernandez                     |
+|AAAAAAAANGDBBAAA|Carlos              |Jewell                        |
+|AAAAAAAANIPLAAAA|Eric                |Lawrence                      |
+|AAAAAAAANJAGAAAA|Allen               |Hood                          |
+|AAAAAAAANJHCBAAA|Christopher         |Schreiber                     |
+|AAAAAAAAOBADBAAA|Elizabeth           |Burnham                       |
+|AAAAAAAAOCAJAAAA|Jenna               |Staton                        |
+|AAAAAAAAOCDJAAAA|Nina                |Sanchez                       |
+|AAAAAAAAOCICAAAA|Zachary             |Pennington                    |
+|AAAAAAAAOCLBBAAA|                    |                              |
+|AAAAAAAAOFLCAAAA|James               |Taylor                        |
+|AAAAAAAAOPDLAAAA|Ann                 |Pence                         |
+|AAAAAAAAPDFBAAAA|Terrance            |Banks                         |
+|AAAAAAAAPEHEBAAA|Edith               |Molina                        |
+|AAAAAAAAPFCLAAAA|Felicia             |Neville                       |
+|AAAAAAAAPJENAAAA|Ashley              |Norton                        |
+|AAAAAAAAPKBCBAAA|Andrea              |White                         |
+|AAAAAAAAPKIKAAAA|Wendy               |Horvath                       |
+|AAAAAAAAPMMBBAAA|Paul                |Jordan                        |
+|AAAAAAAAPPIBBAAA|Candice             |Lee                           |
+----------------------------------------------------------------------

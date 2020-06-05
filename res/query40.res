@@ -1,100 +1,104 @@
-TN|AAAAAAAAAABDAAAA|      100.93|      17.91
-TN|AAAAAAAAAAHDAAAA|       57.56|     114.66
-TN|AAAAAAAAAAKBAAAA|       36.35|      74.59
-TN|AAAAAAAAABBAAAAA|           0|      87.27
-TN|AAAAAAAAABDAAAAA|       83.02|      81.93
-TN|AAAAAAAAACGCAAAA|       46.32|          0
-TN|AAAAAAAAACIBAAAA|      216.23|     247.01
-TN|AAAAAAAAACLDAAAA|       13.97|     225.77
-TN|AAAAAAAAADBEAAAA|       13.33|         70
-TN|AAAAAAAAAEADAAAA|     -104.71|      322.7
-TN|AAAAAAAAAEBDAAAA|     -337.89|      89.97
-TN|AAAAAAAAAEHAAAAA|      -933.2|          0
-TN|AAAAAAAAAENDAAAA|      129.19|     120.28
-TN|AAAAAAAAAFACAAAA|           0|     107.91
-TN|AAAAAAAAAFCBAAAA|        93.9|          0
-TN|AAAAAAAAAFDCAAAA|      128.47|     260.48
-TN|AAAAAAAAAGPCAAAA|     -579.88|      185.3
-TN|AAAAAAAAAHKDAAAA|       26.71|    -179.81
-TN|AAAAAAAAAIEEAAAA|      283.41|    -725.74
-TN|AAAAAAAAAIFBAAAA|     -936.93|     -26.63
-TN|AAAAAAAAAIMCAAAA|    -2377.63|     116.27
-TN|AAAAAAAAAJCAAAAA|      220.41|      55.79
-TN|AAAAAAAAAKNDAAAA|      163.81|          0
-TN|AAAAAAAAALBEAAAA|       45.34|          0
-TN|AAAAAAAAALJAAAAA|      101.25|          0
-TN|AAAAAAAAALNBAAAA|       26.33|          0
-TN|AAAAAAAAAMIDAAAA|         .37|     227.42
-TN|AAAAAAAAAMPBAAAA|     -909.55|      -2884
-TN|AAAAAAAAANAEAAAA|       70.84|     123.86
-TN|AAAAAAAAANDEAAAA|    -1091.57|      56.63
-TN|AAAAAAAAANNAAAAA|       85.74|     210.81
-TN|AAAAAAAAAOBBAAAA|       40.43|     124.49
-TN|AAAAAAAAAPBAAAAA|      168.36|     299.49
-TN|AAAAAAAAAPFDAAAA|       16.41|      89.21
-TN|AAAAAAAAAPODAAAA|           0|     207.58
-TN|AAAAAAAABAPDAAAA|       71.34|     172.82
-TN|AAAAAAAABBIDAAAA|        9.38|     147.65
-TN|AAAAAAAABDCEAAAA|         .16|      70.92
-TN|AAAAAAAABDDDAAAA|       18.19|     309.58
-TN|AAAAAAAABDJAAAAA|           0|      27.67
-TN|AAAAAAAABEFDAAAA|       94.64|      12.78
-TN|AAAAAAAABEODAAAA|           0|      52.91
-TN|AAAAAAAABFCCAAAA|      156.53|          0
-TN|AAAAAAAABFMBAAAA|           0|      17.85
-TN|AAAAAAAABFNAAAAA|       35.96|          0
-TN|AAAAAAAABFOCAAAA|           0|     161.09
-TN|AAAAAAAABHPCAAAA|       62.77|     152.77
-TN|AAAAAAAABIDBAAAA|       69.77|      25.41
-TN|AAAAAAAABIGBAAAA|           0|      14.27
-TN|AAAAAAAABIJBAAAA|        7.09|       95.4
-TN|AAAAAAAABJFEAAAA|        60.3|          0
-TN|AAAAAAAABKFAAAAA|     -144.99|      30.18
-TN|AAAAAAAABKMCAAAA|       55.28|          0
-TN|AAAAAAAABLDEAAAA|           0|      42.04
-TN|AAAAAAAABNHBAAAA|       52.42|      50.08
-TN|AAAAAAAABNIDAAAA|      -18.84|          0
-TN|AAAAAAAABNLAAAAA|       37.87|          0
-TN|AAAAAAAABNLDAAAA|      148.27|     112.47
-TN|AAAAAAAABNMCAAAA|         .25|          0
-TN|AAAAAAAABOCCAAAA|      143.84|      -9.82
-TN|AAAAAAAABOMBAAAA|           0|      28.17
-TN|AAAAAAAACAJCAAAA|           0|     203.27
-TN|AAAAAAAACANCAAAA|           0|     145.21
-TN|AAAAAAAACBBBAAAA|      119.52|        2.3
-TN|AAAAAAAACBEBAAAA|           0|      79.39
-TN|AAAAAAAACBOAAAAA|      193.57|      26.73
-TN|AAAAAAAACBPBAAAA|      101.66|     113.24
-TN|AAAAAAAACCGBAAAA|           0|     192.42
-TN|AAAAAAAACCLCAAAA|       87.13|          0
-TN|AAAAAAAACCMDAAAA|       18.63|          0
-TN|AAAAAAAACCPBAAAA|      161.74|      152.5
-TN|AAAAAAAACDPDAAAA|       10.85|       17.2
-TN|AAAAAAAACEEAAAAA|           0|      81.51
-TN|AAAAAAAACEIDAAAA|      117.49|      78.15
-TN|AAAAAAAACGFDAAAA|       11.93|          0
-TN|AAAAAAAACHCAAAAA|         1.5|       40.4
-TN|AAAAAAAACHFAAAAA|     -104.32|    -381.49
-TN|AAAAAAAACHFDAAAA|      163.31|      50.04
-TN|AAAAAAAACHHDAAAA|           0|     111.62
-TN|AAAAAAAACHLDAAAA|       86.48|     379.07
-TN|AAAAAAAACHNBAAAA|       256.6|     132.17
-TN|AAAAAAAACIGDAAAA|    -1020.53|     107.68
-TN|AAAAAAAACIJBAAAA|           0|     224.79
-TN|AAAAAAAACIMBAAAA|        7.36|   -3286.61
-TN|AAAAAAAACJDCAAAA|       -48.6|      25.65
-TN|AAAAAAAACJLAAAAA|       103.2|      44.38
-TN|AAAAAAAACJNCAAAA|       56.53|      18.71
-TN|AAAAAAAACKCAAAAA|       21.64|       4.18
-TN|AAAAAAAACKCDAAAA|       38.81|      48.86
-TN|AAAAAAAACKEBAAAA|       11.17|     145.33
-TN|AAAAAAAACKFCAAAA|         3.3|          0
-TN|AAAAAAAACKHAAAAA|    -4360.83|      46.87
-TN|AAAAAAAACLDBAAAA|       61.26|      57.83
-TN|AAAAAAAACLGAAAAA|        9.65|      42.66
-TN|AAAAAAAACLLBAAAA|    -2668.42|   -3534.57
-TN|AAAAAAAACLOBAAAA|      213.82|      11.41
-TN|AAAAAAAACLPBAAAA|           0|      128.7
-TN|AAAAAAAACMDDAAAA|       20.42|     114.29
-TN|AAAAAAAACMFBAAAA|      127.73|      26.84
-TN|AAAAAAAACMLAAAAA|       21.94|        .78
+------------------------------------------------------------------------------------------------------------
+|W_STATE|       I_ITEM_ID|                            SALES_BEFORE|                             SALES_AFTER|
+------------------------------------------------------------------------------------------------------------
+|     TN|AAAAAAAAAABDAAAA|                                    0.00|                                  -82.10|
+|     TN|AAAAAAAAAACDAAAA|                                 -216.54|                                  158.04|
+|     TN|AAAAAAAAAAHDAAAA|                                  186.55|                                    0.00|
+|     TN|AAAAAAAAAALAAAAA|                                    0.00|                                   48.23|
+|     TN|AAAAAAAAABBDAAAA|                                   98.61|                                  332.71|
+|     TN|AAAAAAAAABDAAAAA|                                    0.00|                                  213.64|
+|     TN|AAAAAAAAACGCAAAA|                                   63.68|                                    0.00|
+|     TN|AAAAAAAAACHCAAAA|                                  102.68|                                   51.89|
+|     TN|AAAAAAAAACKCAAAA|                                  128.93|                                   44.82|
+|     TN|AAAAAAAAACLDAAAA|                                  205.44|                                 -948.62|
+|     TN|AAAAAAAAACOBAAAA|                                  207.32|                                   24.89|
+|     TN|AAAAAAAAACPDAAAA|                                   87.75|                                   53.99|
+|     TN|AAAAAAAAADGBAAAA|                                   44.31|                                  222.48|
+|     TN|AAAAAAAAADKBAAAA|                                    0.00|                                 -471.87|
+|     TN|AAAAAAAAAEADAAAA|                                   58.24|                                    0.00|
+|     TN|AAAAAAAAAEOCAAAA|                                   19.91|                                  214.70|
+|     TN|AAAAAAAAAFACAAAA|                                  271.82|                                  163.17|
+|     TN|AAAAAAAAAFADAAAA|                                    2.35|                                   28.32|
+|     TN|AAAAAAAAAFDCAAAA|                                 -378.05|                                 -303.27|
+|     TN|AAAAAAAAAGIDAAAA|                                  307.61|                                  -19.29|
+|     TN|AAAAAAAAAHDEAAAA|                                   80.58|                                 -476.72|
+|     TN|AAAAAAAAAHHAAAAA|                                    8.27|                                  155.10|
+|     TN|AAAAAAAAAHJBAAAA|                                   39.24|                                    0.00|
+|     TN|AAAAAAAAAIECAAAA|                                   82.40|                                    3.91|
+|     TN|AAAAAAAAAIEEAAAA|                                   20.40|                                 -151.09|
+|     TN|AAAAAAAAAIMCAAAA|                                   24.47|                                 -150.30|
+|     TN|AAAAAAAAAJACAAAA|                                   49.09|                                   82.10|
+|     TN|AAAAAAAAAJCAAAAA|                                  121.18|                                   63.78|
+|     TN|AAAAAAAAAJKBAAAA|                                   27.94|                                    8.97|
+|     TN|AAAAAAAAALBEAAAA|                                   88.26|                                   30.23|
+|     TN|AAAAAAAAALCEAAAA|                                   93.52|                                   92.02|
+|     TN|AAAAAAAAALECAAAA|                                   64.20|                                   15.16|
+|     TN|AAAAAAAAALNBAAAA|                                    4.20|                                  148.27|
+|     TN|AAAAAAAAAMBEAAAA|                                   28.44|                                    0.00|
+|     TN|AAAAAAAAAMPBAAAA|                                    0.00|                                  131.93|
+|     TN|AAAAAAAAANFEAAAA|                                    0.00|                                 -137.34|
+|     TN|AAAAAAAAAOBBAAAA|                                    0.00|                                   55.62|
+|     TN|AAAAAAAAAOIBAAAA|                                  150.41|                                  254.28|
+|     TN|AAAAAAAAAPBAAAAA|                                   70.40|                                    0.00|
+|     TN|AAAAAAAAAPJBAAAA|                                   45.27|                                  334.40|
+|     TN|AAAAAAAAAPLAAAAA|                                   50.20|                                   29.15|
+|     TN|AAAAAAAAAPLDAAAA|                                    0.00|                                   32.39|
+|     TN|AAAAAAAABAPDAAAA|                                   93.42|                                  145.87|
+|     TN|AAAAAAAABBIDAAAA|                                  296.77|                                   30.96|
+|     TN|AAAAAAAABDCEAAAA|                                -1771.08|                                  -54.78|
+|     TN|AAAAAAAABDDDAAAA|                                  111.12|                                  280.59|
+|     TN|AAAAAAAABDJAAAAA|                                    0.00|                                   79.55|
+|     TN|AAAAAAAABEFDAAAA|                                    0.00|                                    3.43|
+|     TN|AAAAAAAABEODAAAA|                                  269.90|                                  297.58|
+|     TN|AAAAAAAABFMBAAAA|                                  110.83|                                 -941.40|
+|     TN|AAAAAAAABFNAAAAA|                                   47.86|                                    0.00|
+|     TN|AAAAAAAABFOCAAAA|                                   46.34|                                   83.52|
+|     TN|AAAAAAAABHPCAAAA|                                   27.37|                                   77.62|
+|     TN|AAAAAAAABIDBAAAA|                                  196.62|                                    5.57|
+|     TN|AAAAAAAABIGBAAAA|                                  425.34|                                    0.00|
+|     TN|AAAAAAAABIJBAAAA|                                  209.63|                                    0.00|
+|     TN|AAAAAAAABJFEAAAA|                                    7.33|                                   55.16|
+|     TN|AAAAAAAABKFAAAAA|                                    0.00|                                  138.14|
+|     TN|AAAAAAAABKMCAAAA|                                   27.17|                                   54.97|
+|     TN|AAAAAAAABLDEAAAA|                                  170.29|                                    0.00|
+|     TN|AAAAAAAABNHBAAAA|                                   58.06|                                 -337.89|
+|     TN|AAAAAAAABNIDAAAA|                                   54.40|                                   35.02|
+|     TN|AAAAAAAABNLAAAAA|                                    0.00|                                  168.38|
+|     TN|AAAAAAAABNLDAAAA|                                    0.00|                                   96.41|
+|     TN|AAAAAAAABNMCAAAA|                                  202.41|                                   49.53|
+|     TN|AAAAAAAABOCCAAAA|                                    4.73|                                   69.84|
+|     TN|AAAAAAAABOMBAAAA|                                   63.67|                                  163.49|
+|     TN|AAAAAAAACAAAAAAA|                                  121.91|                                    0.00|
+|     TN|AAAAAAAACAADAAAA|                                -1107.61|                                    0.00|
+|     TN|AAAAAAAACAJCAAAA|                                  115.81|                                  173.05|
+|     TN|AAAAAAAACBCDAAAA|                                   18.94|                                  226.38|
+|     TN|AAAAAAAACBFAAAAA|                                    0.00|                                   97.41|
+|     TN|AAAAAAAACBIAAAAA|                                    2.14|                                   84.66|
+|     TN|AAAAAAAACBPBAAAA|                                   95.44|                                   26.68|
+|     TN|AAAAAAAACCABAAAA|                                  160.43|                                  135.86|
+|     TN|AAAAAAAACCHDAAAA|                                    0.00|                                  121.62|
+|     TN|AAAAAAAACCMDAAAA|                                 -115.87|                                  124.38|
+|     TN|AAAAAAAACDBCAAAA|                                   16.62|                                    3.40|
+|     TN|AAAAAAAACDECAAAA|                                -3114.60|                                    0.00|
+|     TN|AAAAAAAACEEAAAAA|                                   34.68|                                   26.41|
+|     TN|AAAAAAAACELAAAAA|                                  130.59|                                  154.63|
+|     TN|AAAAAAAACELDAAAA|                                    0.00|                                  181.07|
+|     TN|AAAAAAAACFEAAAAA|                                    3.78|                                 -315.13|
+|     TN|AAAAAAAACFHDAAAA|                                    0.00|                                    1.80|
+|     TN|AAAAAAAACGFDAAAA|                                 -386.87|                                   96.92|
+|     TN|AAAAAAAACHHDAAAA|                                  143.17|                                  251.64|
+|     TN|AAAAAAAACHPCAAAA|                                    0.17|                                  198.29|
+|     TN|AAAAAAAACJCBAAAA|                                 -918.65|                                  270.96|
+|     TN|AAAAAAAACJDCAAAA|                                    0.00|                                  130.15|
+|     TN|AAAAAAAACJLAAAAA|                                   63.96|                                   91.27|
+|     TN|AAAAAAAACKFCAAAA|                                 -540.59|                                   35.64|
+|     TN|AAAAAAAACKHAAAAA|                                  204.52|                                  110.61|
+|     TN|AAAAAAAACKIAAAAA|                                   18.43|                                  -63.65|
+|     TN|AAAAAAAACLAEAAAA|                                  116.07|                                    0.00|
+|     TN|AAAAAAAACLGAAAAA|                                  108.10|                                  111.14|
+|     TN|AAAAAAAACLKAAAAA|                                  143.05|                                   19.59|
+|     TN|AAAAAAAACLLBAAAA|                                    0.00|                                  178.10|
+|     TN|AAAAAAAACLOBAAAA|                                -2200.72|                                   14.13|
+|     TN|AAAAAAAACMADAAAA|                                   71.42|                                  -13.64|
+|     TN|AAAAAAAACMJAAAAA|                                    0.00|                                  358.31|
+------------------------------------------------------------------------------------------------------------

@@ -1,100 +1,104 @@
-AAAAAAAAAABBAAAA|TN|         0|      34.5|    69.725|         0|    20.355
-AAAAAAAAAABBAAAA|  |         1|      34.5|    69.725|         0|    20.355
-AAAAAAAAAABDAAAA|TN|         0|46.6666667|51.1233333|         0|47.1266667
-AAAAAAAAAABDAAAA|  |         1|46.6666667|51.1233333|         0|47.1266667
-AAAAAAAAAACCAAAA|TN|         0|        94|     78.24|         0|      26.6
-AAAAAAAAAACCAAAA|  |         1|        94|     78.24|         0|      26.6
-AAAAAAAAAACDAAAA|TN|         0|34.6666667|74.5866667|         0|      47.8
-AAAAAAAAAACDAAAA|  |         1|34.6666667|74.5866667|         0|      47.8
-AAAAAAAAAADCAAAA|TN|         0|        15|     96.43|         0|      40.5
-AAAAAAAAAADCAAAA|  |         1|        15|     96.43|         0|      40.5
-AAAAAAAAAADEAAAA|TN|         0|        62|     79.58|         0|     78.78
-AAAAAAAAAADEAAAA|  |         1|        62|     79.58|         0|     78.78
-AAAAAAAAAAEAAAAA|TN|         0|        16|     83.12|         0|     29.09
-AAAAAAAAAAEAAAAA|  |         1|        16|     83.12|         0|     29.09
-AAAAAAAAAAEBAAAA|TN|         0|        14|     52.19|         0|     4.115
-AAAAAAAAAAEBAAAA|  |         1|        14|     52.19|         0|     4.115
-AAAAAAAAAAEEAAAA|TN|         0|        19|     68.47|         0|     30.12
-AAAAAAAAAAEEAAAA|  |         1|        19|     68.47|         0|     30.12
-AAAAAAAAAAFAAAAA|TN|         0|        57|     40.25|    219.51|     13.28
-AAAAAAAAAAFAAAAA|  |         1|        57|     40.25|    219.51|     13.28
-AAAAAAAAAAFCAAAA|TN|         0|        41|    110.25|         0|     41.89
-AAAAAAAAAAFCAAAA|  |         1|        41|    110.25|         0|     41.89
-AAAAAAAAAAFDAAAA|TN|         0|      74.5|   133.555|         0|     66.98
-AAAAAAAAAAFDAAAA|  |         1|      74.5|   133.555|         0|     66.98
-AAAAAAAAAAGCAAAA|TN|         0|      33.5|     15.89|         0|    15.035
-AAAAAAAAAAGCAAAA|  |         1|      33.5|     15.89|         0|    15.035
-AAAAAAAAAAHAAAAA|TN|         0|        77|     63.71|         0|     47.14
-AAAAAAAAAAHAAAAA|  |         1|        77|     63.71|         0|     47.14
-AAAAAAAAAAIAAAAA|TN|         0|         6|     97.28|         0|    30.615
-AAAAAAAAAAIAAAAA|  |         1|         6|     97.28|         0|    30.615
-AAAAAAAAAAICAAAA|TN|         0|        95|    130.76|   2194.69|     40.53
-AAAAAAAAAAICAAAA|  |         1|        95|    130.76|   2194.69|     40.53
-AAAAAAAAAAIDAAAA|TN|         0|      66.5|    130.94|         0|    76.425
-AAAAAAAAAAIDAAAA|  |         1|      66.5|    130.94|         0|    76.425
-AAAAAAAAAAJBAAAA|TN|         0|        96|     62.42|    278.64|     58.05
-AAAAAAAAAAJBAAAA|  |         1|        96|     62.42|    278.64|     58.05
-AAAAAAAAAAJCAAAA|TN|         0|        57|    101.64|         0|     10.16
-AAAAAAAAAAJCAAAA|  |         1|        57|    101.64|         0|     10.16
-AAAAAAAAAAKAAAAA|TN|         0|        47|    148.06|   1928.88|       114
-AAAAAAAAAAKAAAAA|  |         1|        47|    148.06|   1928.88|       114
-AAAAAAAAAAKBAAAA|TN|         0|        55|      88.3|         0|    39.205
-AAAAAAAAAAKBAAAA|  |         1|        55|      88.3|         0|    39.205
-AAAAAAAAAAKDAAAA|TN|         0|      37.5|     80.03|         0|     41.51
-AAAAAAAAAAKDAAAA|  |         1|      37.5|     80.03|         0|     41.51
-AAAAAAAAAALAAAAA|TN|         0|        71|   135.615|         0|     79.41
-AAAAAAAAAALAAAAA|  |         1|        71|   135.615|         0|     79.41
-AAAAAAAAAALCAAAA|TN|         0|         4|    119.98|         0|     33.59
-AAAAAAAAAALCAAAA|  |         1|         4|    119.98|         0|     33.59
-AAAAAAAAAALDAAAA|TN|         0|      52.5|     26.66|      9.26|      6.77
-AAAAAAAAAALDAAAA|  |         1|      52.5|     26.66|      9.26|      6.77
-AAAAAAAAAAMBAAAA|TN|         0|        45|    138.86|    638.56|    101.36
-AAAAAAAAAAMBAAAA|  |         1|        45|    138.86|    638.56|    101.36
-AAAAAAAAAAMCAAAA|TN|         0|        23|      58.8|         0|     26.46
-AAAAAAAAAAMCAAAA|  |         1|        23|      58.8|         0|     26.46
-AAAAAAAAAANAAAAA|TN|         0|        79|     32.22|         0|      4.83
-AAAAAAAAAANAAAAA|  |         1|        79|     32.22|         0|      4.83
-AAAAAAAAAANBAAAA|TN|         0|      39.5|    42.785|        .7|     23.83
-AAAAAAAAAANBAAAA|  |         1|      39.5|    42.785|        .7|     23.83
-AAAAAAAAAANDAAAA|TN|         0|        15|     89.83|    122.36|     43.82
-AAAAAAAAAANDAAAA|  |         1|        15|     89.83|    122.36|     43.82
-AAAAAAAAAAOAAAAA|TN|         0|        92|    149.26|         0|     65.67
-AAAAAAAAAAOAAAAA|  |         1|        92|    149.26|         0|     65.67
-AAAAAAAAAAODAAAA|TN|         0|        82|     74.47|         0|     58.83
-AAAAAAAAAAODAAAA|  |         1|        82|     74.47|         0|     58.83
-AAAAAAAAAAPBAAAA|TN|         0|        97|     75.47|         0|     30.18
-AAAAAAAAAAPBAAAA|  |         1|        97|     75.47|         0|     30.18
-AAAAAAAAABADAAAA|TN|         0|        77|    138.68|         0|     54.08
-AAAAAAAAABADAAAA|  |         1|        77|    138.68|         0|     54.08
-AAAAAAAAABAEAAAA|TN|         0|      64.5|      54.4|         0|     12.93
-AAAAAAAAABAEAAAA|  |         1|      64.5|      54.4|         0|     12.93
-AAAAAAAAABBAAAAA|TN|         0|         2|      75.4|         0|     21.11
-AAAAAAAAABBAAAAA|  |         1|         2|      75.4|         0|     21.11
-AAAAAAAAABBDAAAA|TN|         0|        49|     56.83|    35.125|    34.895
-AAAAAAAAABBDAAAA|  |         1|        49|     56.83|    35.125|    34.895
-AAAAAAAAABCCAAAA|TN|         0|        40|     90.46|         0|     72.36
-AAAAAAAAABCCAAAA|  |         1|        40|     90.46|         0|     72.36
-AAAAAAAAABCEAAAA|TN|         0|        73|      46.4|  2212.505|    33.895
-AAAAAAAAABCEAAAA|  |         1|        73|      46.4|  2212.505|    33.895
-AAAAAAAAABDBAAAA|TN|         0|        73|     47.92|         0|      20.6
-AAAAAAAAABDBAAAA|  |         1|        73|     47.92|         0|      20.6
-AAAAAAAAABDDAAAA|TN|         0|        30|     84.64|         0|     35.54
-AAAAAAAAABDDAAAA|  |         1|        30|     84.64|         0|     35.54
-AAAAAAAAABDEAAAA|TN|         0|        33|    128.59|         0|     99.01
-AAAAAAAAABDEAAAA|  |         1|        33|    128.59|         0|     99.01
-AAAAAAAAABEAAAAA|TN|         0|        54|     13.79|         0|      4.41
-AAAAAAAAABEAAAAA|  |         1|        54|     13.79|         0|      4.41
-AAAAAAAAABECAAAA|TN|         0|        85|       3.5|         0|       .21
-AAAAAAAAABECAAAA|  |         1|        85|       3.5|         0|       .21
-AAAAAAAAABEDAAAA|TN|         0|        95|     93.71|   3642.87|     87.15
-AAAAAAAAABEDAAAA|  |         1|        95|     93.71|   3642.87|     87.15
-AAAAAAAAABFBAAAA|TN|         0|         5|     48.68|      4.81|      2.92
-AAAAAAAAABFBAAAA|  |         1|         5|     48.68|      4.81|      2.92
-AAAAAAAAABFCAAAA|TN|         0|        26|      64.1|         0|       .64
-AAAAAAAAABFCAAAA|  |         1|        26|      64.1|         0|       .64
-AAAAAAAAABFEAAAA|TN|         0|        48|    112.79|         0|     49.62
-AAAAAAAAABFEAAAA|  |         1|        48|    112.79|         0|     49.62
-AAAAAAAAABGBAAAA|TN|         0|        57|118.716667|         0|31.4766667
-AAAAAAAAABGBAAAA|  |         1|        57|118.716667|         0|31.4766667
-AAAAAAAAABGDAAAA|TN|         0|        15|    68.155|       .39|    54.365
-AAAAAAAAABGDAAAA|  |         1|        15|    68.155|       .39|    54.365
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|       I_ITEM_ID|S_STATE|    G_STATE|                                    AGG1|                                    AGG2|                                    AGG3|                                    AGG4|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|            null|   null|          1|                               51.057588|                               75.659586|                              194.407904|                               38.256373|
+|AAAAAAAAAAABAAAA|   null|          1|                               46.000000|                              114.720000|                                0.000000|                               32.120000|
+|AAAAAAAAAAABAAAA|     TN|          0|                               46.000000|                              114.720000|                                0.000000|                               32.120000|
+|AAAAAAAAAAAEAAAA|   null|          1|                              100.000000|                               77.970000|                                0.000000|                               57.690000|
+|AAAAAAAAAAAEAAAA|     TN|          0|                              100.000000|                               77.970000|                                0.000000|                               57.690000|
+|AAAAAAAAAABAAAAA|   null|          1|                                6.000000|                               48.890000|                               13.610000|                                2.440000|
+|AAAAAAAAAABAAAAA|     TN|          0|                                6.000000|                               48.890000|                               13.610000|                                2.440000|
+|AAAAAAAAAACAAAAA|   null|          1|                               62.000000|                               32.213333|                                0.000000|                                5.506667|
+|AAAAAAAAAACAAAAA|     TN|          0|                               62.000000|                               32.213333|                                0.000000|                                5.506667|
+|AAAAAAAAAACDAAAA|   null|          1|                               97.000000|                              161.780000|                                0.000000|                               55.000000|
+|AAAAAAAAAACDAAAA|     TN|          0|                               97.000000|                              161.780000|                                0.000000|                               55.000000|
+|AAAAAAAAAADBAAAA|   null|          1|                               28.000000|                              136.010000|                              575.760000|                               73.440000|
+|AAAAAAAAAADBAAAA|     TN|          0|                               28.000000|                              136.010000|                              575.760000|                               73.440000|
+|AAAAAAAAAADCAAAA|   null|          1|                               64.000000|                              116.140000|                                0.000000|                              108.010000|
+|AAAAAAAAAADCAAAA|     TN|          0|                               64.000000|                              116.140000|                                0.000000|                              108.010000|
+|AAAAAAAAAAEBAAAA|   null|          1|                                9.000000|                                5.430000|                                0.000000|                                5.210000|
+|AAAAAAAAAAEBAAAA|     TN|          0|                                9.000000|                                5.430000|                                0.000000|                                5.210000|
+|AAAAAAAAAAEDAAAA|   null|          1|                               45.500000|                               87.635000|                                0.000000|                               51.840000|
+|AAAAAAAAAAEDAAAA|     TN|          0|                               45.500000|                               87.635000|                                0.000000|                               51.840000|
+|AAAAAAAAAAGBAAAA|   null|          1|                               29.000000|                              101.940000|                                0.000000|                              100.920000|
+|AAAAAAAAAAGBAAAA|     TN|          0|                               29.000000|                              101.940000|                                0.000000|                              100.920000|
+|AAAAAAAAAAGCAAAA|   null|          1|                               97.000000|                               65.270000|                                0.000000|                               21.530000|
+|AAAAAAAAAAGCAAAA|     TN|          0|                               97.000000|                               65.270000|                                0.000000|                               21.530000|
+|AAAAAAAAAAGEAAAA|   null|          1|                               55.000000|                               73.875000|                                0.000000|                               71.000000|
+|AAAAAAAAAAGEAAAA|     TN|          0|                               55.000000|                               73.875000|                                0.000000|                               71.000000|
+|AAAAAAAAAAHAAAAA|   null|          1|                               20.000000|                              134.300000|                                0.000000|                              119.520000|
+|AAAAAAAAAAHAAAAA|     TN|          0|                               20.000000|                              134.300000|                                0.000000|                              119.520000|
+|AAAAAAAAAAHBAAAA|   null|          1|                               97.000000|                                7.400000|                                0.000000|                                6.730000|
+|AAAAAAAAAAHBAAAA|     TN|          0|                               97.000000|                                7.400000|                                0.000000|                                6.730000|
+|AAAAAAAAAAHDAAAA|   null|          1|                               69.000000|                                5.620000|                                0.000000|                                0.330000|
+|AAAAAAAAAAHDAAAA|     TN|          0|                               69.000000|                                5.620000|                                0.000000|                                0.330000|
+|AAAAAAAAAAIAAAAA|   null|          1|                               87.000000|                              106.980000|                                0.000000|                               27.810000|
+|AAAAAAAAAAIAAAAA|     TN|          0|                               87.000000|                              106.980000|                                0.000000|                               27.810000|
+|AAAAAAAAAAKBAAAA|   null|          1|                               84.500000|                               66.175000|                              847.835000|                               57.380000|
+|AAAAAAAAAAKBAAAA|     TN|          0|                               84.500000|                               66.175000|                              847.835000|                               57.380000|
+|AAAAAAAAAALAAAAA|   null|          1|                                6.000000|                               32.280000|                                0.000000|                                7.420000|
+|AAAAAAAAAALAAAAA|     TN|          0|                                6.000000|                               32.280000|                                0.000000|                                7.420000|
+|AAAAAAAAAALCAAAA|   null|          1|                               98.000000|                               34.310000|                               55.300000|                                1.710000|
+|AAAAAAAAAALCAAAA|     TN|          0|                               98.000000|                               34.310000|                               55.300000|                                1.710000|
+|AAAAAAAAAALDAAAA|   null|          1|                               59.000000|                              129.470000|                              713.900000|                               22.000000|
+|AAAAAAAAAALDAAAA|     TN|          0|                               59.000000|                              129.470000|                              713.900000|                               22.000000|
+|AAAAAAAAAANAAAAA|   null|          1|                               74.000000|                               60.875000|                                0.000000|                               13.200000|
+|AAAAAAAAAANAAAAA|     TN|          0|                               74.000000|                               60.875000|                                0.000000|                               13.200000|
+|AAAAAAAAAANBAAAA|   null|          1|                               96.000000|                              130.790000|                             1864.510000|                              129.480000|
+|AAAAAAAAAANBAAAA|     TN|          0|                               96.000000|                              130.790000|                             1864.510000|                              129.480000|
+|AAAAAAAAAAOAAAAA|   null|          1|                               85.000000|                              130.340000|                                0.000000|                              122.510000|
+|AAAAAAAAAAOAAAAA|     TN|          0|                               85.000000|                              130.340000|                                0.000000|                              122.510000|
+|AAAAAAAAAAOCAAAA|   null|          1|                               14.000000|                               64.575000|                                0.000000|                               33.975000|
+|AAAAAAAAAAOCAAAA|     TN|          0|                               14.000000|                               64.575000|                                0.000000|                               33.975000|
+|AAAAAAAAAAODAAAA|   null|          1|                               84.000000|                               30.500000|                                0.000000|                               28.970000|
+|AAAAAAAAAAODAAAA|     TN|          0|                               84.000000|                               30.500000|                                0.000000|                               28.970000|
+|AAAAAAAAAAPBAAAA|   null|          1|                               45.000000|                              118.890000|                             2380.595000|                               84.715000|
+|AAAAAAAAAAPBAAAA|     TN|          0|                               45.000000|                              118.890000|                             2380.595000|                               84.715000|
+|AAAAAAAAABAAAAAA|   null|          1|                               97.000000|                              124.750000|                                0.000000|                               74.850000|
+|AAAAAAAAABAAAAAA|     TN|          0|                               97.000000|                              124.750000|                                0.000000|                               74.850000|
+|AAAAAAAAABABAAAA|   null|          1|                               31.000000|                               29.980000|                               17.090000|                               27.580000|
+|AAAAAAAAABABAAAA|     TN|          0|                               31.000000|                               29.980000|                               17.090000|                               27.580000|
+|AAAAAAAAABAEAAAA|   null|          1|                               34.000000|                               17.210000|                                0.000000|                               13.420000|
+|AAAAAAAAABAEAAAA|     TN|          0|                               34.000000|                               17.210000|                                0.000000|                               13.420000|
+|AAAAAAAAABCBAAAA|   null|          1|                               38.000000|                              131.375000|                                0.000000|                               52.320000|
+|AAAAAAAAABCBAAAA|     TN|          0|                               38.000000|                              131.375000|                                0.000000|                               52.320000|
+|AAAAAAAAABDAAAAA|   null|          1|                               31.500000|                               68.345000|                                0.000000|                               63.275000|
+|AAAAAAAAABDAAAAA|     TN|          0|                               31.500000|                               68.345000|                                0.000000|                               63.275000|
+|AAAAAAAAABDBAAAA|   null|          1|                               56.000000|                              103.850000|                             1624.170000|                               59.190000|
+|AAAAAAAAABDBAAAA|     TN|          0|                               56.000000|                              103.850000|                             1624.170000|                               59.190000|
+|AAAAAAAAABDDAAAA|   null|          1|                               67.333333|                              119.420000|                               23.186667|                               38.720000|
+|AAAAAAAAABDDAAAA|     TN|          0|                               67.333333|                              119.420000|                               23.186667|                               38.720000|
+|AAAAAAAAABDEAAAA|   null|          1|                               61.000000|                               85.950000|                             2282.360000|                               44.605000|
+|AAAAAAAAABDEAAAA|     TN|          0|                               61.000000|                               85.950000|                             2282.360000|                               44.605000|
+|AAAAAAAAABEDAAAA|   null|          1|                               61.000000|                               85.140000|                                0.000000|                               50.230000|
+|AAAAAAAAABEDAAAA|     TN|          0|                               61.000000|                               85.140000|                                0.000000|                               50.230000|
+|AAAAAAAAABFBAAAA|   null|          1|                               31.000000|                               23.550000|                                0.000000|                               13.650000|
+|AAAAAAAAABFBAAAA|     TN|          0|                               31.000000|                               23.550000|                                0.000000|                               13.650000|
+|AAAAAAAAABFCAAAA|   null|          1|                               83.000000|                               15.500000|                                0.000000|                                0.000000|
+|AAAAAAAAABFCAAAA|     TN|          0|                               83.000000|                               15.500000|                                0.000000|                                0.000000|
+|AAAAAAAAABGAAAAA|   null|          1|                               64.000000|                               35.080000|                                0.000000|                                3.150000|
+|AAAAAAAAABGAAAAA|     TN|          0|                               64.000000|                               35.080000|                                0.000000|                                3.150000|
+|AAAAAAAAABGBAAAA|   null|          1|                               40.000000|                               25.070000|                                0.000000|                               16.040000|
+|AAAAAAAAABGBAAAA|     TN|          0|                               40.000000|                               25.070000|                                0.000000|                               16.040000|
+|AAAAAAAAABGEAAAA|   null|          1|                               39.500000|                               56.765000|                               14.255000|                               36.005000|
+|AAAAAAAAABGEAAAA|     TN|          0|                               39.500000|                               56.765000|                               14.255000|                               36.005000|
+|AAAAAAAAABHAAAAA|   null|          1|                               93.000000|                               74.800000|                                0.000000|                               21.690000|
+|AAAAAAAAABHAAAAA|     TN|          0|                               93.000000|                               74.800000|                                0.000000|                               21.690000|
+|AAAAAAAAABHCAAAA|   null|          1|                               31.500000|                               79.835000|                              181.380000|                               61.935000|
+|AAAAAAAAABHCAAAA|     TN|          0|                               31.500000|                               79.835000|                              181.380000|                               61.935000|
+|AAAAAAAAABIBAAAA|   null|          1|                               48.000000|                              170.890000|                                0.000000|                              140.120000|
+|AAAAAAAAABIBAAAA|     TN|          0|                               48.000000|                              170.890000|                                0.000000|                              140.120000|
+|AAAAAAAAABJAAAAA|   null|          1|                               46.500000|                               82.325000|                                0.000000|                               44.985000|
+|AAAAAAAAABJAAAAA|     TN|          0|                               46.500000|                               82.325000|                                0.000000|                               44.985000|
+|AAAAAAAAABJBAAAA|   null|          1|                               76.000000|                               12.400000|                                0.000000|                                3.960000|
+|AAAAAAAAABJBAAAA|     TN|          0|                               76.000000|                               12.400000|                                0.000000|                                3.960000|
+|AAAAAAAAABJDAAAA|   null|          1|                               34.000000|                              118.505000|                                0.000000|                               61.205000|
+|AAAAAAAAABJDAAAA|     TN|          0|                               34.000000|                              118.505000|                                0.000000|                               61.205000|
+|AAAAAAAAABKAAAAA|   null|          1|                               65.000000|                                8.775000|                                0.000000|                                5.180000|
+|AAAAAAAAABKAAAAA|     TN|          0|                               65.000000|                                8.775000|                                0.000000|                                5.180000|
+|AAAAAAAAABKCAAAA|   null|          1|                               26.000000|                               51.570000|                                0.000000|                               41.250000|
+|AAAAAAAAABKCAAAA|     TN|          0|                               26.000000|                               51.570000|                                0.000000|                               41.250000|
+|AAAAAAAAABLBAAAA|   null|          1|                               61.500000|                              149.120000|                                0.000000|                               82.540000|
+|AAAAAAAAABLBAAAA|     TN|          0|                               61.500000|                              149.120000|                                0.000000|                               82.540000|
+|AAAAAAAAABMAAAAA|   null|          1|                               14.000000|                              109.970000|                                0.000000|                               10.990000|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

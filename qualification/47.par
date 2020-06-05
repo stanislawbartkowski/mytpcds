@@ -1,0 +1,4 @@
+YEAR=1999
+SELECTONE=v1.i_category, v1.i_brand, v1.s_store_name, v1.s_company_name
+SELECTTWO=,v1.d_year, v1.d_moy
+ORDERBY=s_store_name

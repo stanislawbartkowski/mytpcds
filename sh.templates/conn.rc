@@ -1,6 +1,5 @@
 export TEMPDIR=/tmp/db2tpc
-#export TCPROOT=/home/sbartkowski/work/v2.10.0rc2
-export TCPROOT=/home/sb/v2.10.1rc3
+export TCPROOT=/home/sbartkowski/work/v2.11.0rc2
 export TCPDATA=/mnt/data/data
 
 #export ENV=env/db2
