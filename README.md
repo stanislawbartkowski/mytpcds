@@ -53,7 +53,9 @@ db/mysqlproc.sh | Implementation for MySQL/MariaDB | https://github.com/stanisla
 db/oracleproc.sh  | Implementation for Oracle | https://github.com/stanislawbartkowski/mytpcds/wiki/Oracle
 db/psqlproc.sh | Implementation for PostreSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/PostgreSQL
 db/sparksqlproc.sh  | Implementation for SparkSQL | https://github.com/stanislawbartkowski/mytpcds/wiki/SparkSQL-Thrive
-db/jsqshproc.sh | Alternative solution for BigSQL, jsqsh | https://github.com/stanislawbartkowski/mytpcds/wiki/IBM-BigSQL,-jsqsh
+db/jsqshproc.sh | Alternative solution for BigSQL, jsqsh | https://github.com/stanislawbartkowski/mytpcds/tree/master/RunQueries
+| proc | Several supporting bash and awk scripts | https://github.com/stanislawbartkowski/mytpcds/tree/master/proc
+| RunQueries | Java tool to run queries using JDBC connection | https://github.com/stanislawbartkowski/mytpcds/tree/master/proc
 ptest.sh  | Starter for Throughput Test
 res | Expected result sets for Qualify Test
 run.sh | Launching script file
@@ -77,6 +79,15 @@ For instance: to run Hive TPC/DS test.<br>
 
 > cp env.templates/hive.rc env<br>
 
+## Java query runner
+
+The queries can be executed by an appropriate command line tool. But to pass QUALIFY test, the output should match the reference answer result set. Because every tool comes with its own output format, it is not easy to find a common denominator for all databases. So I develeped a simple Java QueryRunner giving the same output format regardless of the database.<br>
+
+### Build Java QueryRunner
+Prerequsite: maven<br>
+
+
+
 ## The queries
 
 Not all queries are ready to execute out of the box. The TPC-DS specification allows small alteration of the query to make them runnable (4.2.3.1).
@@ -84,7 +95,7 @@ Not all queries are ready to execute out of the box. The TPC-DS specification al
 > It is recognized that implementations require specific adjustments for their operating environment and the
 > syntactic variations of its dialect of the SQL language
 
-To avoid keeping a different version of queries for every database, I decided to make amendments on the fly. Most changes are related to date arithmetics like adding or subtracting a number of days or table aliases. I decided also to apply only changes possible to make through simple string or regular expression replacement.
+To avoid keeping a different version of queries for every database, I decided to make amendments on the fly. Most changes are related to date arithmetics like adding or subtracting a number of days or table aliases. Changes are limited to basic text substitution without touching the query logic.
 
 The changes are implemented in https://github.com/stanislawbartkowski/mytpcds/blob/master/tpc.sh script file, **runsinglequery** bash function.
 
@@ -98,15 +109,8 @@ Database | Coverage
  PostgreSQL | 97%
  Hive 2.1 | 49%
  SparkSQL 2.3 | 94%
- Netezza | 95%
+ Netezza/NPS | 95%
  IBM BigSQL |  100%
-
-## Query Validation
-
-Unfortunately, I was unable to match the answer data set provided in TPC-DS package with any output. So I decided to use Oracle output as a reference answer set. But the Oracle answer set does not provide a perfect match. Sometimes it matches, sometimes does not. As a consequence, the Query Validation implemented is not fully reliable, it is not easy to tell if the query execution is valid or invalid.
-
-https://github.com/stanislawbartkowski/mytpcds/tree/master/res
-
 
 ### QUALIFY test
 
