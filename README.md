@@ -63,6 +63,20 @@ transf.awk | AWK script file used to transform the results
 env.templates | Templates for configuration files
 sh.templates | Templates for lauch scripts
 
+## Tool configuarion
+Copy bash scripts from *sh.templates* to the directory.
+
+> cd mytpcds<br>
+> cp sh.templates/* .<br>
+
+Create directory for database connection specification.
+> mkdir env<br>
+
+Copy relevent properties file from *env.templates* to *env* and configure according to yout evironment.
+For instance: to run Hive TPC/DS test.<br>
+
+> cp env.templates/hive.rc env<br>
+
 ## The queries
 
 Not all queries are ready to execute out of the box. The TPC-DS specification allows small alteration of the query to make them runnable (4.2.3.1).
