@@ -64,20 +64,8 @@ env | Configuration files for databases
 transf.awk | AWK script file used to transform the results
 env.templates | Templates for configuration files
 sh.templates | Templates for lauch scripts
-
-## Tool configuarion
-Copy bash scripts from *sh.templates* to the directory.
-
-> cd mytpcds<br>
-> cp sh.templates/* .<br>
-
-Create directory for database connection specification.
-> mkdir env<br>
-
-Copy relevent properties file from *env.templates* to *env* and configure according to yout evironment.
-For instance: to run Hive TPC/DS test.<br>
-
-> cp env.templates/hive.rc env<br>
+res | Refeence data set for Qualify Test
+qualification | Queries parameters used to run Qualify Test
 
 ## Java query runner
 
@@ -98,11 +86,35 @@ ll target/
   RunQueries-1.0-SNAPSHOT.jar
   RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
+In order to use QueryRunner in the test, **DBURL** and **JAVADRIVER** configuration parameters should be provied.
 
-### Build Java QueryRunner
-Prerequsite: maven<br>
+## Tool configuarion
+Copy bash scripts from *sh.templates* to the directory.
 
+> cd mytpcds<br>
+> cp sh.templates/* .<br>
 
+Create directory for database connection specification.
+> mkdir env<br>
+
+Copy relevent properties file from *env.templates* to *env* and configure according to yout evironment.
+For instance: to run Hive TPC/DS test.<br>
+
+> cp env.templates/hive.rc env<br>
+
+The common configuration parameters
+
+| Parameter | Value | Example
+| ------- | ------- | ----- |
+| DBNAME | Database name | PERFDB
+| DBUSER | Database user, should have full privileges in the database | perf
+| DBPASSWORD | Database password | secret
+| DBHOST | Database host name | netezza.fyre.ibm.com
+| DTYPE | Database identifier, should correspond to db/${DTYPE}proc.sh | netezza, points to db/netezzaproc.sh
+| DBURL | JDBC URL to connect to database | jdbc:netezza://$DBHOST:5480/$DBNAME
+| JAVADRIVER | JDBC Java driver jar file | /usr/local/nz/lib/nzjdbc3.jar
+
+**DBURL** and **JAVADRIVER** should be specified only if QueryRunner is going to be used. If only database client software is utilized, these parameters should be ignored.
 
 ## The queries
 
@@ -127,10 +139,8 @@ Database | Coverage
  SparkSQL 2.3 | 94%
  Netezza/NPS | 95%
  IBM BigSQL |  100%
-
-### QUALIFY test
-
-## Global settings
+ 
+ ## Global settings
 
 Variable name | Description | Default/sample value
 ------------ | ------------- | -------------
@@ -141,6 +151,20 @@ TESTDATA | TCP-DS table used for test loading phase | call_center
 TESTQUERY | Number of query used to execute a query test | 04
 DONOTVERIFY | If empty, run Test Validation (QUALIFY). If not empty, ignore Test Validation | X (not empty)
 QUERYTIMEOUT | Query time execution thereshold. Parameter for **timout** command | 5s (limit is 5 seconds)
+
+### QUALIFY test
+
+## QUALIFY dataset
+
+Qualify database is 1GB size.
+
+> ./dsdgen -dir ../work/data -sc 1
+
+## QUALIFY queries
+
+Qualify queries are used to validate SQL engine SELECT statements. Qualify queries contains 
+
+
 
 ## Configure database properties
 
