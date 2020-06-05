@@ -83,6 +83,22 @@ For instance: to run Hive TPC/DS test.<br>
 
 The queries can be executed by an appropriate command line tool. But to pass QUALIFY test, the output should match the reference answer result set. Because every tool comes with its own output format, it is not easy to find a common denominator for all databases. So I develeped a simple Java QueryRunner giving the same output format regardless of the database.<br>
 
+**Build Java QueryRunner**
+> cd cd RunQueries<br>
+> mvn package<br>
+The following directory structure should be created.
+```
+ll target/
+  archive-tmp
+  classes
+  generated-sources
+  lib
+  maven-archiver
+  maven-status
+  RunQueries-1.0-SNAPSHOT.jar
+  RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
 ### Build Java QueryRunner
 Prerequsite: maven<br>
 
