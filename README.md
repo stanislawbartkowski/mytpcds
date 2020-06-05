@@ -152,25 +152,11 @@ TESTQUERY | Number of query used to execute a query test | 04
 DONOTVERIFY | If empty, run Test Validation (QUALIFY). If not empty, ignore Test Validation | X (not empty)
 QUERYTIMEOUT | Query time execution thereshold. Parameter for **timout** command | 5s (limit is 5 seconds)
 
-### QUALIFY test
-
-## QUALIFY dataset
-
-Qualify database is 1GB size.
-
-> ./dsdgen -dir ../work/data -sc 1
-
-## QUALIFY queries
-
-Qualify queries are used to validate SQL engine SELECT statements. Qualify queries contains 
-
-
-
 ## Configure database properties
 
 Prepare the server, the client and the connection. https://github.com/stanislawbartkowski/mytpcds/wiki contains a bunch of useful informations.
 
-In run.sh file uncomment the property file appropriate for a particular database and modify the file according to the environment. 
+In **conn.rc** file uncomment the property file appropriate for a particular database and modify the file according to the environment. 
 
 https://github.com/stanislawbartkowski/mytpcds/blob/master/run.sh
 
@@ -187,6 +173,27 @@ export ENV=env/oracle
 #export ENV=env/mysql
 #export ENV=env/netezza
 ```
+
+### Qualify Test
+
+## Qualify dataset
+
+Qualify database is 1GB size.
+
+> ./dsdgen -dir ../work/data -sc 1
+
+## Qualify queries
+
+Qualify queries are used to validate SQL SELECT statements. Qualify queries contains hardcoded parameter values and executed against qualify dataset should yield the same result set. The **run.sh** **queryqualification** task creates a serie of qualify queries. Every test templates has corresponding parameter definition in **qualification** directory. For instance, query template **query_templates/query4.tpl** has corresponding parameters set **qualification/4.par**
+```
+YEAR=2001
+SELECTONE=t_s_secyear.customer_preferred_cust_flag
+```
+To prepare qualification queries:
+* Configure **conn.rc** and **env/{db}proc.sh** file
+* **run.sh** file, uncomment *./tpc.sh queryqualification* line and comment out all other *./tpc.sh* lines.
+* ./run.sh
+
 
 ## Step 1, test the connection
 
