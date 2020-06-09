@@ -36,7 +36,7 @@ class OutputResultSet {
         StringBuffer spaces = new StringBuffer();
         if (s == null) s = NULL;
         String val = s.length() < size ? s : s.substring(0,size);
-        for (int j = (s == null ? 0 : val.length()); j < size; j++) spaces.append(' ');
+        for (int j = val.length(); j < size; j++) spaces.append(' ');
         addDelimiter(buffer);
         if (left) {
             buffer.append(val);
