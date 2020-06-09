@@ -75,12 +75,12 @@ class OutputResultSet {
     }
 
 
-    static void printResult(ResultSet res, Optional<String> output) throws IOException, SQLException {
+    static void printResult(ResultSet res, Optional<String> output, boolean header) throws IOException, SQLException {
         Log.info("Writing result to " + (output.isPresent() ? output.get() : " stdout"));
         PrintStream writer = (output.isPresent()) ? new PrintStream(new File(output.get())) : System.out;
         ResultSetMetaData meta = res.getMetaData();
         List<Integer> sizes = prepareColumnSize(meta);
-        drawHeader(sizes,meta, writer);
+        if (header) drawHeader(sizes,meta, writer);
         while (res.next()) {
             StringBuffer line = new StringBuffer();
             for (int i = 0; i < meta.getColumnCount(); i++) {
@@ -89,7 +89,7 @@ class OutputResultSet {
             addDelimiter(line);
             writeLine(writer, line);
         }
-        drawLine(sizes,writer);
+        if (header) drawLine(sizes,writer);
         writer.close();
     }
 

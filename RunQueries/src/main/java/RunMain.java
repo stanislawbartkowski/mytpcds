@@ -19,6 +19,7 @@ public class RunMain {
     private final static String fileO = "f";
     private final static String outputO = "output";
     private final static String queryO = "query";
+    private final static String headerO = "header";
 
     private static Connection connect(String url, String user, String password) throws SQLException {
         return DriverManager.getConnection(url, user, password);
@@ -43,6 +44,7 @@ public class RunMain {
         options.addOption(outputO, true, "Output text file or stdout if not provided");
         options.addOption(fileO, true, "SQL input file");
         options.addOption(queryO, false, "Query SQL");
+        options.addOption(headerO,false,"Output with header and footer");
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd = null;
         try {
@@ -72,7 +74,7 @@ public class RunMain {
                 res = RunQueries.runSqlFile(conn, cmd.getOptionValue(fileO), queryS);
             }
             if (res != null)
-                OutputResultSet.printResult(res, cmd.hasOption(outputO) ? Optional.of(cmd.getOptionValue(outputO)) : Optional.empty());
+                OutputResultSet.printResult(res, cmd.hasOption(outputO) ? Optional.of(cmd.getOptionValue(outputO)) : Optional.empty(), cmd.hasOption(headerO));
         } catch (SQLException | IOException throwables) {
             Log.severe("Cannot connect to data source", throwables);
         }
