@@ -1,6 +1,3 @@
------------------------------------------------------------------------
-|     CUSTOMER_ID|                                        CUSTOMERNAME|
------------------------------------------------------------------------
 |AAAAAAAAAIPGAAAA|Carter                        , Rodney              |
 |AAAAAAAAAKMBBAAA|Mcarthur                      , Emma                |
 |AAAAAAAACBNHBAAA|Wells                         , Ron                 |
@@ -26,4 +23,4 @@
 |AAAAAAAANKPCAAAA|Shaffer                       , Sergio              |
 |AAAAAAAANOCKAAAA|Vargas                        , James               |
 |AAAAAAAAOGJEBAAA|Owens                         , Denice              |
------------------------------------------------------------------------
+---------

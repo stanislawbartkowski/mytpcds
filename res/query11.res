@@ -1,6 +1,3 @@
----------------------------------------------------------------------------------------------------
-|     CUSTOMER_ID| CUSTOMER_FIRST_NAME|            CUSTOMER_LAST_NAME|CUSTOMER_PREFERRED_CUST_FLAG|
----------------------------------------------------------------------------------------------------
 |AAAAAAAAAFGBBAAA|Howard              |Major                         |                           Y|
 |AAAAAAAAAMGDAAAA|Kenneth             |Harlan                        |                           Y|
 |AAAAAAAAAOPFBAAA|Jerry               |Fields                        |                           Y|
@@ -89,4 +86,4 @@
 |AAAAAAAAPKIKAAAA|Wendy               |Horvath                       |                           Y|
 |AAAAAAAAPMMBBAAA|Paul                |Jordan                        |                           N|
 |AAAAAAAAPPIBBAAA|Candice             |Lee                           |                           Y|
----------------------------------------------------------------------------------------------------
+---------

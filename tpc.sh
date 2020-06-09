@@ -244,7 +244,7 @@ preparequery() {
   local -r TEMPD=`mktemp -d`
   mkdir -p $TEMPD
   cd $TEMPD
-  csplit --suppress-matched  $TCPQ0 "/-- end query/" "{*}" -f query
+  csplit --suppress-matched  $TCPQ0 "/-- end query/" "{*}" -f query -s
   # remove 0
   find $TEMPD -size  0 -exec rm {} \;
 
@@ -299,25 +299,10 @@ resultline() {
   echo $mess
 }
 
+modifyquery() {
+  local -r qfile=$1
+  local -r TMP=$2
 
-runsinglequery() {
-  local qfile=$TMPQ/$1
-  [ -f $qfile ] || logfail "$qfile does not exist"
-  local -r QUERY=`getqueryname $qfile`
-  local -r TPLNAME=$QUERY.tpl
-  RESULTSET=$RESULTDIRECTORY/$QUERY.res
-  rm -f $RESULTSET
-
-  if [[ "$SKIPQUERY" =~ .*${TPLNAME}.* ]]; then
-    mess="$1 | $QUERY | SKIPPED"
-    log "$mess"
-    echo $mess >>$RESFILE0
-    return
-  fi
-  [ $STREAMNO -eq 0 ] && log "$qfile  started ..."
-  [ $STREAMNO -ne 0 ] && log "$STREAMNO $qfile  started ..."
-  [ -f $qfile ] || logfail "Query $qfile does not exist"
-  local TMP=`crtemp`
   local TMP1=`crtemp`
   local TMP2=`crtemp`
   local TMP3=`crtemp`
@@ -410,13 +395,63 @@ runsinglequery() {
     cp $TMP1 $TMP
   fi
 
+}
+
+runsinglequery() {
+  local qfile=$TMPQ/$1
+  [ -f $qfile ] || logfail "$qfile does not exist"
+  local -r QUERY=`getqueryname $qfile`
+  local -r TPLNAME=$QUERY.tpl
+  RESULTSET=$RESULTDIRECTORY/$QUERY.res
+  rm -f $RESULTSET
+
+  if [[ "$SKIPQUERY" =~ .*${TPLNAME}.* ]]; then
+    mess="$1 | $QUERY | SKIPPED"
+    log "$mess"
+    echo $mess >>$RESFILE0
+    return
+  fi
+  [ $STREAMNO -eq 0 ] && log "$qfile  started ..."
+  [ $STREAMNO -ne 0 ] && log "$STREAMNO $qfile  started ..."
+  [ -f $qfile ] || logfail "Query $qfile does not exist"
+
+  local TMP=`crtemp`
+
+  modifyquery $qfile $TMP
+
+  # query can contain more queries separated by ;
+  local -r CDIR=`mktemp -d`
+  csplit $TMP "/;/1"  -f $CDIR/query -s
+  # remove empty file
+  find $CDIR/query* -size 0c -exec rm {} \;
+  find $CDIR/query* -size 1c -exec rm {} \;
+  find $CDIR/query* -size 2c -exec rm {} \;
+
+  local -r OUTPUTQUERY=`crtemp`
   local -r before=`getsec`
-  runquery $TMP >>$LOGFILE
-  local -r RES=$?
+  for f in $CDIR/query*; do 
+    runquery $f >>$LOGFILE
+    RES=$?
+    cat $RESULTSET >>$OUTPUTQUERY
+    echo "---------" >>$OUTPUTQUERY
+  done
+
+  rm -rf $CDIR
+  # copy back compacted output
+  cp $OUTPUTQUERY $RESULTSET
+
   local -r t=`calculatesec $before`
   local mess=`resultline $RES $1 $TPLNAME $t`
-  if [ $RES -eq 0 ] && [ -z "$DONOTVERIFY" ]; then
+  if [ $RES -eq 0 ] && [ -n "$QUALIFYTEST" ]; then
+    local TMP2=`crtemp`
+    local TMP3=`crtemp`
+
     local RESQUERY=$RESQUERYDIR/$QUERY.res
+    if [ -n "$NULLLAST" ]; then
+       local -r RESNULLLAST=$RESQUERYDIR/${QUERY}_null.res
+       if [ -f $RESNULLLAST ]; then RESQUERY=$RESNULLLAST; fi
+    fi
+      
     log "Compare the result $RESQUERY against $RESULTSET"
     compactresult $RESQUERY >$TMP2
     compactresult $RESULTSET >$TMP3
@@ -472,8 +507,8 @@ printhelp() {
   log "    loaddata : load data"
   log "    verifyload : verify load "
   log "    runqueries : runqueries"
-  log "   querystreams : query streams"
-  log "   queryqualification : qualification queries"
+  log "    querystreams : query streams"
+  log "    queryqualification : qualification queries"
   log " -- TEST"
   log "    test : test connection"
   log "    loadtest : load a single table as a test"

@@ -1,6 +1,3 @@
------------------------------------------------------------
-|       I_ITEM_ID|                             TOTAL_SALES|
------------------------------------------------------------
 |AAAAAAAANEFAAAAA|                                    null|
 |AAAAAAAAOHICAAAA|                                    null|
 |AAAAAAAACENDAAAA|                                    0.00|
@@ -101,4 +98,4 @@
 |AAAAAAAAMMCAAAAA|                                  959.76|
 |AAAAAAAACCPDAAAA|                                  971.77|
 |AAAAAAAAKNCEAAAA|                                  998.60|
------------------------------------------------------------
+---------

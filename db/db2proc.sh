@@ -70,14 +70,14 @@ runcreatetable() {
   runscript $1
 }
 
-runquery() {
+deprecated_runquery() {
   runscript $1
   local RES=$?
   [ $RES -eq 1 ] && return 0
   return $RES
 }
 
-numberofrows() {
+deprecated_numberofrows() {
   connect
   db2 -x "$1"
   local RES=$?
@@ -106,3 +106,5 @@ verifyvariables() {
 }
 
 [ "$DTYPEID" = "bigsql" ] && verifyvariables
+
+export NULLLAST=X

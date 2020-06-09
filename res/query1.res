@@ -1,6 +1,3 @@
-------------------
-|   C_CUSTOMER_ID|
-------------------
 |AAAAAAAAAAABBAAA|
 |AAAAAAAAAAADBAAA|
 |AAAAAAAAAAADBAAA|
@@ -101,4 +98,4 @@
 |AAAAAAAAACBNAAAA|
 |AAAAAAAAACBPAAAA|
 |AAAAAAAAACCHAAAA|
-------------------
+---------

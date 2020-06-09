@@ -1,6 +1,3 @@
-----------------------------------------------------------------------
-|     CUSTOMER_ID| CUSTOMER_FIRST_NAME|            CUSTOMER_LAST_NAME|
-----------------------------------------------------------------------
 |AAAAAAAAAMGDAAAA|Kenneth             |Harlan                        |
 |AAAAAAAAANFAAAAA|Philip              |Banks                         |
 |AAAAAAAAAOPFBAAA|Jerry               |Fields                        |
@@ -93,4 +90,4 @@
 |AAAAAAAAPKIKAAAA|Wendy               |Horvath                       |
 |AAAAAAAAPMMBBAAA|Paul                |Jordan                        |
 |AAAAAAAAPPIBBAAA|Candice             |Lee                           |
-----------------------------------------------------------------------
+---------

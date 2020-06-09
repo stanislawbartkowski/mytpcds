@@ -10,7 +10,7 @@ export TESTQUERY=32
 #export QUERYTIMEOUT=5m
 #export QUERYTIMEOUT=1m
 
-#export DONOTVERIFY=X
+export QUALIFYTEST=X
 export QUERYTIMEOUT=59m
 
 #./tpc.sh querystreams 
