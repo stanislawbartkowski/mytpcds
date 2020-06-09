@@ -12,7 +12,7 @@ import java.util.Optional;
 class OutputResultSet {
 
     private final static char DELIMITER = '|';
-    private final static String NULL="null";
+    private final static String NULL="NULL";
 
     private static void addDelimiter(StringBuffer buffer) {
         buffer.append(DELIMITER);
