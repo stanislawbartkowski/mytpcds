@@ -84,7 +84,9 @@ class OutputResultSet {
         while (res.next()) {
             StringBuffer line = new StringBuffer();
             for (int i = 0; i < meta.getColumnCount(); i++) {
-                addColumn(sizes,meta, i, res.getString(i + 1), line);
+                String val = res.getString(i + 1);
+                if (res.wasNull()) val = null;
+                addColumn(sizes,meta, i, val, line);
             }
             addDelimiter(line);
             writeLine(writer, line);
