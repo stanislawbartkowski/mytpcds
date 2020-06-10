@@ -8,6 +8,7 @@ DTYPE=db2
 
 DBURL="jdbc:db2://thinkde:50000/$DBNAME"
 JAVADRIVER=/home/db2inst1/sqllib/java/db2jcc4.jar
+JVMPARS="-Ddb2.jcc.charsetDecoderEncoder=3"
 
 
 

@@ -1012,8 +1012,8 @@
 |    6012008|importobrand #8                                   |          9|          0|                                    0.00|
 |    7012010|importonameless #10                               |         18|         50|                                    0.00|
 |    9012005|importounivamalg #5                               |          9|         12|                                    0.00|
-|    2002001|importoimporto #1                                 |          9|         58|                                    null|
-|    2003002|exportiimporto #2                                 |          9|         27|                                    null|
-|    2004002|edu packimporto #2                                |          9|          7|                                    null|
-|    5003002|exportischolar #2                                 |          9|         20|                                    null|
+|    2002001|importoimporto #1                                 |          9|         58|                                    NULL|
+|    2003002|exportiimporto #2                                 |          9|         27|                                    NULL|
+|    2004002|edu packimporto #2                                |          9|          7|                                    NULL|
+|    5003002|exportischolar #2                                 |          9|         20|                                    NULL|
 ---------

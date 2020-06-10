@@ -1,5 +1,5 @@
-|AAAAAAAANEFAAAAA|                                    null|
-|AAAAAAAAOHICAAAA|                                    null|
+|AAAAAAAANEFAAAAA|                                    NULL|
+|AAAAAAAAOHICAAAA|                                    NULL|
 |AAAAAAAACENDAAAA|                                    0.00|
 |AAAAAAAAEPDEAAAA|                                    0.00|
 |AAAAAAAAIGBEAAAA|                                    0.00|

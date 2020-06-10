@@ -70,7 +70,7 @@
 |catalog|cs_ship_addr_sk    |       1999|          3|Shoes                                             |                  13|                                14924.61|
 |catalog|cs_ship_addr_sk    |       1999|          3|Sports                                            |                  24|                                56456.44|
 |catalog|cs_ship_addr_sk    |       1999|          3|Women                                             |                  17|                                 6958.54|
-|catalog|cs_ship_addr_sk    |       1999|          4|                                                  |                   1|                                    null|
+|catalog|cs_ship_addr_sk    |       1999|          4|                                                  |                   1|                                    NULL|
 |catalog|cs_ship_addr_sk    |       1999|          4|Books                                             |                  27|                                50890.95|
 |catalog|cs_ship_addr_sk    |       1999|          4|Children                                          |                  36|                                30608.13|
 |catalog|cs_ship_addr_sk    |       1999|          4|Electronics                                       |                  28|                                59307.37|

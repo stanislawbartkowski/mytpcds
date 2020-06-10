@@ -1,5 +1,5 @@
-|null           |                        null|                             13343451.50|                               687196.48|                             -4060382.36|
-|catalog channel|                        null|                              4456215.06|                               230287.89|                              -614823.52|
+|NULL           |                        NULL|                             13343451.50|                               687196.48|                             -4060382.36|
+|catalog channel|                        NULL|                              4456215.06|                               230287.89|                              -614823.52|
 |catalog channel|catalog_pageAAAAAAAAAAABAAAA|                                19965.69|                                 3132.48|                               -16011.54|
 |catalog channel|catalog_pageAAAAAAAAABABAAAA|                                14376.88|                                  380.90|                                -3715.45|
 |catalog channel|catalog_pageAAAAAAAAACABAAAA|                                 4427.58|                                    0.00|                                -6520.01|
