@@ -50,7 +50,7 @@ rundroptable() {
      jsqsh_script $TMP
  }
 
- numberofrows() {
+ deprecated_numberofrows() {
   echo "$1" >>$LOGFILE 
   jsqsh_command "$1 ;"
   cat $OUTPUT >>$LOGFILE
