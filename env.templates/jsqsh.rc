@@ -7,3 +7,9 @@ HDFSPATH="/tmp/data"
 
 STOREDAS="stored as parquet"
 #STOREDAS="stored as orc"
+
+DBURL=jdbc:db2://aa1.fyre.ibm.com:32051/$DBNAME?currentSchema=PERFBS
+#JAVADRIVER=/home/bigsql/sqllib/java/db2jcc4.jar
+JAVADRIVER=jars/db2jcc4.jar
+#JVMPARS="-Ddb2.jcc.charsetDecoderEncoder=3"
+
