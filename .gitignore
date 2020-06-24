@@ -11,3 +11,4 @@ tpcgraph/*svg
 tpcgraph/*png
 *.pyc
 param.py
+jars/*
