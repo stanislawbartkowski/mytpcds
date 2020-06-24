@@ -72,7 +72,7 @@ qualification | Queries parameters used to run Qualify Test
 The queries can be executed by an appropriate command line tool. But to pass Qalify Test, the output should match the reference answer result set. Because every tool comes with its own output format, it is not easy to find a common denominator for all databases. So I develeped a simple Java QueryRunner giving the same output format regardless of the database.<br>
 
 **Build Java Query Runner**
-> cd cd RunQueries<br>
+> cd RunQueries<br>
 > mvn package<br>
 The following directory structure should be created.
 ```
