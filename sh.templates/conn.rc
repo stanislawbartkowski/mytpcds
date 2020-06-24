@@ -1,6 +1,6 @@
 export TEMPDIR=/tmp/tpcds
 export TCPROOT=/home/perf/v2.11.0rc2
-export TCPDATA=/mnt/data/data
+export TCPDATA=/home/perf/v2.11.0rc2/work/data
 
 #export ENV=env/db2
 #export ENV=env/bigsql
