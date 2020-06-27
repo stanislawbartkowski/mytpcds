@@ -1,0 +1,6 @@
+Client {
+  com.sun.security.auth.module.Krb5LoginModule required
+  useTicketCache=true
+  doNotPrompt=true
+  useKeyTab=false;
+};

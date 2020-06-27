@@ -2,10 +2,10 @@
 DBNAME=perfdb
 TENAME=perfte
 DBUSER=perf
-HIVEURL="jdbc:hive2://a1.fyre.ibm.com:2181,aa1.fyre.ibm.com:2181,hurds1.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@FYRE.NET"
+#HIVEURL="jdbc:hive2://a1.fyre.ibm.com:2181,aa1.fyre.ibm.com:2181,hurds1.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@FYRE.NET"
+HIVEURL="jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
 
-#HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
-#HIVEURL="jdbc:hive2://myhdp1.fyre.ibm.com:2181,myhdp3.fyre.ibm.com:2181,myhdp2.fyre.ibm.com:2181/XX-XX;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
+
 HDFSPATH="/tmp/data"
 
 REPLACEPIPES=X
@@ -19,5 +19,20 @@ QUEUE3=queue3
 
 STOREDAS="stored as parquet"
 #STOREDAS="stored as orc"
+
+JAVADRIVER=/usr/hdp/current/hive-client/jdbc/hive-jdbc-3.1.0.3.1.0.0-78-standalone.jar
+# -- without Kerberos
+#DBURL="jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2"
+#DBPASSWORD=secret
+
+# --- with Kerberos
+JAVADRIVER="/usr/hdp/current/hive-client/jdbc/hive-jdbc-3.1.0.3.1.0.0-78-standalone.jar:HadoopAuth/target/HadoopAuth-1.0-SNAPSHOT-jar-with-dependencies.jar"
+DBURL="jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@CENTOS.COM.REALM"
+#DBURL="jdbc:hive2://mdp2.sb.com:10000/perfdb;kerberosAuthType=fromSubject;auth=kerberos;principal=hive/_HOST@CENTOS.COM.REALM"
+DBPASSWORD=XXXX
+#JVMPARS="-Dsun.security.krb5.debug=true -Djava.security.auth.login.config=env/kerberos-hive.jaas"
+JVMPARS="-Djava.security.auth.login.config=env/kerberos-hive.jaas"
+RUNQUERYPAR=-hadoopKerberos
+
 
 DTYPE=hive
