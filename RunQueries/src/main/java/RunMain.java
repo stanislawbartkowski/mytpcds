@@ -56,6 +56,10 @@ public class RunMain {
         options.addOption(queryO, false, "Query SQL");
         options.addOption(headerO, false, "Output with header and footer");
         options.addOption(hadoopKerberosO, false, "Hive/Kerberos authentication");
+        // placeholder to force usage of commons.cli 1.4 instead of 1.2
+        // can be found in dependencies
+        options.hasShortOption("dummy");
+
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd = null;
         try {
