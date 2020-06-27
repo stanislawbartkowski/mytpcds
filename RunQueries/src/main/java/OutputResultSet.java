@@ -13,6 +13,7 @@ class OutputResultSet {
 
     private final static char DELIMITER = '|';
     private final static String NULL="NULL";
+    private final static int MAXCSIZE=2000;
 
     private static void addDelimiter(StringBuffer buffer) {
         buffer.append(DELIMITER);
@@ -25,6 +26,8 @@ class OutputResultSet {
         for (int i=0; i<meta.getColumnCount(); i++) {
             String header = meta.getColumnName(i + 1);
             int csize = meta.getColumnDisplaySize(i + 1);
+            // threshold
+            if (csize > MAXCSIZE) Log.info(header + " column size " + csize + " too big");
             sizes.add((header.length() > csize) ? header.length() : csize);
         }
         return sizes;
