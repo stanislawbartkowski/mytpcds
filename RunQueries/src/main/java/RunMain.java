@@ -1,5 +1,7 @@
 
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.Optional;
 
@@ -20,9 +22,11 @@ public class RunMain {
     private final static String outputO = "output";
     private final static String queryO = "query";
     private final static String headerO = "header";
+    private final static String hadoopKerberosO = "hadoopKerberos";
 
     private static Connection connect(String url, String user, String password) throws SQLException {
         return DriverManager.getConnection(url, user, password);
+        //return DriverManager.getConnection(url);
     }
 
     private static void printHelp(Options options, Optional<String> par, boolean notfound) {
@@ -33,6 +37,12 @@ public class RunMain {
         System.exit(4);
     }
 
+    private static void authenticateHadoop() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        Class hadoopAuth = Class.forName("HadoopAuth");
+        Method m = hadoopAuth.getDeclaredMethod("HadoopAuth", null);
+        m.invoke(null, null);
+
+    }
 
     public static void main(String[] args) {
         Options options = new Options();
@@ -44,7 +54,8 @@ public class RunMain {
         options.addOption(outputO, true, "Output text file or stdout if not provided");
         options.addOption(fileO, true, "SQL input file");
         options.addOption(queryO, false, "Query SQL");
-        options.addOption(headerO,false,"Output with header and footer");
+        options.addOption(headerO, false, "Output with header and footer");
+        options.addOption(hadoopKerberosO, false, "Hive/Kerberos authentication");
         CommandLineParser parser = new DefaultParser();
         CommandLine cmd = null;
         try {
@@ -65,6 +76,14 @@ public class RunMain {
 
         Log.info("Connecting to " + url);
         Log.info("User: " + user + ", password: XXXX");
+        if (cmd.hasOption(hadoopKerberosO))
+            try {
+                Log.info("Hadoop/Kerberos authentication");
+                authenticateHadoop();
+                Log.info("Kerberos authentication successful");
+            } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException throwables) {
+                Log.severe("Cannot authenticate as Kerberos or HadoopAuth class not found", throwables);
+            }
         try (Connection conn = connect(url, user, password)) {
             ResultSet res = null;
             if (cmd.hasOption(statementO)) {
