@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="header optional">
+      <change afterPath="$PROJECT_DIR$/test/testquery0.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../HadoopAuth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HadoopAuth/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RunQueries.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RunQueries.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OutputResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OutputResultSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RunMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RunQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunQueries.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
     <configuration name="RunMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RunMain" />
       <module name="RunQueries" />
-      <option name="PROGRAM_PARAMETERS" value="-password &quot;Arkadiusz123?&quot; -url &quot;jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2&quot; -user perf -s &quot;SELECT CAST(CONCAT('NUMBEROFROWS:',COUNT(*)) as CHAR(20)) AS XX FROM perfdb.call_center&quot;  -query -header -hadoopKerberos" />
+      <option name="PROGRAM_PARAMETERS" value="-password &quot;X&quot; -url &quot;jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2&quot; -user perf -f $PROJECT_DIR$/test/testquery0.sql  -query -header -hadoopKerberos -removeSemi" />
       <option name="VM_PARAMETERS" value="-Djava.security.auth.login.config=$PROJECT_DIR$/../jars/kerberos-hive.jaas " />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -102,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593282400107</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Warning if column size too big (Hive JDBC problem)">
+      <created>1593284251024</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593284251024</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -111,17 +118,18 @@
     <MESSAGE value="was null" />
     <MESSAGE value="NULL (capital letter)" />
     <MESSAGE value="placeholder for hasShortOption" />
-    <option name="LAST_COMMIT_MESSAGE" value="placeholder for hasShortOption" />
+    <MESSAGE value="Warning if column size too big (Hive JDBC problem)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Warning if column size too big (Hive JDBC problem)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2372" y="97" width="1024" height="852" key="#Project_Structure" timestamp="1593281980166">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2372" y="97" width="1024" height="852" key="#Project_Structure/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593281980166" />
-    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593283455578">
+    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593287619343">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593283455578" />
+    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287619343" />
     <state x="2622" y="267" width="524" height="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591110038431">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -130,10 +138,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2617" y="281" width="524" height="491" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593000047958" />
-    <state x="2474" y="90" width="875" height="957" key="CommitChangelistDialog2" timestamp="1593282399823">
+    <state x="2474" y="90" width="875" height="957" key="CommitChangelistDialog2" timestamp="1593284250722">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2474" y="90" width="875" height="957" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593282399823" />
+    <state x="2474" y="90" width="875" height="957" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593284250722" />
     <state x="2641" y="406" width="476" height="240" key="DetectedRootsChooserDialog" timestamp="1592904850352">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -146,38 +154,38 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2528" y="265" width="701" height="522" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593246500667" />
-    <state width="1669" height="209" key="GridCell.Tab.0.bottom" timestamp="1593284135970">
+    <state width="1669" height="278" key="GridCell.Tab.0.bottom" timestamp="1593287909847">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="209" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593284135970" />
-    <state width="1669" height="209" key="GridCell.Tab.0.center" timestamp="1593284135970">
+    <state width="1669" height="278" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287909847" />
+    <state width="1669" height="278" key="GridCell.Tab.0.center" timestamp="1593287909847">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="209" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593284135970" />
-    <state width="1669" height="209" key="GridCell.Tab.0.left" timestamp="1593284135970">
+    <state width="1669" height="278" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287909847" />
+    <state width="1669" height="278" key="GridCell.Tab.0.left" timestamp="1593287909847">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="209" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593284135970" />
-    <state width="1669" height="209" key="GridCell.Tab.0.right" timestamp="1593284135970">
+    <state width="1669" height="278" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287909847" />
+    <state width="1669" height="278" key="GridCell.Tab.0.right" timestamp="1593287909847">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="209" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593284135970" />
-    <state width="1669" height="278" key="GridCell.Tab.1.bottom" timestamp="1593283930280">
+    <state width="1669" height="278" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287909847" />
+    <state width="1669" height="278" key="GridCell.Tab.1.bottom" timestamp="1593287884090">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593283930280" />
-    <state width="1669" height="278" key="GridCell.Tab.1.center" timestamp="1593283930279">
+    <state width="1669" height="278" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287884090" />
+    <state width="1669" height="278" key="GridCell.Tab.1.center" timestamp="1593287884090">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593283930279" />
-    <state width="1669" height="278" key="GridCell.Tab.1.left" timestamp="1593283930279">
+    <state width="1669" height="278" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287884090" />
+    <state width="1669" height="278" key="GridCell.Tab.1.left" timestamp="1593287884090">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593283930279" />
-    <state width="1669" height="278" key="GridCell.Tab.1.right" timestamp="1593283930279">
+    <state width="1669" height="278" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287884090" />
+    <state width="1669" height="278" key="GridCell.Tab.1.right" timestamp="1593287884090">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593283930279" />
+    <state width="1669" height="278" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593287884090" />
     <state x="2483" y="274" width="782" height="518" key="NewModule_or_Project.wizard" timestamp="1593210880925">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -186,10 +194,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2385" y="154" width="1007" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591098808967" />
-    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1593282401674">
+    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1593284254830">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593282401674" />
+    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593284254830" />
     <state width="944" height="497" key="XDebugger.FullValuePopup" timestamp="1591818170746">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -212,7 +220,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
-          <line>101</line>
+          <line>102</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -222,7 +230,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
-          <line>93</line>
+          <line>94</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -230,7 +238,15 @@
           <line>82</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/RunQueries.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HadoopAuth$RunMain.ic" NAME="RunMain Coverage Results" MODIFIED="1593287461994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

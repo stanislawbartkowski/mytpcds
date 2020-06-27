@@ -14,7 +14,7 @@ class RunQueries {
         return null;
     }
 
-    static ResultSet runSqlFile(Connection con, String file, boolean queryS) throws IOException, SQLException {
+    static ResultSet runSqlFile(Connection con, String file, boolean queryS, boolean removeSemicolon) throws IOException, SQLException {
         Log.info("Read " + (queryS ? "query" : "update") + " " + file);
         List<String> lines = Files.readAllLines(new File(file).toPath());
         StringBuffer query = new StringBuffer();
@@ -24,7 +24,9 @@ class RunQueries {
                 query.append('\n');
             }
         }
-        return runStatement(con, query.toString(), queryS);
+        String q = query.toString().trim();
+        if (removeSemicolon && q.endsWith(";")) q = q.substring(0,q.length()-1);
+        return runStatement(con, q, queryS);
     }
 
 

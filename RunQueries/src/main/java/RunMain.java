@@ -23,6 +23,7 @@ public class RunMain {
     private final static String queryO = "query";
     private final static String headerO = "header";
     private final static String hadoopKerberosO = "hadoopKerberos";
+    private final static String removeSemiO = "removeSemi";
 
     private static Connection connect(String url, String user, String password) throws SQLException {
         return DriverManager.getConnection(url, user, password);
@@ -41,7 +42,6 @@ public class RunMain {
         Class hadoopAuth = Class.forName("HadoopAuth");
         Method m = hadoopAuth.getDeclaredMethod("HadoopAuth", null);
         m.invoke(null, null);
-
     }
 
     public static void main(String[] args) {
@@ -56,6 +56,7 @@ public class RunMain {
         options.addOption(queryO, false, "Query SQL");
         options.addOption(headerO, false, "Output with header and footer");
         options.addOption(hadoopKerberosO, false, "Hive/Kerberos authentication");
+        options.addOption(removeSemiO, false, "Remove terminating semicolon");
         // placeholder to force usage of commons.cli 1.4 instead of 1.2
         // can be found in dependencies
         options.hasShortOption("dummy");
@@ -94,7 +95,7 @@ public class RunMain {
                 res = RunQueries.runStatement(conn, cmd.getOptionValue(statementO), queryS);
             }
             if (cmd.hasOption(fileO)) {
-                res = RunQueries.runSqlFile(conn, cmd.getOptionValue(fileO), queryS);
+                res = RunQueries.runSqlFile(conn, cmd.getOptionValue(fileO), queryS, cmd.hasOption(removeSemiO));
             }
             if (res != null)
                 OutputResultSet.printResult(res, cmd.hasOption(outputO) ? Optional.of(cmd.getOptionValue(outputO)) : Optional.empty(), cmd.hasOption(headerO));
