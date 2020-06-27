@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="header optional" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1clAPREiJDaGR7ST4DHlIApFe1I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HadoopAuth" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../HadoopAuth" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="RunMain" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RunMain" />
+      <module name="RunQueries" />
+      <option name="PROGRAM_PARAMETERS" value="-password &quot;Arkadiusz123?&quot; -url &quot;jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2&quot; -user perf -s &quot;select * from item&quot;  -query -header -hadoopKerberos" />
+      <option name="VM_PARAMETERS" value="-Dsun.security.krb5.debug=true -Djava.security.auth.login.config=$PROJECT_DIR$/../jars/kerberos-hive.jaas " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="" />
+      <created>1591092781576</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591092781576</updated>
+    </task>
+    <task id="LOCAL-00001" summary="header optional">
+      <created>1591711534944</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591711534944</updated>
+    </task>
+    <task id="LOCAL-00002" summary="small fix">
+      <created>1591726845757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591726845757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="was null">
+      <created>1591727070629</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591727070629</updated>
+    </task>
+    <task id="LOCAL-00004" summary="NULL (capital letter)">
+      <created>1591727252667</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591727252667</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="header optional" />
+    <MESSAGE value="small fix" />
+    <MESSAGE value="was null" />
+    <MESSAGE value="NULL (capital letter)" />
+    <option name="LAST_COMMIT_MESSAGE" value="NULL (capital letter)" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2372" y="97" width="1024" height="852" key="#Project_Structure" timestamp="1593246379793">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2372" y="97" width="1024" height="852" key="#Project_Structure/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593246379793" />
+    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593247600981">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593247600981" />
+    <state x="2622" y="267" width="524" height="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591110038431">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2622" y="267" width="524" height="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591110038431" />
+    <state x="2617" y="281" width="524" height="491" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1593000047958">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2617" y="281" width="524" height="491" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593000047958" />
+    <state x="2446" y="44" width="875" height="957" key="CommitChangelistDialog2" timestamp="1591727252350">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2446" y="44" width="875" height="957" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591727252350" />
+    <state x="2641" y="406" width="476" height="240" key="DetectedRootsChooserDialog" timestamp="1592904850352">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2641" y="406" width="476" height="240" key="DetectedRootsChooserDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1592904850352" />
+    <state x="2122" y="146" width="1517" height="703" key="DiffContextDialog" timestamp="1593245864014">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2122" y="146" width="1517" height="703" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593245864014" />
+    <state x="2528" y="265" width="701" height="522" key="FileChooserDialogImpl" timestamp="1593246500667">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2528" y="265" width="701" height="522" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593246500667" />
+    <state width="1669" height="209" key="GridCell.Tab.0.bottom" timestamp="1593250142483">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="209" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142483" />
+    <state width="1669" height="209" key="GridCell.Tab.0.center" timestamp="1593250142483">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="209" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142483" />
+    <state width="1669" height="209" key="GridCell.Tab.0.left" timestamp="1593250142483">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="209" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142483" />
+    <state width="1669" height="209" key="GridCell.Tab.0.right" timestamp="1593250142483">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="209" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142483" />
+    <state width="1669" height="278" key="GridCell.Tab.1.bottom" timestamp="1593250142480">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="278" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142480" />
+    <state width="1669" height="278" key="GridCell.Tab.1.center" timestamp="1593250142480">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="278" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142480" />
+    <state width="1669" height="278" key="GridCell.Tab.1.left" timestamp="1593250142480">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="278" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142480" />
+    <state width="1669" height="278" key="GridCell.Tab.1.right" timestamp="1593250142480">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1669" height="278" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593250142480" />
+    <state x="2483" y="274" width="782" height="518" key="NewModule_or_Project.wizard" timestamp="1593210880925">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2483" y="274" width="782" height="518" key="NewModule_or_Project.wizard/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593210880925" />
+    <state x="2385" y="154" width="1007" height="737" key="SettingsEditor" timestamp="1591098808967">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2385" y="154" width="1007" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591098808967" />
+    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1591727254217">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591727254217" />
+    <state width="944" height="497" key="XDebugger.FullValuePopup" timestamp="1591818170746">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="944" height="497" key="XDebugger.FullValuePopup/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591818170746" />
+    <state x="2201" y="232" width="1345" height="603" key="new project wizard" timestamp="1593210843101">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2201" y="232" width="1345" height="603" key="new project wizard/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593210843101" />
+    <state x="2552" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1591097772025">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2552" y="245" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591097772025" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/commons-cli/commons-cli/1.4/commons-cli-1.4.jar!/org/apache/commons/cli/DefaultParser.class</url>
+          <line>259</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
