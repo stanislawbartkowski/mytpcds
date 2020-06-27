@@ -62,9 +62,9 @@ testconnection() {
   runcommand 1 "SHOW TABLES"
 }
 
-numberofrows() {
-  runcommand 1 "$1"
-}
+#numberofrows() {
+#  runcommand 1 "$1"
+#}
 
 loadfile() {
   local -r tablename=$1

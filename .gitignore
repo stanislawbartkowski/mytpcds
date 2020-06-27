@@ -12,3 +12,4 @@ tpcgraph/*png
 *.pyc
 param.py
 jars/*
+/target/*
