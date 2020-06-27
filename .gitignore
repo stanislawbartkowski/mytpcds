@@ -13,3 +13,4 @@ tpcgraph/*png
 param.py
 jars/*
 /target/*
+*.log
