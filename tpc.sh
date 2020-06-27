@@ -132,9 +132,11 @@ verifyload() {
   log "Number of rows expected: $NOLINES"
   local -r TMP=`crtemp`
   local -r TMP1=`crtemp`
-  local query="SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table"
+  # reduce the size of the clolumn, Hive produces extremely large size of the column
+  local query="SELECT CAST(CONCAT('NUMBEROFROWS:',COUNT(*)) as CHAR(40)) AS XX FROM $table"
   if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
   # avoid pipe here to catch to error from number of rows
+  log "$query"
   numberofrows "$query" $table >$TMP1
   local -r RES=$?
   [ $RES -eq 124 ] && logfail "Timeout while loading"

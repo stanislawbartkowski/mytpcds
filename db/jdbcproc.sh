@@ -1,11 +1,16 @@
 
-JAVACMD="java $JVMPARS -cp /etc/hive/conf:RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar:$JAVADRIVER RunMain -url $DBURL -user $DBUSER -password $DBPASSWORD $RUNQUERYPAR"
+#JAVACMD="java $JVMPARS -cp RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar:$JAVADRIVER RunMain -url $DBURL -user $DBUSER -password $DBPASSWORD $RUNQUERYPAR $RUNQUERYDBPARAMS"
 
 # ===================
 # internal
 # ===================
 
+setjdbc() {
+   JAVACMD="java $JVMPARS -cp RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar:$JAVADRIVER RunMain -url $DBURL -user $DBUSER -password $DBPASSWORD $RUNQUERYPAR $RUNQUERYDBPARAMS"    
+}
+
 queryjdbccommand() {
+    setjdbc
     timeout $QUERYTIMEOUT $JAVACMD $2 "$1" -query
 }
 
@@ -18,6 +23,7 @@ jdbcfilecommand() {
 }
 
 jdbcqueryupdatefile() {
+    setjdbc
     timeout $QUERYTIMEOUT $JAVACMD -f "$1"
 }
 

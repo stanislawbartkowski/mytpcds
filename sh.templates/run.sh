@@ -6,7 +6,7 @@ export TESTDATA=call_center
 #export TESTDATA=store_sales
 #export TESTDATA=dbgen_version
 
-export TESTQUERY=32
+export TESTQUERY=1
 #export QUERYTIMEOUT=5m
 #export QUERYTIMEOUT=1m
 

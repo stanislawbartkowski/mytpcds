@@ -1,0 +1,1138 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 604504064 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2763), pid=17804, tid=0x00007f5c07fff700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_252-b09) (build 1.8.0_252-b09)
+# Java VM: OpenJDK 64-Bit Server VM (25.252-b09 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f5c200d0800):  VMThread [stack: 0x00007f5c07f00000,0x00007f5c08000000] [id=17809]
+
+Stack: [0x00007f5c07f00000,0x00007f5c08000000],  sp=0x00007f5c07ffe6b0,  free space=1017k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xadf8ed]  VMError::report_and_die()+0x15d
+V  [libjvm.so+0x4f4c6a]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0xaa
+V  [libjvm.so+0x8c32f8]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0xd8
+V  [libjvm.so+0x8ba5fe]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2e
+V  [libjvm.so+0x936deb]  PSVirtualSpace::expand_by(unsigned long)+0x5b
+V  [libjvm.so+0x92760a]  PSOldGen::expand_by(unsigned long) [clone .part.113]+0x2a
+V  [libjvm.so+0x9277db]  PSOldGen::expand(unsigned long) [clone .part.115]+0xdb
+V  [libjvm.so+0x927a68]  PSOldGen::allocate(unsigned long)+0xf8
+V  [libjvm.so+0x8e78b8]  ParallelScavengeHeap::failed_mem_allocate(unsigned long)+0x158
+V  [libjvm.so+0xae1623]  VM_ParallelGCFailedAllocation::doit()+0x93
+V  [libjvm.so+0xae5cd7]  VM_Operation::evaluate()+0x47
+V  [libjvm.so+0xae45a0]  VMThread::evaluate_operation(VM_Operation*)+0x280
+V  [libjvm.so+0xae4a59]  VMThread::loop()+0x219
+V  [libjvm.so+0xae4f12]  VMThread::run()+0x92
+V  [libjvm.so+0x8c0402]  java_start(Thread*)+0xf2
+
+VM_Operation (0x00007f5c26d20650): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007f5c2004a800
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007f5bc8014000 JavaThread "Thread-2" daemon [_thread_blocked, id=17871, stack(0x00007f5c05601000,0x00007f5c05702000)]
+  0x00007f5c2011d800 JavaThread "Service Thread" daemon [_thread_blocked, id=17816, stack(0x00007f5c078f9000,0x00007f5c079fa000)]
+  0x00007f5c2011a800 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=17815, stack(0x00007f5c079fb000,0x00007f5c07afb000)]
+  0x00007f5c2010b000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=17814, stack(0x00007f5c07afc000,0x00007f5c07bfc000)]
+  0x00007f5c20109000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=17813, stack(0x00007f5c07bfc000,0x00007f5c07cfd000)]
+  0x00007f5c200df000 JavaThread "Finalizer" daemon [_thread_blocked, id=17812, stack(0x00007f5c07cfd000,0x00007f5c07dfe000)]
+  0x00007f5c200da000 JavaThread "Reference Handler" daemon [_thread_blocked, id=17811, stack(0x00007f5c07dfe000,0x00007f5c07eff000)]
+  0x00007f5c2004a800 JavaThread "main" [_thread_blocked, id=17805, stack(0x00007f5c26c22000,0x00007f5c26d22000)]
+
+Other Threads:
+=>0x00007f5c200d0800 VMThread [stack: 0x00007f5c07f00000,0x00007f5c08000000] [id=17809]
+  0x00007f5c2011f800 WatcherThread [stack: 0x00007f5c077f9000,0x00007f5c078f9000] [id=17817]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007f5c20048930] ExpandHeap_lock - owner thread: 0x00007f5c200d0800
+[0x00007f5c20048fb0] Threads_lock - owner thread: 0x00007f5c200d0800
+[0x00007f5c200494b0] Heap_lock - owner thread: 0x00007f5c2004a800
+
+heap address: 0x00000000a7800000, size: 1416 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x0000000100000000
+
+Heap:
+ PSYoungGen      total 27136K, used 0K [0x00000000e2800000, 0x00000000e6c00000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+  to   space 11264K, 0% used [0x00000000e6100000,0x00000000e6100000,0x00000000e6c00000)
+ ParOldGen       total 368128K, used 298632K [0x00000000a7800000, 0x00000000bdf80000, 0x00000000e2800000)
+  object space 368128K, 81% used [0x00000000a7800000,0x00000000b9ba2390,0x00000000bdf80000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+
+Card table byte_map: [0x00007f5c10772000,0x00007f5c10a37000] byte_map_base: 0x00007f5c10236000
+
+Marking Bits: (ParMarkBitMap*) 0x00007f5c25edfb60
+ Begin Bits: [0x00007f5c0d758000, 0x00007f5c0ed78000)
+ End Bits:   [0x00007f5c0ed78000, 0x00007f5c10398000)
+
+Polling page: 0x00007f5c26d2f000
+
+CodeCache: size=245760Kb used=3803Kb max_used=3816Kb free=241956Kb
+ bounds [0x00007f5c10df7000, 0x00007f5c111b7000, 0x00007f5c1fdf7000]
+ total_blobs=1542 nmethods=1107 adapters=350
+ compilation: enabled
+
+Compilation events (250 events):
+Event: 2,023 Thread 0x00007f5c2011a800 nmethod 985 0x00007f5c1115f2d0 code [0x00007f5c1115f420, 0x00007f5c1115f530]
+Event: 2,027 Thread 0x00007f5c2011a800  987       3       sun.security.util.DerInputStream::getLength (243 bytes)
+Event: 2,029 Thread 0x00007f5c2011a800 nmethod 987 0x00007f5c11168390 code [0x00007f5c111687a0, 0x00007f5c1116ac18]
+Event: 2,029 Thread 0x00007f5c2011a800  988       3       java.lang.Class::getReflectionFactory (26 bytes)
+Event: 2,029 Thread 0x00007f5c2011a800 nmethod 988 0x00007f5c1116dd50 code [0x00007f5c1116dee0, 0x00007f5c1116e2a8]
+Event: 2,029 Thread 0x00007f5c2011a800  989       3       java.security.Provider$ServiceKey::equals (55 bytes)
+Event: 2,029 Thread 0x00007f5c2010b000 nmethod 980 0x00007f5c1116e3d0 code [0x00007f5c1116e5a0, 0x00007f5c1116eeb8]
+Event: 2,029 Thread 0x00007f5c2011a800 nmethod 989 0x00007f5c1115e9d0 code [0x00007f5c1115eb80, 0x00007f5c1115f178]
+Event: 2,029 Thread 0x00007f5c2010b000  979       4       java.util.ArrayList$Itr::hasNext (20 bytes)
+Event: 2,030 Thread 0x00007f5c2010b000 nmethod 979 0x00007f5c1116c5d0 code [0x00007f5c1116c720, 0x00007f5c1116c7b8]
+Event: 2,030 Thread 0x00007f5c2011a800  990       3       java.util.IdentityHashMap::maskNull (12 bytes)
+Event: 2,030 Thread 0x00007f5c2011a800 nmethod 990 0x00007f5c1116c250 code [0x00007f5c1116c3c0, 0x00007f5c1116c550]
+Event: 2,030 Thread 0x00007f5c2011a800  991       3       java.util.IdentityHashMap::hash (18 bytes)
+Event: 2,030 Thread 0x00007f5c2011a800 nmethod 991 0x00007f5c1116bed0 code [0x00007f5c1116c040, 0x00007f5c1116c1c8]
+Event: 2,030 Thread 0x00007f5c2011a800  992       1       java.security.Provider$Service::getProvider (5 bytes)
+Event: 2,030 Thread 0x00007f5c2011a800 nmethod 992 0x00007f5c1115e710 code [0x00007f5c1115e860, 0x00007f5c1115e970]
+Event: 2,031 Thread 0x00007f5c2011a800  993       1       java.util.LinkedList::size (5 bytes)
+Event: 2,031 Thread 0x00007f5c2011a800 nmethod 993 0x00007f5c1115e450 code [0x00007f5c1115e5a0, 0x00007f5c1115e6b0]
+Event: 2,045 Thread 0x00007f5c2010b000  994       4       java.nio.DirectLongBufferU::get (16 bytes)
+Event: 2,045 Thread 0x00007f5c2011a800  995       3       sun.net.www.ParseUtil::encodePath (336 bytes)
+Event: 2,045 Thread 0x00007f5c2010b000 nmethod 994 0x00007f5c1115dfd0 code [0x00007f5c1115e120, 0x00007f5c1115e1b8]
+Event: 2,046 Thread 0x00007f5c2011a800 nmethod 995 0x00007f5c11170e90 code [0x00007f5c11171100, 0x00007f5c111720d8]
+Event: 2,248 Thread 0x00007f5c2010b000  996       4       java.nio.DirectLongBufferU::put (18 bytes)
+Event: 2,249 Thread 0x00007f5c2010b000 nmethod 996 0x00007f5c1115dd50 code [0x00007f5c1115dea0, 0x00007f5c1115df38]
+Event: 2,255 Thread 0x00007f5c2011a800  997       3       sun.reflect.MagicAccessorImpl::<init> (5 bytes)
+Event: 2,255 Thread 0x00007f5c2011a800 nmethod 997 0x00007f5c1115d990 code [0x00007f5c1115db00, 0x00007f5c1115dcb0]
+Event: 2,317 Thread 0x00007f5c2011a800 1003       3       java.io.DataOutputStream::writeUTF (435 bytes)
+Event: 2,320 Thread 0x00007f5c2011a800 nmethod 1003 0x00007f5c11172850 code [0x00007f5c11172b60, 0x00007f5c11174808]
+Event: 2,320 Thread 0x00007f5c2011a800  999       3       sun.misc.ProxyGenerator::dotToSlash (9 bytes)
+Event: 2,320 Thread 0x00007f5c2011a800 nmethod 999 0x00007f5c1116d910 code [0x00007f5c1116da80, 0x00007f5c1116dc88]
+Event: 2,320 Thread 0x00007f5c2011a800 1004       3       sun.misc.ProxyGenerator$ConstantPool$ValueEntry::write (190 bytes)
+Event: 2,322 Thread 0x00007f5c2011a800 nmethod 1004 0x00007f5c11175710 code [0x00007f5c11175b00, 0x00007f5c11178588]
+Event: 2,322 Thread 0x00007f5c2011a800 1005       3       java.io.DataOutputStream::writeUTF (7 bytes)
+Event: 2,322 Thread 0x00007f5c2011a800 nmethod 1005 0x00007f5c1116d590 code [0x00007f5c1116d700, 0x00007f5c1116d888]
+Event: 2,322 Thread 0x00007f5c2011a800  998       3       sun.misc.ProxyGenerator::access$900 (5 bytes)
+Event: 2,322 Thread 0x00007f5c2011a800 nmethod 998 0x00007f5c1116d0d0 code [0x00007f5c1116d240, 0x00007f5c1116d488]
+Event: 2,322 Thread 0x00007f5c2011a800 1002       3       sun.misc.ProxyGenerator::codeLocalLoadStore (90 bytes)
+Event: 2,323 Thread 0x00007f5c2011a800 nmethod 1002 0x00007f5c11179250 code [0x00007f5c111794a0, 0x00007f5c1117a5a8]
+Event: 2,323 Thread 0x00007f5c2011a800 1001       1       sun.misc.ProxyGenerator::access$800 (5 bytes)
+Event: 2,323 Thread 0x00007f5c2011a800 nmethod 1001 0x00007f5c1116ce10 code [0x00007f5c1116cf60, 0x00007f5c1116d050]
+Event: 2,323 Thread 0x00007f5c2010b000 1000       4       java.util.ArrayList::add (29 bytes)
+Event: 2,329 Thread 0x00007f5c2010b000 nmethod 1000 0x00007f5c1117c690 code [0x00007f5c1117c800, 0x00007f5c1117cb48]
+Event: 2,355 Thread 0x00007f5c2011a800 1006       3       java.lang.Enum::<init> (15 bytes)
+Event: 2,355 Thread 0x00007f5c2011a800 nmethod 1006 0x00007f5c1116ca10 code [0x00007f5c1116cb80, 0x00007f5c1116cd50]
+Event: 2,356 Thread 0x00007f5c2011a800 1007       3       java.lang.Class::searchMethods (90 bytes)
+Event: 2,357 Thread 0x00007f5c2011a800 nmethod 1007 0x00007f5c1117add0 code [0x00007f5c1117b020, 0x00007f5c1117bf98]
+Event: 2,357 Thread 0x00007f5c2011a800 1008       3       java.lang.Class$MethodArray::<init> (38 bytes)
+Event: 2,358 Thread 0x00007f5c2011a800 nmethod 1008 0x00007f5c11170890 code [0x00007f5c11170a20, 0x00007f5c11170d88]
+Event: 2,358 Thread 0x00007f5c2011a800 1009       3       java.lang.Class::arrayContentsEq (70 bytes)
+Event: 2,358 Thread 0x00007f5c2011a800 nmethod 1009 0x00007f5c11170150 code [0x00007f5c111702e0, 0x00007f5c11170710]
+Event: 2,359 Thread 0x00007f5c2011a800 1010       3       java.lang.Class$ReflectionData::<init> (10 bytes)
+Event: 2,359 Thread 0x00007f5c2011a800 nmethod 1010 0x00007f5c1116fd90 code [0x00007f5c1116ff00, 0x00007f5c111700b0]
+Event: 2,359 Thread 0x00007f5c2011a800 1011       3       java.lang.Class$Atomic::casReflectionData (13 bytes)
+Event: 2,359 Thread 0x00007f5c2011a800 nmethod 1011 0x00007f5c1116fa50 code [0x00007f5c1116fba0, 0x00007f5c1116fd10]
+Event: 2,362 Thread 0x00007f5c2010b000 1012   !   4       java.util.zip.Inflater::inflate (113 bytes)
+Event: 2,366 Thread 0x00007f5c2010b000 nmethod 1012 0x00007f5c1117ff10 code [0x00007f5c11180080, 0x00007f5c11180568]
+Event: 2,367 Thread 0x00007f5c2011a800 1013       3       java.io.BufferedReader::readLine (6 bytes)
+Event: 2,367 Thread 0x00007f5c2011a800 nmethod 1013 0x00007f5c1117fb50 code [0x00007f5c1117fcc0, 0x00007f5c1117fe68]
+Event: 2,395 Thread 0x00007f5c2011a800 1014       1       com.sun.security.sasl.util.AbstractSaslImpl::isComplete (5 bytes)
+Event: 2,395 Thread 0x00007f5c2011a800 nmethod 1014 0x00007f5c1117f690 code [0x00007f5c1117f7e0, 0x00007f5c1117f8f0]
+Event: 2,397 Thread 0x00007f5c2011a800 1015       1       java.lang.ref.Finalizer::access$000 (4 bytes)
+Event: 2,398 Thread 0x00007f5c2011a800 nmethod 1015 0x00007f5c1117f410 code [0x00007f5c1117f560, 0x00007f5c1117f650]
+Event: 2,398 Thread 0x00007f5c2011a800 1016       3       java.util.zip.ZipFile$ZipFileInflaterInputStream::finalize (5 bytes)
+Event: 2,398 Thread 0x00007f5c2011a800 nmethod 1016 0x00007f5c1117f090 code [0x00007f5c1117f200, 0x00007f5c1117f388]
+Event: 2,398 Thread 0x00007f5c2011a800 1017       3       java.util.zip.ZipFile$ZipFileInputStream::finalize (5 bytes)
+Event: 2,398 Thread 0x00007f5c2011a800 nmethod 1017 0x00007f5c1117ed10 code [0x00007f5c1117ee80, 0x00007f5c1117f008]
+Event: 2,402 Thread 0x00007f5c2011a800 1018       3       java.lang.Class::privateGetDeclaredMethods (67 bytes)
+Event: 2,403 Thread 0x00007f5c2011a800 nmethod 1018 0x00007f5c1117de50 code [0x00007f5c1117e060, 0x00007f5c1117e968]
+Event: 13,558 Thread 0x00007f5c2010b000 1019       4       java.util.zip.ZipFile::ensureOpen (37 bytes)
+Event: 13,559 Thread 0x00007f5c2010b000 nmethod 1019 0x00007f5c1117db90 code [0x00007f5c1117dce0, 0x00007f5c1117dd98]
+Event: 13,564 Thread 0x00007f5c2011a800 1020       1       org.apache.hive.org.apache.thrift.transport.TTransport::getBytesRemainingInBuffer (2 bytes)
+Event: 13,565 Thread 0x00007f5c2011a800 nmethod 1020 0x00007f5c1117d6d0 code [0x00007f5c1117d820, 0x00007f5c1117d930]
+Event: 13,565 Thread 0x00007f5c2011a800 1021       3       java.net.Socket::isConnected (20 bytes)
+Event: 13,565 Thread 0x00007f5c2011a800 nmethod 1021 0x00007f5c1117d310 code [0x00007f5c1117d480, 0x00007f5c1117d670]
+Event: 13,565 Thread 0x00007f5c2011a800 1022       3       org.apache.hive.org.apache.thrift.transport.TSaslTransport$SaslParticipant::isComplete (27 bytes)
+Event: 13,565 Thread 0x00007f5c2011a800 nmethod 1022 0x00007f5c11182ed0 code [0x00007f5c11183040, 0x00007f5c11183388]
+Event: 14,582 Thread 0x00007f5c2011a800 1023       3       org.apache.hive.org.apache.thrift.transport.TSocket::isOpen (17 bytes)
+Event: 14,583 Thread 0x00007f5c2011a800 nmethod 1023 0x00007f5c1117ce10 code [0x00007f5c1117cf80, 0x00007f5c1117d1e8]
+Event: 14,583 Thread 0x00007f5c2011a800 1024       3       org.apache.hive.org.apache.thrift.transport.TSaslClientTransport::isOpen (5 bytes)
+Event: 14,583 Thread 0x00007f5c2011a800 nmethod 1024 0x00007f5c11182550 code [0x00007f5c11182700, 0x00007f5c11182c98]
+Event: 16,593 Thread 0x00007f5c2011a800 1025       3       org.apache.hive.org.apache.thrift.transport.TTransport::readAll (87 bytes)
+Event: 16,594 Thread 0x00007f5c2011a800 nmethod 1025 0x00007f5c11180f50 code [0x00007f5c111811a0, 0x00007f5c11181ef8]
+Event: 16,594 Thread 0x00007f5c2011a800 1026       3       org.apache.hive.org.apache.thrift.transport.TMemoryInputTransport::read (49 bytes)
+Event: 16,594 Thread 0x00007f5c2011a800 nmethod 1026 0x00007f5c111807d0 code [0x00007f5c11180960, 0x00007f5c11180de8]
+Event: 16,594 Thread 0x00007f5c2011a800 1027       3       org.apache.hive.org.apache.thrift.transport.TMemoryInputTransport::getBytesRemainingInBuffer (10 bytes)
+Event: 16,594 Thread 0x00007f5c2011a800 nmethod 1027 0x00007f5c11183490 code [0x00007f5c111835e0, 0x00007f5c11183730]
+Event: 18,612 Thread 0x00007f5c2011a800 1028       3       org.apache.hadoop.hive.metastore.security.TFilterTransport::getBytesRemainingInBuffer (8 bytes)
+Event: 18,612 Thread 0x00007f5c2011a800 nmethod 1028 0x00007f5c111837d0 code [0x00007f5c11183940, 0x00007f5c11183b68]
+Event: 18,612 Thread 0x00007f5c2011a800 1029       3       org.apache.hadoop.hive.metastore.security.TFilterTransport::readAll (11 bytes)
+Event: 18,613 Thread 0x00007f5c2011a800 nmethod 1029 0x00007f5c11183c10 code [0x00007f5c11183d80, 0x00007f5c11183fa8]
+Event: 18,613 Thread 0x00007f5c2011a800 1030       3       org.apache.hive.org.apache.thrift.transport.TSaslClientTransport::read (8 bytes)
+Event: 18,613 Thread 0x00007f5c2011a800 nmethod 1030 0x00007f5c11184090 code [0x00007f5c11184200, 0x00007f5c11184388]
+Event: 18,613 Thread 0x00007f5c2011a800 1031   !   3       org.apache.hive.org.apache.thrift.transport.TSaslTransport::read (68 bytes)
+Event: 18,613 Thread 0x00007f5c2011a800 nmethod 1031 0x00007f5c11184450 code [0x00007f5c11184620, 0x00007f5c11184c58]
+Event: 19,676 Thread 0x00007f5c2011a800 1032       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readAll (11 bytes)
+Event: 19,676 Thread 0x00007f5c2011a800 nmethod 1032 0x00007f5c11184f10 code [0x00007f5c11185080, 0x00007f5c111852a8]
+Event: 19,676 Thread 0x00007f5c2011a800 1033       3       org.apache.hive.org.apache.thrift.protocol.TField::<init> (20 bytes)
+Event: 19,676 Thread 0x00007f5c2011a800 nmethod 1033 0x00007f5c11185390 code [0x00007f5c11185500, 0x00007f5c111856d0]
+Event: 22,712 Thread 0x00007f5c2011a800 1034       3       org.apache.hadoop.hive.metastore.security.TFilterTransport::write (11 bytes)
+Event: 22,712 Thread 0x00007f5c2011a800 nmethod 1034 0x00007f5c11185790 code [0x00007f5c11185900, 0x00007f5c11185b28]
+Event: 22,712 Thread 0x00007f5c2011a800 1035       3       org.apache.hive.org.apache.thrift.transport.TSaslClientTransport::write (8 bytes)
+Event: 22,713 Thread 0x00007f5c2011a800 nmethod 1035 0x00007f5c11185c10 code [0x00007f5c11185dc0, 0x00007f5c11186208]
+Event: 22,713 Thread 0x00007f5c2011a800 1036       3       org.apache.hive.org.apache.thrift.transport.TSaslTransport::write (29 bytes)
+Event: 22,713 Thread 0x00007f5c2011a800 nmethod 1036 0x00007f5c11186490 code [0x00007f5c11186620, 0x00007f5c11186a08]
+Event: 24,237 Thread 0x00007f5c2011a800 1037       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readByte (55 bytes)
+Event: 24,237 Thread 0x00007f5c2011a800 nmethod 1037 0x00007f5c11186b90 code [0x00007f5c11186d60, 0x00007f5c111873c8]
+Event: 24,237 Thread 0x00007f5c2011a800 1038       1       java.util.concurrent.locks.AbstractOwnableSynchronizer::getExclusiveOwnerThread (5 bytes)
+Event: 24,237 Thread 0x00007f5c2011a800 nmethod 1038 0x00007f5c111876d0 code [0x00007f5c11187820, 0x00007f5c11187930]
+Event: 25,746 Thread 0x00007f5c2011a800 1039       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readFieldBegin (31 bytes)
+Event: 25,746 Thread 0x00007f5c2011a800 nmethod 1039 0x00007f5c11187990 code [0x00007f5c11187b20, 0x00007f5c11187e98]
+Event: 27,247 Thread 0x00007f5c2011a800 1040       3       org.apache.hive.org.apache.thrift.transport.TSaslTransport::isOpen (33 bytes)
+Event: 27,248 Thread 0x00007f5c2011a800 nmethod 1040 0x00007f5c11188010 code [0x00007f5c111881a0, 0x00007f5c111886d8]
+Event: 28,783 Thread 0x00007f5c2011a800 1041       1       org.apache.hive.org.apache.thrift.protocol.TProtocol::getScheme (3 bytes)
+Event: 28,783 Thread 0x00007f5c2011a800 nmethod 1041 0x00007f5c11188890 code [0x00007f5c111889e0, 0x00007f5c11188af0]
+Event: 30,413 Thread 0x00007f5c2010b000 1042       4       sun.reflect.ByteVectorImpl::add (38 bytes)
+Event: 30,415 Thread 0x00007f5c2010b000 nmethod 1042 0x00007f5c1118b850 code [0x00007f5c1118b9a0, 0x00007f5c1118ba88]
+Event: 31,916 Thread 0x00007f5c2011a800 1044       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::writeByte (21 bytes)
+Event: 31,916 Thread 0x00007f5c2011a800 nmethod 1044 0x00007f5c1118b350 code [0x00007f5c1118b4c0, 0x00007f5c1118b708]
+Event: 31,917 Thread 0x00007f5c2011a800 1043       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readFieldEnd (1 bytes)
+Event: 31,917 Thread 0x00007f5c2011a800 nmethod 1043 0x00007f5c1118b010 code [0x00007f5c1118b160, 0x00007f5c1118b2b0]
+Event: 41,477 Thread 0x00007f5c2011a800 1045       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readI16 (78 bytes)
+Event: 41,478 Thread 0x00007f5c2011a800 nmethod 1045 0x00007f5c1118a510 code [0x00007f5c1118a6e0, 0x00007f5c1118ad68]
+Event: 48,519 Thread 0x00007f5c2011a800 1046       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readI32 (103 bytes)
+Event: 48,520 Thread 0x00007f5c2011a800 nmethod 1046 0x00007f5c11189990 code [0x00007f5c11189b60, 0x00007f5c1118a228]
+Event: 56,570 Thread 0x00007f5c2011a800 1047       3       java.lang.String::<init> (38 bytes)
+Event: 56,570 Thread 0x00007f5c2011a800 nmethod 1047 0x00007f5c11189350 code [0x00007f5c111894e0, 0x00007f5c11189828]
+Event: 66,113 Thread 0x00007f5c2011a800 1048       3       org.apache.hive.org.apache.thrift.scheme.StandardScheme::<init> (5 bytes)
+Event: 66,113 Thread 0x00007f5c2011a800 nmethod 1048 0x00007f5c11188f90 code [0x00007f5c11189100, 0x00007f5c111892b0]
+Event: 66,113 Thread 0x00007f5c2011a800 1049       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::writeFieldBegin (17 bytes)
+Event: 66,114 Thread 0x00007f5c2011a800 nmethod 1049 0x00007f5c1118bb90 code [0x00007f5c1118bd20, 0x00007f5c1118c058]
+Event: 73,150 Thread 0x00007f5c2011a800 1050       3       java.util.concurrent.locks.AbstractOwnableSynchronizer::setExclusiveOwnerThread (6 bytes)
+Event: 73,150 Thread 0x00007f5c2011a800 nmethod 1050 0x00007f5c11188c50 code [0x00007f5c11188da0, 0x00007f5c11188f10]
+Event: 89,659 Thread 0x00007f5c2011a800 1051       3       org.apache.hive.org.apache.thrift.EncodingUtils::testBit (6 bytes)
+Event: 89,660 Thread 0x00007f5c2011a800 nmethod 1051 0x00007f5c1118c250 code [0x00007f5c1118c3c0, 0x00007f5c1118c5b0]
+Event: 89,660 Thread 0x00007f5c2011a800 1052       3       org.apache.hive.org.apache.thrift.EncodingUtils::testBit (14 bytes)
+Event: 89,660 Thread 0x00007f5c2011a800 nmethod 1052 0x00007f5c1118c650 code [0x00007f5c1118c7c0, 0x00007f5c1118c950]
+Event: 104,200 Thread 0x00007f5c2011a800 1053       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::writeI32 (71 bytes)
+Event: 104,200 Thread 0x00007f5c2011a800 nmethod 1053 0x00007f5c1118c9d0 code [0x00007f5c1118cb40, 0x00007f5c1118ce28]
+Event: 119,221 Thread 0x00007f5c2011a800 1054       3       java.lang.String::<init> (10 bytes)
+Event: 119,222 Thread 0x00007f5c2011a800 nmethod 1054 0x00007f5c1118cf90 code [0x00007f5c1118d100, 0x00007f5c1118d2a8]
+Event: 139,290 Thread 0x00007f5c2011a800 1055       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::writeFieldEnd (1 bytes)
+Event: 139,291 Thread 0x00007f5c2011a800 nmethod 1055 0x00007f5c1118d390 code [0x00007f5c1118d4e0, 0x00007f5c1118d630]
+Event: 139,291 Thread 0x00007f5c2011a800 1056       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::writeI16 (41 bytes)
+Event: 139,291 Thread 0x00007f5c2011a800 nmethod 1056 0x00007f5c1118d6d0 code [0x00007f5c1118d840, 0x00007f5c1118dac8]
+Event: 164,325 Thread 0x00007f5c2011a800 1057       3       org.apache.hive.org.apache.thrift.EncodingUtils::setBit (8 bytes)
+Event: 164,326 Thread 0x00007f5c2011a800 nmethod 1057 0x00007f5c1118dc10 code [0x00007f5c1118dd80, 0x00007f5c1118dfd0]
+Event: 164,326 Thread 0x00007f5c2011a800 1058       3       org.apache.hive.org.apache.thrift.EncodingUtils::setBit (16 bytes)
+Event: 164,326 Thread 0x00007f5c2011a800 nmethod 1058 0x00007f5c1118e0d0 code [0x00007f5c1118e240, 0x00007f5c1118e430]
+Event: 209,460 Thread 0x00007f5c2011a800 1059       3       org.apache.hive.service.rpc.thrift.THandleIdentifier::validate (77 bytes)
+Event: 209,462 Thread 0x00007f5c2011a800 nmethod 1059 0x00007f5c1118e4d0 code [0x00007f5c1118e780, 0x00007f5c1118f8d8]
+Event: 209,462 Thread 0x00007f5c2011a800 1060       3       org.apache.hive.service.rpc.thrift.THandleIdentifier::isSetGuid (13 bytes)
+Event: 209,462 Thread 0x00007f5c2011a800 nmethod 1060 0x00007f5c11190050 code [0x00007f5c111901c0, 0x00007f5c11190370]
+Event: 219,476 Thread 0x00007f5c2010b000 1065       4       java.net.Socket::isConnected (20 bytes)
+Event: 219,478 Thread 0x00007f5c2010b000 nmethod 1065 0x00007f5c11193090 code [0x00007f5c111931e0, 0x00007f5c11193258]
+Event: 219,478 Thread 0x00007f5c2011a800 1061       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readStructBegin (4 bytes)
+Event: 219,478 Thread 0x00007f5c2011a800 nmethod 1061 0x00007f5c11192d50 code [0x00007f5c11192ec0, 0x00007f5c11193010]
+Event: 219,478 Thread 0x00007f5c2011a800 1062       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readStructEnd (1 bytes)
+Event: 219,478 Thread 0x00007f5c2011a800 nmethod 1062 0x00007f5c11192a10 code [0x00007f5c11192b60, 0x00007f5c11192cb0]
+Event: 219,478 Thread 0x00007f5c2011a800 1063       1       org.apache.hive.service.rpc.thrift.THandleIdentifier::access$300 (5 bytes)
+Event: 219,478 Thread 0x00007f5c2011a800 nmethod 1063 0x00007f5c11192750 code [0x00007f5c111928a0, 0x00007f5c11192990]
+Event: 219,478 Thread 0x00007f5c2011a800 1064       1       org.apache.hive.service.rpc.thrift.THandleIdentifier::access$400 (5 bytes)
+Event: 219,478 Thread 0x00007f5c2011a800 nmethod 1064 0x00007f5c11192490 code [0x00007f5c111925e0, 0x00007f5c111926d0]
+Event: 224,490 Thread 0x00007f5c2010b000 1070       4       org.apache.hive.org.apache.thrift.transport.TSaslTransport::isOpen (33 bytes)
+Event: 224,493 Thread 0x00007f5c2010b000 nmethod 1070 0x00007f5c11190a90 code [0x00007f5c11190c00, 0x00007f5c11190d78]
+Event: 224,493 Thread 0x00007f5c2011a800 1068       1       org.apache.hive.service.rpc.thrift.TOperationHandle::access$300 (5 bytes)
+Event: 224,493 Thread 0x00007f5c2011a800 nmethod 1068 0x00007f5c111907d0 code [0x00007f5c11190920, 0x00007f5c11190a10]
+Event: 224,493 Thread 0x00007f5c2011a800 1066       1       org.apache.hive.service.rpc.thrift.TCLIService$GetOperationStatus_args::access$3600 (5 bytes)
+Event: 224,493 Thread 0x00007f5c2011a800 nmethod 1066 0x00007f5c11190510 code [0x00007f5c11190660, 0x00007f5c11190750]
+Event: 224,493 Thread 0x00007f5c2011a800 1067       1       org.apache.hive.service.rpc.thrift.TGetOperationStatusReq::access$300 (5 bytes)
+Event: 224,493 Thread 0x00007f5c2011a800 nmethod 1067 0x00007f5c111921d0 code [0x00007f5c11192320, 0x00007f5c11192410]
+Event: 224,493 Thread 0x00007f5c2011a800 1069       1       org.apache.hive.service.rpc.thrift.TOperationHandle::access$400 (5 bytes)
+Event: 224,493 Thread 0x00007f5c2011a800 nmethod 1069 0x00007f5c11191f10 code [0x00007f5c11192060, 0x00007f5c11192150]
+Event: 229,509 Thread 0x00007f5c2011a800 1071       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readI64 (168 bytes)
+Event: 229,510 Thread 0x00007f5c2011a800 nmethod 1071 0x00007f5c11191210 code [0x00007f5c111913e0, 0x00007f5c11191ba8]
+Event: 229,510 Thread 0x00007f5c2011a800 1072       1       org.apache.hive.service.rpc.thrift.TCLIService$GetOperationStatus_result::access$1300 (5 bytes)
+Event: 229,510 Thread 0x00007f5c2011a800 nmethod 1072 0x00007f5c11194890 code [0x00007f5c111949e0, 0x00007f5c11194ad0]
+Event: 289,704 Thread 0x00007f5c2010b000 1073       4       org.apache.hive.org.apache.thrift.transport.TSaslClientTransport::isOpen (5 bytes)
+Event: 289,707 Thread 0x00007f5c2010b000 nmethod 1073 0x00007f5c111963d0 code [0x00007f5c11196540, 0x00007f5c111966b8]
+Event: 329,786 Thread 0x00007f5c2011a800 1074       3       org.apache.hive.service.rpc.thrift.TStatus::validate (39 bytes)
+Event: 329,787 Thread 0x00007f5c2011a800 nmethod 1074 0x00007f5c11193950 code [0x00007f5c11193b60, 0x00007f5c111944a8]
+Event: 329,787 Thread 0x00007f5c2011a800 1075       3       org.apache.hive.service.rpc.thrift.TStatus::isSetStatusCode (13 bytes)
+Event: 329,788 Thread 0x00007f5c2011a800 nmethod 1075 0x00007f5c11193590 code [0x00007f5c11193700, 0x00007f5c111938b0]
+Event: 334,820 Thread 0x00007f5c2011a800 1076       1       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readFieldEnd (1 bytes)
+Event: 334,820 Thread 0x00007f5c2011a800 nmethod 1076 0x00007f5c111932d0 code [0x00007f5c11193420, 0x00007f5c11193530]
+Event: 363,936 Thread 0x00007f5c2010b000 1077   !   4       java.util.concurrent.ConcurrentHashMap::transfer (832 bytes)
+Event: 363,950 Thread 0x00007f5c2011a800 1078       3       java.lang.Class::newReflectionData (74 bytes)
+Event: 363,950 Thread 0x00007f5c2011a800 nmethod 1078 0x00007f5c11195450 code [0x00007f5c11195640, 0x00007f5c11195ff0]
+Event: 363,963 Thread 0x00007f5c2011a800 1079       3       sun.reflect.ReflectionFactory::inflationThreshold (4 bytes)
+Event: 363,963 Thread 0x00007f5c2011a800 nmethod 1079 0x00007f5c11195150 code [0x00007f5c111952a0, 0x00007f5c111953d0]
+Event: 363,968 Thread 0x00007f5c2010b000 nmethod 1077 0x00007f5c1119a290 code [0x00007f5c1119a440, 0x00007f5c1119b1c8]
+Event: 363,981 Thread 0x00007f5c2010b000 1080       4       sun.misc.URLClassPath::getResource (83 bytes)
+Event: 364,003 Thread 0x00007f5c2010b000 nmethod 1080 0x00007f5c11196f50 code [0x00007f5c11197120, 0x00007f5c11198168]
+Event: 364,003 Thread 0x00007f5c2010b000 1081       4       org.apache.hive.org.apache.thrift.transport.TTransport::readAll (87 bytes)
+Event: 364,005 Thread 0x00007f5c2011a800 1084       3       java.lang.AbstractStringBuilder::append (54 bytes)
+Event: 364,006 Thread 0x00007f5c2011a800 nmethod 1084 0x00007f5c11199650 code [0x00007f5c11199820, 0x00007f5c1119a128]
+Event: 364,006 Thread 0x00007f5c2011a800 1082       3       java.util.regex.Matcher::start (22 bytes)
+Event: 364,006 Thread 0x00007f5c2011a800 nmethod 1082 0x00007f5c11196a90 code [0x00007f5c11196c00, 0x00007f5c11196e68]
+Event: 364,006 Thread 0x00007f5c2011a800 1085       3       java.lang.StringBuilder::append (8 bytes)
+Event: 364,006 Thread 0x00007f5c2011a800 nmethod 1085 0x00007f5c11194b50 code [0x00007f5c11194cc0, 0x00007f5c11194e48]
+Event: 364,006 Thread 0x00007f5c2011a800 1083       1       sun.util.calendar.CalendarDate::getMonth (5 bytes)
+Event: 364,006 Thread 0x00007f5c2011a800 nmethod 1083 0x00007f5c11199390 code [0x00007f5c111994e0, 0x00007f5c111995f0]
+Event: 364,012 Thread 0x00007f5c2010b000 nmethod 1081 0x00007f5c1119bb10 code [0x00007f5c1119bcc0, 0x00007f5c1119c378]
+Event: 364,018 Thread 0x00007f5c2011a800 1086       3       java.util.regex.Pattern$Ctype::isSatisfiedBy (24 bytes)
+Event: 364,019 Thread 0x00007f5c2011a800 nmethod 1086 0x00007f5c1119f890 code [0x00007f5c1119fa20, 0x00007f5c1119fdb0]
+Event: 364,019 Thread 0x00007f5c2011a800 1087       3       java.util.regex.ASCII::isType (15 bytes)
+Event: 364,019 Thread 0x00007f5c2011a800 nmethod 1087 0x00007f5c11198e90 code [0x00007f5c11199000, 0x00007f5c11199270]
+Event: 364,019 Thread 0x00007f5c2011a800 1088       3       java.util.regex.ASCII::getType (17 bytes)
+Event: 364,019 Thread 0x00007f5c2011a800 nmethod 1088 0x00007f5c1119f490 code [0x00007f5c1119f600, 0x00007f5c1119f7d0]
+Event: 364,019 Thread 0x00007f5c2011a800 1089       1       sun.util.calendar.CalendarDate::getDayOfMonth (5 bytes)
+Event: 364,019 Thread 0x00007f5c2011a800 nmethod 1089 0x00007f5c1119f1d0 code [0x00007f5c1119f320, 0x00007f5c1119f430]
+Event: 364,020 Thread 0x00007f5c2011a800 1090       3       java.lang.StringBuilder::append (6 bytes)
+Event: 364,021 Thread 0x00007f5c2011a800 nmethod 1090 0x00007f5c1119ed10 code [0x00007f5c1119ee80, 0x00007f5c1119f0e8]
+Event: 364,021 Thread 0x00007f5c2011a800 1092       3       java.util.GregorianCalendar::getWeekNumber (89 bytes)
+Event: 364,021 Thread 0x00007f5c2011a800 nmethod 1092 0x00007f5c1119e010 code [0x00007f5c1119e1c0, 0x00007f5c1119e950]
+Event: 364,021 Thread 0x00007f5c2011a800 1093       3       java.lang.String::equalsIgnoreCase (48 bytes)
+Event: 364,021 Thread 0x00007f5c2011a800 nmethod 1093 0x00007f5c1119da50 code [0x00007f5c1119dbc0, 0x00007f5c1119df08]
+Event: 364,021 Thread 0x00007f5c2011a800 1091       1       java.util.Formatter$FormatSpecifier::index (5 bytes)
+Event: 364,021 Thread 0x00007f5c2011a800 nmethod 1091 0x00007f5c1119d790 code [0x00007f5c1119d8e0, 0x00007f5c1119d9f0]
+Event: 364,035 Thread 0x00007f5c2010b000 1094       4       java.util.zip.ZipCoder::getBytes (192 bytes)
+Event: 364,052 Thread 0x00007f5c2010b000 nmethod 1094 0x00007f5c111a3150 code [0x00007f5c111a3320, 0x00007f5c111a3910]
+Event: 364,228 Thread 0x00007f5c2010b000 1095       4       java.lang.String::concat (47 bytes)
+Event: 364,233 Thread 0x00007f5c2010b000 nmethod 1095 0x00007f5c1119cfd0 code [0x00007f5c1119d140, 0x00007f5c1119d4f8]
+Event: 364,238 Thread 0x00007f5c2011a800 1096       3       java.util.RegularEnumSet$EnumSetIterator::hasNext (15 bytes)
+Event: 364,238 Thread 0x00007f5c2011a800 nmethod 1096 0x00007f5c111a2dd0 code [0x00007f5c111a2f40, 0x00007f5c111a30f0]
+Event: 364,240 Thread 0x00007f5c2011a800 1098   !   3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readString (104 bytes)
+Event: 364,241 Thread 0x00007f5c2011a800 nmethod 1098 0x00007f5c111a1f10 code [0x00007f5c111a2140, 0x00007f5c111a29b8]
+Event: 364,241 Thread 0x00007f5c2011a800 1099       3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::checkStringReadLength (84 bytes)
+Event: 364,242 Thread 0x00007f5c2011a800 nmethod 1099 0x00007f5c111a0610 code [0x00007f5c111a0880, 0x00007f5c111a17f8]
+Event: 364,242 Thread 0x00007f5c2011a800 1100   !   3       org.apache.hive.org.apache.thrift.protocol.TBinaryProtocol::readStringBody (37 bytes)
+Event: 364,242 Thread 0x00007f5c2011a800 nmethod 1100 0x00007f5c111a3e90 code [0x00007f5c111a4040, 0x00007f5c111a44e8]
+Event: 364,242 Thread 0x00007f5c2010b000 1097       4       org.apache.hadoop.hive.metastore.security.TFilterTransport::getBytesRemainingInBuffer (8 bytes)
+Event: 364,242 Thread 0x00007f5c2010b000 nmethod 1097 0x00007f5c1119cc90 code [0x00007f5c1119cde0, 0x00007f5c1119ce78]
+Event: 364,243 Thread 0x00007f5c2011a800 1101       1       org.apache.hive.service.rpc.thrift.TI32Column::access$300 (5 bytes)
+Event: 364,243 Thread 0x00007f5c2011a800 nmethod 1101 0x00007f5c111a0350 code [0x00007f5c111a04a0, 0x00007f5c111a0590]
+Event: 364,243 Thread 0x00007f5c2011a800 1102       1       org.apache.hive.service.rpc.thrift.TStringColumn::access$300 (5 bytes)
+Event: 364,243 Thread 0x00007f5c2011a800 nmethod 1102 0x00007f5c111a0090 code [0x00007f5c111a01e0, 0x00007f5c111a02d0]
+Event: 364,246 Thread 0x00007f5c2010b000 1103       4       org.apache.hadoop.hive.metastore.security.TFilterTransport::readAll (11 bytes)
+Event: 364,247 Thread 0x00007f5c2011a800 1104       1       java.lang.ThreadLocal::getMap (5 bytes)
+Event: 364,247 Thread 0x00007f5c2011a800 nmethod 1104 0x00007f5c111a70d0 code [0x00007f5c111a7220, 0x00007f5c111a7330]
+Event: 364,247 Thread 0x00007f5c2011a800 1105       1       org.apache.hive.service.rpc.thrift.TI64Column::access$300 (5 bytes)
+Event: 364,247 Thread 0x00007f5c2011a800 nmethod 1105 0x00007f5c111a6e10 code [0x00007f5c111a6f60, 0x00007f5c111a7050]
+Event: 364,254 Thread 0x00007f5c2010b000 nmethod 1103 0x00007f5c111a91d0 code [0x00007f5c111a9380, 0x00007f5c111a9a78]
+Event: 364,264 Thread 0x00007f5c2011a800 1107 %     3       OutputResultSet::addColumn @ 95 (162 bytes)
+Event: 364,266 Thread 0x00007f5c2011a800 nmethod 1107% 0x00007f5c111aa4d0 code [0x00007f5c111aa860, 0x00007f5c111ad1e8]
+Event: 364,266 Thread 0x00007f5c2010b000 1106  s    4       java.lang.StringBuffer::append (13 bytes)
+Event: 364,271 Thread 0x00007f5c2010b000 nmethod 1106 0x00007f5c111ae7d0 code [0x00007f5c111ae940, 0x00007f5c111aef38]
+Event: 364,271 Thread 0x00007f5c2011a800 1108       3       OutputResultSet::addColumn (162 bytes)
+Event: 364,273 Thread 0x00007f5c2011a800 nmethod 1108 0x00007f5c111af250 code [0x00007f5c111af5e0, 0x00007f5c111b1e08]
+Event: 364,273 Thread 0x00007f5c2010b000 1109 %     4       OutputResultSet::addColumn @ 95 (162 bytes)
+Event: 364,282 Thread 0x00007f5c2010b000 nmethod 1109% 0x00007f5c111b33d0 code [0x00007f5c111b3540, 0x00007f5c111b3d98]
+
+GC Heap History (12 events):
+Event: 1,218 GC heap before
+{Heap before GC invocations=1 (full 0):
+ PSYoungGen      total 27136K, used 23552K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 100% used [0x00000000e2800000,0x00000000e3f00000,0x00000000e3f00000)
+  from space 3584K, 0% used [0x00000000e4280000,0x00000000e4280000,0x00000000e4600000)
+  to   space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+ ParOldGen       total 61440K, used 0K [0x00000000a7800000, 0x00000000ab400000, 0x00000000e2800000)
+  object space 61440K, 0% used [0x00000000a7800000,0x00000000a7800000,0x00000000ab400000)
+ Metaspace       used 13145K, capacity 13350K, committed 13568K, reserved 1060864K
+  class space    used 1441K, capacity 1503K, committed 1536K, reserved 1048576K
+Event: 1,230 GC heap after
+Heap after GC invocations=1 (full 0):
+ PSYoungGen      total 27136K, used 3578K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e3f00000,0x00000000e427eb98,0x00000000e4280000)
+  to   space 3584K, 0% used [0x00000000e4280000,0x00000000e4280000,0x00000000e4600000)
+ ParOldGen       total 61440K, used 2424K [0x00000000a7800000, 0x00000000ab400000, 0x00000000e2800000)
+  object space 61440K, 3% used [0x00000000a7800000,0x00000000a7a5e158,0x00000000ab400000)
+ Metaspace       used 13145K, capacity 13350K, committed 13568K, reserved 1060864K
+  class space    used 1441K, capacity 1503K, committed 1536K, reserved 1048576K
+}
+Event: 2,368 GC heap before
+{Heap before GC invocations=2 (full 0):
+ PSYoungGen      total 27136K, used 27130K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 100% used [0x00000000e2800000,0x00000000e3f00000,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e3f00000,0x00000000e427eb98,0x00000000e4280000)
+  to   space 3584K, 0% used [0x00000000e4280000,0x00000000e4280000,0x00000000e4600000)
+ ParOldGen       total 61440K, used 2424K [0x00000000a7800000, 0x00000000ab400000, 0x00000000e2800000)
+  object space 61440K, 3% used [0x00000000a7800000,0x00000000a7a5e158,0x00000000ab400000)
+ Metaspace       used 19407K, capacity 19696K, committed 19968K, reserved 1067008K
+  class space    used 2195K, capacity 2294K, committed 2304K, reserved 1048576K
+Event: 2,384 GC heap after
+Heap after GC invocations=2 (full 0):
+ PSYoungGen      total 27136K, used 3552K [0x00000000e2800000, 0x00000000e5d00000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e4280000,0x00000000e45f8020,0x00000000e4600000)
+  to   space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+ ParOldGen       total 61440K, used 6568K [0x00000000a7800000, 0x00000000ab400000, 0x00000000e2800000)
+  object space 61440K, 10% used [0x00000000a7800000,0x00000000a7e6a3e0,0x00000000ab400000)
+ Metaspace       used 19407K, capacity 19696K, committed 19968K, reserved 1067008K
+  class space    used 2195K, capacity 2294K, committed 2304K, reserved 1048576K
+}
+Event: 364,293 GC heap before
+{Heap before GC invocations=3 (full 0):
+ PSYoungGen      total 27136K, used 18273K [0x00000000e2800000, 0x00000000e5d00000, 0x0000000100000000)
+  eden space 23552K, 62% used [0x00000000e2800000,0x00000000e3660708,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e4280000,0x00000000e45f8020,0x00000000e4600000)
+  to   space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+ ParOldGen       total 61440K, used 6568K [0x00000000a7800000, 0x00000000ab400000, 0x00000000e2800000)
+  object space 61440K, 10% used [0x00000000a7800000,0x00000000a7e6a3e0,0x00000000ab400000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+Event: 364,311 GC heap after
+Heap after GC invocations=3 (full 0):
+ PSYoungGen      total 27136K, used 3568K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e3f00000,0x00000000e427c010,0x00000000e4280000)
+  to   space 3584K, 0% used [0x00000000e4280000,0x00000000e4280000,0x00000000e4600000)
+ ParOldGen       total 61440K, used 12332K [0x00000000a7800000, 0x00000000ab400000, 0x00000000e2800000)
+  object space 61440K, 20% used [0x00000000a7800000,0x00000000a840b1f0,0x00000000ab400000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+}
+Event: 367,084 GC heap before
+{Heap before GC invocations=4 (full 0):
+ PSYoungGen      total 27136K, used 12784K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 39% used [0x00000000e2800000,0x00000000e3100010,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e3f00000,0x00000000e427c010,0x00000000e4280000)
+  to   space 3584K, 0% used [0x00000000e4280000,0x00000000e4280000,0x00000000e4600000)
+ ParOldGen       total 966656K, used 583724K [0x00000000a7800000, 0x00000000e2800000, 0x00000000e2800000)
+  object space 966656K, 60% used [0x00000000a7800000,0x00000000cb20b240,0x00000000e2800000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+Event: 367,107 GC heap after
+Heap after GC invocations=4 (full 0):
+ PSYoungGen      total 27136K, used 3552K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e4280000,0x00000000e45f8020,0x00000000e4600000)
+  to   space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+ ParOldGen       total 966656K, used 583756K [0x00000000a7800000, 0x00000000e2800000, 0x00000000e2800000)
+  object space 966656K, 60% used [0x00000000a7800000,0x00000000cb213240,0x00000000e2800000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+}
+Event: 367,109 GC heap before
+{Heap before GC invocations=5 (full 0):
+ PSYoungGen      total 27136K, used 3552K [0x00000000e2800000, 0x00000000e4600000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 99% used [0x00000000e4280000,0x00000000e45f8020,0x00000000e4600000)
+  to   space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+ ParOldGen       total 966656K, used 583756K [0x00000000a7800000, 0x00000000e2800000, 0x00000000e2800000)
+  object space 966656K, 60% used [0x00000000a7800000,0x00000000cb213240,0x00000000e2800000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+Event: 367,127 GC heap after
+Heap after GC invocations=5 (full 0):
+ PSYoungGen      total 27136K, used 3536K [0x00000000e2800000, 0x00000000e6c00000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 98% used [0x00000000e3f00000,0x00000000e4274030,0x00000000e4280000)
+  to   space 11264K, 0% used [0x00000000e6100000,0x00000000e6100000,0x00000000e6c00000)
+ ParOldGen       total 966656K, used 583764K [0x00000000a7800000, 0x00000000e2800000, 0x00000000e2800000)
+  object space 966656K, 60% used [0x00000000a7800000,0x00000000cb215240,0x00000000e2800000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+}
+Event: 367,127 GC heap before
+{Heap before GC invocations=6 (full 1):
+ PSYoungGen      total 27136K, used 3536K [0x00000000e2800000, 0x00000000e6c00000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 98% used [0x00000000e3f00000,0x00000000e4274030,0x00000000e4280000)
+  to   space 11264K, 0% used [0x00000000e6100000,0x00000000e6100000,0x00000000e6c00000)
+ ParOldGen       total 966656K, used 583764K [0x00000000a7800000, 0x00000000e2800000, 0x00000000e2800000)
+  object space 966656K, 60% used [0x00000000a7800000,0x00000000cb215240,0x00000000e2800000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+Event: 367,342 GC heap after
+Heap after GC invocations=6 (full 1):
+ PSYoungGen      total 27136K, used 0K [0x00000000e2800000, 0x00000000e6c00000, 0x0000000100000000)
+  eden space 23552K, 0% used [0x00000000e2800000,0x00000000e2800000,0x00000000e3f00000)
+  from space 3584K, 0% used [0x00000000e3f00000,0x00000000e3f00000,0x00000000e4280000)
+  to   space 11264K, 0% used [0x00000000e6100000,0x00000000e6100000,0x00000000e6c00000)
+ ParOldGen       total 368128K, used 298632K [0x00000000a7800000, 0x00000000bdf80000, 0x00000000e2800000)
+  object space 368128K, 81% used [0x00000000a7800000,0x00000000b9ba2390,0x00000000bdf80000)
+ Metaspace       used 20761K, capacity 21046K, committed 21296K, reserved 1069056K
+  class space    used 2333K, capacity 2423K, committed 2432K, reserved 1048576K
+}
+
+Deoptimization events (16 events):
+Event: 0,904 Thread 0x00007f5c2004a800 Uncommon trap: reason=range_check action=make_not_entrant pc=0x00007f5c10fd96c0 method=sun.reflect.generics.parser.SignatureParser.current()C @ 34
+Event: 1,207 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c11033834 method=java.util.HashMap.getNode(ILjava/lang/Object;)Ljava/util/HashMap$Node; @ 129
+Event: 1,240 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c11056684 method=com.ctc.wstx.io.WstxInputData.isNameChar(C)Z @ 49
+Event: 1,314 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c10fa5d74 method=java.lang.String.replace(CC)Ljava/lang/String; @ 26
+Event: 1,379 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c110dece8 method=com.ctc.wstx.sr.BasicStreamReader.readTextPrimary(C)Z @ 81
+Event: 1,418 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c110f9b20 method=com.ctc.wstx.io.UTF8Reader.read([CII)I @ 269
+Event: 1,418 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c110d61d0 method=com.ctc.wstx.io.UTF8Reader.read([CII)I @ 269
+Event: 1,584 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c10ff7d1c method=java.lang.AbstractStringBuilder.append(Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; @ 1
+Event: 1,891 Thread 0x00007f5c2056e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c10f60ba4 method=java.lang.String.startsWith(Ljava/lang/String;I)Z @ 25
+Event: 1,891 Thread 0x00007f5c2056e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c10f598a4 method=java.lang.String.startsWith(Ljava/lang/String;I)Z @ 25
+Event: 1,930 Thread 0x00007f5c2056e800 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007f5c1111b6a4 method=sun.net.www.ParseUtil.encodePath(Ljava/lang/String;Z)Ljava/lang/String; @ 36
+Event: 2,010 Thread 0x00007f5c2004a800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f5c11129b60 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 91
+Event: 2,011 Thread 0x00007f5c2004a800 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007f5c11129b60 method=java.util.HashMap.putVal(ILjava/lang/Object;Ljava/lang/Object;ZZ)Ljava/lang/Object; @ 91
+Event: 2,036 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c1115bfd8 method=sun.net.www.ParseUtil.encodePath(Ljava/lang/String;Z)Ljava/lang/String; @ 109
+Event: 2,037 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c111164e8 method=sun.net.www.ParseUtil.encodePath(Ljava/lang/String;Z)Ljava/lang/String; @ 109
+Event: 364,018 Thread 0x00007f5c2004a800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007f5c1114ec50 method=java.lang.String.regionMatches(ZILjava/lang/String;II)Z @ 123
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (15 events):
+Event: 0,060 Thread 0x00007f5c2004a800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000e2807cc0) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64
+Event: 0,060 Thread 0x00007f5c2004a800 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000e2807fa8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/s
+Event: 0,214 Thread 0x00007f5c2004a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e28d3b20) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1509]
+Event: 0,214 Thread 0x00007f5c2004a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e28d3d30) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1509]
+Event: 0,214 Thread 0x00007f5c2004a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e28d6808) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1509]
+Event: 0,214 Thread 0x00007f5c2004a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e28d6a18) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1509]
+Event: 0,214 Thread 0x00007f5c2004a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e28d78f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1509]
+Event: 0,214 Thread 0x00007f5c2004a800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000e28d7b08) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/jvm.cpp, line 1509]
+Event: 0,904 Thread 0x00007f5c2004a800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 71> (0x00000000e36f6250) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 0,904 Thread 0x00007f5c2004a800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 18> (0x00000000e36f6fc8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 0,905 Thread 0x00007f5c2004a800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 60> (0x00000000e36f8168) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 0,905 Thread 0x00007f5c2004a800 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 71> (0x00000000e36f99f8) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 371]
+Event: 1,120 Thread 0x00007f5c2004a800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000e3bc9260) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 1,122 Thread 0x00007f5c2004a800 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x00000000e3bd6920) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/prims/methodHandles.cpp, line 1167]
+Event: 1,347 Thread 0x00007f5c2004a800 Exception <a 'java/lang/NoClassDefFoundError': org/slf4j/impl/StaticLoggerBinder> (0x00000000e2a41d80) thrown at [/builddir/build/BUILD/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/openjdk/hotspot/src/share/vm/classfile/systemDictionary.cpp, line 199]
+
+Events (250 events):
+Event: 363,944 loading class org/apache/hive/service/rpc/thrift/TCLIService$GetResultSetMetadata_result$GetResultSetMetadata_resultTupleSchemeFactory
+Event: 363,944 loading class org/apache/hive/service/rpc/thrift/TCLIService$GetResultSetMetadata_result$GetResultSetMetadata_resultTupleSchemeFactory done
+Event: 363,945 loading class org/apache/hive/service/rpc/thrift/TCLIService$GetResultSetMetadata_result$_Fields
+Event: 363,945 loading class org/apache/hive/service/rpc/thrift/TCLIService$GetResultSetMetadata_result$_Fields done
+Event: 363,945 loading class org/apache/hive/service/rpc/thrift/TCLIService$GetResultSetMetadata_result$GetResultSetMetadata_resultStandardScheme
+Event: 363,945 loading class org/apache/hive/service/rpc/thrift/TCLIService$GetResultSetMetadata_result$GetResultSetMetadata_resultStandardScheme done
+Event: 363,947 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$TGetResultSetMetadataRespStandardSchemeFactory
+Event: 363,947 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$TGetResultSetMetadataRespStandardSchemeFactory done
+Event: 363,947 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$TGetResultSetMetadataRespTupleSchemeFactory
+Event: 363,947 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$TGetResultSetMetadataRespTupleSchemeFactory done
+Event: 363,948 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$_Fields
+Event: 363,948 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$_Fields done
+Event: 363,949 loading class org/apache/hive/service/rpc/thrift/TTableSchema
+Event: 363,949 loading class org/apache/hive/service/rpc/thrift/TTableSchema done
+Event: 363,951 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$TGetResultSetMetadataRespStandardScheme
+Event: 363,951 loading class org/apache/hive/service/rpc/thrift/TGetResultSetMetadataResp$TGetResultSetMetadataRespStandardScheme done
+Event: 363,953 loading class org/apache/hive/service/rpc/thrift/TTableSchema$TTableSchemaStandardSchemeFactory
+Event: 363,953 loading class org/apache/hive/service/rpc/thrift/TTableSchema$TTableSchemaStandardSchemeFactory done
+Event: 363,953 loading class org/apache/hive/service/rpc/thrift/TTableSchema$TTableSchemaTupleSchemeFactory
+Event: 363,953 loading class org/apache/hive/service/rpc/thrift/TTableSchema$TTableSchemaTupleSchemeFactory done
+Event: 363,953 loading class org/apache/hive/service/rpc/thrift/TTableSchema$_Fields
+Event: 363,953 loading class org/apache/hive/service/rpc/thrift/TTableSchema$_Fields done
+Event: 363,954 loading class org/apache/hive/service/rpc/thrift/TColumnDesc
+Event: 363,954 loading class org/apache/hive/service/rpc/thrift/TColumnDesc done
+Event: 363,956 loading class org/apache/hive/service/rpc/thrift/TTableSchema$TTableSchemaStandardScheme
+Event: 363,956 loading class org/apache/hive/service/rpc/thrift/TTableSchema$TTableSchemaStandardScheme done
+Event: 363,957 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$TColumnDescStandardSchemeFactory
+Event: 363,957 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$TColumnDescStandardSchemeFactory done
+Event: 363,957 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$TColumnDescTupleSchemeFactory
+Event: 363,957 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$TColumnDescTupleSchemeFactory done
+Event: 363,958 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$_Fields
+Event: 363,958 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$_Fields done
+Event: 363,959 loading class org/apache/hive/service/rpc/thrift/TTypeDesc
+Event: 363,959 loading class org/apache/hive/service/rpc/thrift/TTypeDesc done
+Event: 363,960 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$TColumnDescStandardScheme
+Event: 363,960 loading class org/apache/hive/service/rpc/thrift/TColumnDesc$TColumnDescStandardScheme done
+Event: 363,961 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$TTypeDescStandardSchemeFactory
+Event: 363,961 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$TTypeDescStandardSchemeFactory done
+Event: 363,962 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$TTypeDescTupleSchemeFactory
+Event: 363,962 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$TTypeDescTupleSchemeFactory done
+Event: 363,962 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$_Fields
+Event: 363,962 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$_Fields done
+Event: 363,963 loading class org/apache/hive/service/rpc/thrift/TTypeEntry
+Event: 363,963 loading class org/apache/hive/service/rpc/thrift/TTypeEntry done
+Event: 363,964 loading class org/apache/hive/org/apache/thrift/TUnion
+Event: 363,964 loading class org/apache/hive/org/apache/thrift/TUnion done
+Event: 363,965 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$TTypeDescStandardScheme
+Event: 363,965 loading class org/apache/hive/service/rpc/thrift/TTypeDesc$TTypeDescStandardScheme done
+Event: 363,966 loading class org/apache/hive/org/apache/thrift/TUnion$TUnionStandardSchemeFactory
+Event: 363,966 loading class org/apache/hive/org/apache/thrift/TUnion$TUnionStandardSchemeFactory done
+Event: 363,967 loading class org/apache/hive/org/apache/thrift/TUnion$TUnionTupleSchemeFactory
+Event: 363,967 loading class org/apache/hive/org/apache/thrift/TUnion$TUnionTupleSchemeFactory done
+Event: 363,967 loading class org/apache/hive/service/rpc/thrift/TTypeEntry$_Fields
+Event: 363,967 loading class org/apache/hive/service/rpc/thrift/TTypeEntry$_Fields done
+Event: 363,968 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry
+Event: 363,968 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry done
+Event: 363,969 loading class org/apache/hive/service/rpc/thrift/TArrayTypeEntry
+Event: 363,969 loading class org/apache/hive/service/rpc/thrift/TArrayTypeEntry done
+Event: 363,969 loading class org/apache/hive/service/rpc/thrift/TMapTypeEntry
+Event: 363,969 loading class org/apache/hive/service/rpc/thrift/TMapTypeEntry done
+Event: 363,971 loading class org/apache/hive/service/rpc/thrift/TStructTypeEntry
+Event: 363,971 loading class org/apache/hive/service/rpc/thrift/TStructTypeEntry done
+Event: 363,973 loading class org/apache/hive/service/rpc/thrift/TUnionTypeEntry
+Event: 363,973 loading class org/apache/hive/service/rpc/thrift/TUnionTypeEntry done
+Event: 363,974 loading class org/apache/hive/service/rpc/thrift/TUserDefinedTypeEntry
+Event: 363,974 loading class org/apache/hive/service/rpc/thrift/TUserDefinedTypeEntry done
+Event: 363,977 loading class org/apache/hive/org/apache/thrift/TUnion$TUnionStandardScheme
+Event: 363,977 loading class org/apache/hive/org/apache/thrift/TUnion$TUnionStandardScheme done
+Event: 363,978 loading class org/apache/hive/service/rpc/thrift/TTypeEntry$1
+Event: 363,978 loading class org/apache/hive/service/rpc/thrift/TTypeEntry$1 done
+Event: 363,980 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$TPrimitiveTypeEntryStandardSchemeFactory
+Event: 363,980 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$TPrimitiveTypeEntryStandardSchemeFactory done
+Event: 363,981 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$TPrimitiveTypeEntryTupleSchemeFactory
+Event: 363,981 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$TPrimitiveTypeEntryTupleSchemeFactory done
+Event: 363,981 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$_Fields
+Event: 363,981 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$_Fields done
+Event: 363,982 loading class org/apache/hive/service/rpc/thrift/TTypeId
+Event: 363,982 loading class org/apache/hive/service/rpc/thrift/TTypeId done
+Event: 363,982 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers
+Event: 363,982 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers done
+Event: 363,984 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$TPrimitiveTypeEntryStandardScheme
+Event: 363,984 loading class org/apache/hive/service/rpc/thrift/TPrimitiveTypeEntry$TPrimitiveTypeEntryStandardScheme done
+Event: 363,986 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$TTypeQualifiersStandardSchemeFactory
+Event: 363,986 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$TTypeQualifiersStandardSchemeFactory done
+Event: 363,987 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$TTypeQualifiersTupleSchemeFactory
+Event: 363,987 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$TTypeQualifiersTupleSchemeFactory done
+Event: 363,987 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$_Fields
+Event: 363,987 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$_Fields done
+Event: 363,988 loading class org/apache/hive/service/rpc/thrift/TTypeQualifierValue
+Event: 363,988 loading class org/apache/hive/service/rpc/thrift/TTypeQualifierValue done
+Event: 363,989 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$TTypeQualifiersStandardScheme
+Event: 363,989 loading class org/apache/hive/service/rpc/thrift/TTypeQualifiers$TTypeQualifiersStandardScheme done
+Event: 363,991 loading class org/apache/hive/service/rpc/thrift/TTypeQualifierValue$_Fields
+Event: 363,991 loading class org/apache/hive/service/rpc/thrift/TTypeQualifierValue$_Fields done
+Event: 363,992 loading class org/apache/hive/service/rpc/thrift/TTypeQualifierValue$1
+Event: 363,992 loading class org/apache/hive/service/rpc/thrift/TTypeQualifierValue$1 done
+Event: 363,993 loading class org/apache/hive/service/cli/TableSchema
+Event: 363,993 loading class org/apache/hive/service/cli/TableSchema done
+Event: 363,994 loading class org/apache/hive/service/cli/ColumnDescriptor
+Event: 363,994 loading class org/apache/hive/service/cli/ColumnDescriptor done
+Event: 363,995 loading class org/apache/hive/service/cli/TypeDescriptor
+Event: 363,995 loading class org/apache/hive/service/cli/TypeDescriptor done
+Event: 363,996 loading class org/apache/hadoop/hive/serde2/thrift/Type
+Event: 363,996 loading class org/apache/hadoop/hive/serde2/thrift/Type done
+Event: 363,999 loading class org/apache/hive/service/cli/TypeQualifiers
+Event: 363,999 loading class org/apache/hive/service/cli/TypeQualifiers done
+Event: 364,000 loading class org/apache/hive/service/rpc/thrift/TCLIServiceConstants
+Event: 364,000 loading class org/apache/hive/service/rpc/thrift/TCLIServiceConstants done
+Event: 364,001 loading class org/apache/hive/jdbc/HiveQueryResultSet$1
+Event: 364,001 loading class org/apache/hive/jdbc/HiveQueryResultSet$1 done
+Event: 364,001 loading class org/apache/hive/jdbc/JdbcColumnAttributes
+Event: 364,001 loading class org/apache/hive/jdbc/JdbcColumnAttributes done
+Event: 364,002 loading class java/util/Optional
+Event: 364,002 loading class java/util/Optional done
+Event: 364,002 loading class OutputResultSet
+Event: 364,002 loading class OutputResultSet done
+Event: 364,005 loading class org/apache/hive/jdbc/HiveResultSetMetaData
+Event: 364,005 loading class org/apache/hive/jdbc/HiveResultSetMetaData done
+Event: 364,016 loading class org/apache/hive/jdbc/JdbcColumn
+Event: 364,016 loading class org/apache/hive/jdbc/JdbcColumn done
+Event: 364,018 Thread 0x00007f5c2004a800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00007f5c1114ec50
+Event: 364,018 Thread 0x00007f5c2004a800 DEOPT PACKING pc=0x00007f5c1114ec50 sp=0x00007f5c26d20680
+Event: 364,018 Thread 0x00007f5c2004a800 DEOPT UNPACKING pc=0x00007f5c10e3c47a sp=0x00007f5c26d205a0 mode 2
+Event: 364,021 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args
+Event: 364,021 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args done
+Event: 364,023 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$FetchResults_argsStandardSchemeFactory
+Event: 364,023 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$FetchResults_argsStandardSchemeFactory done
+Event: 364,023 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$FetchResults_argsTupleSchemeFactory
+Event: 364,023 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$FetchResults_argsTupleSchemeFactory done
+Event: 364,024 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$_Fields
+Event: 364,024 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$_Fields done
+Event: 364,025 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$FetchResults_argsStandardScheme
+Event: 364,025 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_args$FetchResults_argsStandardScheme done
+Event: 364,025 loading class org/apache/hive/service/rpc/thrift/TFetchResultsReq$TFetchResultsReqStandardScheme
+Event: 364,025 loading class org/apache/hive/service/rpc/thrift/TFetchResultsReq$TFetchResultsReqStandardScheme done
+Event: 364,026 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result
+Event: 364,026 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result done
+Event: 364,027 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$FetchResults_resultStandardSchemeFactory
+Event: 364,027 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$FetchResults_resultStandardSchemeFactory done
+Event: 364,027 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$FetchResults_resultTupleSchemeFactory
+Event: 364,027 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$FetchResults_resultTupleSchemeFactory done
+Event: 364,028 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$_Fields
+Event: 364,028 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$_Fields done
+Event: 364,227 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$FetchResults_resultStandardScheme
+Event: 364,227 loading class org/apache/hive/service/rpc/thrift/TCLIService$FetchResults_result$FetchResults_resultStandardScheme done
+Event: 364,228 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$TFetchResultsRespStandardSchemeFactory
+Event: 364,228 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$TFetchResultsRespStandardSchemeFactory done
+Event: 364,228 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$TFetchResultsRespTupleSchemeFactory
+Event: 364,228 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$TFetchResultsRespTupleSchemeFactory done
+Event: 364,228 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$_Fields
+Event: 364,228 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$_Fields done
+Event: 364,229 loading class org/apache/hive/service/rpc/thrift/TRowSet
+Event: 364,229 loading class org/apache/hive/service/rpc/thrift/TRowSet done
+Event: 364,230 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$TFetchResultsRespStandardScheme
+Event: 364,230 loading class org/apache/hive/service/rpc/thrift/TFetchResultsResp$TFetchResultsRespStandardScheme done
+Event: 364,231 loading class org/apache/hive/service/rpc/thrift/TRowSet$TRowSetStandardSchemeFactory
+Event: 364,231 loading class org/apache/hive/service/rpc/thrift/TRowSet$TRowSetStandardSchemeFactory done
+Event: 364,231 loading class org/apache/hive/service/rpc/thrift/TRowSet$TRowSetTupleSchemeFactory
+Event: 364,231 loading class org/apache/hive/service/rpc/thrift/TRowSet$TRowSetTupleSchemeFactory done
+Event: 364,231 loading class org/apache/hive/service/rpc/thrift/TRowSet$_Fields
+Event: 364,231 loading class org/apache/hive/service/rpc/thrift/TRowSet$_Fields done
+Event: 364,232 loading class org/apache/hive/service/rpc/thrift/TRow
+Event: 364,232 loading class org/apache/hive/service/rpc/thrift/TRow done
+Event: 364,232 loading class org/apache/hive/service/rpc/thrift/TColumn
+Event: 364,232 loading class org/apache/hive/service/rpc/thrift/TColumn done
+Event: 364,233 loading class org/apache/hive/service/rpc/thrift/TRowSet$TRowSetStandardScheme
+Event: 364,233 loading class org/apache/hive/service/rpc/thrift/TRowSet$TRowSetStandardScheme done
+Event: 364,234 loading class org/apache/hive/service/rpc/thrift/TColumn$_Fields
+Event: 364,234 loading class org/apache/hive/service/rpc/thrift/TColumn$_Fields done
+Event: 364,235 loading class org/apache/hive/service/rpc/thrift/TBoolColumn
+Event: 364,235 loading class org/apache/hive/service/rpc/thrift/TBoolColumn done
+Event: 364,235 loading class org/apache/hive/service/rpc/thrift/TByteColumn
+Event: 364,235 loading class org/apache/hive/service/rpc/thrift/TByteColumn done
+Event: 364,236 loading class org/apache/hive/service/rpc/thrift/TI16Column
+Event: 364,236 loading class org/apache/hive/service/rpc/thrift/TI16Column done
+Event: 364,236 loading class org/apache/hive/service/rpc/thrift/TI32Column
+Event: 364,236 loading class org/apache/hive/service/rpc/thrift/TI32Column done
+Event: 364,237 loading class org/apache/hive/service/rpc/thrift/TI64Column
+Event: 364,237 loading class org/apache/hive/service/rpc/thrift/TI64Column done
+Event: 364,237 loading class org/apache/hive/service/rpc/thrift/TDoubleColumn
+Event: 364,237 loading class org/apache/hive/service/rpc/thrift/TDoubleColumn done
+Event: 364,238 loading class org/apache/hive/service/rpc/thrift/TStringColumn
+Event: 364,238 loading class org/apache/hive/service/rpc/thrift/TStringColumn done
+Event: 364,238 loading class org/apache/hive/service/rpc/thrift/TBinaryColumn
+Event: 364,238 loading class org/apache/hive/service/rpc/thrift/TBinaryColumn done
+Event: 364,239 loading class org/apache/hive/service/rpc/thrift/TColumn$1
+Event: 364,239 loading class org/apache/hive/service/rpc/thrift/TColumn$1 done
+Event: 364,239 loading class org/apache/hive/service/rpc/thrift/TStringColumn$TStringColumnStandardSchemeFactory
+Event: 364,239 loading class org/apache/hive/service/rpc/thrift/TStringColumn$TStringColumnStandardSchemeFactory done
+Event: 364,239 loading class org/apache/hive/service/rpc/thrift/TStringColumn$TStringColumnTupleSchemeFactory
+Event: 364,239 loading class org/apache/hive/service/rpc/thrift/TStringColumn$TStringColumnTupleSchemeFactory done
+Event: 364,240 loading class org/apache/hive/service/rpc/thrift/TStringColumn$_Fields
+Event: 364,240 loading class org/apache/hive/service/rpc/thrift/TStringColumn$_Fields done
+Event: 364,240 loading class org/apache/hive/service/rpc/thrift/TStringColumn$TStringColumnStandardScheme
+Event: 364,240 loading class org/apache/hive/service/rpc/thrift/TStringColumn$TStringColumnStandardScheme done
+Event: 364,241 loading class org/apache/hive/service/rpc/thrift/TI32Column$TI32ColumnStandardSchemeFactory
+Event: 364,241 loading class org/apache/hive/service/rpc/thrift/TI32Column$TI32ColumnStandardSchemeFactory done
+Event: 364,241 loading class org/apache/hive/service/rpc/thrift/TI32Column$TI32ColumnTupleSchemeFactory
+Event: 364,241 loading class org/apache/hive/service/rpc/thrift/TI32Column$TI32ColumnTupleSchemeFactory done
+Event: 364,241 loading class org/apache/hive/service/rpc/thrift/TI32Column$_Fields
+Event: 364,242 loading class org/apache/hive/service/rpc/thrift/TI32Column$_Fields done
+Event: 364,242 loading class org/apache/hive/service/rpc/thrift/TI32Column$TI32ColumnStandardScheme
+Event: 364,242 loading class org/apache/hive/service/rpc/thrift/TI32Column$TI32ColumnStandardScheme done
+Event: 364,244 loading class org/apache/hive/service/rpc/thrift/TI64Column$TI64ColumnStandardSchemeFactory
+Event: 364,244 loading class org/apache/hive/service/rpc/thrift/TI64Column$TI64ColumnStandardSchemeFactory done
+Event: 364,244 loading class org/apache/hive/service/rpc/thrift/TI64Column$TI64ColumnTupleSchemeFactory
+Event: 364,244 loading class org/apache/hive/service/rpc/thrift/TI64Column$TI64ColumnTupleSchemeFactory done
+Event: 364,244 loading class org/apache/hive/service/rpc/thrift/TI64Column$_Fields
+Event: 364,244 loading class org/apache/hive/service/rpc/thrift/TI64Column$_Fields done
+Event: 364,245 loading class org/apache/hive/service/rpc/thrift/TI64Column$TI64ColumnStandardScheme
+Event: 364,245 loading class org/apache/hive/service/rpc/thrift/TI64Column$TI64ColumnStandardScheme done
+Event: 364,246 loading class org/apache/hive/service/cli/RowSetFactory
+Event: 364,246 loading class org/apache/hive/service/cli/RowSetFactory done
+Event: 364,247 loading class org/apache/hive/service/cli/RowSet
+Event: 364,247 loading class org/apache/hive/service/cli/RowSet done
+Event: 364,247 loading class org/apache/hive/service/cli/ColumnBasedSet
+Event: 364,247 loading class org/apache/hive/service/cli/ColumnBasedSet done
+Event: 364,249 loading class org/apache/hive/org/slf4j/ext/EventData
+Event: 364,249 loading class org/apache/hive/org/slf4j/ext/EventData done
+Event: 364,249 loading class org/apache/hive/org/slf4j/ext/EventData
+Event: 364,249 loading class org/apache/hive/org/slf4j/ext/EventData done
+Event: 364,249 loading class org/apache/hadoop/hive/serde2/thrift/ColumnBuffer
+Event: 364,249 loading class org/apache/hadoop/hive/serde2/thrift/ColumnBuffer done
+Event: 364,251 loading class org/apache/hive/org/apache/thrift/TBaseHelper
+Event: 364,251 loading class org/apache/hive/org/apache/thrift/TBaseHelper done
+Event: 364,253 loading class org/apache/hive/org/apache/thrift/TBaseHelper$NestedStructureComparator
+Event: 364,253 loading class org/apache/hive/org/apache/thrift/TBaseHelper$NestedStructureComparator done
+Event: 364,253 loading class org/apache/hive/com/google/common/primitives/Ints
+Event: 364,253 loading class org/apache/hive/com/google/common/primitives/Ints done
+Event: 364,256 loading class org/apache/hive/com/google/common/primitives/Ints$IntConverter
+Event: 364,256 loading class org/apache/hive/com/google/common/primitives/Ints$IntConverter done
+Event: 364,257 loading class org/apache/hive/com/google/common/primitives/Ints$IntArrayAsList
+Event: 364,257 loading class org/apache/hive/com/google/common/primitives/Ints$IntArrayAsList done
+Event: 364,258 loading class org/apache/hive/com/google/common/primitives/Longs
+Event: 364,258 loading class org/apache/hive/com/google/common/primitives/Longs done
+Event: 364,260 loading class org/apache/hive/com/google/common/primitives/Longs$LongConverter
+Event: 364,260 loading class org/apache/hive/com/google/common/primitives/Longs$LongConverter done
+Event: 364,260 loading class org/apache/hive/com/google/common/primitives/Longs$LongArrayAsList
+Event: 364,260 loading class org/apache/hive/com/google/common/primitives/Longs$LongArrayAsList done
+Event: 364,261 loading class org/apache/hive/service/cli/ColumnBasedSet$1
+Event: 364,261 loading class org/apache/hive/service/cli/ColumnBasedSet$1 done
+Event: 364,261 loading class org/apache/hadoop/hive/serde2/thrift/ColumnBuffer$1
+Event: 364,261 loading class org/apache/hadoop/hive/serde2/thrift/ColumnBuffer$1 done
+Event: 364,262 loading class org/apache/hive/jdbc/HiveBaseResultSet$1
+Event: 364,262 loading class org/apache/hive/jdbc/HiveBaseResultSet$1 done
+Event: 364,282 Thread 0x00007f5c2004a800 DEOPT PACKING pc=0x00007f5c111ace2c sp=0x00007f5c26d20690
+Event: 364,282 Thread 0x00007f5c2004a800 DEOPT UNPACKING pc=0x00007f5c10e3e4c4 sp=0x00007f5c26d20538 mode 0
+Event: 364,293 Executing VM operation: ParallelGCFailedAllocation
+Event: 364,311 Executing VM operation: ParallelGCFailedAllocation done
+Event: 367,080 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+a7800000-bdf80000 rw-p 00000000 00:00 0 
+e2000000-e2800000 ---p 00000000 00:00 0 
+e2800000-e6c00000 rw-p 00000000 00:00 0 
+e6c00000-100000000 ---p 00000000 00:00 0 
+100000000-100260000 rw-p 00000000 00:00 0 
+100260000-140000000 ---p 00000000 00:00 0 
+56134467e000-56134467f000 r-xp 00000000 fd:00 42081481                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/bin/java
+56134487e000-56134487f000 r--p 00000000 fd:00 42081481                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/bin/java
+56134487f000-561344880000 rw-p 00001000 fd:00 42081481                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/bin/java
+561344f6f000-561344f90000 rw-p 00000000 00:00 0                          [heap]
+7f5bc8000000-7f5bc8097000 rw-p 00000000 00:00 0 
+7f5bc8097000-7f5bcc000000 ---p 00000000 00:00 0 
+7f5bcc000000-7f5bcc021000 rw-p 00000000 00:00 0 
+7f5bcc021000-7f5bd0000000 ---p 00000000 00:00 0 
+7f5bd0000000-7f5bd0021000 rw-p 00000000 00:00 0 
+7f5bd0021000-7f5bd4000000 ---p 00000000 00:00 0 
+7f5bd4000000-7f5bd4021000 rw-p 00000000 00:00 0 
+7f5bd4021000-7f5bd8000000 ---p 00000000 00:00 0 
+7f5bd8000000-7f5bd8021000 rw-p 00000000 00:00 0 
+7f5bd8021000-7f5bdc000000 ---p 00000000 00:00 0 
+7f5bdc000000-7f5bdc021000 rw-p 00000000 00:00 0 
+7f5bdc021000-7f5be0000000 ---p 00000000 00:00 0 
+7f5be0000000-7f5be02ec000 rw-p 00000000 00:00 0 
+7f5be02ec000-7f5be4000000 ---p 00000000 00:00 0 
+7f5be4000000-7f5be4397000 rw-p 00000000 00:00 0 
+7f5be4397000-7f5be8000000 ---p 00000000 00:00 0 
+7f5be8000000-7f5be8021000 rw-p 00000000 00:00 0 
+7f5be8021000-7f5bec000000 ---p 00000000 00:00 0 
+7f5bedabe000-7f5bf4000000 r--p 00000000 fd:00 33557896                   /usr/lib/locale/locale-archive
+7f5bf4000000-7f5bf4021000 rw-p 00000000 00:00 0 
+7f5bf4021000-7f5bf8000000 ---p 00000000 00:00 0 
+7f5bf8000000-7f5bf8021000 rw-p 00000000 00:00 0 
+7f5bf8021000-7f5bfc000000 ---p 00000000 00:00 0 
+7f5bfc000000-7f5bfc2a3000 rw-p 00000000 00:00 0 
+7f5bfc2a3000-7f5c00000000 ---p 00000000 00:00 0 
+7f5c00000000-7f5c00021000 rw-p 00000000 00:00 0 
+7f5c00021000-7f5c04000000 ---p 00000000 00:00 0 
+7f5c04dc1000-7f5c04de5000 r--p 00000000 fd:00 101090404                  /usr/share/locale/pl/LC_MESSAGES/libc.mo
+7f5c04de5000-7f5c04e51000 rw-p 00000000 00:00 0 
+7f5c04e51000-7f5c04fe5000 ---p 00000000 00:00 0 
+7f5c04fe5000-7f5c051e5000 rw-p 00000000 00:00 0 
+7f5c051e5000-7f5c051ff000 r-xp 00000000 fd:00 67217077                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libsunec.so
+7f5c051ff000-7f5c053fe000 ---p 0001a000 fd:00 67217077                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libsunec.so
+7f5c053fe000-7f5c053ff000 r--p 00019000 fd:00 67217077                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libsunec.so
+7f5c053ff000-7f5c05400000 rw-p 0001a000 fd:00 67217077                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libsunec.so
+7f5c05400000-7f5c05601000 rw-p 00000000 00:00 0 
+7f5c05601000-7f5c05604000 ---p 00000000 00:00 0 
+7f5c05604000-7f5c05702000 rw-p 00000000 00:00 0 
+7f5c05702000-7f5c05705000 ---p 00000000 00:00 0 
+7f5c05705000-7f5c05803000 rw-p 00000000 00:00 0 
+7f5c05803000-7f5c05806000 ---p 00000000 00:00 0 
+7f5c05806000-7f5c05904000 rw-p 00000000 00:00 0 
+7f5c05904000-7f5c05907000 ---p 00000000 00:00 0 
+7f5c05907000-7f5c05a05000 rw-p 00000000 00:00 0 
+7f5c05a05000-7f5c05a06000 r-xp 00000000 fd:00 67217011                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjaas_unix.so
+7f5c05a06000-7f5c05c05000 ---p 00001000 fd:00 67217011                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjaas_unix.so
+7f5c05c05000-7f5c05c06000 r--p 00000000 fd:00 67217011                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjaas_unix.so
+7f5c05c06000-7f5c05c07000 rw-p 00001000 fd:00 67217011                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjaas_unix.so
+7f5c05c07000-7f5c05e07000 rw-p 00000000 00:00 0 
+7f5c05e07000-7f5c05e0a000 ---p 00000000 00:00 0 
+7f5c05e0a000-7f5c05f08000 rw-p 00000000 00:00 0 
+7f5c05f08000-7f5c05f0b000 ---p 00000000 00:00 0 
+7f5c05f0b000-7f5c06141000 rw-p 00000000 00:00 0 
+7f5c06141000-7f5c06341000 rw-p 00000000 00:00 0 
+7f5c06341000-7f5c0634a000 r-xp 00000000 fd:00 67217020                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libmanagement.so
+7f5c0634a000-7f5c06549000 ---p 00009000 fd:00 67217020                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libmanagement.so
+7f5c06549000-7f5c0654a000 r--p 00008000 fd:00 67217020                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libmanagement.so
+7f5c0654a000-7f5c0654b000 rw-p 00009000 fd:00 67217020                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libmanagement.so
+7f5c0654b000-7f5c065ad000 rw-p 00000000 00:00 0 
+7f5c065ad000-7f5c06843000 r--s 02597000 fd:00 102891898                  /home/perf/mytpcds/HadoopAuth/target/HadoopAuth-1.0-SNAPSHOT-jar-with-dependencies.jar
+7f5c06843000-7f5c069a2000 rw-p 00000000 00:00 0 
+7f5c069a2000-7f5c073cc000 r--s 08f8c000 fd:00 69973296                   /usr/hdp/3.1.0.0-78/hive/jdbc/hive-jdbc-3.1.0.3.1.0.0-78-standalone.jar
+7f5c073cc000-7f5c073e4000 r-xp 00000000 fd:00 67217022                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnet.so
+7f5c073e4000-7f5c075e3000 ---p 00018000 fd:00 67217022                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnet.so
+7f5c075e3000-7f5c075e4000 r--p 00017000 fd:00 67217022                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnet.so
+7f5c075e4000-7f5c075e5000 rw-p 00018000 fd:00 67217022                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnet.so
+7f5c075e5000-7f5c075f7000 r-xp 00000000 fd:00 67217023                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnio.so
+7f5c075f7000-7f5c077f6000 ---p 00012000 fd:00 67217023                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnio.so
+7f5c077f6000-7f5c077f7000 r--p 00011000 fd:00 67217023                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnio.so
+7f5c077f7000-7f5c077f8000 rw-p 00012000 fd:00 67217023                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libnio.so
+7f5c077f8000-7f5c077f9000 ---p 00000000 00:00 0 
+7f5c077f9000-7f5c078f9000 rw-p 00000000 00:00 0 
+7f5c078f9000-7f5c078fc000 ---p 00000000 00:00 0 
+7f5c078fc000-7f5c079fa000 rw-p 00000000 00:00 0 
+7f5c079fa000-7f5c079fe000 ---p 00000000 00:00 0 
+7f5c079fe000-7f5c07afb000 rw-p 00000000 00:00 0 
+7f5c07afb000-7f5c07aff000 ---p 00000000 00:00 0 
+7f5c07aff000-7f5c07bfc000 rw-p 00000000 00:00 0 
+7f5c07bfc000-7f5c07bff000 ---p 00000000 00:00 0 
+7f5c07bff000-7f5c07cfd000 rw-p 00000000 00:00 0 
+7f5c07cfd000-7f5c07d00000 ---p 00000000 00:00 0 
+7f5c07d00000-7f5c07dfe000 rw-p 00000000 00:00 0 
+7f5c07dfe000-7f5c07e01000 ---p 00000000 00:00 0 
+7f5c07e01000-7f5c07eff000 rw-p 00000000 00:00 0 
+7f5c07eff000-7f5c07f00000 ---p 00000000 00:00 0 
+7f5c07f00000-7f5c08000000 rw-p 00000000 00:00 0 
+7f5c08000000-7f5c08021000 rw-p 00000000 00:00 0 
+7f5c08021000-7f5c0c000000 ---p 00000000 00:00 0 
+7f5c0c00b000-7f5c0c026000 r--s 001d6000 fd:00 100689945                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/ext/nashorn.jar
+7f5c0c026000-7f5c0c05b000 r--s 00000000 fd:00 33798159                   /var/db/nscd/hosts
+7f5c0c05b000-7f5c0c087000 rw-p 00000000 00:00 0 
+7f5c0c087000-7f5c0c0a3000 r--s 003b6000 fd:00 107607036                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/ext/cldrdata.jar
+7f5c0c0a3000-7f5c0ca4c000 rw-p 00000000 00:00 0 
+7f5c0ca4c000-7f5c0cc1e000 r--s 0449b000 fd:00 67477971                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/rt.jar
+7f5c0cc1e000-7f5c10398000 rw-p 00000000 00:00 0 
+7f5c10398000-7f5c10399000 ---p 00000000 00:00 0 
+7f5c10399000-7f5c10499000 rw-p 00000000 00:00 0 
+7f5c10499000-7f5c1049a000 ---p 00000000 00:00 0 
+7f5c1049a000-7f5c1064e000 rw-p 00000000 00:00 0 
+7f5c1064e000-7f5c10772000 ---p 00000000 00:00 0 
+7f5c10772000-7f5c10826000 rw-p 00000000 00:00 0 
+7f5c10826000-7f5c1094a000 ---p 00000000 00:00 0 
+7f5c1094a000-7f5c1096c000 rw-p 00000000 00:00 0 
+7f5c1096c000-7f5c10a36000 ---p 00000000 00:00 0 
+7f5c10a36000-7f5c10a46000 rw-p 00000000 00:00 0 
+7f5c10a46000-7f5c10df7000 ---p 00000000 00:00 0 
+7f5c10df7000-7f5c111b7000 rwxp 00000000 00:00 0 
+7f5c111b7000-7f5c1fdf7000 ---p 00000000 00:00 0 
+7f5c1fdf7000-7f5c1fdff000 r-xp 00000000 fd:00 67217080                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libzip.so
+7f5c1fdff000-7f5c1fffe000 ---p 00008000 fd:00 67217080                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libzip.so
+7f5c1fffe000-7f5c1ffff000 r--p 00007000 fd:00 67217080                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libzip.so
+7f5c1ffff000-7f5c20000000 rw-p 00008000 fd:00 67217080                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libzip.so
+7f5c20000000-7f5c2067e000 rw-p 00000000 00:00 0 
+7f5c2067e000-7f5c24000000 ---p 00000000 00:00 0 
+7f5c24008000-7f5c24009000 rw-p 00000000 00:00 0 
+7f5c24009000-7f5c24010000 r--s 00000000 fd:00 33565795                   /usr/lib64/gconv/gconv-modules.cache
+7f5c24010000-7f5c24015000 r--s 00046000 fd:00 100689952                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/ext/sunjce_provider.jar
+7f5c24015000-7f5c24019000 r--s 00041000 fd:00 100689954                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/ext/sunpkcs11.jar
+7f5c24019000-7f5c2401b000 r--s 00019000 fd:00 67217085                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/jce.jar
+7f5c2401b000-7f5c24097000 rw-p 00000000 00:00 0 
+7f5c24097000-7f5c240c1000 r-xp 00000000 fd:00 67217012                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjava.so
+7f5c240c1000-7f5c242c0000 ---p 0002a000 fd:00 67217012                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjava.so
+7f5c242c0000-7f5c242c1000 r--p 00029000 fd:00 67217012                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjava.so
+7f5c242c1000-7f5c242c3000 rw-p 0002a000 fd:00 67217012                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libjava.so
+7f5c242c3000-7f5c242d0000 r-xp 00000000 fd:00 67217079                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libverify.so
+7f5c242d0000-7f5c244cf000 ---p 0000d000 fd:00 67217079                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libverify.so
+7f5c244cf000-7f5c244d1000 r--p 0000c000 fd:00 67217079                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libverify.so
+7f5c244d1000-7f5c244d2000 rw-p 0000e000 fd:00 67217079                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/libverify.so
+7f5c244d2000-7f5c244d9000 r-xp 00000000 fd:00 321343                     /usr/lib64/librt-2.17.so
+7f5c244d9000-7f5c246d8000 ---p 00007000 fd:00 321343                     /usr/lib64/librt-2.17.so
+7f5c246d8000-7f5c246d9000 r--p 00006000 fd:00 321343                     /usr/lib64/librt-2.17.so
+7f5c246d9000-7f5c246da000 rw-p 00007000 fd:00 321343                     /usr/lib64/librt-2.17.so
+7f5c246da000-7f5c246ef000 r-xp 00000000 fd:00 7382745                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5c246ef000-7f5c248ee000 ---p 00015000 fd:00 7382745                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5c248ee000-7f5c248ef000 r--p 00014000 fd:00 7382745                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5c248ef000-7f5c248f0000 rw-p 00015000 fd:00 7382745                    /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f5c248f0000-7f5c249f1000 r-xp 00000000 fd:00 12347                      /usr/lib64/libm-2.17.so
+7f5c249f1000-7f5c24bf0000 ---p 00101000 fd:00 12347                      /usr/lib64/libm-2.17.so
+7f5c24bf0000-7f5c24bf1000 r--p 00100000 fd:00 12347                      /usr/lib64/libm-2.17.so
+7f5c24bf1000-7f5c24bf2000 rw-p 00101000 fd:00 12347                      /usr/lib64/libm-2.17.so
+7f5c24bf2000-7f5c24cdb000 r-xp 00000000 fd:00 191834                     /usr/lib64/libstdc++.so.6.0.19
+7f5c24cdb000-7f5c24eda000 ---p 000e9000 fd:00 191834                     /usr/lib64/libstdc++.so.6.0.19
+7f5c24eda000-7f5c24ee2000 r--p 000e8000 fd:00 191834                     /usr/lib64/libstdc++.so.6.0.19
+7f5c24ee2000-7f5c24ee4000 rw-p 000f0000 fd:00 191834                     /usr/lib64/libstdc++.so.6.0.19
+7f5c24ee4000-7f5c24ef9000 rw-p 00000000 00:00 0 
+7f5c24ef9000-7f5c25bf4000 r-xp 00000000 fd:00 36346281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/server/libjvm.so
+7f5c25bf4000-7f5c25df4000 ---p 00cfb000 fd:00 36346281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/server/libjvm.so
+7f5c25df4000-7f5c25ea0000 r--p 00cfb000 fd:00 36346281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/server/libjvm.so
+7f5c25ea0000-7f5c25eca000 rw-p 00da7000 fd:00 36346281                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/server/libjvm.so
+7f5c25eca000-7f5c25efd000 rw-p 00000000 00:00 0 
+7f5c25efd000-7f5c260c0000 r-xp 00000000 fd:00 12339                      /usr/lib64/libc-2.17.so
+7f5c260c0000-7f5c262c0000 ---p 001c3000 fd:00 12339                      /usr/lib64/libc-2.17.so
+7f5c262c0000-7f5c262c4000 r--p 001c3000 fd:00 12339                      /usr/lib64/libc-2.17.so
+7f5c262c4000-7f5c262c6000 rw-p 001c7000 fd:00 12339                      /usr/lib64/libc-2.17.so
+7f5c262c6000-7f5c262cb000 rw-p 00000000 00:00 0 
+7f5c262cb000-7f5c262cd000 r-xp 00000000 fd:00 12345                      /usr/lib64/libdl-2.17.so
+7f5c262cd000-7f5c264cd000 ---p 00002000 fd:00 12345                      /usr/lib64/libdl-2.17.so
+7f5c264cd000-7f5c264ce000 r--p 00002000 fd:00 12345                      /usr/lib64/libdl-2.17.so
+7f5c264ce000-7f5c264cf000 rw-p 00003000 fd:00 12345                      /usr/lib64/libdl-2.17.so
+7f5c264cf000-7f5c264dd000 r-xp 00000000 fd:00 122280                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/jli/libjli.so
+7f5c264dd000-7f5c266dc000 ---p 0000e000 fd:00 122280                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/jli/libjli.so
+7f5c266dc000-7f5c266dd000 r--p 0000d000 fd:00 122280                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/jli/libjli.so
+7f5c266dd000-7f5c266de000 rw-p 0000e000 fd:00 122280                     /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/amd64/jli/libjli.so
+7f5c266de000-7f5c266f3000 r-xp 00000000 fd:00 1131                       /usr/lib64/libz.so.1.2.7
+7f5c266f3000-7f5c268f2000 ---p 00015000 fd:00 1131                       /usr/lib64/libz.so.1.2.7
+7f5c268f2000-7f5c268f3000 r--p 00014000 fd:00 1131                       /usr/lib64/libz.so.1.2.7
+7f5c268f3000-7f5c268f4000 rw-p 00015000 fd:00 1131                       /usr/lib64/libz.so.1.2.7
+7f5c268f4000-7f5c2690b000 r-xp 00000000 fd:00 321337                     /usr/lib64/libpthread-2.17.so
+7f5c2690b000-7f5c26b0a000 ---p 00017000 fd:00 321337                     /usr/lib64/libpthread-2.17.so
+7f5c26b0a000-7f5c26b0b000 r--p 00016000 fd:00 321337                     /usr/lib64/libpthread-2.17.so
+7f5c26b0b000-7f5c26b0c000 rw-p 00017000 fd:00 321337                     /usr/lib64/libpthread-2.17.so
+7f5c26b0c000-7f5c26b10000 rw-p 00000000 00:00 0 
+7f5c26b10000-7f5c26b32000 r-xp 00000000 fd:00 17440                      /usr/lib64/ld-2.17.so
+7f5c26b32000-7f5c26b33000 r--s 0000c000 fd:00 100689946                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/ext/sunec.jar
+7f5c26b33000-7f5c26b3e000 r--s 0011c000 fd:00 100689942                  /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/ext/localedata.jar
+7f5c26b3e000-7f5c26be4000 rw-p 00000000 00:00 0 
+7f5c26be4000-7f5c26bec000 rw-s 00000000 fd:00 101017833                  /tmp/hsperfdata_perf/17804
+7f5c26bec000-7f5c26c21000 r--s 00000000 fd:00 33798118                   /var/db/nscd/passwd
+7f5c26c21000-7f5c26c25000 ---p 00000000 00:00 0 
+7f5c26c25000-7f5c26d27000 rw-p 00000000 00:00 0 
+7f5c26d27000-7f5c26d2c000 r--s 000c1000 fd:00 67217120                   /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/jre/lib/jsse.jar
+7f5c26d2c000-7f5c26d2e000 r--s 0000e000 fd:00 475215                     /home/perf/mytpcds/RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar
+7f5c26d2e000-7f5c26d2f000 rw-p 00000000 00:00 0 
+7f5c26d2f000-7f5c26d30000 ---p 00000000 00:00 0 
+7f5c26d30000-7f5c26d31000 rw-p 00000000 00:00 0 
+7f5c26d31000-7f5c26d32000 r--p 00021000 fd:00 17440                      /usr/lib64/ld-2.17.so
+7f5c26d32000-7f5c26d33000 rw-p 00022000 fd:00 17440                      /usr/lib64/ld-2.17.so
+7f5c26d33000-7f5c26d34000 rw-p 00000000 00:00 0 
+7ffcda3c7000-7ffcda3e8000 rw-p 00000000 00:00 0                          [stack]
+7ffcda3f0000-7ffcda3f2000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Djava.security.auth.login.config=env/kerberos-hive.jaas 
+java_command: RunMain -url jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2;principal=hive/_HOST@CENTOS.COM.REALM -user perf -password XXXX -hadoopKerberos -removeSemi -f /tmp/tmp.CpQy8G0PJX/query01 -query
+java_class_path (initial): RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar:/usr/hdp/current/hive-client/jdbc/hive-jdbc-3.1.0.3.1.0.0-78-standalone.jar:HadoopAuth/target/HadoopAuth-1.0-SNAPSHOT-jar-with-dependencies.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/perf/.local/bin:/home/perf/bin
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xae0410], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xae0410], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8be640], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8be640], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8be640], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8be640], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8be4f0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8be700], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8be700], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8be700], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8be700], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS Linux release 7.8.2003 (Core)
+
+uname:Linux 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 4096, NOFILE 10000, AS infinity
+load average:12,23 13,17 9,46
+
+/proc/meminfo:
+MemTotal:        5799276 kB
+MemFree:          309176 kB
+MemAvailable:     214172 kB
+Buffers:               0 kB
+Cached:            36472 kB
+SwapCached:        37888 kB
+Active:          4175832 kB
+Inactive:        1066600 kB
+Active(anon):    4166040 kB
+Inactive(anon):  1048912 kB
+Active(file):       9792 kB
+Inactive(file):    17688 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       4063228 kB
+SwapFree:         302736 kB
+Dirty:               160 kB
+Writeback:             0 kB
+AnonPages:       5174836 kB
+Mapped:            15652 kB
+Shmem:              8700 kB
+Slab:              87320 kB
+SReclaimable:      39024 kB
+SUnreclaim:        48296 kB
+KernelStack:       36976 kB
+PageTables:        37008 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6962864 kB
+Committed_AS:   19326964 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      155128 kB
+VmallocChunk:   34359406588 kB
+Percpu:              352 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:    864256 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       69596 kB
+DirectMap2M:     6074368 kB
+
+container (cgroup) information:
+container_type: cgroupv1
+cpu_cpuset_cpus: 0-1
+cpu_memory_nodes: 0
+active_processor_count: 2
+cpu_quota: -1
+cpu_period: 100000
+cpu_shares: -1
+memory_limit_in_bytes: -1
+memory_and_swap_limit_in_bytes: -1
+memory_soft_limit_in_bytes: -1
+memory_usage_in_bytes: 5286834176
+memory_max_usage_in_bytes: 0
+
+
+CPU:total 2 (initial active 2) (1 cores per cpu, 1 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, tsc, bmi1, bmi2, adx
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel Core Processor (Skylake, IBRS)
+stepping	: 3
+microcode	: 0x1
+cpu MHz		: 2711.998
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ibrs ibpb fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap xsaveopt xsavec xgetbv1 spec_ctrl
+bogomips	: 5423.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 94
+model name	: Intel Core Processor (Skylake, IBRS)
+stepping	: 3
+microcode	: 0x1
+cpu MHz		: 2711.998
+cache size	: 4096 KB
+physical id	: 1
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 syscall nx rdtscp lm constant_tsc rep_good nopl eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ibrs ibpb fsgsbase bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx rdseed adx smap xsaveopt xsavec xgetbv1 spec_ctrl
+bogomips	: 5423.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 5799276k(308824k free), swap 4063228k(302736k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.252-b09) for linux-amd64 JRE (1.8.0_252-b09), built on Apr 29 2020 09:01:52 by "mockbuild" with gcc 4.8.5 20150623 (Red Hat 4.8.5-39)
+
+time: Sat Jun 27 22:23:42 2020
+timezone: CEST
+elapsed time: 367 seconds (0d 0h 6m 7s)
+
