@@ -74,6 +74,7 @@ The queries can be executed by an appropriate command line tool. But to pass Qal
 **Build Java Query Runner**
 > cd RunQueries<br>
 > mvn package<br>
+
 The following directory structure should be created.
 ```
 ll target/
