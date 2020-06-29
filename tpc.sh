@@ -69,16 +69,22 @@ droptables() {
 }
 
 loadsinglefile() {
-   log "Load $1 using $2"
-   local -r before=`date  +"%s"`
+  log "Load $1 using $2"
+  local -r before=`date  +"%s"`
 
-   loadfile $1 $2 >>$LOGFILE
-   local -r RES=$?
-   local -r after=`date  +"%s"`
-   local -r t=$(expr $after - $before)
-   log "Time : $t sec"
-   [ $RES -eq 124 ] && logfail "Timeout while loading"
-   [ $RES -eq 0 ] || logfail "Failed while loading"
+  if [ -n $REMOVELASTPIPE ]; then 
+    local -r TMP=`crtemp`
+    cat $2 | sed 's/|$//' >$TMP
+    loadfile $1 $TMP >>$LOGFILE
+  else
+    loadfile $1 $2 >>$LOGFILE
+  fi
+  local -r RES=$?
+  local -r after=`date  +"%s"`
+  local -r t=$(expr $after - $before)
+  log "Time : $t sec"
+  [ $RES -eq 124 ] && logfail "Timeout while loading"
+  [ $RES -eq 0 ] || logfail "Failed while loading"
 }
 
 verifydat() {

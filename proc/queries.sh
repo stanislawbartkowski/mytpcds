@@ -1,3 +1,6 @@
+#set -x
+#w
+
 verifyqueries() {
     SQLDIALECT=${SQLDIALECT:-$DTYPE}
     DSQGEN=$TCPROOT/tools/dsqgen

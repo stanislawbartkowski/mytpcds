@@ -1,0 +1,13 @@
+# netezza specific
+LOGLOADDIR=/tmp/mssqllog
+
+DBNAME=perfdb
+DBUSER=perf
+DBPASSWORD="secret123?"
+DBHOST=thinkde
+DBPORT=1433
+
+DTYPE=mssql
+
+DBURL="jdbc:sqlserver://$DBHOST;databaseName=$DBNAME"
+JAVADRIVER=/opt/"sqljdbc_8.2\enu"/mssql-jdbc-8.2.2.jre8.jar 
