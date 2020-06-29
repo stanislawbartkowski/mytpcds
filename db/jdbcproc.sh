@@ -48,5 +48,6 @@ runquery() {
 }
 
 testjdbcconnection() {
+    setjdbc
     $JAVACMD 
 }
