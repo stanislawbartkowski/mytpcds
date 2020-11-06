@@ -6,6 +6,8 @@ https://github.com/stanislawbartkowski/mytpcds/wiki
 Test results:
 https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-DS-BigData-results
 
+Tool was tested with *v2.11.0rc2* version of TPC/DS. Qualification test will not work with *v2.13.0rc1*. It is pending task.<br>
+
 ### Inspiration
 
 http://www.tpc.org/tpcds/
