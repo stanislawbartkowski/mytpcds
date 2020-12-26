@@ -89,7 +89,7 @@ ll target/
   RunQueries-1.0-SNAPSHOT.jar
   RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
-In order to use QueryRunner in the test, **DBURL** and **JAVADRIVER** configuration parameters should be provied.
+In order to use QueryRunner in the test, **DBURL** and **JAVADRIVER** configuration parameters should be specified.
 
 ## Tool configuarion
 Copy bash scripts from *sh.templates* to the directory.
