@@ -6,7 +6,7 @@ https://github.com/stanislawbartkowski/mytpcds/wiki
 Test results:
 https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-DS-BigData-results
 
-Tool was tested with *v2.11.0rc2* version of TPC/DS. Qualification test will not work with *v2.13.0rc1*. It is pending task.<br>
+The tool was tested with the latest version of TPCDS : v2.13.0rc1<br>
 
 ### Inspiration
 
@@ -17,7 +17,7 @@ But using TPC-DS is not easy out of the box. Requires some manual tasks to perfo
 
 ## TPC-DS preparation
 Unpack the compressed zip file in the directory. The following directory structure is created.
-* v2.10.1rc3/v2.11.0rc2
+* v2.10.1rc3/v2.11.0rc2/v2.13.0rc1
   * answer_sets  
   * EULA.txt  
   * query_templates  
