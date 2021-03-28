@@ -1,3 +1,6 @@
+#set -x
+#w
+
 verifyvariable() {
   [ -z "$DBHOST" ] && logfail "Variable DBHOST not defined"
   [ -z "$KILLINTERVAL" ] && logfail "Variable KILLINTERVAL not defined"
@@ -35,37 +38,25 @@ killlong() {
 }
 
 loadfile() {
-  local tbl=$1
-  local file=$2
-  local TMP=`mktemp`
-  sed -e "s/|$//g" $file | sed -e "s/\xd4/X/g"  | sed -e "s/\x54/X/g" | sed -e "s/\xc9/X/g" | sed -e "s/\x55/X/g" >$TMP
-  echo "\copy $tbl FROM '$file' ( DELIMITER('|') )"
-  echo "$TMP"
-  psqlcommand "TRUNCATE $tbl"
-  psqlcommand "\copy $tbl FROM '$TMP' ( DELIMITER('|'), NULL('') )"
-  local RES=$?
-  rm $TMP
-  return $RES
+  local -r tbl=$1
+  local -r file=$2
+  local -r TMP=`crtemp`
+
+cat <<EOF >$TMP
+TRUNCATE $tbl;
+\copy $tbl FROM '$file' ( DELIMITER('|'), NULL(''), ENCODING 'latin1' );
+EOF
+
+#  psqlcommand "TRUNCATE $tbl"
+#  psqlcommand "\copy $tbl FROM '$file' ( DELIMITER('|'), NULL(''), ENCODING 'latin1' )"
+  psqlscript $TMP
 }
 
-numberofrows() {
-  psqlcommand "$1"
-}
-
-toremove_numberofrows() {
-  local table=$1
-  local TMP=$2
-  psqlcommand "SELECT CONCAT('NUMBEROFROWS:',COUNT(*)) AS XX FROM $table" | grep "NUMBEROFROWS:" | tr -d "\| " | cut -d ":" -f2 >$TMP
-}
 
 runquery() {
   killlong
   cat $1
   psqlscript $1
-}
-
-testconnection() {
-  psqlcommand "\dt"
 }
 
 verifyvariable

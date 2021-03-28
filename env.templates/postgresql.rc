@@ -1,9 +1,12 @@
 DBNAME=perfdb
-DBUSER=perf
-DBPASSWORD=secret
+DBUSER=redhat
+DBPASSWORD=redhat123
 #DBHOST=thinkde
-DBHOST=localhost
-DBPORT=5433
+DBHOST=post-node-sb.apps.jobbery.cp.fyre.ibm.com 
+DBPORT=5432
+
+DBURL="jdbc:postgresql://$DBHOST:$DBPORT/$DBNAME"
+JAVADRIVER=/usr/share/java/postgresql-jdbc.jar
 
 DTYPE=psql
 
