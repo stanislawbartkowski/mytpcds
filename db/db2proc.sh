@@ -70,21 +70,6 @@ runcreatetable() {
   runscript $1
 }
 
-deprecated_runquery() {
-  runscript $1
-  local RES=$?
-  [ $RES -eq 1 ] && return 0
-  return $RES
-}
-
-deprecated_numberofrows() {
-  connect
-  db2 -x "$1"
-  local RES=$?
-  disconnect
-  return $RES
-}
-
 loadfile() {
   local tablename=$1
   local inloadfile=$2

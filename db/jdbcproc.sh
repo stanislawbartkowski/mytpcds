@@ -27,6 +27,11 @@ jdbcqueryupdatefile() {
     timeout $QUERYTIMEOUT $JAVACMD -f "$1"
 }
 
+jdbcrunquery() {
+    jdbcfilecommand $1 >$RESULTSET
+}
+
+
 # ==================
 # interface command
 # ==================
@@ -44,7 +49,7 @@ numberofrows() {
 }
 
 runquery() {
-    jdbcfilecommand $1 >$RESULTSET
+    jdbcrunquery $1 
 }
 
 testjdbcconnection() {

@@ -47,16 +47,19 @@ TRUNCATE $tbl;
 \copy $tbl FROM '$file' ( DELIMITER('|'), NULL(''), ENCODING 'latin1' );
 EOF
 
-#  psqlcommand "TRUNCATE $tbl"
-#  psqlcommand "\copy $tbl FROM '$file' ( DELIMITER('|'), NULL(''), ENCODING 'latin1' )"
   psqlscript $TMP
+}
+
+testconnection() {
+  psqlcommand "\l"
 }
 
 
 runquery() {
   killlong
   cat $1
-  psqlscript $1
+#  psqlscript $1
+  jdbcrunquery $1
 }
 
 verifyvariable

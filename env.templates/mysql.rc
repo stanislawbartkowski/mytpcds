@@ -2,8 +2,13 @@
 DBNAME=perfdb
 DBUSER=perf
 DBPASSWORD=secret
+DBPORT=3306
 #DBHOST=localhost
-DBHOST=thinkde
+DBHOST=mysql-node-sb.apps.jobbery.cp.fyre.ibm.com
+
+DBURL="jdbc:mysql://$DBHOST:$DBPORT/$DBNAME"
+JAVADRIVER=/usr/share/java/mysql-connector-java.jar
+
 
 DTYPE=mysql
 
