@@ -119,6 +119,23 @@ The common configuration parameters
 
 **DBURL** and **JAVADRIVER** should be specified only if QueryRunner is going to be used. If only database client software is utilized, these parameters should be ignored.
 
+## Troubleshooting
+
+Logs are created in the directory pointed by *TEMPDIR* variable.<br>
+```
+export TEMPDIR=/tmp/tpcds
+
+```
+Example:<br>
+
+> cat /tmp/tpcds/db2log/mytcpds.log<br>
+```
+SQL30082N  Security processing failed with reason "24" ("USERNAME AND/OR 
+PASSWORD INVALID").  SQLSTATE=08001
+Cannot connect to DB2
+Exit immediately
+```
+
 ## The queries
 
 Not all queries are ready to execute out of the box. The TPC-DS specification allows small alteration of the query to make them runnable (4.2.3.1).
