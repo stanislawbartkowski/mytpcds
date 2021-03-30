@@ -8,7 +8,7 @@ DTYPE=db2
 
 DBURL="jdbc:db2://thinkde:50000/$DBNAME"
 #DBURL="jdbc:db2://jobbery-inf:50000/$DBNAME:currentschema=$SCHEMA;"
-JAVADRIVER=/home/db2inst1/sqllib/java/db2jcc4.jar
+JAVADRIVER=/opt/ibm/db2/V11.5/java/db2jcc4.jar
 JVMPARS="-Ddb2.jcc.charsetDecoderEncoder=3"
 
 
