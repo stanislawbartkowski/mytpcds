@@ -90,3 +90,5 @@ check_variables
 export REMOVEQUERYDAYS=X
 export REQUIREDCOMMANDS="sqlplus sqlldr"
 
+export RUNQUERYDBPARAMS=-removeSemi
+
