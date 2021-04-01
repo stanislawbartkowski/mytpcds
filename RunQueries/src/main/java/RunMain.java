@@ -27,7 +27,6 @@ public class RunMain {
 
     private static Connection connect(String url, String user, String password) throws SQLException {
         return DriverManager.getConnection(url, user, password);
-        //return DriverManager.getConnection(url);
     }
 
     private static void printHelp(Options options, Optional<String> par, boolean notfound) {
@@ -100,7 +99,7 @@ public class RunMain {
             if (res != null)
                 OutputResultSet.printResult(res, cmd.hasOption(outputO) ? Optional.of(cmd.getOptionValue(outputO)) : Optional.empty(), cmd.hasOption(headerO));
         } catch (SQLException | IOException throwables) {
-            Log.severe("Cannot connect to data source", throwables);
+            Log.severe("Error while connecting to JDBC data source or running SQL query", throwables);
         }
     }
 }
