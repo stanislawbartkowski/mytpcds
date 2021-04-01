@@ -21,7 +21,7 @@ EOF
 }
 
 oraclecommand() {
-  local TMP=`mktemp`
+  local TMP=`crtemp`
   echo "$1 ;" >$TMP
   oraclescript $TMP
 }
@@ -30,18 +30,19 @@ runquery() {
   local -r TMP=`mktemp`
   sed -e "s/EXCEPT/minus/gi" $1 >$TMP
   cat $TMP
-  oraclescript $TMP
+#  oraclescript $TMP
+  jdbcrunquery $TMP
 }
 
 rundroptable() {
   # oraclescript removes the file passed as a parameter
-  local -r TMP=`mktemp`
+  local -r TMP=`crtemp`
   cp $1 $TMP
   oraclescript $TMP
 }
 
 runcreatetable() {
-  local -r TMP=`mktemp`
+  local -r TMP=`crtemp`
   sed "s/ time /varchar(20)/g" $1  >$TMP
   oraclescript $TMP
 }
@@ -55,6 +56,7 @@ loadfile() {
   INTO TABLE $tbl
   TRUNCATE
   FIELDS TERMINATED BY "|"
+  TRAILING NULLCOLS
 EOF
   cha="("
   oraclecommand "select column_name,data_type from user_tab_columns where table_name = UPPER('$tbl') order by COLUMN_ID"
@@ -75,13 +77,6 @@ EOF
   return $RES
 }
 
-numberofrows() {
-  oraclecommand "$1"
-  local -r RES=$?
-  cat $RESULTSET
-  return $RES
-}
-
 testconnection() {
    oraclecommand "SELECT * FROM USER_TABLES"
 }
@@ -93,3 +88,5 @@ check_variables() {
 check_variables
 
 export REMOVEQUERYDAYS=X
+export REQUIREDCOMMANDS="sqlplus sqlldr"
+

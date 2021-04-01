@@ -23,16 +23,7 @@ runquery() {
   local -r TMP1=`crtemp`
   sed -e "s/\+ *\([0-9]*\)  *days/+ INTERVAL \1 DAY/g" $1 | sed -e "s/\- *\([0-9]*\)  *days/- INTERVAL \1 DAY/g"  >$TMP
   cat $TMP
-  #mysqlscript $TMP >$TMP1
   jdbcrunquery $TMP
-#  local -r RES=$?
-#  rm $TMP
-  # remove first and last line from outout
- # cat $TMP1 | sed '1d;$d' |
-  # remove first and last pipe
-#  sed 's/^|[ ]*//g ; s/|[ ]*$//g' >$RESULTSET
-#  rm $TMP1
-#  return $RES
 }
 
 rundroptable() {

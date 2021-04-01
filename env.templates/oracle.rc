@@ -1,6 +1,11 @@
-#oracle
-DBNAME=xxx
-URL="c##perf/secret@//thinkde:1521/ORCLCDB"
+DBHOST=tedious-inf
+DBUSER=perf
+DBNAME=ORCLPDB1
+DBPASSWORD=secret
+URL="$DBUSER/$DBPASSWORD@//$DBHOST:1521/$DBNAME"
+
+DBURL="jdbc:oracle:thin:@$DBHOST:1521/$DBNAME"
+JAVADRIVER=/usr/lib/oracle/19.3/client64/lib/ojdbc8.jar
 
 DTYPE=oracle
 #SKIPQUERY=query34,query47
