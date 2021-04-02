@@ -45,3 +45,4 @@ verifyvariable() {
 verifyvariable
 
 export IFEXIST="IF EXISTS"
+export REQUIREDCOMMANDS="mysql"

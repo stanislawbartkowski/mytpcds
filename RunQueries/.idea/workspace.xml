@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="header optional">
-      <change beforePath="$PROJECT_DIR$/../HadoopAuth/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HadoopAuth/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="header optional" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -18,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1clAPREiJDaGR7ST4DHlIApFe1I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -30,7 +37,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HadoopAuth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -52,6 +59,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -125,111 +133,17 @@
     <MESSAGE value="remove semicolon parameter" />
     <option name="LAST_COMMIT_MESSAGE" value="remove semicolon parameter" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="2372" y="97" width="1024" height="852" key="#Project_Structure" timestamp="1593281980166">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2372" y="97" width="1024" height="852" key="#Project_Structure/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593281980166" />
-    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593288017046">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2347" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593288017046" />
-    <state x="2622" y="267" width="524" height="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591110038431">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2622" y="267" width="524" height="511" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591110038431" />
-    <state x="2617" y="281" width="524" height="491" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1593000047958">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2617" y="281" width="524" height="491" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593000047958" />
-    <state x="2474" y="90" width="875" height="957" key="CommitChangelistDialog2" timestamp="1593288175524">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2474" y="90" width="875" height="957" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593288175524" />
-    <state x="2641" y="406" width="476" height="240" key="DetectedRootsChooserDialog" timestamp="1592904850352">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2641" y="406" width="476" height="240" key="DetectedRootsChooserDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1592904850352" />
-    <state x="2122" y="146" width="1517" height="703" key="DiffContextDialog" timestamp="1593245864014">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2122" y="146" width="1517" height="703" key="DiffContextDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593245864014" />
-    <state x="2528" y="265" width="701" height="522" key="FileChooserDialogImpl" timestamp="1593246500667">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2528" y="265" width="701" height="522" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593246500667" />
-    <state width="1669" height="278" key="GridCell.Tab.0.bottom" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.0.center" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.0.left" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.0.right" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.1.bottom" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.bottom/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.1.center" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.center/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.1.left" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.left/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state width="1669" height="278" key="GridCell.Tab.1.right" timestamp="1593291084636">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1669" height="278" key="GridCell.Tab.1.right/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593291084636" />
-    <state x="2483" y="274" width="782" height="518" key="NewModule_or_Project.wizard" timestamp="1593210880925">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2483" y="274" width="782" height="518" key="NewModule_or_Project.wizard/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593210880925" />
-    <state x="2385" y="154" width="1007" height="737" key="SettingsEditor" timestamp="1591098808967">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2385" y="154" width="1007" height="737" key="SettingsEditor/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591098808967" />
-    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1593288177422">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2484" y="255" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593288177422" />
-    <state width="944" height="497" key="XDebugger.FullValuePopup" timestamp="1591818170746">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="944" height="497" key="XDebugger.FullValuePopup/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591818170746" />
-    <state x="2538" y="282" width="674" height="438" key="git4idea.merge.GitPullDialog" timestamp="1593282448685">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2538" y="282" width="674" height="438" key="git4idea.merge.GitPullDialog/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593282448685" />
-    <state x="2201" y="232" width="1345" height="603" key="new project wizard" timestamp="1593210843101">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2201" y="232" width="1345" height="603" key="new project wizard/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1593210843101" />
-    <state x="2552" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1591097772025">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2552" y="245" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1020@1920.0.1920.1080" timestamp="1591097772025" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
-          <line>102</line>
+          <line>101</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
-          <line>94</line>
+          <line>93</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

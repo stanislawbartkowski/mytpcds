@@ -1,7 +1,7 @@
 
 
 oraclescript() {
-  local -r TMP=`mktemp`
+  local -r TMP=`crtemp`
   cat >$TMP <<EOF
   WHENEVER OSERROR EXIT FAILURE;
   WHENEVER SQLERROR EXIT SQL.SQLCODE;
@@ -13,11 +13,6 @@ oraclescript() {
 EOF
   cat $1 >>$TMP
   echo EXIT | timeout $QUERYTIMEOUT sqlplus -S "$URL" \@$TMP >$RESULTSET
-  local RES=$?
-  rm $TMP
-  # remove parameter file, the calling function must not remove it
-  rm $1
-  return $RES
 }
 
 oraclecommand() {
@@ -27,7 +22,7 @@ oraclecommand() {
 }
 
 runquery() {
-  local -r TMP=`mktemp`
+  local -r TMP=`crtemp`
   sed -e "s/EXCEPT/minus/gi" $1 >$TMP
   cat $TMP
 #  oraclescript $TMP
@@ -35,7 +30,6 @@ runquery() {
 }
 
 rundroptable() {
-  # oraclescript removes the file passed as a parameter
   local -r TMP=`crtemp`
   cp $1 $TMP
   oraclescript $TMP
@@ -50,7 +44,7 @@ runcreatetable() {
 loadfile() {
   local -r tbl=$1
   local -r file=$2
-  local -r TMP=`mktemp`
+  local -r TMP=`crtemp`
   cat >$TMP <<EOF
   load data INFILE '$file'
   INTO TABLE $tbl
@@ -72,9 +66,6 @@ EOF
   cat $TMP
   log "log=$LOGDIR/oracleload.log"
   sqlldr "$URL" control=$TMP log=$LOGDIR/oracleload.log
-  local -r RES=$?
-  rm $TMP
-  return $RES
 }
 
 testconnection() {
@@ -89,6 +80,6 @@ check_variables
 
 export REMOVEQUERYDAYS=X
 export REQUIREDCOMMANDS="sqlplus sqlldr"
-
+export NULLLAST=X
 export RUNQUERYDBPARAMS=-removeSemi
 

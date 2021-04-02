@@ -31,6 +31,11 @@ removetemp() {
   rm $TMPSTORE
 }
 
+existfile() {
+  local -r file=$1
+  [ -f $file ] || logfail "File $file does not exist"
+}
+
 [ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
 mkdir -p $TEMPDIR
@@ -132,7 +137,7 @@ numberoflines() {
 verifyload() {
   local -r table=$1
   local -r file=$2
-  [ -f $file ] || logfail "File $file does not exist"
+  existfile $file
   log "Verify table $table against input file $2"
   local -r NOLINES=`numberoflines $file`
   log "Number of rows expected: $NOLINES"
@@ -213,7 +218,7 @@ verify() {
   TESTQUERY=${TESTQUERY:-55}
   TESTDATA=${TESTDATA:-customer}
   QUERYTIMEOUT=${QUERYTIMEOUT:-10m}
-  RESQUERYDIR=${RESQUERYDIR:-$PWD/res}
+  RESQUERYDIR=${RESQUERYDIR:-$PWD/qualifres}
   DELIM=${DELIM:-|}
 
   RESULTDIRECTORY=${RESULTDIRECTORY:-$TEMPDIR/${DTYPEID}result${STREAMNO}}
@@ -223,9 +228,9 @@ verify() {
 
   required_listofvars "RESQUERYDIR RESULTDIRECTORY TCPDATA RESFILE0"
 
-  [ -f $TCPDS ] || logfail "$TCPDS does not exist"
+  existfile $TCPDS
   if [ $VERQ -eq 1 ]; then 
-     [ -f $TCPQ0 ] || logfail "$TCPQ0 does not exist"
+     existfile $TCPQ0
   fi
   [ -d $TCPDATA ] || logfail "$TCPDATA directory does not exist"
   [ -d $RESQUERYDIR ] || logfail "$RESQUERYDIR directory does not exist"
@@ -270,28 +275,7 @@ preparequery() {
 }
 
 compactresult() {
-  # trim the first column
-  sed "s/^ [ ]*\([^|]*\)|/\1|/g" $1 |
-    # trim right spaces
-    sed "s/\([^ ]\) [ ]*|/\1|/g" | sed 's/[ ]*$//g' |
-    # trim left
-      sed "s/| [ ]*\([^ ]\)/|\1/g" |
-    # replace decimal , with .
-         sed "s/\([0-9][0-9]*\),\([0-9][0-9]*\)/\1.\2/g"  |
-    # remove emmpty lines
-          sed '/^\s*$/d' |
-          # replace 0.9 with 0.90
-#            sed "s/\(\.[0-9]\)$/\10/g" |
-#              sed "s/\(\.[0-9]\)|/\10|/g" |
-               # remove NULL NaN
-               # run twice !
-                 sed "s/NULL//g" | sed "s/NaN//g" | sed "s/|-|/||/g" | sed "s/|-|/||/g" | sed "s/^-|/|/g" |
-                # replace |9999| with |9999.00|
-                # run twice the same, can overlap
-#                sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" | sed "s/|\([0-9][0-9]*\)|/|\1.00|/g" |
-
-   awk -f $STARTPWD/proc/transf.awk
-
+   awk -f $STARTPWD/proc/transf.awk $1
 }
 
 resultline() {
@@ -407,7 +391,7 @@ modifyquery() {
 
 runsinglequery() {
   local qfile=$TMPQ/$1
-  [ -f $qfile ] || logfail "$qfile does not exist"
+  existfile $qfile
   local -r QUERY=`getqueryname $qfile`
   local -r TPLNAME=$QUERY.tpl
   RESULTSET=$RESULTDIRECTORY/$QUERY.res
@@ -421,7 +405,6 @@ runsinglequery() {
   fi
   [ $STREAMNO -eq 0 ] && log "$qfile  started ..."
   [ $STREAMNO -ne 0 ] && log "$STREAMNO $qfile  started ..."
-  [ -f $qfile ] || logfail "Query $qfile does not exist"
 
   local TMP=`crtemp`
 
@@ -461,6 +444,10 @@ runsinglequery() {
     fi
       
     log "Compare the result $RESQUERY against $RESULTSET"
+
+    existfile $RESQUERY
+    existfile $RESULTSET
+
     compactresult $RESQUERY >$TMP2
     compactresult $RESULTSET >$TMP3
     if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess $DELIM MATCH"; else mess="$mess $DELIM DIFFER"; fi
