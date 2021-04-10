@@ -1,6 +1,6 @@
 I_ITEM_ID	 S_    G_STATE	     AGG1	AGG2	   AGG3       AGG4
 ---------------- -- ---------- ---------- ---------- ---------- ----------
-			     1 51.0575881 75.6595856 194.407904 38.2563735
+NULL	     1	 51.0575881 75.6595856	 194.407904 38.2563735
 AAAAAAAAAAABAAAA	     1	       46     114.72	      0      32.12
 AAAAAAAAAAABAAAA TN	     0	       46     114.72	      0      32.12
 AAAAAAAAAAAEAAAA	     1	      100      77.97	      0      57.69
@@ -51,8 +51,8 @@ AAAAAAAAAAOCAAAA	     1	       14     64.575	      0     33.975
 AAAAAAAAAAOCAAAA TN	     0	       14     64.575	      0     33.975
 AAAAAAAAAAODAAAA	     1	       84	30.5	      0      28.97
 AAAAAAAAAAODAAAA TN	     0	       84	30.5	      0      28.97
-AAAAAAAAAAPBAAAA	     1	       45     118.89   2380.595     84.715
-AAAAAAAAAAPBAAAA TN	     0	       45     118.89   2380.595     84.715
+AAAAAAAAAAPBAAAA	     1	       45     118.89	   2380.595     84.715
+AAAAAAAAAAPBAAAA TN	     0	       45     118.89 	  2380.595     84.715
 AAAAAAAAABAAAAAA	     1	       97     124.75	      0      74.85
 AAAAAAAAABAAAAAA TN	     0	       97     124.75	      0      74.85
 AAAAAAAAABABAAAA	     1	       31      29.98	  17.09      27.58
@@ -65,8 +65,8 @@ AAAAAAAAABDAAAAA	     1	     31.5     68.345	      0     63.275
 AAAAAAAAABDAAAAA TN	     0	     31.5     68.345	      0     63.275
 AAAAAAAAABDBAAAA	     1	       56     103.85	1624.17      59.19
 AAAAAAAAABDBAAAA TN	     0	       56     103.85	1624.17      59.19
-AAAAAAAAABDDAAAA	     1 67.3333333     119.42 23.1866667      38.72
-AAAAAAAAABDDAAAA TN	     0 67.3333333     119.42 23.1866667      38.72
+AAAAAAAAABDDAAAA	     1	 67.3333333     119.42	 23.1866667      38.72
+AAAAAAAAABDDAAAA TN	     0	 67.3333333     119.42	 23.1866667      38.72
 AAAAAAAAABDEAAAA	     1	       61      85.95	2282.36     44.605
 AAAAAAAAABDEAAAA TN	     0	       61      85.95	2282.36     44.605
 AAAAAAAAABEDAAAA	     1	       61      85.14	      0      50.23
