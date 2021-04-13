@@ -1,5 +1,5 @@
 
-IGNORE=["Warning: Null","Elapsed:","rows ","rows)","rows selected","-------"]
+IGNORE=["Warning: Null","Elapsed:","rows ","rows)","rows selected","-------","record(s)"]
 
 from enum import Enum
 
@@ -224,6 +224,29 @@ LISTOFRES=[
     ("35_NULLS_LAST.ans","query35_null.res",2 ,17,[TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
     ("36_NULLS_FIRST.ans","query36.res",1 ,5,[TYPEF.ALLTOPIPE]),
     ("36_NULLS_LAST.ans","query36_null.res",2 ,5,[TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
+    ("37.ans","query37.res",2 ,3,[TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
+    ("38.ans","query38.res",2 ,1,[TYPEF.TOSPACE]),
+    ("39.ans","query39.res",1 ,10,[TYPEF.ALLTOPIPE],"W_WAREHOUSE_SK",1,10,[TYPEF.ALLTOPIPE]),  
+    ("40.ans","query40.res",2 ,4,[TYPEF.ALLTOSPACE]),
+    ("41.ans","query41.res",2 ,1,[TYPEF.ALLTOSPACE]),
+    ("42.ans","query42.res",2 ,4,[TYPEF.ALLTOSPACE]),
+    ("43.ans","query43.res",1 ,9,[TYPEF.ALLTOPIPE]),
+    ("44.ans","query44.res",1 ,3,[TYPEF.IGNORETABS,TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
+    ("45.ans","query45.res",4 ,3,[TYPEF.ALLTOPIPE]),
+    ("46_NULLS_FIRST.ans","query46.res",2 ,7,[TYPEF.ALLTOPIPE]),
+    ("46_NULLS_LAST.ans","query46_null.res",2 ,7,[TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
+    ("47.ans","query47.res",2 ,10,[TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
+    ("48.ans","query48.res",2 ,1,[TYPEF.IGNORETABS,TYPEF.ALLTOSPACE]),
+    ("49.ans","query49.res",2 ,5,[TYPEF.ALLTOSPACE]),
+    ("50.ans","query50.res",2 ,14,[TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOPIPE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
+    ("51.ans","query51.res",2 ,6,[TYPEF.IGNORETABS,TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
+    ("52.ans","query52.res",2 ,4,[TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
+    ("53.ans","query53.res",1 ,3,[TYPEF.ALLTOPIPE]),
+    ("54.ans","query54.res",2 ,3,[TYPEF.ALLTOSPACE]),
+    ("55.ans","query55.res",2 ,3,[TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
+    ("56_NULLS_FIRST.ans","query56.res",2 ,[1,2],[TYPEF.ALLTOSPACE]),
+    ("56_NULLS_LAST.ans","query56_null.res",2 ,2,[TYPEF.ALLTOSPACE]),
+
 
 
 #    ("18_NULLS_FIRST.ans","query18.res",1 ,11,[TYPEF.ALLTOPIPE]),  
@@ -264,4 +287,4 @@ def main () :
     for l in LISTOFRES : runone(l)
 
 #main()
-runone(LISTOFRES[46])
+runone(LISTOFRES[68])

@@ -58,8 +58,8 @@ EOF
 
 
 loadfile() {
-#  loadfileclient $@
-  loadfiles3 $@
+  loadfileclient $@
+#  loadfiles3 $@
 }
 
 
