@@ -1,0 +1,33 @@
+#DB2
+#DBHOST=paganish-inf
+#DBUSER=admin
+#DBPASSWORD=password
+
+DBNAME=BLUDB
+CLIENT=client
+SCHEMA=PERFDB
+DBPORT=50000
+
+DBHOST=thinkde
+DBUSER=bluadmin
+DBPASSWORD=secret
+
+
+DTYPE=db2
+DPROC=db2cli
+
+DBURL="jdbc:db2://$DBHOST:$DBPORT/$DBNAME:currentSchema=$SCHEMA;blockingReadConnectionTimeout=300;"
+#DBURL="jdbc:db2://jobbery-inf:50000/$DBNAME"
+JAVADRIVER=/opt/ibm/db2/V11.5/java/db2jcc4.jar
+JVMPARS="-Ddb2.jcc.charsetDecoderEncoder=3 -Xmx1024m -XX:MaxPermSize=256m"
+
+# S3 loading
+
+AWSKEY=XXXXXXXXXXXXXXXX
+AWSSECRETKEY=YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+
+ENDPOINT=s3-us-west-2.amazonaws.com
+BUCKET=BBBBBBBBBBBBBBBBBBBBBBB
+
+PREFIXSERVER=sbtest/tpcdata/data10
+#PREFIXSERVER=/mnt/clusterfs/scratch/loadarea

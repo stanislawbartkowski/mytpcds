@@ -40,7 +40,7 @@ existfile() {
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
 mkdir -p $TEMPDIR
 source db/jdbcproc.sh
-source db/${DTYPE}proc.sh
+source db/${DPROC:-$DTYPE}proc.sh
 source proc/queries.sh
 
 # ---------------------
@@ -77,7 +77,7 @@ loadsinglefile() {
   log "Load $1 using $2"
   local -r before=`date  +"%s"`
 
-  if [ -n $REMOVELASTPIPE ]; then 
+  if [ -n "$REMOVELASTPIPE" ]; then 
     local -r TMP=`crtemp`
     cat $2 | sed 's/|$//' >$TMP
     loadfile $1 $TMP >>$LOGFILE
