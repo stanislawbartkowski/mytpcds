@@ -1,13 +1,30 @@
 source ./conn.rc 
 
 #export TESTDATA=call_center
-#export TESTDATA=dbgen_version
-#export TESTDATA=catalog_sales
-#export TESTDATA=store_sales
-#export TESTDATA=dbgen_version
 #export TESTDATA=catalog_page
+#export TESTDATA=catalog_returns
+#export TESTDATA=catalog_sales
+#export TESTDATA=customer_address
 #export TESTDATA=customer
-export TESTDATA=customer_demographics
+#export TESTDATA=customer_demographics
+#export TESTDATA=date_dim
+#export TESTDATA=dbgen_version
+#export TESTDATA=household_demographics
+#export TESTDATA=income_band
+#export TESTDATA=inventory
+#export TESTDATA=item
+#export TESTDATA=promotion
+#export TESTDATA=reason
+#export TESTDATA=ship_mode
+#export TESTDATA=store
+#export TESTDATA=store_returns
+#export TESTDATA=store_sales
+#export TESTDATA=time_dim
+#export TESTDATA=warehouse
+#export TESTDATA=web_page
+#export TESTDATA=web_returns
+#export TESTDATA=web_sales
+export TESTDATA=web_site
 
 export TESTQUERY=1
 #export QUERYTIMEOUT=5m

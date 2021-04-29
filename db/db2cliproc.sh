@@ -1,5 +1,7 @@
 
 db2clirun() {
+    required_var DBPASSWORD
+
     local -r CONNECTION="DATABASE=$DBNAME;HOSTNAME=$DBHOST;PORT=$DBPORT;UID=$DBUSER;PWD=$DBPASSWORD"
     local -r sqlinput=$1
     local -r ITEMP=`crtemp`
@@ -26,7 +28,7 @@ loadfiles3() {
   local -r INLOADFILE=$2
   local -r TMPS=`crtemp`
 
-  required_var PREFIXSERVER ENDPOINT AWSKEY AWSSECRETKEY BUCKET
+  required_listofvars PREFIXSERVER ENDPOINT AWSKEY AWSSECRETKEY BUCKET
 
   local -r S3FILE=`serverfile $INLOADFILE`
 
@@ -58,8 +60,8 @@ EOF
 
 
 loadfile() {
-  loadfileclient $@
-#  loadfiles3 $@
+  [ -z "$LOADS3" ] && loadfileclient $@
+  [ -n "$LOADS3" ] && loadfiles3 $@
 }
 
 

@@ -38,6 +38,7 @@ existfile() {
 
 [ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
+
 mkdir -p $TEMPDIR
 source db/jdbcproc.sh
 source db/${DPROC:-$DTYPE}proc.sh
