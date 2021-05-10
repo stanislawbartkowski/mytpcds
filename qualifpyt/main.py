@@ -1,5 +1,5 @@
 
-IGNORE=["Warning: Null","Elapsed:","rows ","rows)","rows selected","-------","record(s)"]
+IGNORE=["Warning: Null","Elapsed:","rows)","rows affected","rows select","rows selected","-------","record(s)"]
 
 from enum import Enum
 
@@ -126,6 +126,7 @@ class ANSTYPE :
 
     def __answerfile(self,outfile,lines,beg,end,ty,numof) :
         maxnum = max(numof)
+        ignored = 0
 
         for i in range(beg,end) :
             line = lines[i]
@@ -133,7 +134,10 @@ class ANSTYPE :
             ignore = False
             for ig in IGNORE :
               if line.rfind(ig) != -1 : ignore = True
-            if ignore : continue
+            if ignore : 
+                print("ignored="+line)
+                ignored = ignored + 1
+                continue
             ll = LINE(line)
             self.transformline(ll,ty)
             if not len(ll.out) in numof :
@@ -146,6 +150,7 @@ class ANSTYPE :
             for i in range(len(ll.out),maxnum) : outfile.write('NULL |')
             outfile.write('\n')
         outfile.write("---------\n")
+        # print("ignored=" + str(ignored))
 
     
     def doanswerfile(self,infile,out) :
@@ -296,6 +301,14 @@ LISTOFRES=[
     ("92.ans","query92.res",2,1,[TYPEF.ALLTOTAB]),
     ("93_NULLS_FIRST.ans","query93.res",1,2,[TYPEF.ALLTOPIPE]),
     ("93_NULLS_LAST.ans","query93_null.res",1,2,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]),
+    ("94.ans","query94.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]),
+    ("95.ans","query95.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]),
+    ("96.ans","query96.res",2,1,[TYPEF.ALLTOTAB]),
+    ("97.ans","query97.res",1,3,[TYPEF.ALLTOPIPE]),
+    ("98_NULLS_FIRST.ans","query98.res",2,7,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.ALLTOSPACE],"I_ITEM_ID",2,7,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
+    ("98_NULLS_LAST.ans","query98_null.res",2,7,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.ALLTOSPACE],"I_ITEM_ID",2,7,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
+    ("99_NULLS_FIRST.ans","query99.res",1,8,[TYPEF.ALLTOPIPE]),
+    ("99_NULLS_LAST.ans","query99_null.res",1,8,[TYPEF.TOPIPE,TYPEF.ALLTOTAB])
 
 
 #    ("18_NULLS_FIRST.ans","query18.res",1 ,11,[TYPEF.ALLTOPIPE]),  
@@ -335,5 +348,5 @@ def runone(l) :
 def main () :
     for l in LISTOFRES : runone(l)
 
-#main()
-runone(LISTOFRES[118])
+main()
+#runone(LISTOFRES[126])

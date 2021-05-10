@@ -9,37 +9,11 @@ source ./$ENV.rc
 
 declare -g TMPSTORE=`mktemp`
 
-log() {
-  [ -n "$LOGILE" ] && echo $1 >>$LOGFILE
-  echo "$1"
-}
-
-logfail() {
-  log "$1"
-  log "Exit immediately"
-  exit 1
-}
-
-crtemp() {
-  local -r TMP=`mktemp`
-  echo $TMP >>$TMPSTORE
-  echo $TMP
-}
-
-removetemp() {
-  while read rmfile;  do rm $rmfile; done <$TMPSTORE
-  rm $TMPSTORE
-}
-
-existfile() {
-  local -r file=$1
-  [ -f $file ] || logfail "File $file does not exist"
-}
-
 [ -z "$DTYPE" ] && { echo "Variable DTYPE not defined"; exit 1; }
 [ -z "$TEMPDIR" ] && { echo "Variable TEMPDIR not defined"; exit 1; }
 
 mkdir -p $TEMPDIR
+source proc/commonproc.sh
 source db/jdbcproc.sh
 source db/${DPROC:-$DTYPE}proc.sh
 source proc/queries.sh
@@ -104,19 +78,6 @@ loaddatatest() {
 
 # --------------
 
-getsec() {
-  echo `date  +"%s"`
-}
-
-
-calculatesec() {
-  local -r before=$1
-  local -r after=`getsec`
-  echo $(expr $after - $before)
-}
-
-# --------------
-
 loaddata() {
    verifydat
    log "Data loading ..."
@@ -129,10 +90,6 @@ loaddata() {
    local -r timeelapsed=`calculatesec $before`
    echo $LOADTIMEFILE
    echo "LOAD TIME IN SEC: $timeelapsed" >$LOADTIMEFILE
-}
-
-numberoflines() {
-  wc --line $1 | cut -d ' ' -f 1
 }
 
 verifyload() {
@@ -175,28 +132,6 @@ verifyallload() {
   done
 }
 
-required_var() {
-  local -r VARIABLE=$1
-  [ -z "${!VARIABLE}" ] && logfail "Need to set environment variable $VARIABLE"
-}
-
-required_listofvars() {
-  local -r listv=$1
-  for value in $listv; do required_var $value; done
-}
-
-required_command() {
-  local -r COMMAND=$1
-
-  if ! command -v $COMMAND >>$LOGFILE ; then logfail "$COMMAND not installed"; fi
-}
-
-required_listofcommands() {
-  local -r LISTC=$1
-  for value in $LISTC; do required_command $value; done
-}
-
-
 verify() {
 
   local -r VERQ=$1
@@ -206,6 +141,8 @@ verify() {
 
   mkdir -p $LOGDIR
   LOGFILE=$LOGDIR/mytcpds.log
+
+  touchlogfile
 
   required_var DBNAME
 
@@ -459,13 +396,6 @@ runsinglequery() {
     log "Number of lines received $RESLINES"
     if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess $DELIM NUMBER OF LINES MATCHES"; else mess="$mess $DELIM NUMBER OF LINES DIFFERS"; fi
   fi
-
-# uncomment for debugging
-#  cat $RESULTSET >>$LOGFILE
-#  echo >>$LOGFILE
-#  echo >>$LOGFILE
-#  echo >>$LOGFILE
-#  compactresult $RESULTSET >>$LOGFILE
 
   log "$mess"
   echo $mess >>$RESFILE0
