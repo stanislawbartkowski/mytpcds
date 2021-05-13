@@ -186,18 +186,18 @@ LISTOFRES=[
     ("3.ans","query3.res",2 ,4,[TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOSPACE]),
     ("4.ans","query4.res",2 ,4,[TYPEF.ALLTOSPACE]),
     ("5_NULLS_FIRST.ans","query5.res",1 ,5,[TYPEF.ALLTOPIPE]),
-# manual:("5_NULLS_LAST.ans","query5_null.res",1 ,5,[TYPEF.ALLTOPIPE]),  
+    ("5_NULLS_LAST.ans","query5_null.res",1 ,5,[TYPEF.TOPIPE,TYPEF.ALLTOSPACE]),  #5
     ("6_NULLS_FIRST.ans","query6.res",2 ,2,[TYPEF.ALLTOSPACE]),  
     ("6_NULLS_LAST.ans","query6_null.res",2 ,2,[TYPEF.ALLTOSPACE]),  
     ("7.ans","query7.res",1 ,5,[TYPEF.ALLTOPIPE]),
     ("8.ans","query8.res",2 ,2,[TYPEF.ALLTOSPACE]),
-    ("9.ans","query9.res",2 ,5,[TYPEF.ALLTOSPACE]),
+    ("9.ans","query9.res",2 ,5,[TYPEF.ALLTOSPACE]), #10
     ("10.ans","query10.res",2 ,14,[TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
     ("11.ans","query11.res",2 ,[1,3,4],[TYPEF.ALLTOSPACE]),
     ("12.ans","query12.res",2,[6,7],[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
     ("13.ans","query13.res",2,4,[TYPEF.IGNORETABS,TYPEF.ALLTOSPACE]),
-    ("14_NULLS_FIRST.ans","query14.res",2 ,6,[TYPEF.ALLTOPIPE],"CHANN|",2,12,[TYPEF.ALLTOPIPE]),  
-    ("14_NULLS_LAST.ans","query14_null.res",2 ,[4,5,6],[TYPEF.ALLTOSPACE],"CHANN",2,12,[TYPEF.ALLTOSPACE]),  
+    ("14_NULLS_FIRST.ans","query14.res",2 ,6,[TYPEF.ALLTOPIPE],"CHANN|",2,12,[TYPEF.ALLTOPIPE]),   #15
+    ("14_NULLS_LAST.ans","query14_null.res",2 ,6,[TYPEF.ALLTOSPACE],"CHANN",2,12,[TYPEF.ALLTOSPACE]),  #16
     ("15_NULLS_FIRST.ans","query15.res",2,2,[TYPEF.ALLTOSPACE]),
     ("15_NULLS_LAST.ans","query15_null.res",2,2,[TYPEF.ALLTOTAB]),
     ("16.ans","query16.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOSPACE]),
@@ -348,5 +348,5 @@ def runone(l) :
 def main () :
     for l in LISTOFRES : runone(l)
 
-main()
-#runone(LISTOFRES[126])
+#main()
+runone(LISTOFRES[16])

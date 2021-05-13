@@ -1,0 +1,19 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query26.res against /tmp/tpcds/oracleresult0/query26.res
+7c7
+<  | AAAAAAAAAAEAAAAA | 71 | 176.71 | 0 | 142.69 | 
+---
+>  | AAAAAAAAAAEAAAAA | 71 | 1.77 | 0 | 1.43 | 
+12,13c12,13
+<  | AAAAAAAAAAIDAAAA | 78.33 | 126.37 | 0 | 61.94 | 
+<  | AAAAAAAAAAJBAAAA | 60.33 | 85.60 | 23.20 | 15.50 | 
+---
+>  | AAAAAAAAAAIDAAAA | 7.83 | 126.37 | 0 | 6.19 | 
+>  | AAAAAAAAAAJBAAAA | 6.03 | 8.56 | 23.20 | 15.50 | 
+21c21
+<  | AAAAAAAAAAOCAAAA | 34.33 | 84.50 | 1133.95 | 63.43 | 
+---
+>  | AAAAAAAAAAOCAAAA | 3.43 | 8.45 | 1.13 | 63.43 | 
+47c47
+<  | AAAAAAAAACODAAAA | 46 | 35.84 | 0 | 16.28 | 
+---
+>  | AAAAAAAAACODAAAA | 46 | 35.84 | 0 | 1.63 | 
