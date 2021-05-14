@@ -9,7 +9,7 @@
 |Abrams|Dorothy|Lincoln|New Hope|99435|2640.46|-12712.81|
 |Abreu|David|Brownsville |Mount Pleasant |189640|4026.11|-7711.87|
 |Abreu|David|Brownsville |White Oak|55423|2943.2|-5695.81|
-|Ackerman|%|Hopewell|Pleasant Grove |94468|5981.77|-11788.36|
+|Ackerman|NULL|Hopewell|Pleasant Grove |94468|5981.77|-11788.36|
 |Ackley|Christopher|Bethel|Newport|95923|2996.52|-7797.5|
 |Acosta|Bobby|Riverdale|Friendship|197899|60.5|-27188.42|
 |Acosta|Eric|Fairfield|Shiloh |11072|9.85|-4142.15|
@@ -68,7 +68,7 @@
 |Alcala|Nancy|Fairfield|Arlington|181927|711.7|-14419.56|
 |Aldrich |Stephen|Shady Grove |Post Oak|194020|4141.47|-15841.39|
 |Aldrich |Willard|Woodville|Arthur |11159|9577.24|1816.47|
-|Aldrich |%|Salem|Woodville|107876|638.97|-6506.27|
+|Aldrich |NULL|Salem|Woodville|107876|638.97|-6506.27|
 |Aleman|Eddie|White Oak|Concord|25327|9293.14|-21425.24|
 |Alexander|Beverly|Valley View |Five Forks|212635|0|-5122.61|
 |Alexander|Donna|Liberty|Hamilton|218554|517.32|-10027.79|

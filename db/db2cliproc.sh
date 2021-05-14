@@ -1,3 +1,5 @@
+source ../proc/db2commonproc.sh
+
 serverfile() {
     local -r tbl=`basename $1`
     echo "$PREFIXSERVER/$tbl"

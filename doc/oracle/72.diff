@@ -1,0 +1,14 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query72_null.res against /tmp/tpcds/oracleresult0/query72.res
+20a21
+>  | Able, alternative police shall not give so other complaints. There complex | NULL | 5212 | 0 | 1 | 1 | 
+23d23
+<  | Able, alternative police shall not give so other complaints. There complex | NULL | 5212 | 0 | 1 | 1 | 
+60d59
+<  | Afraid years suspend much building | NULL | 5171 | 0 | 1 | 1 | 
+64a64
+>  | Afraid years suspend much building | NULL | 5171 | 0 | 1 | 1 | 
+93d92
+<  | Alone working-class dates open from a issues. Most european concessions will not tell personal areas; central, poor officials might not act | Doors canno | 5197 | 0 | 1 | 1 | 
+94a94
+>  | Alone working-class dates open from a issues. Most european concessions will not tell personal areas; central, poor officials might not act | Doors canno | 5197 | 0 | 1 | 1 | 
+Expected number of line 101
