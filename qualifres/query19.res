@@ -6,7 +6,7 @@
 |10015008|scholaramalgamalg #8 |839|n stprieing |36664.59|
 |5003002|exportischolar #2|50|baranti|35402.74|
 |4002002|importoedu pack #2|615|antioughtcally|34673.98|
-|3002002|importoexporti #2|581|oughteinganti|34669|
+|3002002|importoexporti #2|581|oughteinganti|34669.00|
 |5002001|importoscholar #1|442|ableeseese|34618.53|
 |5003001|exportischolar #1|224|eseableable |34541.38|
 |5004002|edu packscholar #2|168|eingcallyought|33004.86|

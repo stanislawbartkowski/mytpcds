@@ -182,7 +182,7 @@ OUTPUTDIR="/home/sbartkowski/work/mytpcds/qualifres"
 
 LISTOFRES=[
     ("1.ans","query1.res",2,1,[TYPEF.ALLTOSPACE]),
-    ("2.ans","query2.res",2,8,[TYPEF.ALLTOSPACE]),
+    ("2.ans","query2.res",2,8,[TYPEF.ALLTOSPACE]), #1
     ("3.ans","query3.res",2 ,4,[TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOSPACE]),
     ("4.ans","query4.res",2 ,4,[TYPEF.ALLTOSPACE]),
     ("5_NULLS_FIRST.ans","query5.res",1 ,5,[TYPEF.ALLTOPIPE]),
@@ -194,7 +194,7 @@ LISTOFRES=[
     ("9.ans","query9.res",2 ,5,[TYPEF.ALLTOSPACE]), #10
     ("10.ans","query10.res",2 ,14,[TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
     ("11.ans","query11.res",2 ,[1,3,4],[TYPEF.ALLTOSPACE]),
-    ("12.ans","query12.res",2,[6,7],[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
+    ("12.ans","query12.res",2,7,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.ALLTOSPACE]), #13
     ("13.ans","query13.res",2,4,[TYPEF.IGNORETABS,TYPEF.ALLTOSPACE]),
     ("14_NULLS_FIRST.ans","query14.res",2 ,6,[TYPEF.ALLTOPIPE],"CHANN|",2,12,[TYPEF.ALLTOPIPE]),   #15
     ("14_NULLS_LAST.ans","query14_null.res",2 ,6,[TYPEF.ALLTOSPACE],"CHANN",2,12,[TYPEF.ALLTOSPACE]),  #16
@@ -203,7 +203,7 @@ LISTOFRES=[
     ("16.ans","query16.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOSPACE]),
     ("17.ans","query17.res",2,15,[TYPEF.ALLTOPIPE]), #20
     ("oracle18.res","query18.res",0,11,[TYPEF.IGNOREPIPE,TYPEF.ALLTOPIPE]),
-    ("19.ans","query19.res",2,5,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB]),
+    ("19.ans","query19.res",2,5,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB]), #22
     ("20_NULLS_FIRST.ans","query20.res",2,7,[TYPEF.TOPIPE,TYPEF.TOPIPE,TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),
     ("20_NULLS_LAST.ans","query20_null.res",2,7,[TYPEF.TOSPACE,TYPEF.TOPIPE,TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),
     ("21_NULLS_FIRST.ans","query21.res",1,4,[TYPEF.ALLTOPIPE]),
@@ -281,9 +281,9 @@ LISTOFRES=[
     ("76_NULLS_LAST.ans","query76_null.res",1 ,7,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.ALLTOSPACE]), #97
     ("77_NULLS_FIRST.ans","query77.res",2 ,5,[TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
     ("77_NULLS_LAST.ans","query77_null.res",2 ,5,[TYPEF.TOTAB,TYPEF.ALLTOSPACE]),
-    ("78.ans","query78.res",2,10,[TYPEF.ALLTOPIPE]),
+    ("78.ans","query78.res",2,10,[TYPEF.ALLTOPIPE]), #100
     ("79_NULLS_FIRST.ans","query79.res",1,[5,6],[TYPEF.ALLTOPIPE]),
-    ("79_NULLS_LAST.ans","query79_null.res",1,[5,6],[TYPEF.ALLTOTAB]),
+    ("79_NULLS_LAST.ans","query79_null.res",1,6,[TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.ALLTOTAB]), #102
     ("80_NULLS_FIRST.ans","query80.res",5,5,[TYPEF.ALLTOPIPE]),
     ("80_NULLS_LAST.ans","query80_null.res",2,5,[TYPEF.TOPIPE,TYPEF.ALLTOSPACE]),    
     ("81.ans","query81.res",2,16,[TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOPIPE,TYPEF.TOTAB,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.TOSPACE,TYPEF.TOTAB,TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
@@ -291,7 +291,7 @@ LISTOFRES=[
     ("83.ans","query83.res",2,8,[TYPEF.ALLTOSPACE]),
     ("84.ans","query84.res",2,2,[TYPEF.ALLTOPIPE]),
     ("85.ans","query85.res",2,4,[TYPEF.ALLTOTAB]),
-    ("86_NULLS_FIRST.ans","query86.res",1,5,[TYPEF.ALLTOPIPE]),
+    ("86_NULLS_FIRST.ans","query86.res",1,5,[TYPEF.ALLTOPIPE]), #110
     ("86_NULLS_LAST.ans","query86_null.res",1,5,[TYPEF.TOSPACE,TYPEF.ALLTOTAB]),
     ("87.ans","query87.res",2,1,[TYPEF.ALLTOTAB]),
     ("88.ans","query88.res",2,8,[TYPEF.ALLTOTAB]),
@@ -301,7 +301,7 @@ LISTOFRES=[
     ("92.ans","query92.res",2,1,[TYPEF.ALLTOTAB]),
     ("93_NULLS_FIRST.ans","query93.res",1,2,[TYPEF.ALLTOPIPE]),
     ("93_NULLS_LAST.ans","query93_null.res",1,2,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]),
-    ("94.ans","query94.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]),
+    ("94.ans","query94.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]), #120
     ("95.ans","query95.res",2,3,[TYPEF.IGNORETABS,TYPEF.ALLTOTAB]),
     ("96.ans","query96.res",2,1,[TYPEF.ALLTOTAB]),
     ("97.ans","query97.res",1,3,[TYPEF.ALLTOPIPE]),
@@ -349,4 +349,4 @@ def main () :
     for l in LISTOFRES : runone(l)
 
 #main()
-runone(LISTOFRES[97])
+runone(LISTOFRES[1])

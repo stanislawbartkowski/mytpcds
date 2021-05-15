@@ -1,0 +1,7 @@
+NFO: Writing result to  stdout
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query90.res against /tmp/tpcds/oracleresult0/query90.res
+1c1
+<  | 0.61 | 
+---
+>  | 6.12 | 
+Expected number of line 2

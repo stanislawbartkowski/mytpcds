@@ -1,0 +1,7 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query15.res against /tmp/tpcds/db2result0/query15.res
+1d0
+<  | NULL | 4723.12 | 
+100a100
+>  | 38877 | 251.15 | 
+Expected number of line 101
+Number of lines received 101

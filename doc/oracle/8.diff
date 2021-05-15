@@ -1,0 +1,13 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query8.res against /tmp/tpcds/oracleresult0/query8.res
+1,5c1,5
+<  | able | -9767751.90 | 
+<  | ation | -10546550 | 
+<  | bar | -10133672 | 
+<  | ese | -10335181 | 
+<  | ought | -10737660 | 
+---
+>  | able | -9767751.88 | 
+>  | ation | -10546549.93 | 
+>  | bar | -10133672.06 | 
+>  | ese | -10335181.30 | 
+>  | ought | -10737659.56 | 

@@ -1,0 +1,137 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query99_null.res against /tmp/tpcds/oracleresult0/query99.res
+2d1
+<  | Bad cards must make. | EXPRESS | NY Metro | 1226 | 1287 | 1282 | 0 | 0 | 
+3a3
+>  | Bad cards must make. | EXPRESS | NY Metro | 1226 | 1287 | 1282 | 0 | 0 | 
+5d4
+<  | Bad cards must make. | LIBRARY | NY Metro | 978 | 984 | 999 | 0 | 0 | 
+6a6
+>  | Bad cards must make. | LIBRARY | NY Metro | 978 | 984 | 999 | 0 | 0 | 
+8d7
+<  | Bad cards must make. | NEXT DAY | NY Metro | 1262 | 1325 | 1246 | 0 | 0 | 
+9a9
+>  | Bad cards must make. | NEXT DAY | NY Metro | 1262 | 1325 | 1246 | 0 | 0 | 
+11d10
+<  | Bad cards must make. | OVERNIGHT | NY Metro | 982 | 930 | 993 | 0 | 0 | 
+12a12
+>  | Bad cards must make. | OVERNIGHT | NY Metro | 982 | 930 | 993 | 0 | 0 | 
+14d13
+<  | Bad cards must make. | REGULAR | NY Metro | 942 | 1009 | 948 | 0 | 0 | 
+15a15
+>  | Bad cards must make. | REGULAR | NY Metro | 942 | 1009 | 948 | 0 | 0 | 
+17d16
+<  | Bad cards must make. | TWO DAY | NY Metro | 947 | 1013 | 952 | 0 | 0 | 
+18a18
+>  | Bad cards must make. | TWO DAY | NY Metro | 947 | 1013 | 952 | 0 | 0 | 
+20d19
+<  | Conventional childr | EXPRESS | NY Metro | 1284 | 1331 | 1277 | 0 | 0 | 
+21a21
+>  | Conventional childr | EXPRESS | NY Metro | 1284 | 1331 | 1277 | 0 | 0 | 
+23d22
+<  | Conventional childr | LIBRARY | NY Metro | 983 | 976 | 981 | 0 | 0 | 
+24a24
+>  | Conventional childr | LIBRARY | NY Metro | 983 | 976 | 981 | 0 | 0 | 
+26d25
+<  | Conventional childr | NEXT DAY | NY Metro | 1288 | 1280 | 1284 | 0 | 0 | 
+27a27
+>  | Conventional childr | NEXT DAY | NY Metro | 1288 | 1280 | 1284 | 0 | 0 | 
+29d28
+<  | Conventional childr | OVERNIGHT | NY Metro | 958 | 963 | 897 | 0 | 0 | 
+30a30
+>  | Conventional childr | OVERNIGHT | NY Metro | 958 | 963 | 897 | 0 | 0 | 
+32d31
+<  | Conventional childr | REGULAR | NY Metro | 949 | 928 | 987 | 0 | 0 | 
+33a33
+>  | Conventional childr | REGULAR | NY Metro | 949 | 928 | 987 | 0 | 0 | 
+35d34
+<  | Conventional childr | TWO DAY | NY Metro | 925 | 1007 | 962 | 0 | 0 | 
+37,54c36,54
+<  | Doors canno |  | EXPRESS | Mid Atlantic | 1240 | 1245 | 1267 | 0 | 0 | 
+<  | Doors canno |  | EXPRESS | NY Metro | 1234 | 1270 | 1349 | 0 | 0 | 
+<  | Doors canno |  | EXPRESS | North Midwest | 1185 | 1238 | 1197 | 0 | 0 | 
+<  | Doors canno |  | LIBRARY | Mid Atlantic | 873 | 974 | 948 | 0 | 0 | 
+<  | Doors canno |  | LIBRARY | NY Metro | 987 | 1005 | 990 | 0 | 0 | 
+<  | Doors canno |  | LIBRARY | North Midwest | 947 | 952 | 1025 | 0 | 0 | 
+<  | Doors canno |  | NEXT DAY | Mid Atlantic | 1264 | 1276 | 1185 | 0 | 0 | 
+<  | Doors canno |  | NEXT DAY | NY Metro | 1263 | 1337 | 1310 | 0 | 0 | 
+<  | Doors canno |  | NEXT DAY | North Midwest | 1202 | 1247 | 1278 | 0 | 0 | 
+<  | Doors canno |  | OVERNIGHT | Mid Atlantic | 912 | 888 | 934 | 0 | 0 | 
+<  | Doors canno |  | OVERNIGHT | NY Metro | 942 | 1003 | 959 | 0 | 0 | 
+<  | Doors canno |  | OVERNIGHT | North Midwest | 896 | 903 | 911 | 0 | 0 | 
+<  | Doors canno |  | REGULAR | Mid Atlantic | 888 | 953 | 974 | 0 | 0 | 
+<  | Doors canno |  | REGULAR | NY Metro | 971 | 1028 | 946 | 0 | 0 | 
+<  | Doors canno |  | REGULAR | North Midwest | 937 | 974 | 914 | 0 | 0 | 
+<  | Doors canno |  | TWO DAY | Mid Atlantic | 974 | 898 | 985 | 0 | 0 | 
+<  | Doors canno |  | TWO DAY | NY Metro | 982 | 1017 | 997 | 0 | 0 | 
+<  | Doors canno |  | TWO DAY | North Midwest | 985 | 937 | 959 | 0 | 0 | 
+---
+>  | Conventional childr | TWO DAY | NY Metro | 925 | 1007 | 962 | 0 | 0 | 
+>  | Doors canno | EXPRESS | Mid Atlantic | 1240 | 1245 | 1267 | 0 | 0 | 
+>  | Doors canno | EXPRESS | North Midwest | 1185 | 1238 | 1197 | 0 | 0 | 
+>  | Doors canno | EXPRESS | NY Metro | 1234 | 1270 | 1349 | 0 | 0 | 
+>  | Doors canno | LIBRARY | Mid Atlantic | 873 | 974 | 948 | 0 | 0 | 
+>  | Doors canno | LIBRARY | North Midwest | 947 | 952 | 1025 | 0 | 0 | 
+>  | Doors canno | LIBRARY | NY Metro | 987 | 1005 | 990 | 0 | 0 | 
+>  | Doors canno | NEXT DAY | Mid Atlantic | 1264 | 1276 | 1185 | 0 | 0 | 
+>  | Doors canno | NEXT DAY | North Midwest | 1202 | 1247 | 1278 | 0 | 0 | 
+>  | Doors canno | NEXT DAY | NY Metro | 1263 | 1337 | 1310 | 0 | 0 | 
+>  | Doors canno | OVERNIGHT | Mid Atlantic | 912 | 888 | 934 | 0 | 0 | 
+>  | Doors canno | OVERNIGHT | North Midwest | 896 | 903 | 911 | 0 | 0 | 
+>  | Doors canno | OVERNIGHT | NY Metro | 942 | 1003 | 959 | 0 | 0 | 
+>  | Doors canno | REGULAR | Mid Atlantic | 888 | 953 | 974 | 0 | 0 | 
+>  | Doors canno | REGULAR | North Midwest | 937 | 974 | 914 | 0 | 0 | 
+>  | Doors canno | REGULAR | NY Metro | 971 | 1028 | 946 | 0 | 0 | 
+>  | Doors canno | TWO DAY | Mid Atlantic | 974 | 898 | 985 | 0 | 0 | 
+>  | Doors canno | TWO DAY | North Midwest | 985 | 937 | 959 | 0 | 0 | 
+>  | Doors canno | TWO DAY | NY Metro | 982 | 1017 | 997 | 0 | 0 | 
+56d55
+<  | Important issues liv | EXPRESS | NY Metro | 1301 | 1300 | 1239 | 0 | 0 | 
+57a57
+>  | Important issues liv | EXPRESS | NY Metro | 1301 | 1300 | 1239 | 0 | 0 | 
+59d58
+<  | Important issues liv | LIBRARY | NY Metro | 947 | 963 | 988 | 0 | 0 | 
+60a60
+>  | Important issues liv | LIBRARY | NY Metro | 947 | 963 | 988 | 0 | 0 | 
+62d61
+<  | Important issues liv | NEXT DAY | NY Metro | 1281 | 1311 | 1310 | 0 | 0 | 
+63a63
+>  | Important issues liv | NEXT DAY | NY Metro | 1281 | 1311 | 1310 | 0 | 0 | 
+65d64
+<  | Important issues liv | OVERNIGHT | NY Metro | 950 | 965 | 931 | 0 | 0 | 
+66a66
+>  | Important issues liv | OVERNIGHT | NY Metro | 950 | 965 | 931 | 0 | 0 | 
+68d67
+<  | Important issues liv | REGULAR | NY Metro | 972 | 934 | 1018 | 0 | 0 | 
+69a69
+>  | Important issues liv | REGULAR | NY Metro | 972 | 934 | 1018 | 0 | 0 | 
+71d70
+<  | Important issues liv | TWO DAY | NY Metro | 844 | 972 | 1006 | 0 | 0 | 
+72a72
+>  | Important issues liv | TWO DAY | NY Metro | 844 | 972 | 1006 | 0 | 0 | 
+74d73
+<  | NULL | EXPRESS | NY Metro | 1274 | 1296 | 1286 | 0 | 0 | 
+75a75
+>  | NULL | EXPRESS | NY Metro | 1274 | 1296 | 1286 | 0 | 0 | 
+77d76
+<  | NULL | LIBRARY | NY Metro | 886 | 1001 | 1009 | 0 | 0 | 
+78a78
+>  | NULL | LIBRARY | NY Metro | 886 | 1001 | 1009 | 0 | 0 | 
+80d79
+<  | NULL | NEXT DAY | NY Metro | 1271 | 1251 | 1291 | 0 | 0 | 
+81a81
+>  | NULL | NEXT DAY | NY Metro | 1271 | 1251 | 1291 | 0 | 0 | 
+83d82
+<  | NULL | OVERNIGHT | NY Metro | 979 | 993 | 1039 | 0 | 0 | 
+84a84
+>  | NULL | OVERNIGHT | NY Metro | 979 | 993 | 1039 | 0 | 0 | 
+86d85
+<  | NULL | REGULAR | NY Metro | 961 | 1022 | 1034 | 0 | 0 | 
+87a87
+>  | NULL | REGULAR | NY Metro | 961 | 1022 | 1034 | 0 | 0 | 
+89d88
+<  | NULL | TWO DAY | NY Metro | 926 | 974 | 1004 | 0 | 0 | 
+90a90
+>  | NULL | TWO DAY | NY Metro | 926 | 974 | 1004 | 0 | 0 | 
+Expected number of line 91
+Number of lines received 91
+query99 | query99.tpl | 4 | DIFFER | NUMBER OF LINES MATCHES

@@ -1,0 +1,203 @@
+ompare the result /home/sbartkowski/work/mytpcds/qualifres/query21.res against /tmp/tpcds/db2result0/query21.res
+1,100c1,100
+<  | NULL | AAAAAAAAAABDAAAA | 2565 | 1922 | 
+<  | NULL | AAAAAAAAAAHDAAAA | 2956 | 2052 | 
+<  | NULL | AAAAAAAAAALAAAAA | 2042 | 1793 | 
+<  | NULL | AAAAAAAAABDAAAAA | 3340 | 2626 | 
+<  | NULL | AAAAAAAAACGCAAAA | 2373 | 1771 | 
+<  | NULL | AAAAAAAAACKCAAAA | 2321 | 1856 | 
+<  | NULL | AAAAAAAAACOBAAAA | 1504 | 1397 | 
+<  | NULL | AAAAAAAAADKBAAAA | 1820 | 2163 | 
+<  | NULL | AAAAAAAAAEADAAAA | 2631 | 1965 | 
+<  | NULL | AAAAAAAAAEOCAAAA | 1659 | 1798 | 
+<  | NULL | AAAAAAAAAFACAAAA | 1965 | 1705 | 
+<  | NULL | AAAAAAAAAFADAAAA | 1769 | 1313 | 
+<  | NULL | AAAAAAAAAHDEAAAA | 2700 | 1985 | 
+<  | NULL | AAAAAAAAAHHAAAAA | 1578 | 1082 | 
+<  | NULL | AAAAAAAAAIECAAAA | 1756 | 1804 | 
+<  | NULL | AAAAAAAAAIMCAAAA | 3603 | 2951 | 
+<  | NULL | AAAAAAAAAJACAAAA | 2109 | 1989 | 
+<  | NULL | AAAAAAAAAJKBAAAA | 2573 | 3540 | 
+<  | NULL | AAAAAAAAALBEAAAA | 3458 | 2992 | 
+<  | NULL | AAAAAAAAALCEAAAA | 1720 | 1810 | 
+<  | NULL | AAAAAAAAALECAAAA | 2569 | 1946 | 
+<  | NULL | AAAAAAAAALNBAAAA | 2552 | 1750 | 
+<  | NULL | AAAAAAAAANFEAAAA | 2022 | 2269 | 
+<  | NULL | AAAAAAAAAOBBAAAA | 1603 | 1592 | 
+<  | NULL | AAAAAAAAAOIBAAAA | 2982 | 2540 | 
+<  | NULL | AAAAAAAAAPJBAAAA | 2344 | 2593 | 
+<  | NULL | AAAAAAAABAPDAAAA | 2182 | 2787 | 
+<  | NULL | AAAAAAAABDCEAAAA | 2844 | 2069 | 
+<  | NULL | AAAAAAAABDDDAAAA | 2417 | 2537 | 
+<  | NULL | AAAAAAAABDJAAAAA | 1584 | 1666 | 
+<  | NULL | AAAAAAAABEODAAAA | 2141 | 2649 | 
+<  | NULL | AAAAAAAABFCCAAAA | 2745 | 2020 | 
+<  | NULL | AAAAAAAABFMBAAAA | 1642 | 1364 | 
+<  | NULL | AAAAAAAABHPCAAAA | 1923 | 1780 | 
+<  | NULL | AAAAAAAABIDBAAAA | 1956 | 2836 | 
+<  | NULL | AAAAAAAABIGBAAAA | 2023 | 2344 | 
+<  | NULL | AAAAAAAABIJBAAAA | 1977 | 2728 | 
+<  | NULL | AAAAAAAABJFEAAAA | 1891 | 2390 | 
+<  | NULL | AAAAAAAABLDEAAAA | 1983 | 1797 | 
+<  | NULL | AAAAAAAABNIDAAAA | 2485 | 2324 | 
+<  | NULL | AAAAAAAABNLDAAAA | 2385 | 2786 | 
+<  | NULL | AAAAAAAABOMBAAAA | 2291 | 2092 | 
+<  | NULL | AAAAAAAACAAAAAAA | 2233 | 2560 | 
+<  | NULL | AAAAAAAACBCDAAAA | 1540 | 2012 | 
+<  | NULL | AAAAAAAACBIAAAAA | 2394 | 2122 | 
+<  | NULL | AAAAAAAACBPBAAAA | 1790 | 1661 | 
+<  | NULL | AAAAAAAACCMDAAAA | 2654 | 2691 | 
+<  | NULL | AAAAAAAACDBCAAAA | 1804 | 2072 | 
+<  | NULL | AAAAAAAACFEAAAAA | 1941 | 1567 | 
+<  | NULL | AAAAAAAACFHDAAAA | 1696 | 1147 | 
+<  | NULL | AAAAAAAACGFDAAAA | 2123 | 2265 | 
+<  | NULL | AAAAAAAACHPCAAAA | 2933 | 2174 | 
+<  | NULL | AAAAAAAACIGDAAAA | 2618 | 2399 | 
+<  | NULL | AAAAAAAACJCBAAAA | 2728 | 2367 | 
+<  | NULL | AAAAAAAACJLAAAAA | 1350 | 1732 | 
+<  | NULL | AAAAAAAACLAEAAAA | 2578 | 2329 | 
+<  | NULL | AAAAAAAACLGAAAAA | 1842 | 1588 | 
+<  | NULL | AAAAAAAACLLBAAAA | 3418 | 2657 | 
+<  | NULL | AAAAAAAACLOBAAAA | 3115 | 2560 | 
+<  | NULL | AAAAAAAACMADAAAA | 1991 | 2243 | 
+<  | NULL | AAAAAAAACMJAAAAA | 1261 | 1855 | 
+<  | NULL | AAAAAAAACMLAAAAA | 3288 | 2753 | 
+<  | NULL | AAAAAAAACMPDAAAA | 1320 | 1676 | 
+<  | NULL | AAAAAAAACNGBAAAA | 2340 | 2118 | 
+<  | NULL | AAAAAAAACNHDAAAA | 3519 | 3348 | 
+<  | NULL | AAAAAAAACNPCAAAA | 2561 | 1948 | 
+<  | NULL | AAAAAAAADCPCAAAA | 2664 | 2627 | 
+<  | NULL | AAAAAAAADDHAAAAA | 1313 | 1926 | 
+<  | NULL | AAAAAAAADDNDAAAA | 1109 | 835 | 
+<  | NULL | AAAAAAAADEAAAAAA | 2141 | 1847 | 
+<  | NULL | AAAAAAAADEJAAAAA | 3142 | 2723 | 
+<  | NULL | AAAAAAAADFKBAAAA | 1470 | 1650 | 
+<  | NULL | AAAAAAAADGCCAAAA | 2113 | 2331 | 
+<  | NULL | AAAAAAAADGFCAAAA | 2201 | 2928 | 
+<  | NULL | AAAAAAAADHPAAAAA | 2467 | 2133 | 
+<  | NULL | AAAAAAAADMBAAAAA | 3085 | 2087 | 
+<  | NULL | AAAAAAAADPABAAAA | 3494 | 3081 | 
+<  | NULL | AAAAAAAAEAECAAAA | 2133 | 2148 | 
+<  | NULL | AAAAAAAAEAPAAAAA | 1560 | 1275 | 
+<  | NULL | AAAAAAAAECGCAAAA | 2815 | 3307 | 
+<  | NULL | AAAAAAAAEDPDAAAA | 2731 | 1883 | 
+<  | NULL | AAAAAAAAEEECAAAA | 2024 | 1902 | 
+<  | NULL | AAAAAAAAEEMCAAAA | 2624 | 2387 | 
+<  | NULL | AAAAAAAAEFFAAAAA | 2047 | 1878 | 
+<  | NULL | AAAAAAAAEGJAAAAA | 2403 | 2633 | 
+<  | NULL | AAAAAAAAEGMAAAAA | 2784 | 2772 | 
+<  | NULL | AAAAAAAAEGOCAAAA | 2389 | 1753 | 
+<  | NULL | AAAAAAAAEHFDAAAA | 1940 | 1420 | 
+<  | NULL | AAAAAAAAEHLBAAAA | 2320 | 2057 | 
+<  | NULL | AAAAAAAAEHPAAAAA | 1898 | 1853 | 
+<  | NULL | AAAAAAAAEIPBAAAA | 2930 | 2326 | 
+<  | NULL | AAAAAAAAEJAEAAAA | 2582 | 1836 | 
+<  | NULL | AAAAAAAAEJIBAAAA | 2257 | 1681 | 
+<  | NULL | AAAAAAAAEJJAAAAA | 2791 | 1941 | 
+<  | NULL | AAAAAAAAEJJDAAAA | 3410 | 2405 | 
+<  | NULL | AAAAAAAAEJNCAAAA | 2472 | 2067 | 
+<  | NULL | AAAAAAAAEJPDAAAA | 1219 | 1229 | 
+<  | NULL | AAAAAAAAEKEBAAAA | 2047 | 1713 | 
+<  | NULL | AAAAAAAAEMEAAAAA | 2502 | 1897 | 
+<  | NULL | AAAAAAAAEMKCAAAA | 2362 | 2042 | 
+---
+>  | Bad cards must make. | AAAAAAAAAACDAAAA | 1889 | 2168 | 
+>  | Bad cards must make. | AAAAAAAAABDAAAAA | 1717 | 1782 | 
+>  | Bad cards must make. | AAAAAAAAADGBAAAA | 2242 | 2759 | 
+>  | Bad cards must make. | AAAAAAAAADKBAAAA | 2138 | 2456 | 
+>  | Bad cards must make. | AAAAAAAAAEOCAAAA | 1797 | 2073 | 
+>  | Bad cards must make. | AAAAAAAAAFACAAAA | 2058 | 2734 | 
+>  | Bad cards must make. | AAAAAAAAAFADAAAA | 2173 | 2515 | 
+>  | Bad cards must make. | AAAAAAAAAGIDAAAA | 1864 | 2197 | 
+>  | Bad cards must make. | AAAAAAAAAHJBAAAA | 2904 | 3312 | 
+>  | Bad cards must make. | AAAAAAAAAIECAAAA | 2239 | 2526 | 
+>  | Bad cards must make. | AAAAAAAAAIMCAAAA | 1948 | 2693 | 
+>  | Bad cards must make. | AAAAAAAAAJKBAAAA | 2184 | 2190 | 
+>  | Bad cards must make. | AAAAAAAAALECAAAA | 2539 | 3052 | 
+>  | Bad cards must make. | AAAAAAAAALNBAAAA | 1406 | 1728 | 
+>  | Bad cards must make. | AAAAAAAAAPBAAAAA | 1743 | 2851 | 
+>  | Bad cards must make. | AAAAAAAABDCEAAAA | 2068 | 2187 | 
+>  | Bad cards must make. | AAAAAAAABEFDAAAA | 1023 | 1510 | 
+>  | Bad cards must make. | AAAAAAAABFNAAAAA | 1962 | 2719 | 
+>  | Bad cards must make. | AAAAAAAABFOCAAAA | 2392 | 2520 | 
+>  | Bad cards must make. | AAAAAAAABHPCAAAA | 2945 | 3058 | 
+>  | Bad cards must make. | AAAAAAAABIGBAAAA | 1706 | 2631 | 
+>  | Bad cards must make. | AAAAAAAABJFEAAAA | 2458 | 2647 | 
+>  | Bad cards must make. | AAAAAAAABLDEAAAA | 2439 | 2899 | 
+>  | Bad cards must make. | AAAAAAAABNLAAAAA | 2552 | 2608 | 
+>  | Bad cards must make. | AAAAAAAABNMCAAAA | 1752 | 2078 | 
+>  | Bad cards must make. | AAAAAAAACBFAAAAA | 1237 | 1460 | 
+>  | Bad cards must make. | AAAAAAAACCABAAAA | 1167 | 1704 | 
+>  | Bad cards must make. | AAAAAAAACCHDAAAA | 1700 | 2673 | 
+>  | Bad cards must make. | AAAAAAAACCMDAAAA | 2057 | 2563 | 
+>  | Bad cards must make. | AAAAAAAACEEAAAAA | 1288 | 2448 | 
+>  | Bad cards must make. | AAAAAAAACGFDAAAA | 2811 | 3027 | 
+>  | Bad cards must make. | AAAAAAAACJDCAAAA | 1299 | 1807 | 
+>  | Bad cards must make. | AAAAAAAACKHAAAAA | 1484 | 2158 | 
+>  | Bad cards must make. | AAAAAAAACLKAAAAA | 2743 | 2910 | 
+>  | Bad cards must make. | AAAAAAAACMJAAAAA | 1345 | 1776 | 
+>  | Bad cards must make. | AAAAAAAACMLAAAAA | 1869 | 2372 | 
+>  | Bad cards must make. | AAAAAAAACMPDAAAA | 1480 | 2177 | 
+>  | Bad cards must make. | AAAAAAAACNEBAAAA | 2170 | 2456 | 
+>  | Bad cards must make. | AAAAAAAACNGBAAAA | 1830 | 2659 | 
+>  | Bad cards must make. | AAAAAAAACNHDAAAA | 1507 | 1643 | 
+>  | Bad cards must make. | AAAAAAAADCBEAAAA | 2403 | 2684 | 
+>  | Bad cards must make. | AAAAAAAADEAAAAAA | 1693 | 2757 | 
+>  | Bad cards must make. | AAAAAAAADEJDAAAA | 1719 | 1822 | 
+>  | Bad cards must make. | AAAAAAAADFLDAAAA | 1337 | 2179 | 
+>  | Bad cards must make. | AAAAAAAADGGBAAAA | 2686 | 3567 | 
+>  | Bad cards must make. | AAAAAAAADKPDAAAA | 2476 | 3512 | 
+>  | Bad cards must make. | AAAAAAAADMDBAAAA | 1562 | 2479 | 
+>  | Bad cards must make. | AAAAAAAAEAECAAAA | 1743 | 2678 | 
+>  | Bad cards must make. | AAAAAAAAEAICAAAA | 1420 | 2094 | 
+>  | Bad cards must make. | AAAAAAAAEAPAAAAA | 1875 | 2244 | 
+>  | Bad cards must make. | AAAAAAAAEHLBAAAA | 1417 | 2034 | 
+>  | Bad cards must make. | AAAAAAAAEJNCAAAA | 1271 | 2313 | 
+>  | Bad cards must make. | AAAAAAAAEJPDAAAA | 1788 | 2188 | 
+>  | Bad cards must make. | AAAAAAAAEKEBAAAA | 1494 | 2731 | 
+>  | Bad cards must make. | AAAAAAAAENACAAAA | 694 | 1286 | 
+>  | Bad cards must make. | AAAAAAAAENFBAAAA | 2123 | 2294 | 
+>  | Bad cards must make. | AAAAAAAAENODAAAA | 1254 | 2092 | 
+>  | Bad cards must make. | AAAAAAAAEOLCAAAA | 1484 | 2339 | 
+>  | Bad cards must make. | AAAAAAAAFAGCAAAA | 1350 | 2648 | 
+>  | Bad cards must make. | AAAAAAAAFAKBAAAA | 843 | 1256 | 
+>  | Bad cards must make. | AAAAAAAAFCGAAAAA | 1721 | 2722 | 
+>  | Bad cards must make. | AAAAAAAAFDNBAAAA | 1731 | 2591 | 
+>  | Bad cards must make. | AAAAAAAAFGODAAAA | 1989 | 2137 | 
+>  | Bad cards must make. | AAAAAAAAFJFAAAAA | 1770 | 2237 | 
+>  | Bad cards must make. | AAAAAAAAFKLCAAAA | 1833 | 2170 | 
+>  | Bad cards must make. | AAAAAAAAFPEBAAAA | 2090 | 2273 | 
+>  | Bad cards must make. | AAAAAAAAGAJBAAAA | 2265 | 3103 | 
+>  | Bad cards must make. | AAAAAAAAGAMBAAAA | 1661 | 1830 | 
+>  | Bad cards must make. | AAAAAAAAGBBDAAAA | 1155 | 1601 | 
+>  | Bad cards must make. | AAAAAAAAGBDBAAAA | 2016 | 2707 | 
+>  | Bad cards must make. | AAAAAAAAGBMDAAAA | 1479 | 2104 | 
+>  | Bad cards must make. | AAAAAAAAGCHCAAAA | 1013 | 1681 | 
+>  | Bad cards must make. | AAAAAAAAGCIDAAAA | 1125 | 1733 | 
+>  | Bad cards must make. | AAAAAAAAGGIDAAAA | 1985 | 2158 | 
+>  | Bad cards must make. | AAAAAAAAGGNAAAAA | 2417 | 2821 | 
+>  | Bad cards must make. | AAAAAAAAGIJDAAAA | 1462 | 1779 | 
+>  | Bad cards must make. | AAAAAAAAGKLCAAAA | 1297 | 2275 | 
+>  | Bad cards must make. | AAAAAAAAGLEBAAAA | 1685 | 2445 | 
+>  | Bad cards must make. | AAAAAAAAGNBAAAAA | 1297 | 1688 | 
+>  | Bad cards must make. | AAAAAAAAGNLCAAAA | 1676 | 1878 | 
+>  | Bad cards must make. | AAAAAAAAGONBAAAA | 2135 | 2571 | 
+>  | Bad cards must make. | AAAAAAAAGPABAAAA | 1659 | 1908 | 
+>  | Bad cards must make. | AAAAAAAAHGIBAAAA | 2234 | 3059 | 
+>  | Bad cards must make. | AAAAAAAAHJGDAAAA | 2283 | 2531 | 
+>  | Bad cards must make. | AAAAAAAAHLHAAAAA | 2531 | 2712 | 
+>  | Bad cards must make. | AAAAAAAAHOEDAAAA | 1903 | 2403 | 
+>  | Bad cards must make. | AAAAAAAAICGDAAAA | 1985 | 2436 | 
+>  | Bad cards must make. | AAAAAAAAICIBAAAA | 1296 | 1767 | 
+>  | Bad cards must make. | AAAAAAAAIEBDAAAA | 1305 | 1640 | 
+>  | Bad cards must make. | AAAAAAAAIEFCAAAA | 1679 | 1901 | 
+>  | Bad cards must make. | AAAAAAAAIGADAAAA | 1695 | 2157 | 
+>  | Bad cards must make. | AAAAAAAAIHGCAAAA | 1670 | 1884 | 
+>  | Bad cards must make. | AAAAAAAAIIGBAAAA | 2585 | 2612 | 
+>  | Bad cards must make. | AAAAAAAAIIMDAAAA | 1925 | 2523 | 
+>  | Bad cards must make. | AAAAAAAAIKGCAAAA | 2052 | 2491 | 
+>  | Bad cards must make. | AAAAAAAAIKHAAAAA | 1969 | 2744 | 
+>  | Bad cards must make. | AAAAAAAAILDAAAAA | 1289 | 1961 | 
+>  | Bad cards must make. | AAAAAAAAILJBAAAA | 1811 | 2845 | 
+>  | Bad cards must make. | AAAAAAAAIMPCAAAA | 1982 | 2312 | 
+>  | Bad cards must make. | AAAAAAAAIOLCAAAA | 2639 | 3029 | 
