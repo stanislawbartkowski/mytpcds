@@ -1,0 +1,7 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query29.res against /tmp/tpcds/db2result0/query29.res
+1c1
+<  | AAAAAAAABOKDAAAA | Immediate women sell. Slowly sure measures might ensure in order from a duties. Privately aware damages may compensate so for example previous letters | AAAAAAAABAAAAAAA | ought | 99.00 | 81.00 | 22.00 | 
+---
+>  | AAAAAAAABOKDAAAA | Immediate women sell. Slowly sure measures might ensure in order from a duties. Privately aware damages may compensate so for example previous letters | AAAAAAAABAAAAAAA | ought | 99 | 81 | 22 | 
+Expected number of line 2
+Number of lines received 2

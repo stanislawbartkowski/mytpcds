@@ -1,12 +1,12 @@
 C_CUSTOMER_ID	 C_SALUTATI C_FIRST_NAME	 C_LAST_NAME			C C_BIRTH_DAY C_BIRTH_MONTH C_BIRTH_YEAR C_BIRTH_COUNTRY      C_LOGIN	    C_EMAIL_ADDRESS				       C_LAST_REV CTR_TOTAL_RETURN
 ---------------- ---------- -------------------- ------------------------------ - ----------- ------------- ------------ -------------------- ------------- -------------------------------------------------- ---------- ----------------
-AAAAAAAAAAAIBAAA Mr.	    Eduardo		 Goodwin			Y	   24		 11	    1950 GHANA		      NULL 	    Eduardo.Goodwin@rolemn2xusv5Ot0.edu 	       2452312		      3838
+AAAAAAAAAAAIBAAA Mr.	    Eduardo		 Goodwin			Y	   24		 11	    1950 GHANA		      NULL 	    Eduardo.Goodwin@rolemn2xusv5Ot0.edu 	       2452312		      3838.00
 AAAAAAAAABHAAAAA Sir	    Robert		 Thornton			Y	   24		  5	    1924 HONG KONG	      NULL 	    Robert.Thornton@jas.edu			       2452431		   2434.58
-AAAAAAAAABPNAAAA Mr.	    Alonzo		 Huddleston			Y	   19		  4	    1957 FAROE ISLANDS	      NULL 	    Alonzo.Huddleston@g.edu			       2452289		      2813
+AAAAAAAAABPNAAAA Mr.	    Alonzo		 Huddleston			Y	   19		  4	    1957 FAROE ISLANDS	      NULL 	    Alonzo.Huddleston@g.edu			       2452289		      2813.00
 AAAAAAAAAFCGBAAA Ms.	    Pamela		 Slater 			Y	    2		  6	    1931 GAMBIA 	      NULL 	    Pamela.Slater@ajU1sMrf5vC7.com		       2452613		   1746.58
 AAAAAAAAAFLBAAAA Sir	    Keith		 Stern				N	   18		  2	    1925 ICELAND	      NULL 	    Keith.Stern@34Hb991eohmd.com		       2452549		    1850.7
 AAAAAAAAAFLBAAAA Sir	    Keith		 Stern				N	   18		  2	    1925 ICELAND	      NULL 	    Keith.Stern@34Hb991eohmd.com		       2452549		   10898.4
-AAAAAAAAAFOEBAAA Dr.	    Trevor		 Battle 			N	   12		  8	    1953 THAILAND	      NULL 	    Trevor.Battle@0F.com			       2452643		      3556
+AAAAAAAAAFOEBAAA Dr.	    Trevor		 Battle 			N	   12		  8	    1953 THAILAND	      NULL 	    Trevor.Battle@0F.com			       2452643		      3556.00
 AAAAAAAAAIKEAAAA Dr.	    Joseph		 Miller 			N	   17		 12	    1930 MONACO 	      NULL 	    Joseph.Miller@Ampmde.edu			       2452332		   7037.55
 AAAAAAAAAJMABAAA Miss	    Brenda		 Sloan				Y	   23		  3	    1982 MALAYSIA	      NULL 	    Brenda.Sloan@csCoX.edu			       2452336		   1783.19
 AAAAAAAAAKDNAAAA NULL	    NULL			 NULL				NULL	 NULL			 12	 NULL		 NULL		      NULL 	    NULL						       2452544		   2448.03
@@ -28,7 +28,7 @@ AAAAAAAACCMEAAAA Dr.	    Adriane		 Harmon 			N	    1		 10	    1964 ARGENTINA	   
 AAAAAAAACCNJAAAA Dr.	    Elizabeth		 Gilbreath			Y	   17		  1	    1985 KIRIBATI	      NULL 	    Elizabeth.Gilbreath@4LxlO8fArnEeEavQe.com	       2452485		   2450.86
 AAAAAAAACDDNAAAA Ms.	    Holly		 Kim				N	   15		  6	    1941 ICELAND	      NULL 	    Holly.Kim@OkTfC7tRYgy4.edu			       2452580		   2719.44
 AAAAAAAACGILAAAA Sir	    Nolan		 Mosley 			N	   20		  3	    1980 KENYA		      NULL 	    Nolan.Mosley@5E.org 			       2452317		   1865.64
-AAAAAAAACHFHBAAA Mr.	    Dallas		 Courtney			Y	   21		  5	    1928 CTE D'IVOIRE	      NULL 	    Dallas.Courtney@c7.org			       2452496		   4394.79
+AAAAAAAACHFHBAAA Mr.	    Dallas		 Courtney			Y	   21		  5	    1928 C�TE D'IVOIRE	      NULL 	    Dallas.Courtney@c7.org			       2452496		   4394.79
 AAAAAAAACKOFAAAA Dr.	    Eric		 Bucher 			Y	   19		  9	    1979 ALBANIA	      NULL 	    Eric.Bucher@sxSne.org			       2452541		   4662.35
 AAAAAAAACMHNAAAA Miss	    Lisa		 Dukes				Y	    4		  3	    1964 SOLOMON ISLANDS  	     NULL 	    Lisa.Dukes@tuRJRXkQm.com			       2452303		  10387.84
 AAAAAAAACNGBAAAA Mr.	    Michael		 Haley				Y	   10		  5	    1933 SWAZILAND	      NULL 	    Michael.Haley@OfAOvhrm.com			       2452359		   4187.82

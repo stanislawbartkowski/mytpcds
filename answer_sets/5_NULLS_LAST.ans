@@ -44,7 +44,7 @@ catalog channel| catalog_pageAAAAAAAABBABAAAA  111653.24 	 0  -11685.07
 catalog channel| catalog_pageAAAAAAAABCABAAAA   66152.25     6000.8  -26884.15
 catalog channel| catalog_pageAAAAAAAABDABAAAA	94791.6     992.91  -15597.95
 catalog channel| catalog_pageAAAAAAAABDCBAAAA   80488.77 	 0   -9539.13
-catalog channel| catalog_pageAAAAAAAABDPAAAAA	      0    4671.24	-1866
+catalog channel| catalog_pageAAAAAAAABDPAAAAA	      0    4671.24	-1866.00
 catalog channel| catalog_pageAAAAAAAABEABAAAA   44094.18     1392.9  -27351.01
 catalog channel| catalog_pageAAAAAAAABECBAAAA   59973.49      10.56   -27067.7
 catalog channel| catalog_pageAAAAAAAABEIAAAAA	      0     2316.6   -1437.01
@@ -57,7 +57,7 @@ catalog channel| catalog_pageAAAAAAAABGCBAAAA   62240.04     439.05  -14709.55
 catalog channel| catalog_pageAAAAAAAABGPAAAAA	      0     868.79   -1140.92
 catalog channel| catalog_pageAAAAAAAABHABAAAA   76979.86    1176.08  -11100.37
 catalog channel| catalog_pageAAAAAAAABHCBAAAA   77547.85 	 0    -912.18
-catalog channel| catalog_pageAAAAAAAABHPAAAAA	      0       2202   -3022.79
+catalog channel| catalog_pageAAAAAAAABHPAAAAA	      0       2202.00   -3022.79
 catalog channel| catalog_pageAAAAAAAABICBAAAA  103048.22 	 0    1192.82
 catalog channel| catalog_pageAAAAAAAABIMAAAAA	      0      87.44    -262.84
 catalog channel| catalog_pageAAAAAAAABIPAAAAA	      0      28.04    -170.37
@@ -76,7 +76,7 @@ catalog channel| catalog_pageAAAAAAAABNCBAAAA	 617.85 	 0    -120.59
 catalog channel| catalog_pageAAAAAAAABNPAAAAA  174166.86    3157.33  -18851.56
 catalog channel| catalog_pageAAAAAAAABOCBAAAA	4800.08 	 0    -244.67
 catalog channel| catalog_pageAAAAAAAABOPAAAAA  130138.56    1700.57  -28949.36
-catalog channel| catalog_pageAAAAAAAABPABAAAA	      0        840    -580.31
+catalog channel| catalog_pageAAAAAAAABPABAAAA	      0        840.00    -580.31
 catalog channel| catalog_pageAAAAAAAABPPAAAAA  226764.44    1823.48   20367.34
 catalog channel| catalog_pageAAAAAAAACAABAAAA  154257.53    2655.84  -11249.51
 catalog channel| catalog_pageAAAAAAAACAJAAAAA	      0    2717.78   -1408.24

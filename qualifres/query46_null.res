@@ -1,6 +1,6 @@
 |Aaron|Charles|Jamestown|Red Hill|183217|2067.37|-8054.03|
 |Aaron|Genevieve|Lakeside|Springtown|185247|1739.84|-1337.44|
-|Aaron|Guy|Lakeside|Mount Pleasant |210815|1849.59|-11333|
+|Aaron|Guy|Lakeside|Mount Pleasant |210815|1849.59|-11333.00|
 |Abbott|Frederick|Green Acres |Oakland|7247|518.63|-13290.67|
 |Abbott|Harriet|Wesley|Forest Hills|84405|800.12|-8540.46|
 |Abel|Flora|Perry|Newtown|117310|8532.29|-28474.67|
@@ -25,7 +25,7 @@
 |Adams|Earl|Mount Zion|Greenfield|99055|551.98|-6440.04|
 |Adams|Henry|Saint James |Georgetown|231785|901.24|-18286.29|
 |Adams|Hortencia|Wildwood|Friendship|69694|296.89|-11931.45|
-|Adams|Isidro|Glenwood|Oak Grove|148351|923.3|-3177|
+|Adams|Isidro|Glenwood|Oak Grove|148351|923.3|-3177.00|
 |Adams|Jane|Shiloh|Red Hill|106214|1434.41|-7320.39|
 |Adams|Jay|Sulphur Springs|Bridgeport|195437|141.95|-6997.43|
 |Adams|Jim|Pleasant Valley|Edgewater|136554|4677.64|-8308.27|

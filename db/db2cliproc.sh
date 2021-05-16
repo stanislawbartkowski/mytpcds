@@ -64,3 +64,5 @@ rundroptable() {
 runcreatetable() {
   db2clirun $1
 }
+
+export NULLLAST=X

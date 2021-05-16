@@ -1,0 +1,185 @@
+Compare the result /home/sbartkowski/work/mytpcds/qualifres/query34_null.res against /tmp/tpcds/db2result0/query34.res
+1d0
+<  | Abbott | Harriet | Ms. | N | 195008 | 15 | 
+5d3
+<  | Alford | Deborah | Miss | N | 97678 | 15 | 
+10d7
+<  | Anderson | Martha | Mrs. | N | 74295 | 15 | 
+14d10
+<  | Andrews | Michael | Sir | N | 135694 | 15 | 
+20,21d15
+<  | Ashton | Irma | Mrs. | Y | 99233 | 15 | 
+<  | Bailey | Lucille | Mrs. | N | 2490 | 15 | 
+25d18
+<  | Barnes | Michael | Mr. | N | 168802 | 15 | 
+27,28d19
+<  | Beasley | Joshua | Dr. | Y | 32731 | 15 | 
+<  | Bell | William | Mr. | Y | 82227 | 15 | 
+32d22
+<  | Berry | Theresa | Ms. | Y | 77257 | 15 | 
+34d23
+<  | Blake | John | Mr. | N | 193896 | 15 | 
+37d25
+<  | Bolin | Yolanda | Dr. | N | 13057 | 16 | 
+39d26
+<  | Box | Eric | Dr. | N | 79283 | 16 | 
+49d35
+<  | Brown | Frederick | Mr. | N | 120037 | 15 | 
+61,63d46
+<  | Butler | Nicole | Dr. | N | 214214 | 16 | 
+<  | Byrd | Stephanie | Miss | Y | 24803 | 15 | 
+<  | Byrd | Wanda | Ms. | Y | 155385 | 15 | 
+65d47
+<  | Campbell | William | Mr. | N | 95665 | 15 | 
+67d48
+<  | Carpenter | Stephen | Mr. | Y | 174519 | 16 | 
+72,73d52
+<  | Casey | Darrell | Sir | N | 181470 | 15 | 
+<  | Castro | Sandra | Ms. | N | 87567 | 15 | 
+75d53
+<  | Chang | Bradley | Sir | Y | 53396 | 15 | 
+80d57
+<  | Christenson | Steven | Mr. | Y | 156157 | 15 | 
+84d60
+<  | Clark | Rosemary | Miss | Y | 31542 | 15 | 
+90d65
+<  | Coker | John | Mr. | N | 2730 | 15 | 
+95d69
+<  | Coleman | Nancy | Ms. | N | 39446 | 16 | 
+100,102d73
+<  | Cook | John | Mr. | N | 237195 | 15 | 
+<  | Cook | NULL | Sir | NULL | 81755 | 15 | 
+<  | Cope | Felicia | Dr. | Y | 195003 | 15 | 
+120d90
+<  | Dorsey | Lisa | Dr. | Y | 5587 | 15 | 
+126,127d95
+<  | Esquivel | Hee | Mrs. | Y | 42741 | 15 | 
+<  | Evans | April | Dr. | Y | 41310 | 15 | 
+132d99
+<  | Fields | Philomena | Dr. | N | 217374 | 15 | 
+135d101
+<  | Fitzgerald | Thomas | Mr. | Y | 2698 | 15 | 
+150,151d115
+<  | German | Katie | Dr. | N | 33536 | 16 | 
+<  | Gibbons | Christopher | Sir | Y | 237265 | 16 | 
+155,156d118
+<  | Gill | Joshua | Sir | Y | 230910 | 16 | 
+<  | Glass | Jorge | Sir | N | 137536 | 15 | 
+159d120
+<  | Gonzales | Edgar | Sir | N | 153714 | 15 | 
+164d124
+<  | Gray | Jeffery | Mr. | Y | 154258 | 15 | 
+170d129
+<  | Grubbs | Florence | Mrs. | N | 47930 | 15 | 
+173d131
+<  | Guzman | Mason | Mr. | Y | 235019 | 16 | 
+177d134
+<  | Hammonds | Richelle | Dr. | Y | 135423 | 15 | 
+179,181d135
+<  | Hardy | Inez | Ms. | Y | 104878 | 15 | 
+<  | Harris | Charles | Dr. | Y | 61618 | 15 | 
+<  | Harris | Ezekiel | Sir | N | 142043 | 15 | 
+187d140
+<  | Hayes | Johnnie | Sir | N | 57732 | 15 | 
+194d146
+<  | Hill | Barbara | Ms. | Y | 88890 | 15 | 
+198d149
+<  | Huffman | Beverly | Ms. | Y | 166660 | 16 | 
+202d152
+<  | Jackson | Kathy | Ms. | N | 233945 | 15 | 
+205,206d154
+<  | Johnson | Richard | Dr. | N | 52256 | 15 | 
+<  | Johnston | Walter | Mr. | Y | 219689 | 15 | 
+209,210d156
+<  | Jones | Jarvis | Sir | Y | 74474 | 16 | 
+<  | Jones | Rebecca | Dr. | Y | 187035 | 16 | 
+212d157
+<  | Joseph | Ramon | Mr. | N | 7856 | 15 | 
+239d183
+<  | Lott | Ronald | Sir | N | 79453 | 15 | 
+242d185
+<  | Lozano | Charlotte | Mrs. | Y | 31661 | 15 | 
+244d186
+<  | Mansfield | Paul | Dr. | Y | 5723 | 15 | 
+246d187
+<  | Marks | Duane | Dr. | Y | 34432 | 15 | 
+255d195
+<  | Mccloud | Nicholas | Mr. | Y | 28001 | 15 | 
+258d197
+<  | Mcdaniel | Brian | Sir | N | 217760 | 15 | 
+269d207
+<  | Miller | Karrie | Dr. | N | 170750 | 15 | 
+289d226
+<  | Nesbitt | Andrew | Miss | N | 185257 | 15 | 
+299d235
+<  | Page | James | Dr. | Y | 214208 | 16 | 
+310d245
+<  | Price | Florence | Ms. | Y | 17220 | 15 | 
+313d247
+<  | Price | Marie | Ms. | N | 88963 | 15 | 
+318d251
+<  | Ramirez | Lee | Sir | N | 234584 | 15 | 
+324d256
+<  | Richardson | Alice | Ms. | N | 43255 | 16 | 
+326d257
+<  | Riddle | Marcelino | Dr. | N | 60749 | 15 | 
+332,333d262
+<  | Robinson | Gary | Mr. | Y | 87081 | 15 | 
+<  | Robinson | Sara | Mrs. | N | 190406 | 15 | 
+335d263
+<  | Roman | Jimmie | Dr. | Y | 221049 | 15 | 
+342d269
+<  | Saddler | Robert | Mr. | Y | 74571 | 15 | 
+345d271
+<  | Sanders | Dustin | Mr. | N | 20319 | 15 | 
+353d278
+<  | Shaffer | Richard | Dr. | N | 190775 | 16 | 
+359d283
+<  | Smith | Herbert | Dr. | Y | 238646 | 15 | 
+362d285
+<  | Smith | Ralph | Sir | N | 87132 | 16 | 
+366d288
+<  | Soares | Sally | Ms. | Y | 203554 | 16 | 
+369d290
+<  | Spencer | Alfred | Mr. | Y | 159308 | 15 | 
+371,372d291
+<  | Stafford | Jerry | Mr. | Y | 230470 | 15 | 
+<  | Stamper | Rebekah | Dr. | N | 235329 | 15 | 
+378d296
+<  | Stewart | Kendra | Mrs. | Y | 16423 | 15 | 
+381d298
+<  | Street | Lee | Mr. | N | 171013 | 15 | 
+384d300
+<  | Swisher | Brian | Mr. | Y | 53341 | 15 | 
+386d301
+<  | Taylor | Jacqueline | Mrs. | Y | 89977 | 16 | 
+391d305
+<  | Thomas | Jeffrey | Dr. | Y | 115846 | 15 | 
+393d306
+<  | Thomas | Rebecca | Mrs. | N | 80953 | 15 | 
+398d310
+<  | Tinsley | Charlie | Dr. | N | 23881 | 16 | 
+406,408d317
+<  | Valenzuela | Bryan | Sir | Y | 221858 | 16 | 
+<  | Vance | Josefina | Mrs. | N | 147148 | 15 | 
+<  | Vargas | Charles | Dr. | Y | 79536 | 15 | 
+414d322
+<  | Wallace | Joseph | Sir | N | 27193 | 15 | 
+416d323
+<  | Warren | Brian | Dr. | N | 15877 | 15 | 
+419d325
+<  | Welch | Pauline | Mrs. | Y | 47529 | 15 | 
+422d327
+<  | Wetzel | Bebe | Dr. | N | 82518 | 15 | 
+424d328
+<  | White | Johnny | Dr. | N | 204026 | 16 | 
+433d336
+<  | Wilson | Charles | Mr. | Y | 60 | 15 | 
+437,438d339
+<  | Yates | Kimberly | Ms. | Y | 220849 | 15 | 
+<  | NULL | Grace | NULL | NULL | 147095 | 16 | 
+441,442d341
+<  | NULL | Roy | NULL | NULL | 200033 | 15 | 
+<  | NULL | NULL | Mr. | Y | 214003 | 15 | 
+Expected number of line 452
+Number of lines received 351
