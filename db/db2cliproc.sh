@@ -1,43 +1,11 @@
 source proc/db2commonproc.sh
 
-serverfile() {
-    local -r tbl=`basename $1`
-    echo "$PREFIXSERVER/$tbl"
-}
-
 loadfiles3() {
-  local -r TABLENAME=$1
-  local -r INLOADFILE=$2
-  local -r TMPS=`crtemp`
-
-  required_listofvars PREFIXSERVER ENDPOINT AWSKEY AWSSECRETKEY BUCKET
-
-  local -r S3FILE=`serverfile $INLOADFILE`
-
-  log "Loading from $S3FILE S3/AWS file"
-
-cat << EOF > $TMPS
-
-  CALL SYSPROC.ADMIN_CMD('LOAD FROM S3::$ENDPOINT::$AWSKEY::$AWSSECRETKEY::$BUCKET::$S3FILE OF DEL modified by coldel| REPLACE INTO $TABLENAME NONRECOVERABLE');
-EOF
-
-  db2clirun $TMPS
-#  jdbcqueryupdatefile $TMPS
+  db2loadfiles3 $1 $2
 }
 
 loadfileclient() {
-  local -r TABLENAME=$1
-  local -r INLOADFILE=$2
-  local -r TMPS=`crtemp`
-  local -r SFILE=`serverfile $INLOADFILE`
-
-
-cat << EOF > $TMPS
-    CALL SYSPROC.ADMIN_CMD('load from $SFILE  of del modified by coldel| replace into $TABLENAME');
-EOF
-
-  db2clirun $TMPS
-#  jdbcqueryupdatefile $TMPS
+  db2loadfileserver $1 $2
 }
 
 

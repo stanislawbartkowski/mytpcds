@@ -21,6 +21,70 @@ db2clirun() {
     return $RES
 }
 
+##################################################
+# DB2 load delimited file from server location
+# important: text file delimited by |
+# Arguments:
+#   $1 - table to load
+#   $2 - server location of delimited file
+#######################################
+
+db2loadfileserver() {
+  local -r TABLENAME=$1
+  local -r INLOADFILE=$2
+  local -r TMPS=`crtemp`
+  local -r SFILE=`serverfile $INLOADFILE`
+
+cat << EOF > $TMPS
+    CALL SYSPROC.ADMIN_CMD('load from $SFILE  of del modified by coldel| replace into $TABLENAME');
+EOF
+
+  db2clirun $TMPS
+}
+
+
+serverfile() {
+    local -r tbl=`basename $1`
+    echo "$PREFIXSERVER/$tbl"
+}
+
+
+##################################################
+# DB2 load delimited file from S3 bucker
+# important: text file delimited by |
+#
+# GLOBALS:
+#    PREFIXSERVER: root directory in S3 bucket, prefix to $2
+#    ENDPOINT: S3 endpoint
+#    AWSKEY: AWS key
+#    AWSSECRETKEY: AWS secret key
+#    BUCKET: AWS secret
+# Arguments:
+#   $1 - table to load
+#   $2 - location in S3 bucket of file to load
+#####################################################
+
+db2loadfiles3() {
+  local -r TABLENAME=$1
+  local -r INLOADFILE=$2
+  local -r TMPS=`crtemp`
+
+  required_listofvars PREFIXSERVER ENDPOINT AWSKEY AWSSECRETKEY BUCKET
+
+  local -r S3FILE=`serverfile $INLOADFILE`
+
+  log "Loading from $S3FILE S3/AWS file"
+
+cat << EOF > $TMPS
+
+  CALL SYSPROC.ADMIN_CMD('LOAD FROM S3::$ENDPOINT::$AWSKEY::$AWSSECRETKEY::$BUCKET::$S3FILE OF DEL modified by coldel| REPLACE INTO $TABLENAME NONRECOVERABLE');
+EOF
+
+  db2clirun $TMPS
+#  jdbcqueryupdatefile $TMPS
+}
+
+
 
 db2connect() {
    required_command db2

@@ -21,7 +21,7 @@ required_listofvars() {
 # -------------------------
 
 log() {
-  [ -n "$LOGILE" ] && echo $1 >>$LOGFILE
+  [ -n "$LOGFILE" ] && echo $1 >>$LOGFILE
   echo "$1"
 }
 

@@ -1,4 +1,4 @@
-|Books|arts |amalgmaxi #12|NULL|NULL|NULL|NULL|NULL|1577322.2|26|
+|Books|arts |amalgmaxi #12|NULL|NULL|NULL|NULL|NULL|1577322.20|26|
 |Books|arts |amalgmaxi #2|NULL|NULL|NULL|NULL|NULL|757558.15|93|
 |Books|arts |amalgmaxi #3|NULL|NULL|NULL|NULL|NULL|889848.65|79|
 |Books|arts |amalgmaxi #9|NULL|NULL|NULL|NULL|NULL|816219.08|89|
@@ -15,11 +15,11 @@
 |Books|computers|exportimaxi #8|NULL|NULL|NULL|NULL|NULL|1189646.65|49|
 |Books|computers|exportimaxi #9|NULL|NULL|NULL|NULL|NULL|1059845.98|63|
 |Books|computers|NULL |NULL|NULL|NULL|NULL|NULL|7061536.03|7|
-|Books|cooking|amalgunivamalg #12|NULL|NULL|NULL|NULL|NULL|1097730|58|
+|Books|cooking|amalgunivamalg #12|NULL|NULL|NULL|NULL|NULL|1097730.00|58|
 |Books|cooking|amalgunivamalg #3 |NULL|NULL|NULL|NULL|NULL|978431.47|69|
 |Books|cooking|amalgunivamalg #6 |NULL|NULL|NULL|NULL|NULL|858562.34|84|
-|Books|cooking|amalgunivamalg #8 |NULL|NULL|NULL|NULL|NULL|917692|74|
-|Books|cooking|amalgunivamalg #9 |NULL|NULL|NULL|NULL|NULL|881045.3|80|
+|Books|cooking|amalgunivamalg #8 |NULL|NULL|NULL|NULL|NULL|917692.00|74|
+|Books|cooking|amalgunivamalg #9 |NULL|NULL|NULL|NULL|NULL|881045.30|80|
 |Books|cooking|NULL |NULL|NULL|NULL|NULL|NULL|5357549.49|16|
 |Books|entertainments|edu packmaxi #12|NULL|NULL|NULL|NULL|NULL|962267.01|70|
 |Books|entertainments|edu packmaxi #2|NULL|NULL|NULL|NULL|NULL|750249.81|94|
@@ -36,7 +36,7 @@
 |Books|fiction|NULL |NULL|NULL|NULL|NULL|NULL|7867516.44|3|
 |Books|history|scholarmaxi #12|NULL|NULL|NULL|NULL|NULL|1407800.96|34|
 |Books|history|scholarmaxi #2|NULL|NULL|NULL|NULL|NULL|1601550.87|25|
-|Books|history|scholarmaxi #3|NULL|NULL|NULL|NULL|NULL|1181491.2|50|
+|Books|history|scholarmaxi #3|NULL|NULL|NULL|NULL|NULL|1181491.20|50|
 |Books|history|scholarmaxi #6|NULL|NULL|NULL|NULL|NULL|1175904.65|51|
 |Books|history|scholarmaxi #8|NULL|NULL|NULL|NULL|NULL|1205167.13|48|
 |Books|history|scholarmaxi #9|NULL|NULL|NULL|NULL|NULL|1873407.99|18|
@@ -54,12 +54,12 @@
 |Books|mystery|corpunivamalg #6|NULL|NULL|NULL|NULL|NULL|1098189.71|57|
 |Books|mystery|corpunivamalg #8|NULL|NULL|NULL|NULL|NULL|759890.03|92|
 |Books|mystery|NULL |NULL|NULL|NULL|NULL|NULL|5559086.76|13|
-|Books|parenting|corpmaxi #12|NULL|NULL|NULL|NULL|NULL|1022503.6|66|
+|Books|parenting|corpmaxi #12|NULL|NULL|NULL|NULL|NULL|1022503.60|66|
 |Books|parenting|corpmaxi #2|NULL|NULL|NULL|NULL|NULL|908607.31|76|
 |Books|parenting|corpmaxi #6|NULL|NULL|NULL|NULL|NULL|1717275.15|21|
 |Books|parenting|corpmaxi #9|NULL|NULL|NULL|NULL|NULL|895829.36|77|
 |Books|parenting|NULL |NULL|NULL|NULL|NULL|NULL|5905648.45|11|
-|Books|reference|brandmaxi #12|NULL|NULL|NULL|NULL|NULL|1418372.8|33|
+|Books|reference|brandmaxi #12|NULL|NULL|NULL|NULL|NULL|1418372.80|33|
 |Books|reference|brandmaxi #2|NULL|NULL|NULL|NULL|NULL|1154379.77|53|
 |Books|reference|brandmaxi #3|NULL|NULL|NULL|NULL|NULL|1168210.15|52|
 |Books|reference|brandmaxi #6|NULL|NULL|NULL|NULL|NULL|1349780.84|37|
@@ -68,16 +68,16 @@
 |Books|reference|NULL |NULL|NULL|NULL|NULL|NULL|7245435.64|6|
 |Books|romance|namelessmaxi #12|NULL|NULL|NULL|NULL|NULL|1356568.45|36|
 |Books|romance|namelessmaxi #2|NULL|NULL|NULL|NULL|NULL|1236630.16|47|
-|Books|romance|namelessmaxi #3|NULL|NULL|NULL|NULL|NULL|1866764.2|19|
+|Books|romance|namelessmaxi #3|NULL|NULL|NULL|NULL|NULL|1866764.20|19|
 |Books|romance|namelessmaxi #6|NULL|NULL|NULL|NULL|NULL|1086707.92|59|
-|Books|romance|namelessmaxi #8|NULL|NULL|NULL|NULL|NULL|825762.4|88|
+|Books|romance|namelessmaxi #8|NULL|NULL|NULL|NULL|NULL|825762.40|88|
 |Books|romance|namelessmaxi #9|NULL|NULL|NULL|NULL|NULL|876869.83|81|
 |Books|romance|NULL |NULL|NULL|NULL|NULL|NULL|7252274.41|5|
-|Books|science|maximaxi #2|NULL|NULL|NULL|NULL|NULL|702171.3|98|
+|Books|science|maximaxi #2|NULL|NULL|NULL|NULL|NULL|702171.30|98|
 |Books|science|maximaxi #3|NULL|NULL|NULL|NULL|NULL|777021.93|90|
 |Books|science|maximaxi #6|NULL|NULL|NULL|NULL|NULL|1446589.43|29|
 |Books|science|maximaxi #8|NULL|NULL|NULL|NULL|NULL|1004042.04|67|
-|Books|science|maximaxi #9|NULL|NULL|NULL|NULL|NULL|849422.2|85|
+|Books|science|maximaxi #9|NULL|NULL|NULL|NULL|NULL|849422.20|85|
 |Books|science|NULL |NULL|NULL|NULL|NULL|NULL|5359276.19|15|
 |Books|self-help|exportiunivamalg #2|NULL|NULL|NULL|NULL|NULL|1283148.53|44|
 |Books|self-help|exportiunivamalg #3|NULL|NULL|NULL|NULL|NULL|770181.59|91|
@@ -94,7 +94,7 @@
 |Books|travel|univunivamalg #2|NULL|NULL|NULL|NULL|NULL|1053533.86|64|
 |Books|travel|univunivamalg #3|NULL|NULL|NULL|NULL|NULL|1085484.15|60|
 |Books|travel|univunivamalg #6|NULL|NULL|NULL|NULL|NULL|696575.97|99|
-|Books|travel|univunivamalg #8|NULL|NULL|NULL|NULL|NULL|1310411.8|41|
+|Books|travel|univunivamalg #8|NULL|NULL|NULL|NULL|NULL|1310411.80|41|
 |Books|travel|univunivamalg #9|NULL|NULL|NULL|NULL|NULL|917487.24|75|
 |Books|travel|NULL |NULL|NULL|NULL|NULL|NULL|6200882.35|9|
 |Books|NULL|NULL |NULL|NULL|NULL|NULL|NULL|102246971.86|1|

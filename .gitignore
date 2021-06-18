@@ -14,3 +14,4 @@ param.py
 jars/*
 /target/*
 *.log
+doc/.~lock.comparequalify.ods#
