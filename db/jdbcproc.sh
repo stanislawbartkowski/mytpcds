@@ -6,7 +6,7 @@
 # ===================
 
 setjdbc() {
-   JAVACMD="java $JVMPARS -cp RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar:$JAVADRIVER RunMain -url $DBURL -user $DBUSER -password $DBPASSWORD $RUNQUERYPAR $RUNQUERYDBPARAMS"    
+   JAVACMD="java $JVMPARS -cp RunQueries/target/RunQueries-1.0-SNAPSHOT-jar-with-dependencies.jar:$JAVADRIVER RunMain -url $DBURL -user $DBUSER -password $DBPASSWORD $RUNQUERYPAR $RUNQUERYDBPARAMS -rounddec 2"
 }
 
 queryjdbccommand() {

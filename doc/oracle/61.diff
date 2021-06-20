@@ -1,5 +1,0 @@
-Compare the result /home/sbartkowski/work/mytpcds/qualifres/query61.res against /tmp/tpcds/oracleresult0/query61.res
-1c1
-<  | 2894229.70 | 5493575.41 | 52.68 | 
----
->  | 2894229.70 | 5493575.41 | 5.26838986269599601254950280185559517058E01 | 

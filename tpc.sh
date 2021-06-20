@@ -165,6 +165,7 @@ verify() {
   mkdir -p $RESQUERYDIR
 
   required_listofvars "RESQUERYDIR RESULTDIRECTORY TCPDATA RESFILE0"
+  required_command python3
 
   existfile $TCPDS
   if [ $VERQ -eq 1 ]; then 
@@ -388,7 +389,13 @@ runsinglequery() {
 
     compactresult $RESQUERY >$TMP2
     compactresult $RESULTSET >$TMP3
-    if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess $DELIM MATCH"; else mess="$mess $DELIM DIFFER"; fi
+    if python3 qualifpyt/src/compare.py $TMP2 $TMP3 >>$LOGFILE; then mess="$mess $DELIM MATCH"; 
+    else
+      diff $TMP2 $TMP3 >>$LOGFILE >&2; 
+      mess="$mess $DELIM DIFFER"; 
+    fi
+
+#    if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess $DELIM MATCH"; else mess="$mess $DELIM DIFFER"; fi
     # compare size
     local EXPECTEDLINE=`numberoflines $TMP2`
     log "Expected number of line $EXPECTEDLINE"

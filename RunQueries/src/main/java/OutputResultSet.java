@@ -1,19 +1,21 @@
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Optional;
 
 class OutputResultSet {
 
     private final static char DELIMITER = '|';
-    private final static String NULL="NULL";
-    private final static int MAXCSIZE=2000;
+    private final static String NULL = "NULL";
+    private final static int MAXCSIZE = 2000;
 
     private static void addDelimiter(StringBuffer buffer) {
         buffer.append(DELIMITER);
@@ -23,7 +25,7 @@ class OutputResultSet {
 
         List<Integer> sizes = new ArrayList<Integer>();
         // calculate maximum number
-        for (int i=0; i<meta.getColumnCount(); i++) {
+        for (int i = 0; i < meta.getColumnCount(); i++) {
             String header = meta.getColumnName(i + 1);
             int csize = meta.getColumnDisplaySize(i + 1);
             // threshold
@@ -35,10 +37,10 @@ class OutputResultSet {
 
     private static void addColumn(List<Integer> sizes, ResultSetMetaData meta, int i, String s, StringBuffer buffer) throws SQLException {
         int size = sizes.get(i);
-        boolean left = meta.getColumnType(i+1) == Types.VARCHAR || meta.getColumnType(i+1) == Types.VARCHAR;
+        boolean left = meta.getColumnType(i + 1) == Types.VARCHAR || meta.getColumnType(i + 1) == Types.VARCHAR;
         StringBuffer spaces = new StringBuffer();
         if (s == null) s = NULL;
-        String val = s.length() < size ? s : s.substring(0,size);
+        String val = s.length() < size ? s : s.substring(0, size);
         for (int j = val.length(); j < size; j++) spaces.append(' ');
         addDelimiter(buffer);
         if (left) {
@@ -66,11 +68,11 @@ class OutputResultSet {
         writeLine(writer, s);
     }
 
-    private static void drawHeader(List<Integer> sizes,ResultSetMetaData meta, PrintStream writer) throws SQLException, IOException {
-        drawLine(sizes,writer);
+    private static void drawHeader(List<Integer> sizes, ResultSetMetaData meta, PrintStream writer) throws SQLException, IOException {
+        drawLine(sizes, writer);
         StringBuffer line = new StringBuffer();
         for (int i = 0; i < meta.getColumnCount(); i++) {
-            addColumn(sizes,meta, i, meta.getColumnName(i + 1), line);
+            addColumn(sizes, meta, i, meta.getColumnName(i + 1), line);
         }
         addDelimiter(line);
         writeLine(writer, line);
@@ -78,23 +80,37 @@ class OutputResultSet {
     }
 
 
-    static void printResult(ResultSet res, Optional<String> output, boolean header) throws IOException, SQLException {
+    static void printResult(ResultSet res, Optional<String> output, boolean header, Optional<Short> rounddec) throws IOException, SQLException {
         Log.info("Writing result to " + (output.isPresent() ? output.get() : " stdout"));
         PrintStream writer = (output.isPresent()) ? new PrintStream(new File(output.get())) : System.out;
         ResultSetMetaData meta = res.getMetaData();
         List<Integer> sizes = prepareColumnSize(meta);
-        if (header) drawHeader(sizes,meta, writer);
+        String format = null;
+        if (rounddec.isPresent()) {
+            format = "%." + rounddec.get() + "f";
+        }
+        if (header) drawHeader(sizes, meta, writer);
         while (res.next()) {
             StringBuffer line = new StringBuffer();
             for (int i = 0; i < meta.getColumnCount(); i++) {
                 String val = res.getString(i + 1);
                 if (res.wasNull()) val = null;
-                addColumn(sizes,meta, i, val, line);
+                else {
+                    int t = meta.getColumnType(i + 1);
+                    int scale = meta.getScale(i + 1);
+                    boolean numericround = rounddec.isPresent() && (t == Types.NUMERIC || t == Types.DECIMAL || t == Types.FLOAT || t == Types.BIGINT);
+                    if (numericround) {
+                        BigDecimal b = res.getBigDecimal(i + 1);
+                        // Local.US to have digital dot, not comma
+                        val = String.format(Locale.US, format, b);
+                    }
+                }
+                addColumn(sizes, meta, i, val, line);
             }
             addDelimiter(line);
             writeLine(writer, line);
         }
-        if (header) drawLine(sizes,writer);
+        if (header) drawLine(sizes, writer);
         writer.close();
     }
 

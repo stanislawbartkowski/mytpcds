@@ -1,5 +1,0 @@
-Compare the result /home/sbartkowski/work/mytpcds/qualifres/query9.res against /tmp/tpcds/oracleresult0/query9.res
-1c1
-<  | 39.65 | 115.90 | 191.63 | 267.19 | 341.99 | 
----
->  | 3.96 | 115.90 | 1.92 | 2.67 | 3.42 | 

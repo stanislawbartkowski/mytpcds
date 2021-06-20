@@ -214,6 +214,7 @@ class ANSTYPE:
                 assert(False)
             self.__answerfile(outfile, lines, self.headerno,
                               nexti, self.ty, self.numof)
+            drawlastline(outfile)
             self.__answerfile(outfile, lines, nexti+self.headerno2,
                               len(lines), self.ty2, self.numof2)
             drawlastline(outfile)
@@ -225,21 +226,57 @@ OUTPUTDIR = "/home/sbartkowski/work/mytpcds/qualifres"
 # 5_NULLS_FIRST.ans
 
 NUMBERS = {
+    "query10.res": {3, 5, 7, 9, 11, 13},
+    "query12.res": {4, 5, 6},
     "query13.res": {0},
-    "query17.res": {4,8,12},
-    "query35_null.res": {7,12,17},
+    "query14_null.res": {4, 5, 10, 11},
+    "query16.res": {0},
+    "query17.res": {3, 4, 7, 8, 11, 12},
+    "query18.res": {4, 5, 6, 7, 8, 9, 10},
+    "query20_null.res": {4, 5, 6},
+    "query26.res": {1, 2, 4},
+    "query27_null.res": {3},
+    "query28.res": {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17},
+    "query29.res": {4, 5, 6},
+    "query34_null.res": {5},
+    "query35_null.res": {4, 7, 9, 12, 14, 17},
+    "query36_null.res": {0, 4},
+    "query38.res": {0},
+    "query44.res": {0},
+    "query48.res": {0},
+    "query49.res": {2, 3, 4},
+    "query50.res": {10, 11, 12, 13, 14},
     "query52.res": {3},
+    "query54.res": {1},
     "query56_null.res": {1},
+    "query6_null.res": {1},
     "query60.res": {1},
-    "query65.res": {3, 4},
+    "query62_null.res": {3,4,5,6},
+    "query64.res": {12, 13, 20},
     "query65_null.res": {3, 4},
-    "query67_null.res": {8},
+    "query67_null.res": {8,9},
     "query68_null.res": {6},
-    "query76_null.res": {6},
+    "query69.res": {3, 5, 7},
+    "query70.res": {0,4},
+    "query72_null.res": {4, 5},
+    "query73.res": {5},
+    "query75.res": {6,7,8,9},
+    "query76_null.res": {5, 6},
+    "query77_null.res": {2, 3, 4},
+    "query78.res": {4, 7, },
     "query79_null.res": {4},
+    "query80_null.res": {2, 3, 4},
     "query81.res": {13, 15},
     "query85.res": {1},
-    "query98_null.res": {5}
+    "query86_null.res": {4},
+    "query87.res": {0},
+    "query88.res": {0, 1, 2, 3, 4, 5, 6, 7},
+    "query94.res": {0},
+    "query95.res": {0},
+    "query96.res": {0},
+    "query97.res": {0,1,2},
+    "query98_null.res": {5},
+    "query99_null.res": {3,4,5}
 }
 
 LISTOFRES = [
@@ -257,6 +294,7 @@ LISTOFRES = [
      5, [TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),  # 5
 
     ("6_NULLS_FIRST.ans", "query6.res", 2, 2, [TYPEF.ALLTOSPACE]),
+
     ("6_NULLS_LAST.ans", "query6_null.res", 2, 2, [TYPEF.ALLTOSPACE]),  # 7
 
     ("7.ans", "query7.res", 1, 5, [TYPEF.ALLTOPIPE]),
@@ -266,27 +304,33 @@ LISTOFRES = [
     ("9.ans", "query9.res", 2, 5, [TYPEF.ALLTOSPACE]),  # 10
 
     ("10.ans", "query10.res", 2, 14, [TYPEF.TOSPACE, TYPEF.TOSPACE,
-     TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+     TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 11
 
     ("11.ans", "query11.res", 2, [1, 3, 4], [TYPEF.ALLTOSPACE]),
 
     ("12.ans", "query12.res", 2, 7, [
      TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),  # 13
 
-    ("13.ans", "query13.res", 2, 4, [TYPEF.IGNORETABS, TYPEF.ALLTOSPACE]), #14
+    ("13.ans", "query13.res", 2, 4, [
+     TYPEF.IGNORETABS, TYPEF.ALLTOSPACE]),  # 14
 
     ("14_NULLS_FIRST.ans", "query14.res", 2, 6, [
      TYPEF.ALLTOPIPE], "CHANN|", 2, 12, [TYPEF.ALLTOPIPE]),  # 15
+
     ("14_NULLS_LAST.ans", "query14_null.res", 2, 6, [
      TYPEF.ALLTOSPACE], "CHANN", 2, 12, [TYPEF.ALLTOSPACE]),  # 16
+
     ("15_NULLS_FIRST.ans", "query15.res", 2, 2, [TYPEF.ALLTOSPACE]),
     ("15_NULLS_LAST.ans", "query15_null.res", 2, 2, [TYPEF.ALLTOTAB]),
 
-    ("16.ans", "query16.res", 2, 3, [TYPEF.IGNORETABS, TYPEF.ALLTOSPACE]),
+    ("16.ans", "query16.res", 2, 3, [
+     TYPEF.IGNORETABS, TYPEF.ALLTOSPACE]),  # 19
 
     ("17.ans", "query17.res", 2, 15, [TYPEF.ALLTOPIPE]),  # 20
+
     ("oracle18.res", "query18.res", 0, 11,
-     [TYPEF.IGNOREPIPE, TYPEF.ALLTOPIPE]),
+     [TYPEF.IGNOREPIPE, TYPEF.ALLTOPIPE]),  # 21
+
     ("19.ans", "query19.res", 2, 5, [
      TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOTAB]),  # 22
 
@@ -294,7 +338,7 @@ LISTOFRES = [
      TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),
 
     ("20_NULLS_LAST.ans", "query20_null.res", 2, 7, [
-     TYPEF.TOSPACE, TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),
+     TYPEF.TOSPACE, TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),  # 24
 
     ("21_NULLS_FIRST.ans", "query21.res", 1, 4, [TYPEF.ALLTOPIPE]),
 
@@ -309,24 +353,36 @@ LISTOFRES = [
 
     ("23_NULLS_LAST.ans", "query23_null.res", 2, 1, [
      TYPEF.ALLTOSPACE], "C_LAST_NAME", 2, 3, [TYPEF.ALLTOSPACE]),  # 30
+
     ("24.ans", "query24.res", 4, 4, [
      TYPEF.ALLTOSPACE], "C_LAST_NAME", 2, 4, [TYPEF.ALLTOSPACE]),
+
     ("25.ans", "query25.res", 2, 7, [
      TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
-    ("26.ans", "query26.res", 2, 5, [TYPEF.ALLTOSPACE]),
+
+    ("26.ans", "query26.res", 2, 5, [TYPEF.ALLTOSPACE]),  # 33
+
     ("27_NULLS_FIRST.ans", "query27.res", 2, 6, [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),
-    ("27_NULLS_LAST.ans", "query27_null.res", 2, 6, [
-     TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),
+
+    ("27_NULLS_LAST.ans", "query27_null.res", 2, 7, [
+     TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),  # 35
+
     ("28.ans", "query28.res", 2, 18, [TYPEF.ALLTOSPACE]),  # 36
-    ("29.ans", "query29.res", 2, 7, [TYPEF.ALLTOPIPE]),
+
+    ("29.ans", "query29.res", 2, 7, [TYPEF.ALLTOPIPE]),  # 37
+
     ("30.ans", "query30.res", 2, 13, [TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB,
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 38
+
     ("31.ans", "query31.res", 2, 6, [TYPEF.ALLTOTAB]),
     ("32.ans", "query32.res", 2, 1, [TYPEF.ALLTOSPACE]),  # 40
     ("33.ans", "query33.res", 2, 2, [TYPEF.IGNORETABS, TYPEF.ALLTOTAB]),  # 41
+
     ("34_NULLS_FIRST.ans", "query34.res", 2, 6, [TYPEF.ALLTOSPACE]),
-    ("34_NULLS_LAST.ans", "query34_null.res", 2, 6, [TYPEF.ALLTOSPACE]),
+
+    ("34_NULLS_LAST.ans", "query34_null.res", 2, 6, [TYPEF.ALLTOSPACE]),  # 43
+
     ("35_NULLS_FIRST.ans", "query35.res", 2,
      17, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 44
 
@@ -334,29 +390,42 @@ LISTOFRES = [
      TYPEF.TOSPACE, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 45
 
     ("36_NULLS_FIRST.ans", "query36.res", 1, 5, [TYPEF.ALLTOPIPE]),
+
     ("36_NULLS_LAST.ans", "query36_null.res",
-     2, 5, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+     2, 5, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 47
+
     ("37.ans", "query37.res", 2, 3, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
-    ("38.ans", "query38.res", 2, 1, [TYPEF.TOSPACE]),
+
+    ("38.ans", "query38.res", 2, 1, [TYPEF.TOSPACE]),  # 49
+
     ("39.ans", "query39.res", 1, 10, [
      TYPEF.ALLTOPIPE], "W_WAREHOUSE_SK", 1, 10, [TYPEF.ALLTOPIPE]),  # 50
+
     ("40.ans", "query40.res", 2, 4, [TYPEF.ALLTOSPACE]),
     ("41.ans", "query41.res", 2, 1, [TYPEF.ALLTOSPACE]),
     ("42.ans", "query42.res", 2, 4, [TYPEF.ALLTOSPACE]),
     ("43.ans", "query43.res", 1, 9, [TYPEF.ALLTOPIPE]),
+
     ("44.ans", "query44.res", 1, 3, [
-     TYPEF.IGNORETABS, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+     TYPEF.IGNORETABS, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 55
+
     ("45.ans", "query45.res", 4, 3, [TYPEF.ALLTOPIPE]),
-    ("46_NULLS_FIRST.ans", "query46.res", 2, 7, [TYPEF.ALLTOPIPE]),
+
+    ("46_NULLS_FIRST.ans", "query46.res", 2, 7, [TYPEF.ALLTOPIPE]),  # 57
+
     ("46_NULLS_LAST.ans", "query46_null.res", 2, 7, [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),  # 58
     ("47.ans", "query47.res", 2, 10, [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),
+
     ("48.ans", "query48.res", 2, 1, [
      TYPEF.IGNORETABS, TYPEF.ALLTOSPACE]),  # 60
+
     ("49.ans", "query49.res", 2, 5, [TYPEF.ALLTOSPACE]),  # 61
-    ("50.ans", "query50.res", 2, 14, [TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB,
-     TYPEF.TOTAB, TYPEF.TOPIPE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+
+    ("50.ans", "query50.res", 2, 15, [TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB,
+     TYPEF.TOTAB, TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 62
+
     ("51.ans", "query51.res", 2, 6, [
      TYPEF.IGNORETABS, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
     ("52.ans", "query52.res", 2, 4, [
@@ -364,13 +433,13 @@ LISTOFRES = [
 
     ("53.ans", "query53.res", 1, 3, [TYPEF.ALLTOPIPE]),
 
-    ("54.ans", "query54.res", 2, 3, [TYPEF.ALLTOSPACE]),
+    ("54.ans", "query54.res", 2, 3, [TYPEF.ALLTOSPACE]),  # 66
 
     ("55.ans", "query55.res", 2, 3, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
 
     ("56_NULLS_FIRST.ans", "query56.res", 2, [1, 2], [TYPEF.ALLTOSPACE]),
 
-    ("56_NULLS_LAST.ans", "query56_null.res", 2, 2, [TYPEF.ALLTOSPACE]), #69
+    ("56_NULLS_LAST.ans", "query56_null.res", 2, 2, [TYPEF.ALLTOSPACE]),  # 69
 
     ("57.ans", "query57.res", 2, 9, [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),  # 70
@@ -378,12 +447,17 @@ LISTOFRES = [
     ("59.ans", "query59.res", 2, 10, [TYPEF.ALLTOSPACE]),
     ("60.ans", "query60.res", 2, 2, [TYPEF.ALLTOSPACE]),  # 73
     ("61.ans", "query61.res", 2, 3, [TYPEF.ALLTOSPACE]),
+
     ("62_NULLS_FIRST.ans", "query62.res", 2, 8, [
      TYPEF.TOPIPE, TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),
+
     ("62_NULLS_LAST.ans", "query62_null.res", 2,
      8, [TYPEF.TOPIPE, TYPEF.ALLTOTAB]),  # 76
-    ("63.ans", "query63.res", 1, 3, [TYPEF.ALLTOPIPE]),
-    ("64.ans", "query64.res", 2, 21, [TYPEF.ALLTOPIPE]),
+
+    ("63.ans", "query63.res", 1, 3, [TYPEF.ALLTOPIPE]),  # 77
+
+    ("64.ans", "query64.res", 2, 21, [TYPEF.ALLTOPIPE]),  # 78
+
     ("65_NULLS_FIRST.ans", "query65.res", 2, 6, [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 79
     ("65_NULLS_LAST.ans", "query65_null.res", 2, 6, [
@@ -391,6 +465,7 @@ LISTOFRES = [
     ("66_NULLS_FIRST.ans", "query66.res", 1, 44, [TYPEF.ALLTOPIPE]),
     ("66_NULLS_LAST.ans", "query66_null.res", 2, 44, [
      TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),  # 82
+     
     ("67_NULLS_FIRST.ans", "query67.res", 2, 10, [TYPEF.ALLTOPIPE]),
 
     ("67_NULLS_LAST.ans", "query67_null.res", 2, 10, [TYPEF.ALLTOTAB]),  # 84
@@ -401,9 +476,11 @@ LISTOFRES = [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),  # 86
 
     ("69.ans", "query69.res", 2, 8, [TYPEF.TOSPACE, TYPEF.TOSPACE,
-     TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+     TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 87
+
     ("70.ans", "query70.res", 2, 5, [
      TYPEF.TOSPACE, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 88
+
     ("71_NULLS_FIRST.ans", "query71.res", 2, 5, [TYPEF.ALLTOPIPE]),
 
     ("71_NULLS_LAST.ans", "query71_null.res",
@@ -418,7 +495,7 @@ LISTOFRES = [
     ("74.ans", "query74.res", 2, 3, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
 
     ("75.ans", "query75.res", 2, 10, [TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB,
-     TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.ALLTOSPACE]),
+     TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.ALLTOSPACE]), #95
 
     ("76_NULLS_FIRST.ans", "query76.res", 1, [6, 7], [TYPEF.ALLTOPIPE]),
 
@@ -427,9 +504,12 @@ LISTOFRES = [
 
     ("77_NULLS_FIRST.ans", "query77.res",
      2, 5, [TYPEF.TOTAB, TYPEF.ALLTOSPACE]),
+
     ("77_NULLS_LAST.ans", "query77_null.res",
-     2, 5, [TYPEF.TOTAB, TYPEF.ALLTOSPACE]),
+     2, 5, [TYPEF.TOTAB, TYPEF.ALLTOSPACE]),  # 99
+
     ("78.ans", "query78.res", 2, 10, [TYPEF.ALLTOPIPE]),  # 100
+
     ("79_NULLS_FIRST.ans", "query79.res", 1, [5, 6], [TYPEF.ALLTOPIPE]),
 
     ("79_NULLS_LAST.ans", "query79_null.res", 1, 6, [
@@ -438,10 +518,10 @@ LISTOFRES = [
     ("80_NULLS_FIRST.ans", "query80.res", 5, 5, [TYPEF.ALLTOPIPE]),
 
     ("80_NULLS_LAST.ans", "query80_null.res",
-     2, 5, [TYPEF.TOPIPE, TYPEF.ALLTOSPACE]), #104
+     2, 5, [TYPEF.TOPIPE, TYPEF.ALLTOSPACE]),  # 104
 
     ("81.ans", "query81.res", 2, 16, [TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB,
-     TYPEF.TOPIPE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]), #105
+     TYPEF.TOPIPE, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.TOSPACE, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 105
 
     ("82.ans", "query82.res", 2, 3, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
     ("83.ans", "query83.res", 2, 8, [TYPEF.ALLTOSPACE]),
@@ -450,18 +530,28 @@ LISTOFRES = [
     ("85.ans", "query85.res", 2, 4, [TYPEF.ALLTOTAB]),  # 109
 
     ("86_NULLS_FIRST.ans", "query86.res", 1, 5, [TYPEF.ALLTOPIPE]),  # 110
+
     ("86_NULLS_LAST.ans", "query86_null.res",
-     1, 5, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
-    ("87.ans", "query87.res", 2, 1, [TYPEF.ALLTOTAB]),
-    ("88.ans", "query88.res", 2, 8, [TYPEF.ALLTOTAB]),
+     1, 5, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),  # 111
+
+    ("87.ans", "query87.res", 2, 1, [TYPEF.ALLTOTAB]),  # 112
+
+    ("88.ans", "query88.res", 2, 8, [TYPEF.ALLTOTAB]),  # 113
+
     ("89.ans", "query89.res", 2, 8, [
      TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOTAB, TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+
     ("90.ans", "query90.res", 2, 1, [TYPEF.ALLTOTAB]),
+
     ("91.ans", "query91.res", 2, 4, [TYPEF.TOSPACE, TYPEF.ALLTOTAB]),
+
     ("92.ans", "query92.res", 2, 1, [TYPEF.ALLTOTAB]),
+
     ("93_NULLS_FIRST.ans", "query93.res", 1, 2, [TYPEF.ALLTOPIPE]),
+
     ("93_NULLS_LAST.ans", "query93_null.res",
      1, 2, [TYPEF.IGNORETABS, TYPEF.ALLTOTAB]),
+
     ("94.ans", "query94.res", 2, 3, [TYPEF.IGNORETABS, TYPEF.ALLTOTAB]),  # 120
 
     ("95.ans", "query95.res", 2, 3, [TYPEF.IGNORETABS, TYPEF.ALLTOTAB]),  # 121
@@ -516,10 +606,15 @@ def runone(l):
 
     print(INPUT + " => " + WRITE)
     # numbers conversion
-    if l[1] in NUMBERS:
-        numbers = NUMBERS[l[1]]
+    ares = l[1]
+    s = ares.split(".")
+    aresnull = s[0] + "_null." + s[1]
+    if ares in NUMBERS :
+        numbers = NUMBERS[ares]
         print("Apply number conversion : {0}".format(numbers))
-
+    elif aresnull in NUMBERS :
+        numbers = NUMBERS[aresnull]
+        print("Apply number conversion : {0}".format(numbers))
     else:
         numbers = None
     a = ANSTYPE(headersno, ans, nof, sep, headersno2, ans2, nof2, numbers)
@@ -531,5 +626,5 @@ def main():
         runone(l)
 
 
-# main()
-runone(LISTOFRES[105])
+main()
+#runone(LISTOFRES[11])

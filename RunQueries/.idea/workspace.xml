@@ -5,7 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="header optional">
-      <change beforePath="$PROJECT_DIR$/../qualifres/.query7.res.swp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/testquery17.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/testquery29.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/testquery63.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/nzjdbc3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OutputResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OutputResultSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/RunMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../answer_sets/27_NULLS_LAST.ans" beforeDir="false" afterPath="$PROJECT_DIR$/../answer_sets/27_NULLS_LAST.ans" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../db/jdbcproc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../db/jdbcproc.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../doc/comparequalify.ods" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/comparequalify.ods" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifpyt/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifpyt/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query10.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query10.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query12.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query12.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query14_null.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query14_null.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query16.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query16.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query17.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query17.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query18.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query18.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query20_null.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query20_null.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query26.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query26.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query27_null.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query27_null.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query28.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query28.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query29.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query29.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query34_null.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query34_null.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query35_null.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query35_null.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query38.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query38.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query54.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query54.res" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../qualifres/query6_null.res" beforeDir="false" afterPath="$PROJECT_DIR$/../qualifres/query6_null.res" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +65,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="/opt/IBM/db2/V11.5/java/db2jcc4.jar" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -54,8 +80,7 @@
     <configuration name="RunMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RunMain" />
       <module name="RunQueries" />
-      <option name="PROGRAM_PARAMETERS" value="-password &quot;X&quot; -url &quot;jdbc:hive2://mdp1.sb.com:2181,mdp2.sb.com:2181,mdp3.sb.com:2181/perfdb;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2&quot; -user perf -f $PROJECT_DIR$/test/testquery0.sql  -query -header -hadoopKerberos -removeSemi" />
-      <option name="VM_PARAMETERS" value="-Djava.security.auth.login.config=$PROJECT_DIR$/../jars/kerberos-hive.jaas " />
+      <option name="PROGRAM_PARAMETERS" value="-password secret -url jdbc:db2://thinkde:50000/bludb:currentSchema=PERFDB;blockingReadConnectionTimeout=300; -user bluadmin -f $PROJECT_DIR$/test/testquery63.sql  -query -header -removeSemi -rounddec 2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,23 +165,18 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
-          <line>101</line>
+          <line>120</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/RunMain.java</url>
-          <line>93</line>
+          <line>108</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/OutputResultSet.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/RunQueries.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="12" />
+          <line>104</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

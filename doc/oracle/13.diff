@@ -1,7 +1,0 @@
-1c1
-<  | 31.00 | 2551.86 | 2365.94 | 14195.66 | 
----
->  | 31.00 | 2.55 | 2.37 | 14195.66 | 
-Expected number of line 2
-Number of lines received 2
-query13 | query13.tpl | 3 | DIFFER | NUMBER OF LINES MATCHES
