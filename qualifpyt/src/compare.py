@@ -21,7 +21,7 @@ def columnsnotmatch(i, line1, line2, j, col1, col2, errmess):
 
 
 def decimalnotmatch(d1, d2):
-    d =  abs(d1 -  d2)
+    d = abs(d1 - d2)
     # be merciful for difference less then 0.5
     return d >= Decimal(0.5)
 
@@ -33,20 +33,27 @@ def isdecimal(s):
     except InvalidOperation:
         return (False, None)
 
-def isdate(s) :
-    try :
+
+def isdate(s):
+    try:
         d = datetime.datetime.strptime(s, '%Y-%m-%d')
-        return (True,d)
+        return (True, d)
     except ValueError:
         pass
-    try :
+    try:
         d = datetime.datetime.strptime(s, '%Y-%m')
-        return (True,d)
+        return (True, d)
     except ValueError:
-        return (False,None)
+        return (False, None)
 
-def datenotmatch(d1,d2) :
+
+def datenotmatch(d1, d2):
     return d1.year != d2.year or d1.month != d2.month
+
+def equalnull(col1,col2) :
+    if col1 == "NULL" and col2 == "0": return True
+    if col1 == "0" and col2 == "NULL": return True
+    return col1 == "NULL" and col2 == "NULL"
 
 def compare(file1, file2):
     with open(file1, 'r') as f1, open(file2, "r") as f2:
@@ -55,7 +62,7 @@ def compare(file1, file2):
 
     if len(lines1) != len(lines2):
         logging.info("Number of lines does not match {0} => {1}".format(
-            len(lines1), lines2))
+            len(lines1), len(lines2)))
         sys.exit(1)
 
     for i in range(len(lines1)):
@@ -69,6 +76,8 @@ def compare(file1, file2):
         for j in range(len(fields1)):
             col1 = fields1[j].strip()
             col2 = fields2[j].strip()
+
+            if equalnull(col1,col2) : continue
 
             (isdecimal1, d1) = isdecimal(col1)
             (isdecimal2, d2) = isdecimal(col2)

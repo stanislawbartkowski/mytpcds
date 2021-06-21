@@ -2,10 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.math.BigDecimal;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -79,6 +76,17 @@ class OutputResultSet {
         drawLine(sizes, writer);
     }
 
+    static boolean isMySql(ResultSet res) throws SQLException {
+        DatabaseMetaData da = res.getStatement().getConnection().getMetaData();
+        String s = da.getDriverName();
+        return s.startsWith("MySQL");
+    }
+
+    static boolean wasNull(ResultSet res, int i, String val) throws SQLException {
+        if (res.wasNull()) return true;
+        if (isMySql(res) && val.equals("")) return true;
+        return false;
+    }
 
     static void printResult(ResultSet res, Optional<String> output, boolean header, Optional<Short> rounddec) throws IOException, SQLException {
         Log.info("Writing result to " + (output.isPresent() ? output.get() : " stdout"));
@@ -94,7 +102,7 @@ class OutputResultSet {
             StringBuffer line = new StringBuffer();
             for (int i = 0; i < meta.getColumnCount(); i++) {
                 String val = res.getString(i + 1);
-                if (res.wasNull()) val = null;
+                if (wasNull(res, i, val)) val = null;
                 else {
                     int t = meta.getColumnType(i + 1);
                     int scale = meta.getScale(i + 1);

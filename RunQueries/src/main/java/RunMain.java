@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.sql.*;
 import java.util.Optional;
+import java.util.Properties;
 
 import org.apache.commons.cli.*;
 
@@ -19,6 +20,10 @@ import org.apache.commons.cli.*;
 // -- DB2
 // -password secret -url jdbc:db2://thinkde:50000/bludb:currentSchema=PERFDB;blockingReadConnectionTimeout=300; -user bluadmin -f /home/sbartkowski/work/mytpcds/RunQueries/test/testquery17.sql  -query -header -removeSemi -rounddec 2
 // --
+
+// -- MYSQL
+// -password secret -url  jdbc:mysql://kist:3306/perfdb -user perf -f /tmp/tpcds/mysqlqueries0/query15  -query -header -removeSemi -rounddec 2
+// ---------
 
 public class RunMain {
 

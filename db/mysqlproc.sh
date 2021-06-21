@@ -46,3 +46,5 @@ verifyvariable
 
 export IFEXIST="IF EXISTS"
 export REQUIREDCOMMANDS="mysql"
+
+#export NULLLAST=X
