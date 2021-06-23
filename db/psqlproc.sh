@@ -41,10 +41,15 @@ loadfile() {
   local -r tbl=$1
   local -r file=$2
   local -r TMP=`crtemp`
-  local -r TMPFILE=`crtemp`
+  local -r TMPFILE=$LOADBUFFER
+
+  required_var LOADBUFFER
 
   log "Transforming $file to $TMPFILE removing the last pipe"
+  
   sed "s/|$//"g $file >$TMPFILE
+  [ $? -eq 0 ] || logfail "Failed transforming load input file"
+
   log "OK, completed, now loading $TEMPFILE"
 
 cat <<EOF >$TMP

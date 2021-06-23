@@ -55,9 +55,9 @@ loadsinglefile() {
   if [ -n "$REMOVELASTPIPE" ]; then 
     local -r TMP=`crtemp`
     cat $2 | sed 's/|$//' >$TMP
-    loadfile $1 $TMP >>$LOGFILE
+    loadfile $1 $TMP 2>>$LOGFILE
   else
-    loadfile $1 $2 >>$LOGFILE
+    loadfile $1 $2 2>>$LOGFILE
   fi
   local -r RES=$?
   local -r after=`date  +"%s"`
