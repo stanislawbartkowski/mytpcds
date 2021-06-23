@@ -77,4 +77,5 @@ verifyvariable
 export IFEXIST="IF EXISTS"
 export REMOVEQUERYDAYS=X
 export REQUIREDCOMMANDS="psql"
+export NULLLAST=X
 
