@@ -280,13 +280,6 @@ modifyquery() {
     cp $TMP1 $TMP
   fi
 
-#  sed "s/\(cast\ *(.*date)\)\ *+ *\([0-9]*\) *days/date_add(\1,\2)/g" $1 | sed "s/\(cast\ *(.*date)\)\ *- *\([0-9]*\) *days/date_sub(\1,\2)/g" >$TMP
-
-  if [ -n "$REMOVEQUERYDAYS" ]; then
-    sed -e "s/\+ *\([0-9]*\)  *days/+ \1/g" $TMP | sed -e "s/\- *\([0-9]*\)  *days/- \1/g" >$TMP1
-    cp $TMP1 $TMP
-  fi
-
   if [ -n "$REMOVECOMMENTS" ]; then
     sed "/--/d" $TMP >$TMP1
     cp $TMP1 $TMP
@@ -325,6 +318,12 @@ modifyquery() {
       sed "s/\(cast\ *(.*date)\)\ *- *\([0-9]*\) *days/date_sub(\1,\2)/g" >$TMP1
     cp $TMP1 $TMP
   fi
+
+  if [ "$DTYPE" = "mssql" ]; then    
+    sed -i "s/date_add/dbo.date_add/g" $TMP
+    sed -i "s/date_sub/dbo.date_sub/g" $TMP
+  fi
+
 
 }
 

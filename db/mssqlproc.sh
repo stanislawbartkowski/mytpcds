@@ -6,6 +6,9 @@ SQLCOMMAND="sqlcmd $CONNPARS"
 
 testconnection() {
     $SQLCOMMAND -Q "SELECT 1"
+    [ $? -eq 0 ] || return 1
+    log "Now create several MSSQL UDFs"
+    runscript db/sqlserver.proc.sql
 }
 
 runscript() {
@@ -33,3 +36,4 @@ loadfile() {
 
 export REQUIREDCOMMANDS="sqlcmd bcp"
 export REMOVELASTPIPE=X
+export REPLACEQUERYDAYSPROC=X
