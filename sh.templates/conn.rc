@@ -7,7 +7,7 @@ export LOADBUFFER=~/tmp/filebuffer.txt
 #export ENV=env/db2
 #export ENV=env/bigsql
 #export ENV=env/oracle
-export ENV=env/hive
+#export ENV=env/hive
 #export ENV=env/postgresql
 #export ENV=env/sparksql
 #export ENV=env/thrive
@@ -16,3 +16,5 @@ export ENV=env/hive
 #export ENV=env/netezza
 #export ENV=env/derby
 #export ENV=env/jsqsh
+#export ENV=env/mssql
+

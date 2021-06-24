@@ -10,4 +10,6 @@ DBPORT=1433
 DTYPE=mssql
 
 DBURL="jdbc:sqlserver://$DBHOST;databaseName=$DBNAME"
-JAVADRIVER=/opt/"sqljdbc_8.2\enu"/mssql-jdbc-8.2.2.jre8.jar 
+
+#JAVADRIVER=/opt/"sqljdbc_8.2\enu"/mssql-jdbc-8.2.2.jre8.jar 
+JAVADRIVER=/opt/sqljdbc_9.2/enu/mssql-jdbc-9.2.1.jre8.jar
