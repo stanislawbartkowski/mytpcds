@@ -5,6 +5,8 @@
 # variables
 # ------------------
 
+REPDEL='|'
+
 required_var() {
   local -r VARIABLE=$1
   [ -z "${!VARIABLE}" ] && logfail "Need to set environment variable $VARIABLE"
@@ -92,6 +94,36 @@ calculatesec() {
   local -r after=`getsec`
   echo $(expr $after - $before)
 }
+
+getdate() {
+    echo `date +"%Y-%m-%d %H-%M-%S"`
+}
+
+# -----------------------
+# formated result table
+# -----------------------
+
+
+tsp() {
+    local -r MESS="$1"
+    local -r LEN=$2
+    local -r OUT=`printf "%-${LEN}s" "$MESS"`
+    echo "$OUT"
+}
+
+printreportline() {
+    local -r REPORTFILE=$1
+    shift
+    echo -n $REPDEL >>$REPORTFILE
+    while true; do
+        [ -z "$1" ] && break
+        O=`tsp "$1" $2`
+        echo -n " $O $REPDEL" >>$REPORTFILE
+        shift 2
+    done
+    echo >>$REPORTFILE
+}
+
 
 # --------------------------
 # commands

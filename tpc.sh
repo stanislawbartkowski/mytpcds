@@ -217,19 +217,6 @@ compactresult() {
    awk -f $STARTPWD/proc/transf.awk $1
 }
 
-resultline() {
-  local -r RES=$1
-  local -r NAME=$2
-  local -r TPLNAME=$3
-  local -r t=$4
-  local mess=""
-  if [ $RES -eq 0 ]; then mess="$NAME $DELIM $TPLNAME $DELIM $t"
-  elif [ $RES -eq 124 ]; then mess="$NAME $DELIM $TPLNAME $DELIM TIMEOUT "
-  else mess="$NAME $DELIM $TPLNAME $DELIM FAILED "
-  fi
-  echo $mess
-}
-
 modifyquery() {
   local -r qfile=$1
   local -r TMP=$2
@@ -322,10 +309,52 @@ modifyquery() {
   if [ "$DTYPE" = "mssql" ]; then    
     sed -i "s/date_add/dbo.date_add/g" $TMP
     sed -i "s/date_sub/dbo.date_sub/g" $TMP
+    sed -i "s/substr/substring/g" $TMP
+    sed -i "s/stddev_samp/stdev/g" $TMP
+    if grep query72.tpl $TMP; then
+       sed -i "s/d1.d_date + 5/dbo.date_add(d1.d_date,5)/g" $TMP
+    fi
+
   fi
 
-
 }
+
+# ================
+# output table
+# =================
+
+COLQUERYLEN=7
+COLTIMELEN=4
+COLRESULTLEN=7
+COLLINESLEN=10
+
+printresultline() {
+    local -r BEG=$1
+    local -r QUERY=$2
+    local -r RES=$3
+    local -r RESMATCH="$4"
+
+
+    if [ -z "$RES" ]; then
+        printreportline $RESFILE0 $QUERY $COLQUERYLEN "`calculatesec $BEG`" $COLTIMELEN 
+        return
+    fi
+
+    if [ -z "$RESMATCH" ]; then
+       printreportline $RESFILE0 $QUERY $COLQUERYLEN "`calculatesec $BEG`" $COLTIMELEN $RES $COLRESULTLEN
+    fi
+
+    printreportline $RESFILE0 $QUERY $COLQUERYLEN "`calculatesec $BEG`" $COLTIMELEN $RES $COLRESULTLEN "$RESMATCH" $COLLINESLEN
+}
+
+printresultfailed() {
+    local -r BEG=$1
+    local -r QUERY=$2
+    local -r RES=$3
+ 
+    printreportline $RESFILE0 $QUERY $COLQUERYLEN "`calculatesec $BEG`" $COLTIMELEN $RES $COLRESULTLEN 
+}
+
 
 runsinglequery() {
   local qfile=$TMPQ/$1
@@ -335,10 +364,13 @@ runsinglequery() {
   RESULTSET=$RESULTDIRECTORY/$QUERY.res
   rm -f $RESULTSET
 
+  local -r BEG=`getsec`
+
   if [[ "$SKIPQUERY" =~ .*${TPLNAME}.* ]]; then
-    mess="$1 | $QUERY | SKIPPED"
-    log "$mess"
-    echo $mess >>$RESFILE0
+#    mess="$1 | $QUERY | SKIPPED"
+#    log "$mess"
+#    echo $mess >>$RESFILE0
+    printresultfailed $BEG $1 "SKIPPED"
     return
   fi
   [ $STREAMNO -eq 0 ] && log "$qfile  started ..."
@@ -357,7 +389,6 @@ runsinglequery() {
   find $CDIR/query* -size 2c -exec rm {} \;
 
   local -r OUTPUTQUERY=`crtemp`
-  local -r before=`getsec`
   for f in $CDIR/query*; do 
     runquery $f >>$LOGFILE
     RES=$?
@@ -369,9 +400,17 @@ runsinglequery() {
   # copy back compacted output
   cp $OUTPUTQUERY $RESULTSET
 
-  local -r t=`calculatesec $before`
-  local mess=`resultline $RES $1 $TPLNAME $t`
-  if [ $RES -eq 0 ] && [ -n "$QUALIFYTEST" ]; then
+  if [ $RES -ne 0 ]; then
+     RESMESS="FAILED"
+     if [ $RES -eq 124 ]; then RESMESS="TIMEOUT"; fi
+     printresultfailed $BEG $1 $RESMESS
+     return $RES
+  fi
+
+  RESMESS="PASSED"
+  RESLINES=""
+
+  if [ -n "$QUALIFYTEST" ]; then
     local TMP2=`crtemp`
     local TMP3=`crtemp`
 
@@ -388,10 +427,10 @@ runsinglequery() {
 
     compactresult $RESQUERY >$TMP2
     compactresult $RESULTSET >$TMP3
-    if python3 qualifpyt/src/compare.py $TMP2 $TMP3 >>$LOGFILE; then mess="$mess $DELIM MATCH"; 
+    if python3 qualifpyt/src/compare.py $TMP2 $TMP3 >>$LOGFILE; then RESMESS="MATCH"; 
     else
       diff $TMP2 $TMP3 >>$LOGFILE >&2; 
-      mess="$mess $DELIM DIFFER"; 
+      RESMESS="DIFFER"
     fi
 
 #    if  diff $TMP2 $TMP3 >>$LOGFILE >&2;  then mess="$mess $DELIM MATCH"; else mess="$mess $DELIM DIFFER"; fi
@@ -400,11 +439,12 @@ runsinglequery() {
     log "Expected number of line $EXPECTEDLINE"
     local RESLINES=`numberoflines $TMP3`
     log "Number of lines received $RESLINES"
-    if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then mess="$mess $DELIM NUMBER OF LINES MATCHES"; else mess="$mess $DELIM NUMBER OF LINES DIFFERS"; fi
+    if [ "$EXPECTEDLINE" -eq "$RESLINES" ]; then RESLINES="NUMBER OF LINES MATCHES"; else RESLINES="NUMBER OF LINES DIFFERS"; fi
   fi
 
-  log "$mess"
-  echo $mess >>$RESFILE0
+#  log "$mess"
+#  echo $mess >>$RESFILE0
+  printresultline $BEG $1 $RESMESS "$RESLINES"
   return $RES
 }
 
@@ -417,17 +457,13 @@ runqueries() {
   preparequery >>$LOGFILE
   rm -f $RESFILE0
   rm -f $RESULTDIRECTORY/*
-  local -r before=`date  +"%s"`
+  local -r BEG=`getsec`
   for f in $TMPQ/query*
   do
     query=`basename $f`
     runsinglequery $query
   done
-  local -r after=`date  +"%s"`
-  local -r t=$(expr $after - $before)
-  mess="ALL | $t"
-  log "$mess"
-  echo "$mess" >>$RESFILE0
+  printresultline $BEG "ALL"
 }
 # ------------------------------
 

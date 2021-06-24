@@ -37,3 +37,7 @@ loadfile() {
 export REQUIREDCOMMANDS="sqlcmd bcp"
 export REMOVELASTPIPE=X
 export REPLACEQUERYDAYSPROC=X
+export REPLACEPIPES=X
+
+# SQLSERVER : NULL FIRST
+# export NULLLAST=X
