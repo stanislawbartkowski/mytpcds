@@ -117,7 +117,7 @@ The common configuration parameters
 | DBURL | JDBC URL to connect to database | jdbc:netezza://$DBHOST:5480/$DBNAME
 | JAVADRIVER | JDBC Java driver jar file | /usr/local/nz/lib/nzjdbc3.jar
 
-**DBURL** and **JAVADRIVER** should be specified only if QueryRunner is going to be used. If only database client software is utilized, these parameters should be ignored.
+**DBURL** and **JAVADRIVER** should be specified only if QueryRunner is going to be used. If only database client software is used, these parameters could be ignored.
 
 ## Troubleshooting
 
