@@ -50,7 +50,9 @@ rundroptable() {
      jsqsh_script $TMP
  }
 
-runquery() {
+# replaced by JDBC
+# not used
+jsqsh_runquery() {
   jsqsh_script $1
   local -r RES=$?
   # remove the first and the last line from outout

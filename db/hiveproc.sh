@@ -14,7 +14,9 @@ runscript() {
   timeout --foreground $QUERYTIMEOUT beeline -u "$U" $CREDEN -f $scriptfile
 }
 
-xxx_runquery() {
+
+# supersede by JDBC
+beeline_runquery() {
   prepareurl 1
   timeout --foreground $QUERYTIMEOUT beeline --outputformat=dsv --showHeader=false -u "$U" $CREDEN -f $1 >$RESULTSET
 }
