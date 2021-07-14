@@ -26,7 +26,7 @@ source ./conn.rc
 #export TESTDATA=web_sales
 export TESTDATA=web_site
 
-export TESTQUERY=1
+export TESTQUERY=14
 #export QUERYTIMEOUT=5m
 #export QUERYTIMEOUT=1m
 

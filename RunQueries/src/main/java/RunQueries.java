@@ -16,7 +16,8 @@ class RunQueries {
 
     static ResultSet runSqlFile(Connection con, String file, boolean queryS, boolean removeSemicolon) throws IOException, SQLException {
         Log.info("Read " + (queryS ? "query" : "update") + " " + file);
-        List<String> lines = Files.readAllLines(new File(file).toPath());
+        File f = new File(file);
+        List<String> lines = Files.readAllLines(f.toPath());
         StringBuffer query = new StringBuffer();
         for (String line : lines) {
             if (!line.startsWith("--")) {

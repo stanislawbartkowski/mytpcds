@@ -3,6 +3,7 @@ source db/hivesql.proc
 runcommand() {
   local command="$2"
   prepareurl $1
+  required_command beeline
   timeout --foreground $QUERYTIMEOUT beeline -u "$U" $CREDEN -e "$command"
   [ $? -eq 0 ] || logfail "Cannot execute Hive command"
 }
@@ -20,6 +21,5 @@ xxx_runquery() {
 
 verifycommand
 
-export REQUIREDCOMMANDS=beeline
 export REPLACEPIPES=X
 export RUNQUERYDBPARAMS=-removeSemi

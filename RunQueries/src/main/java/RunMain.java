@@ -25,6 +25,11 @@ import org.apache.commons.cli.*;
 // -password secret -url  jdbc:mysql://kist:3306/perfdb -user perf -f /tmp/tpcds/mysqlqueries0/query15  -query -header -removeSemi -rounddec 2
 // ---------
 
+// -- Hive
+// -password secret -url  jdbc:hive2://inimical1.fyre.ibm.com:10000/perfdb -user perf -f /tmp/tpcds/hivequeries0/query10  -query -header -removeSemi -rounddec 2
+// ---------
+
+
 public class RunMain {
 
     private static void P(String s) {

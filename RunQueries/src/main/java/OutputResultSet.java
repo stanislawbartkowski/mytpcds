@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,11 @@ class OutputResultSet {
             String header = meta.getColumnName(i + 1);
             int csize = meta.getColumnDisplaySize(i + 1);
             // threshold
-            if (csize > MAXCSIZE) Log.info(header + " column size " + csize + " too big");
+            if (csize > MAXCSIZE) {
+                Log.info(header + " column size " + csize + " too big, reduced to " + MAXCSIZE);
+                csize = MAXCSIZE;
+            }
+
             sizes.add((header.length() > csize) ? header.length() : csize);
         }
         return sizes;
@@ -34,6 +39,9 @@ class OutputResultSet {
 
     private static void addColumn(List<Integer> sizes, ResultSetMetaData meta, int i, String s, StringBuffer buffer) throws SQLException {
         int size = sizes.get(i);
+        if (size > 1000) {
+            int x = 0;
+        }
         boolean left = meta.getColumnType(i + 1) == Types.VARCHAR || meta.getColumnType(i + 1) == Types.VARCHAR;
         StringBuffer spaces = new StringBuffer();
         if (s == null) s = NULL;
@@ -82,6 +90,12 @@ class OutputResultSet {
         return s.startsWith("MySQL");
     }
 
+    static boolean isHive(ResultSet res) throws SQLException {
+        DatabaseMetaData da = res.getStatement().getConnection().getMetaData();
+        String s = da.getDriverName();
+        return s.startsWith("Hive");
+    }
+
     static boolean wasNull(ResultSet res, int i, String val) throws SQLException {
         if (res.wasNull()) return true;
         if (isMySql(res) && val.equals("")) return true;
@@ -106,11 +120,19 @@ class OutputResultSet {
                 else {
                     int t = meta.getColumnType(i + 1);
                     int scale = meta.getScale(i + 1);
-                    boolean numericround = rounddec.isPresent() && (t == Types.NUMERIC || t == Types.DECIMAL || t == Types.FLOAT || t == Types.BIGINT);
-                    if (numericround) {
-                        BigDecimal b = res.getBigDecimal(i + 1);
+                    if (rounddec.isPresent()) {
+                        // Data: 2021/07/12
+                        BigDecimal b = null;
+                        if (t == Types.BIGINT && isHive(res)) {
+                            Long lo = res.getLong(i + 1);
+                            b = new BigDecimal(lo);
+                        } else {
+                            boolean numericround = rounddec.isPresent() && (t == Types.NUMERIC || t == Types.DECIMAL || t == Types.FLOAT || t == Types.BIGINT);
+                            if (numericround) b = res.getBigDecimal(i + 1);
+
+                        }
                         // Local.US to have digital dot, not comma
-                        val = String.format(Locale.US, format, b);
+                        if (b != null) val = String.format(Locale.US, format, b);
                     }
                 }
                 addColumn(sizes, meta, i, val, line);
