@@ -6,7 +6,9 @@ https://github.com/stanislawbartkowski/mytpcds/wiki
 Test results:
 https://github.com/stanislawbartkowski/mytpcds/wiki/TPC-DS-BigData-results
 
-The tool was tested with the latest version of TPC/DS : v2.13.0rc1<br>
+TPC/DS version tested: 
+* v2.13.0rc1
+* DSGen-software-code-3.2.0rc1
 
 ### Inspiration
 
