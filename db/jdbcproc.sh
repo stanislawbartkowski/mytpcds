@@ -11,7 +11,7 @@ setjdbc() {
 
 queryjdbccommand() {
     setjdbc
-    timeout $QUERYTIMEOUT $JAVACMD $2 "$1" -query
+    $QUERYTIMEOUT $JAVACMD $2 "$1" -query
 }
 
 jdbccommand() {
@@ -25,7 +25,7 @@ jdbcfilecommand() {
 
 jdbcqueryupdatefile() {
     setjdbc
-    timeout $QUERYTIMEOUT $JAVACMD -f "$1"
+    $QUERYTIMEOUT $JAVACMD -f "$1"
 }
 
 jdbcrunquery() {

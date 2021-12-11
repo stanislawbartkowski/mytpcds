@@ -155,7 +155,7 @@ verify() {
   LOADTIMEFILE=${LOADTIMELINE:-$TCPROOT/work/${DTYPE}queries/${DTYPEID}.loadtime}
   TESTQUERY=${TESTQUERY:-55}
   TESTDATA=${TESTDATA:-customer}
-  QUERYTIMEOUT=${QUERYTIMEOUT:-10m}
+  QUERYTIMEOUT=${QUERYTIMEOUT:-timeout 10m}
   RESQUERYDIR=${RESQUERYDIR:-$PWD/qualifres}
   DELIM=${DELIM:-|}
 
@@ -281,6 +281,12 @@ modifyquery() {
         sed "s/\([^ ]*\) || \([^ ]*\) /concat(\1 , \2) /g" >$TMP1
     cp $TMP1 $TMP
   fi
+
+  if [ -n "$REMOVEQUERYDAYS" ]; then
+     sed "s/days//g" $TMP >$TMP1
+     cp $TMP1 $TMP
+  fi
+
 
   if [ -n "$MODIFYALIAS" ]; then
   # replace

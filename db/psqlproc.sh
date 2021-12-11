@@ -1,23 +1,11 @@
 #set -x
 #w
 
+source proc/psqlproc.sh
+
 verifyvariable() {
   [ -z "$DBHOST" ] && logfail "Variable DBHOST not defined"
   [ -z "$KILLINTERVAL" ] && logfail "Variable KILLINTERVAL not defined"
-}
-
-psqlcommand() {
-  local -r command="$1"
-  local PORT=""
-  [ -n "DBPORT" ] && PORT="-p $DBPORT"
-  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST $PORT -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" -c "$command"
-}
-
-psqlscript() {
-  local PORT=""
-  [ -n "DBPORT" ] && PORT="-p $DBPORT"
-
-  export PGPASSWORD=$DBPASSWORD; timeout -s 15 $QUERYTIMEOUT psql -h $DBHOST $PORT -U $DBUSER -d $DBNAME -t -v "ON_ERROR_STOP=true" <$1 >$RESULTSET
 }
 
 rundroptable() {
@@ -68,14 +56,16 @@ testconnection() {
 runquery() {
   killlong
   cat $1
-#  psqlscript $1
   jdbcrunquery $1
 }
 
 verifyvariable
 
+export DB=$DBNAME
+
 export IFEXIST="IF EXISTS"
 export REMOVEQUERYDAYS=X
 export REQUIREDCOMMANDS="psql"
 export NULLLAST=X
+
 

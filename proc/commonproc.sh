@@ -1,3 +1,10 @@
+# ----------------------------------
+# my bash shell common utilitities
+# version: 1.00
+# 2021/11/11
+# 2021/12/01 - COLDEL added, logfile
+# ----------------------------------
+
 #set -x
 #w
 
@@ -6,6 +13,7 @@
 # ------------------
 
 REPDEL='|'
+COLDEL=${COLDEL:-|}
 
 required_var() {
   local -r VARIABLE=$1
@@ -21,6 +29,11 @@ required_listofvars() {
 # -------------------------
 # logging
 # -------------------------
+
+logfile() {
+  [ -n "$LOGFILE" ] && cat $1 >>$LOGFILE
+  cat $1
+}
 
 log() {
   [ -n "$LOGFILE" ] && echo $1 >>$LOGFILE
@@ -38,6 +51,30 @@ touchlogfile() {
   local -r basedir=$(dirname "$LOGILE")
   createbasedir $LOGFILE
   touch $LOGFILE  
+}
+
+execute_withlog() {
+    local -r CMD="$@"
+    # important: some command are assuming the first line in the output is not relevant and remove it
+    # do not remove this log $CMD below
+    log "$CMD"
+    eval $CMD
+    if [ $? -ne 0 ]; then
+        # log CMD again, it can preceded by bunch of logs
+        log "$CMD"
+        logfail "Job failed"
+    fi
+}
+
+# -------------------------
+# misc
+# -------------------------
+
+trim() {
+    local var="$1"
+    var="${var#"${var%%[![:space:]]*}"}"
+    var="${var%"${var##*[![:space:]]}"}"   
+    printf '%s' "$var"
 }
 
 # -------------------------

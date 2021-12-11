@@ -1,7 +1,7 @@
 
 runnzsql() {
   local -r tfile=$1
-  timeout $QUERYTIMEOUT nzsql -r -t -h $DBHOST -U $DBUSER -W $DBPASSWORD -d $DBNAME -f $tfile
+  $QUERYTIMEOUT nzsql -r -t -h $DBHOST -U $DBUSER -W $DBPASSWORD -d $DBNAME -f $tfile
 }
 
 nzsqlcommand() {

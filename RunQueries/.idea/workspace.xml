@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c41877-28cb-47f1-aad4-59dc933fd957" name="Default Changelist" comment="header optional">
-      <change afterPath="$PROJECT_DIR$/test/testquery14.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OutputResultSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OutputResultSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RunMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RunQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/RunQueries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../db/hiveproc.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../db/hiveproc.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../doc/comparequalify.ods" beforeDir="false" afterPath="$PROJECT_DIR$/../doc/comparequalify.ods" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../sh.templates/run.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sh.templates/run.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,13 +26,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/Log.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/RunMain.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/OutputResultSet.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/RunQueries.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/test/testquery29.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/RunMain.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/Log.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/testquery17.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/testquery14.sql" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/test/testquery0.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test/testquery29.sql" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/RunQueries.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -55,7 +49,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="/opt/IBM/db2/V11.5/java/db2jcc4.jar" />
+    <property name="last_opened_file_path" value="/mnt/perseus/PerseusRestService" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
