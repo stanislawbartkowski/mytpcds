@@ -10,11 +10,8 @@ loadfileclient() {
 
 
 loadfile() {
-  [ -z "$LOADS3" ] && loadfileclient $@
-  [ -n "$LOADS3" ] && loadfiles3 $@
+  if [ -z "$LOADS3" ]; then loadfileclient $@; else loadfiles3 $@; fi
 }
-
-
 
 # CALL SYSPROC.ADMIN_CMD('LOAD FROM S3::$ENDPOINT::X$AWSKEY::$AWSSECRETKEY::$BUCKET::$INPATH OF DEL INSERT INTO $TABLEDEST');
 
