@@ -1,7 +1,8 @@
 source ./conn.rc 
 
-export QUERYTIMEOUT=4h
-export DONOTVERIFY=X
+export QUERYTIMEOUT="timeout 4h"
+
+export ORDERBYSTREAM=X
 
 export STREAMNO=$1
 [ -z "$STREAMNO" ] && { echo "Provide parameter, STREAM number"; exit 1; }

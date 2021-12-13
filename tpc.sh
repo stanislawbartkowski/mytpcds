@@ -204,12 +204,18 @@ preparequery() {
   rm -f $TMPQ/*
   mkdir -p $TMPQ
 
-  for f in $TEMPD/query*
-  do
-   QUERY=`getqueryname $f`
-   cp $f $TMPQ/$QUERY
-  done
+  if [ -z "$ORDERBYSTREAM" ]; then 
+   for f in $TEMPD/query*
+    do
+     QUERY=`getqueryname $f`
+    cp $f $TMPQ/$QUERY   
+   done
+  else 
+     cp $TEMPD/* $TMPQ;
+  fi
+
   rm -rf $TEMPD
+
   cd $STARTPWD
 }
 
@@ -348,6 +354,7 @@ printresultline() {
 
     if [ -z "$RESMATCH" ]; then
        printreportline $RESFILE0 $QUERY $COLQUERYLEN "`calculatesec $BEG`" $COLTIMELEN $RES $COLRESULTLEN
+       return
     fi
 
     printreportline $RESFILE0 $QUERY $COLQUERYLEN "`calculatesec $BEG`" $COLTIMELEN $RES $COLRESULTLEN "$RESMATCH" $COLLINESLEN
@@ -362,6 +369,11 @@ printresultfailed() {
 }
 
 
+#runquery() {
+#  echo $1 >$RESULTSET 
+#  return 0
+#}
+
 runsinglequery() {
   local qfile=$TMPQ/$1
   existfile $qfile
@@ -373,9 +385,6 @@ runsinglequery() {
   local -r BEG=`getsec`
 
   if [[ "$SKIPQUERY" =~ .*${TPLNAME}.* ]]; then
-#    mess="$1 | $QUERY | SKIPPED"
-#    log "$mess"
-#    echo $mess >>$RESFILE0
     printresultfailed $BEG $1 "SKIPPED"
     return
   fi
@@ -450,7 +459,8 @@ runsinglequery() {
 
 #  log "$mess"
 #  echo $mess >>$RESFILE0
-  printresultline $BEG $1 $RESMESS "$RESLINES"
+#  printresultline $BEG $1 $RESMESS "$RESLINES"
+  printresultline $BEG $QUERY $RESMESS "$RESLINES"
   return $RES
 }
 

@@ -19,7 +19,7 @@ jdbccommand() {
 }
 
 jdbcfilecommand() {
-   cat $1 >>$LOGFILE
+   logfile $1
    queryjdbccommand $1 -f
 }
 
