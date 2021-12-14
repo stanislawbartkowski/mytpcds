@@ -133,3 +133,4 @@ db2loadblobs() {
   log "Load $IMPTABLE table from server $IMPFILE using blobs in $IMPBLOBDIR"
   db2 "LOAD FROM $IMPFILE OF DEL LOBS FROM $IMPBLOBDIR MODIFIED BY COLDEL$COLDEL REPLACE INTO $IMPTABLE"
   [ $? -ne 0 ] && logfail "Load failed"
+}
