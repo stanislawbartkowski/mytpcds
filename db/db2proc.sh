@@ -93,3 +93,4 @@ verifyvariables() {
 [ "$DTYPEID" = "bigsql" ] && verifyvariables
 
 export NULLLAST=X
+export COUNT=BIG_COUNT

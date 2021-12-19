@@ -4,6 +4,7 @@
 # 2021/11/11
 # 2021/12/02 - added set -x w at the beginning
 # 2021/12/12 - change in loadserver
+# 2021/12/18 - db2clirun, timeout detection
 # -----------------------------------
 
 #set -x
@@ -19,6 +20,8 @@ db2clirun() {
     [ -n "$SCHEMA" ] && echo "SET CURRENT SCHEMA $SCHEMA ;" >$ITEMP
     cat $1 >>$ITEMP
     $QUERYTIMEOUT db2cli execsql -statementdelimiter ";" -connstring "$CONNECTION" -inputsql $ITEMP -outfile $OTEMP
+    [ $? -eq 124  ] && return 124
+    # timeout
     local RES=0
     if grep "ErrorMsg" $OTEMP; then
       logfile $OTEMP

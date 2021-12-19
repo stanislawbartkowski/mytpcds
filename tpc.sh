@@ -146,6 +146,7 @@ verify() {
 
   required_var DBNAME
 
+  COUNT=${COUNT:-COUNT}
   TEMPDIR=${TEMPDIR:-/tmp/mytpcds}
   TCPDS=${TCPDS:-$TCPROOT/tools/tpcds.sql}
   TCPDATA=${TCPDATA:-$TCPROOT/work/data}
