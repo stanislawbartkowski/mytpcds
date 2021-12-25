@@ -1,5 +1,5 @@
-INDIR=/mnt/usb/repo/tpcdata/data1
-OUTDIR=/var/db2warehouse/scratch/loadarea
+INDIR=/mnt/ausb1/repo/tpcdata/data100
+OUTDIR=/var/db2ce/backup/scratch
 
 mkdir -p $OUTDIR -m 777
 
@@ -27,6 +27,13 @@ createpipe() {
 
 }
 
+catpipetable() {
+   local -r f=$INDIR/$1.dat
+   local D=`outtable $f`
+   echo "$f =>  $D"
+   cat $f >>$D
+}
+
 catpipe() {
    for f in $INDIR/*.dat
    do
@@ -38,4 +45,6 @@ catpipe() {
 
 remove
 createpipe
+#catpipetable customer
+#catpipetable store_sales
 catpipe
