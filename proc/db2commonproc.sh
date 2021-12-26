@@ -5,6 +5,7 @@
 # 2021/12/02 - added set -x w at the beginning
 # 2021/12/12 - change in loadserver
 # 2021/12/18 - db2clirun, timeout detection
+# 2021/12/16 - db2clirun, load messages
 # -----------------------------------
 
 #set -x
@@ -44,10 +45,11 @@ db2loadfileserver() {
   local -r TABLENAME=$1
   local -r INLOADFILE=$2
   local -r TMPS=`crtemp`
+  local -t MESSFILE=/tmp/$TABLENAME.txt
 #  local -r SFILE=`serverfile $INLOADFILE`
 
 cat << EOF > $TMPS
-    CALL SYSPROC.ADMIN_CMD('load from $INLOADFILE  of del modified by coldel$COLDEL replace into $TABLENAME NONRECOVERABLE');
+    CALL SYSPROC.ADMIN_CMD('load from $INLOADFILE  of del modified by coldel$COLDEL MESSAGES ON SERVER replace into $TABLENAME NONRECOVERABLE');
 EOF
 
   db2clirun $TMPS
