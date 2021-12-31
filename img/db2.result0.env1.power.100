@@ -1,3 +1,5 @@
+| Query number | Time in sec | Test result
+| --- | ---- | ---- |
 | query1  | 14400 | TIMEOUT |
 | query10 | 254  | PASSED  |
 | query11 | 14400 | TIMEOUT |
