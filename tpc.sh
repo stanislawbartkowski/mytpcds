@@ -73,7 +73,7 @@ verifydat() {
 
 loaddatatest() {
   verifydat
-  loadsinglefile $TESTDATA $TCPDATA/$TESTDATA.dat
+  loadsinglefile $TESTDATA $TCPDATA/$TESTDATA.dat 
 }
 
 # --------------
@@ -81,12 +81,30 @@ loaddatatest() {
 loaddata() {
    verifydat
    log "Data loading ..."
+   local pid_count=0
+   [ $PARALLELLOAD -eq 0 ] && log "No parallelism, load sequentially"
+   [ $PARALLELLOAD -gt 0 ] && log "Load in parallel,  $PARALLELLOAD max"
    local -r before=`getsec`
    for f in $TCPDATA/*.dat
    do
      tbl=`basename $f .dat`
-     loadsinglefile $tbl $f
+
+     if [ $PARALLELLOAD -eq 0 ]; then loadsinglefile $tbl $f; fi
+     if [ $PARALLELLOAD -gt 0 ]; then 
+        loadsinglefile $tbl $f & 
+        if (( ++pid_count >= $PARALLELLOAD )); then
+          log "$pid_count loading jobs running in parallel limit $PARALLELLOAD, waiting ... "
+           wait -n
+          ((pid_count--))
+          log "Loading job completed. $pid_count loading jobs running, launch the next one"
+       fi
+      fi
+
    done
+   if [ $PARALLELLOAD -gt 0 ]; then
+     log "$pid_count still running - waiting to be completed"
+     wait
+   fi
    local -r timeelapsed=`calculatesec $before`
    echo $LOADTIMEFILE
    echo "LOAD TIME IN SEC: $timeelapsed" >$LOADTIMEFILE
@@ -101,7 +119,7 @@ verifyload() {
   log "Number of rows expected: $NOLINES"
   local -r TMP=`crtemp`
   local -r TMP1=`crtemp`
-  # reduce the size of the clolumn, Hive produces extremely large size of the column
+  # reduce the size of the column, Hive produces extremely large size of the column
   local query="SELECT CAST(CONCAT('NUMBEROFROWS:',COUNT(*)) as CHAR(40)) AS XX FROM $table"
   if [ -n "$USEPIPECONCATENATE" ]; then query="SELECT 'NUMBEROFROWS:' || COUNT(*) AS XX FROM $table"; fi
   # avoid pipe here to catch to error from number of rows
@@ -159,6 +177,9 @@ verify() {
  #  QUERYTIMEOUT=${QUERYTIMEOUT:-timeout 10m}
   RESQUERYDIR=${RESQUERYDIR:-$PWD/qualifres}
   DELIM=${DELIM:-|}
+
+# PARALLELLOAD
+  PARALLELLOAD=${PARALLELLOAD:-0}
 
   RESULTDIRECTORY=${RESULTDIRECTORY:-$TEMPDIR/${DTYPEID}result${STREAMNO}}
   TMPQ=${TMPQ:-$TEMPDIR/${DTYPEID}queries${STREAMNO}}
